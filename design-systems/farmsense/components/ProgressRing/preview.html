@@ -1,0 +1,22 @@
+<!-- @dsCard group="Data" height=130 -->
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>ProgressRing</title>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{margin:0;padding:16px;background:var(--bege-perola);font-family:var(--font-sans);color:var(--verde-sombra)}.k{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;opacity:.75;display:block;margin:0 0 10px}.pane{border-radius:var(--r-md);padding:16px}.pane-l{background:rgba(0,65,65,.035);border:1px solid rgba(0,65,65,.08)}.pane-d{background:var(--verde-sombra);color:#fff}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const { ProgressRing } = window.FarmSenseDesignSystem_c4c636;
+const { useState } = React;
+function Demo(){
+  
+  return (
+<div className="pane pane-l" style={{display:'flex',gap:24,alignItems:'center',justifyContent:'center'}}>
+  <ProgressRing value={68} size={92} />
+  <ProgressRing value={92} size={72} color="var(--verde-anil)" />
+  <ProgressRing value={35} size={56} stroke={5} />
+</div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

@@ -1,0 +1,37 @@
+<!-- @dsCard group="Effects" height=820 subtitle="Pontos adensados de 0 a 15% de opacidade · a única textura da marca, usada com cautela" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN · Textura</title>
+<style>
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--ff-body);font-size:16px;line-height:1.55}
+.pg{padding:32px 40px 40px;max-width:1120px;margin:0 auto}
+h4{font-size:15px;font-weight:800;margin:0 0 12px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.amostra{height:180px;border-radius:14px;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid var(--rule-soft)}
+.amostra b{font-family:var(--ff-display);font-weight:800;font-size:20px;line-height:1.05;text-transform:uppercase}
+.leg{font-size:12.5px;color:var(--text-muted);margin-top:8px}
+code{font-family:var(--ff-mono);font-size:11.5px}
+.bloco{margin-top:28px}
+.aviso{margin-top:28px;display:grid;grid-template-columns:160px 1fr;gap:24px;align-items:center;background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;padding:20px}
+.lupa{height:120px;border-radius:10px;background:var(--brand-amarelo-suave);position:relative;isolation:isolate;overflow:hidden}
+.lupa::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.15;background-image:radial-gradient(circle,var(--brand-preto) 2.1px,transparent 2.55px);background-size:12px 12px}
+.aviso p{margin:0 0 6px;font-size:14px;color:var(--text-soft)}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.aviso{grid-template-columns:1fr}}
+</style></head><body><main class="pg">
+<h4>Textura cheia · 15%</h4>
+<div class="grid">
+  <div><div class="amostra bry-sec-light-1 bry-tex-pontos"><b>Fundo claro</b></div><div class="leg"><code>.bry-tex-pontos</code></div></div>
+  <div><div class="amostra bry-sec-dark-1 bry-tex-pontos bry-tex-pontos--escuro"><b>Fundo preto</b></div><div class="leg"><code>.bry-tex-pontos--escuro</code></div></div>
+  <div><div class="amostra bry-tex-pontos" style="background:var(--brand-amarelo-principal)"><b>Fundo amarelo</b></div><div class="leg">pontos pretos</div></div>
+  <div><div class="amostra bry-tex-pontos" style="background:var(--brand-amarelo-claro)"><b>Amarelo claro</b></div><div class="leg">pontos pretos, tom sobre tom</div></div>
+</div>
+<div class="bloco"><h4>Textura em degradê · de 15% a totalmente transparente</h4>
+<div class="grid">
+  <div><div class="amostra bry-sec-dark-1 bry-tex-pontos bry-tex-pontos--escuro bry-tex-pontos--fade-baixo"><b>Some para baixo</b></div><div class="leg"><code>--fade-baixo</code></div></div>
+  <div><div class="amostra bry-sec-light-1 bry-tex-pontos bry-tex-pontos--fade-cima"><b>Some para cima</b></div><div class="leg"><code>--fade-cima</code></div></div>
+  <div><div class="amostra bry-sec-dark-1 bry-tex-pontos bry-tex-pontos--escuro bry-tex-pontos--fade-lado"><b>Some para o lado</b></div><div class="leg"><code>--fade-lado</code> · pontos à direita, texto livre à esquerda</div></div>
+  <div><div class="amostra bry-tex-pontos bry-tex-pontos--fade-canto" style="background:var(--brand-amarelo-principal)"><b>Só no canto</b></div><div class="leg"><code>--fade-canto</code></div></div>
+</div></div>
+<div class="aviso"><div class="lupa" aria-hidden="true"></div><div>
+  <p><b>Como é feita.</b> Pontos de 1,4 px a cada 4 px, em preto no fundo claro ou em branco no escuro, numa camada atrás do conteúdo. A opacidade vai de <b>0 (totalmente transparente) a 15%</b>, nunca mais. Ao lado, ampliada 3 vezes.</p>
+  <p><b>Use com cautela.</b> No máximo uma área texturizada por tela, nunca sob texto de leitura longa, tabela ou formulário. Prefira o degradê, que deixa a área do texto limpa. Na dúvida, sem textura.</p>
+</div></div>
+</main></body></html>

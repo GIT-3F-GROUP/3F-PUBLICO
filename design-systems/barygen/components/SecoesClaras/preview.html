@@ -1,0 +1,301 @@
+<!-- @dsCard group="Effects" height=6360 subtitle="Três estilos de seção clara (suave, branco e creme) e como usá-los em sequência, alternados ou repetidos" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN · Seções claras</title>
+<style>
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--ff-body);font-size:16px;line-height:1.55}
+.pg{padding:48px 56px 72px;max-width:1120px;margin:0 auto}
+.ey{font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--text-accent)}
+h2{font-size:40px;font-weight:800;line-height:1.06;margin:12px 0 16px}
+h2 span{font-weight:600}
+h3{font-size:22px;font-weight:800;line-height:1.1;margin:0}
+.lead{font-size:18px;color:var(--text-soft);max-width:62ch;margin:0}
+.desc{font-size:15px;color:var(--text-soft);max-width:70ch;margin:0 0 18px}
+.sec{margin-top:64px}
+.sec-h{display:flex;gap:16px;align-items:baseline;margin-bottom:12px}
+.num{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--text-accent)}
+code{font-family:var(--ff-mono);font-size:12px}
+.leg{font-size:13px;color:var(--text-muted);margin:10px 0 0}
+.demo{border-radius:16px;overflow:hidden;border:1px solid var(--rule-soft)}
+.demo + .demo{margin-top:32px}
+
+/* 01 · estilos */
+.estilos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.estilo{border-radius:14px;border:1px solid var(--rule-soft);overflow:hidden;background:var(--brand-branco)}
+.estilo .amostra{height:150px;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;border-bottom:1px solid var(--rule-soft)}
+.estilo .amostra .bry-caixa-clara{padding:12px 14px;font-size:13px;color:var(--text-soft)}
+.estilo .t{padding:16px 18px 18px;font-size:14px;color:var(--text-soft)}
+.estilo .nm{font-family:var(--ff-display);text-transform:uppercase;font-weight:800;font-size:18px;color:var(--text-body)}
+.estilo .cd{display:block;margin:4px 0 8px;color:var(--text-muted)}
+
+/* exemplos de seção */
+.ex{position:relative;overflow:hidden;padding:48px 48px 52px}
+.ex-rot{position:absolute;top:14px;right:16px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+.ex-rot code{font-size:11px;letter-spacing:0;text-transform:none;font-weight:400}
+.ex h4{font-family:var(--ff-display);text-transform:uppercase;font-weight:800;font-size:30px;line-height:1.06;margin:10px 0 10px;max-width:22ch}
+.ex h4 span{font-weight:600}
+.ex p{margin:0;max-width:56ch;color:var(--text-soft)}
+.grade{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.grade .bry-caixa-clara{padding:20px}
+.grade b{display:block;font-family:var(--ff-display);text-transform:uppercase;font-weight:800;font-size:17px;margin-bottom:4px}
+.grade .bry-caixa-clara span{font-size:14px;color:var(--text-soft)}
+.ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--tom-claro-creme);border:1px solid var(--tom-claro-linha);margin-bottom:12px;color:var(--text-accent)}
+.ic svg{width:20px;height:20px}
+.duas{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:center}
+.faq{margin-top:20px;border-top:1px solid var(--tom-claro-linha)}
+.faq div{padding:14px 0;border-bottom:1px solid var(--tom-claro-linha);display:flex;justify-content:space-between;gap:16px;font-weight:600}
+.faq div span{color:var(--text-accent);font-weight:700}
+.ficha{width:100%;border-collapse:collapse;margin-top:20px;font-size:14px}
+.ficha th{text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:700;padding:0 0 10px}
+.ficha td{padding:12px 0;border-top:1px solid var(--tom-claro-linha)}
+.ficha td:last-child{font-weight:700;text-align:right}
+.ficha th:last-child{text-align:right}
+.ex .cit{font-family:var(--ff-display);text-transform:uppercase;font-weight:600;font-size:26px;line-height:1.15;max-width:30ch;margin:10px 0 16px}
+.cit b{font-weight:800}
+.quem{font-size:14px;color:var(--text-muted)}
+.quem b{color:var(--text-body)}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px;max-width:640px}
+.campo{height:44px;border-radius:8px;border:1.5px solid var(--rule-soft);background:var(--tom-claro-suave);display:flex;align-items:center;padding:0 14px;font-size:14px;color:var(--text-muted)}
+.dna-fundo{position:absolute;right:64px;bottom:-40px;width:150px;pointer-events:none}
+.ex-rot{z-index:1}
+.dna-fundo svg{display:block;width:100%;height:auto}
+.ex > *:not(.dna-fundo):not(.ex-rot){position:relative}
+
+/* receitas de página */
+.receitas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.receita{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;padding:16px}
+.receita .nm{font-family:var(--ff-display);text-transform:uppercase;font-weight:800;font-size:15px;margin-bottom:12px}
+.pilha{border-radius:10px;overflow:hidden;border:1px solid var(--rule-soft)}
+.pilha div{padding:9px 12px;font-size:12px;font-weight:600;color:var(--text-soft);display:flex;justify-content:space-between;gap:8px}
+.pilha div i{font-style:normal;font-weight:400;color:var(--text-muted)}
+.pilha .p-suave{background:var(--tom-claro-suave)}
+.pilha .p-branco{background:var(--tom-claro-branco)}
+.pilha .p-creme{background:var(--tom-claro-creme)}
+.pilha .p-grad{background:linear-gradient(180deg,var(--tom-claro-suave),var(--tom-claro-creme))}
+.pilha .p-fio{border-top:1px solid var(--tom-claro-linha)}
+.pilha .p-amarelo{background:linear-gradient(150deg,var(--brand-amarelo-detalhe),var(--brand-amarelo-contraste));color:var(--brand-preto)}
+.pilha .p-amarelo i{color:var(--text-soft)}
+.pilha .p-preto{background:#000;color:var(--text-on-dark)}
+.pilha .p-preto i{color:var(--text-on-dark-muted)}
+.receita .t{font-size:13px;color:var(--text-muted);margin-top:10px}
+
+/* regras */
+.regras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.regra{border-radius:14px;border:1px solid var(--rule-soft);background:var(--brand-branco);overflow:hidden}
+.regra .palco{height:150px;display:flex;flex-direction:column;border-bottom:1px solid var(--rule-soft)}
+.regra .palco div{flex:1}
+.regra .t{padding:14px 16px;font-size:14px;color:var(--text-soft)}
+.regra .t b{display:block;color:var(--text-body)}
+.sim{color:var(--fn-success);font-weight:800}.nao{color:var(--fn-error);font-weight:800}
+
+@media (max-width:900px){
+  .estilos,.grade,.regras{grid-template-columns:minmax(0,1fr)}
+  .receitas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .duas{grid-template-columns:minmax(0,1fr);gap:20px}
+}
+@media (max-width:640px){
+  .pg{padding:32px 16px 48px}h2{font-size:30px}
+  .ex{padding:44px 20px 40px}.ex h4{font-size:24px}.cit{font-size:21px}
+  .receitas,.form{grid-template-columns:minmax(0,1fr)}
+  .ex-rot{left:20px;right:auto}
+  .dna-fundo{right:-10px;width:110px}
+}
+</style></head><body>
+<main class="pg">
+  <div class="ey">Efeitos · Seções claras</div>
+  <h2>Seções <span>claras</span></h2>
+  <p class="lead">O claro é a base da maior parte das páginas. Três estilos de seção clara, muito próximos entre si, criam ritmo sem cortar a página: suave, branco e creme. Alternados, marcam a passagem de um assunto para outro; repetidos, pedem um fio ou um título que abra a nova parte.</p>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">01</span><h3>Três estilos</h3></div>
+    <div class="estilos">
+      <div class="estilo">
+        <div class="amostra bry-sec-light-1"><div class="bry-caixa-clara">Caixa branca</div></div>
+        <div class="t"><div class="nm">Suave</div><code class="cd">.bry-sec-light-1 · #FBF9F5</code>O padrão. Leitura, conteúdo institucional e a maior parte da página. Caixas em branco (elevadas) ou areia (rebaixadas).</div>
+      </div>
+      <div class="estilo">
+        <div class="amostra bry-sec-branco"><div class="bry-caixa-clara bry-caixa-clara--suave">Caixa suave</div></div>
+        <div class="t"><div class="nm">Branco</div><code class="cd">.bry-sec-branco · #FFFFFF</code>O mais limpo. Catálogo, ficha técnica, tabela e formulário: conteúdo com muitas caixas, que precisa de ar. Caixas em suave ou creme.</div>
+      </div>
+      <div class="estilo">
+        <div class="amostra bry-sec-creme"><div class="bry-caixa-clara">Caixa branca</div></div>
+        <div class="t"><div class="nm">Creme</div><code class="cd">.bry-sec-creme · #FEF7E6</code>Destaque leve e quente. Depoimento, dado em destaque, chamada e a passagem para uma seção amarela. Caixas só em branco.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">02</span><h3>Alternados em sequência</h3></div>
+    <p class="desc">A troca de tom marca o novo assunto, sem fio, sem sombra e sem caixa. O ritmo mais comum é suave, branco, suave. Para um destaque leve no meio, entra o creme.</p>
+
+    <div class="demo">
+      <section class="ex bry-sec-light-1">
+        <span class="ex-rot">Suave · <code>.bry-sec-light-1</code></span>
+        <div class="bry-eyebrow">Por que BARYGEN</div>
+        <h4>Genética pensada <span>para o campo brasileiro.</span></h4>
+        <p>Híbridos testados em diferentes regiões e safras, com acompanhamento técnico do plantio à colheita.</p>
+        <div class="grade">
+          <div class="bry-caixa-clara"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V9"/><path d="M12 13c-4 0-6-3-6-7 4 0 6 3 6 7z"/><path d="M12 11c0-4 2-7 6-7 0 4-2 7-6 7z"/></svg></div><b>Pesquisa</b><span>Anos de seleção em campo antes do lançamento.</span></div>
+          <div class="bry-caixa-clara"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/></svg></div><b>Região</b><span>Posicionamento por ciclo, porte e sanidade.</span></div>
+          <div class="bry-caixa-clara"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><b>Consultores</b><span>Visitas nas fases mais importantes da safra.</span></div>
+        </div>
+      </section>
+      <section class="ex bry-sec-branco">
+        <span class="ex-rot">Branco · <code>.bry-sec-branco</code></span>
+        <div class="bry-eyebrow">Catálogo</div>
+        <h4>Conheça <span>o seu híbrido.</span></h4>
+        <div class="grade">
+          <div class="bry-caixa-clara bry-caixa-clara--suave"><b>BG307 Max</b><span>Grão · ciclo precoce · alto potencial produtivo.</span></div>
+        </div>
+      </section>
+      <section class="ex bry-sec-light-1">
+        <span class="ex-rot">Suave · <code>.bry-sec-light-1</code></span>
+        <div class="duas">
+          <div><div class="bry-eyebrow">Dúvidas</div><h4>Perguntas <span>frequentes.</span></h4><p>Se a sua dúvida não estiver aqui, fale com um consultor da sua região.</p></div>
+          <div class="faq"><div>Qual o melhor híbrido para safrinha?<span>+</span></div><div>Onde vejo um campo demonstrativo?<span>+</span></div><div>Como falo com um consultor?<span>+</span></div></div>
+        </div>
+      </section>
+    </div>
+    <p class="leg">Página institucional: suave, branco, suave. A troca de tom basta para separar os assuntos.</p>
+
+    <div class="demo">
+      <section class="ex bry-sec-branco">
+        <span class="ex-rot">Branco · <code>.bry-sec-branco</code></span>
+        <div class="bry-eyebrow">Ficha técnica · BG307 Max</div>
+        <h4>Características <span>do híbrido.</span></h4>
+        <table class="ficha"><thead><tr><th>Característica</th><th>BG307 Max</th></tr></thead><tbody>
+          <tr><td>Ciclo</td><td>Precoce</td></tr><tr><td>Finalidade</td><td>Grão</td></tr><tr><td>Época de plantio</td><td>Verão e safrinha</td></tr>
+        </tbody></table>
+      </section>
+      <section class="ex bry-sec-creme">
+        <span class="ex-rot">Creme · <code>.bry-sec-creme</code></span>
+        <span class="dna-fundo" data-dna="rgba(246,162,0,.14)" aria-hidden="true"></span>
+        <div class="bry-eyebrow">Quem planta</div>
+        <p class="cit">“O BG307 Max <b>fechou a melhor média</b> da fazenda nesta safra.”</p>
+        <div class="quem"><b>Produtor parceiro</b> · Sorriso, MT · depoimento de exemplo</div>
+      </section>
+      <section class="ex bry-sec-branco">
+        <span class="ex-rot">Branco · <code>.bry-sec-branco</code></span>
+        <div class="bry-eyebrow">Contato</div>
+        <h4>Fale com <span>um consultor.</span></h4>
+        <div class="form"><div class="campo">Nome</div><div class="campo">Município</div><div class="campo">Telefone</div><div class="campo">Área plantada (ha)</div></div>
+        <div class="bry-acoes" style="margin-top:20px"><button class="bry-btn bry-btn--primary">Enviar</button></div>
+      </section>
+    </div>
+    <p class="leg">Página de produto: branco, creme, branco. O creme destaca o depoimento, com a hélice de DNA em amarelo bem transparente ao fundo, tom sobre tom.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">03</span><h3>O mesmo estilo em sequência</h3></div>
+    <p class="desc">Também vale repetir o mesmo estilo, quando a página é longa e calma. Nesse caso a separação vem de outro jeito: um fio fino em <code>--tom-claro-linha</code> (<code>.bry-sec-fio</code>) ou um título que abra a nova parte, com mais respiro antes dele. No máximo três seções seguidas do mesmo estilo.</p>
+
+    <div class="demo">
+      <section class="ex bry-sec-light-1">
+        <span class="ex-rot">Suave</span>
+        <div class="bry-eyebrow">Notícias · Safra 26/27</div>
+        <h4>Começa o plantio <span>nos campos demonstrativos.</span></h4>
+        <p>Os primeiros campos da safra 26/27 já estão plantados em Mato Grosso, Goiás e Paraná. As visitas abertas começam em novembro.</p>
+      </section>
+      <section class="ex bry-sec-light-1 bry-sec-fio">
+        <span class="ex-rot">Suave · <code>.bry-sec-fio</code></span>
+        <div class="bry-eyebrow">Eventos</div>
+        <h4>Dia de campo <span>em Rio Verde.</span></h4>
+        <p>Venha ver os híbridos de perto, com os consultores da região. Inscrições abertas.</p>
+      </section>
+    </div>
+    <p class="leg">Suave e suave, separadas por um fio de 1 px em marrom bem leve.</p>
+
+    <div class="demo">
+      <section class="ex bry-sec-branco">
+        <span class="ex-rot">Branco</span>
+        <div class="bry-eyebrow">Portal do produtor</div>
+        <h4>Seus <span>pedidos.</span></h4>
+        <div class="grade">
+          <div class="bry-caixa-clara bry-caixa-clara--suave"><b>Pedido 1042</b><span>120 sacas · entrega em setembro</span></div>
+          <div class="bry-caixa-clara bry-caixa-clara--suave"><b>Pedido 1038</b><span>80 sacas · entregue</span></div>
+          <div class="bry-caixa-clara bry-caixa-clara--suave"><b>Pedido 1031</b><span>60 sacas · entregue</span></div>
+        </div>
+      </section>
+      <section class="ex bry-sec-branco" style="padding-top:72px">
+        <span class="ex-rot">Branco · título com respiro</span>
+        <div class="bry-eyebrow">Portal do produtor</div>
+        <h4>Seus <span>talhões.</span></h4>
+        <div class="grade">
+          <div class="bry-caixa-clara bry-caixa-clara--creme"><b>Talhão 4</b><span>210 ha · BG307 Max</span></div>
+          <div class="bry-caixa-clara bry-caixa-clara--suave"><b>Talhão 7</b><span>145 ha · BG307 Max</span></div>
+          <div class="bry-caixa-clara bry-caixa-clara--suave"><b>Talhão 9</b><span>98 ha · BG307 Max</span></div>
+        </div>
+      </section>
+    </div>
+    <p class="leg">Branco e branco, sem fio: o espaço maior e o título abrem a nova parte. O creme marca o talhão em destaque.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">04</span><h3>Passagem em degradê</h3></div>
+    <p class="desc">Para ir do suave ao creme sem corte, use <code>.bry-sec-claro-grad</code> (do suave para o creme) ou <code>.bry-sec-claro-grad--sobe</code> (do creme para o suave). A página esquenta aos poucos, por exemplo antes de uma chamada.</p>
+    <div class="demo">
+      <section class="ex bry-sec-light-1">
+        <span class="ex-rot">Suave</span>
+        <div class="bry-eyebrow">Tecnologia</div>
+        <h4>Do laboratório <span>ao talhão.</span></h4>
+        <p>Cada híbrido passa por seleção em laboratório, campo experimental e campo demonstrativo.</p>
+      </section>
+      <section class="ex bry-sec-claro-grad">
+        <span class="ex-rot">Degradê · <code>.bry-sec-claro-grad</code></span>
+        <div class="grade" style="margin-top:0">
+          <div class="bry-caixa-clara"><b>Laboratório</b><span>Seleção genética.</span></div>
+          <div class="bry-caixa-clara"><b>Experimental</b><span>Ensaios em várias regiões.</span></div>
+          <div class="bry-caixa-clara"><b>Demonstrativo</b><span>O híbrido na lavoura do produtor.</span></div>
+        </div>
+      </section>
+      <section class="ex bry-sec-creme">
+        <span class="ex-rot">Creme</span>
+        <h4 style="margin-top:0">Quer ver <span>de perto?</span></h4>
+        <div class="bry-acoes" style="margin-top:16px"><button class="bry-btn bry-btn--primary">Encontrar um campo</button><button class="bry-btn bry-btn--link">Falar com um consultor</button></div>
+      </section>
+    </div>
+    <p class="leg">Suave, degradê, creme: nenhuma junção aparece.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">05</span><h3>Receitas de página</h3></div>
+    <p class="desc">As seções claras fazem a base; uma seção de destaque (amarela, preta ou Van Gogh) entra no máximo uma vez, e o rodapé fecha. Alguns ritmos que funcionam:</p>
+    <div class="receitas">
+      <div class="receita"><div class="nm">Institucional</div>
+        <div class="pilha"><div class="p-preto">Herói <i>preto</i></div><div class="p-suave">Por que BARYGEN <i>suave</i></div><div class="p-branco">Catálogo <i>branco</i></div><div class="p-suave">Dúvidas <i>suave</i></div><div class="p-amarelo">Chamada <i>amarelo</i></div><div class="p-preto">Rodapé <i>preto</i></div></div>
+        <div class="t">Alternância simples entre suave e branco.</div></div>
+      <div class="receita"><div class="nm">Produto</div>
+        <div class="pilha"><div class="p-suave">Herói do híbrido <i>suave</i></div><div class="p-branco">Ficha técnica <i>branco</i></div><div class="p-creme">Depoimento <i>creme</i></div><div class="p-branco">Contato <i>branco</i></div><div class="p-preto">Rodapé <i>preto</i></div></div>
+        <div class="t">O creme no meio destaca a prova.</div></div>
+      <div class="receita"><div class="nm">Notícias</div>
+        <div class="pilha"><div class="p-suave">Destaque <i>suave</i></div><div class="p-suave p-fio">Notícia <i>suave + fio</i></div><div class="p-suave p-fio">Notícia <i>suave + fio</i></div><div class="p-branco">Eventos <i>branco</i></div><div class="p-preto">Rodapé <i>preto</i></div></div>
+        <div class="t">O mesmo estilo repetido, com fio.</div></div>
+      <div class="receita"><div class="nm">Campanha</div>
+        <div class="pilha"><div class="p-suave">Abertura <i>suave</i></div><div class="p-grad">Etapas <i>degradê</i></div><div class="p-creme">Resultado <i>creme</i></div><div class="p-amarelo">Chamada <i>amarelo</i></div><div class="p-preto">Rodapé <i>preto</i></div></div>
+        <div class="t">A página esquenta até a chamada amarela.</div></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">06</span><h3>Regras</h3></div>
+    <div class="regras">
+      <div class="regra"><div class="palco"><div style="background:var(--tom-claro-suave)"></div><div style="background:var(--tom-claro-branco)"></div><div style="background:var(--tom-claro-suave)"></div></div>
+        <div class="t"><b><span class="sim">✓</span> Alternar tons vizinhos</b>Suave, branco e creme se alternam livremente. A troca de tom já separa os assuntos.</div></div>
+      <div class="regra"><div class="palco"><div style="background:var(--tom-claro-suave)"></div><div style="background:var(--tom-claro-suave);border-top:1px solid var(--tom-claro-linha)"></div><div style="background:var(--tom-claro-suave);border-top:1px solid var(--tom-claro-linha)"></div></div>
+        <div class="t"><b><span class="sim">✓</span> Repetir com fio ou respiro</b>O mesmo estilo seguido, até três vezes, com fio de 1 px ou um título com mais espaço.</div></div>
+      <div class="regra"><div class="palco"><div style="background:var(--tom-claro-suave)"></div><div style="background:var(--tom-claro-creme)"></div><div style="background:var(--tom-claro-creme);border-top:1px solid var(--tom-claro-linha)"></div></div>
+        <div class="t"><b><span class="nao">✕</span> Creme seguido de creme</b>O creme é destaque: uma seção por vez. Para alongar o calor, use o degradê.</div></div>
+      <div class="regra"><div class="palco"><div style="background:var(--tom-claro-suave)"></div><div style="background:var(--tom-claro-branco);border-top:4px solid var(--brand-amarelo-principal)"></div><div style="background:var(--tom-claro-suave)"></div></div>
+        <div class="t"><b><span class="nao">✕</span> Fio grosso ou colorido</b>Entre seções claras, só o fio de 1 px em <code>--tom-claro-linha</code>. Faixa amarela é das seções Van Gogh.</div></div>
+      <div class="regra"><div class="palco"><div style="background:var(--tom-claro-suave)"></div><div style="background:var(--tom-claro-branco);box-shadow:0 -12px 24px rgba(0,0,0,.14);position:relative"></div><div style="background:var(--tom-claro-suave)"></div></div>
+        <div class="t"><b><span class="nao">✕</span> Sombra entre seções</b>Seção não flutua sobre seção. A separação é o tom, o fio ou o espaço.</div></div>
+      <div class="regra"><div class="palco"><div style="background:var(--tom-claro-areia)"></div><div style="background:var(--surface-sunken)"></div><div style="background:#ece6da"></div></div>
+        <div class="t"><b><span class="nao">✕</span> Inventar outros claros</b>Seções claras são só suave, branco e creme. Areia é tom de caixa, não de seção.</div></div>
+    </div>
+  </section>
+</main>
+<script>
+(() => {
+  const L = window.BarygenDesignSystem_a84d4b.BARYGEN_LOGO;
+  document.querySelectorAll('[data-dna]').forEach(el => { el.innerHTML = L.svg({ type: 'dna', color: el.dataset.dna, title: '' }); });
+})();
+</script>
+</body></html>

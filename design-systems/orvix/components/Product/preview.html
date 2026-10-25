@@ -1,0 +1,83 @@
+<!-- @dsCard group="Produto" height=640 subtitle="Um único modelo de card de produto, mais ficha rápida e documentos. Sem imagem de produto, sem variação de moldura" page -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.ovx-stage{padding:20px;background:radial-gradient(120% 130% at 70% 0%,var(--surface-1) 0%,var(--bg-deep) 62%)}.sec{display:flex;flex-direction:column;gap:var(--space-3)}.sec+.sec{margin-top:var(--space-6)}.sh{display:flex;align-items:baseline;gap:var(--space-3);padding-bottom:var(--space-2);border-bottom:1px solid var(--border)}.sh b{font-family:var(--font-display);font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-strong)}.sh span{font:var(--type-caption);color:var(--text-muted)}.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap)}.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--gap)}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const {
+  ProductCard,
+  DoseTable,
+  PhScale,
+  DocLink,
+  LinkAction
+} = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("section", {
+    className: "sec"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "sh"
+  }, /*#__PURE__*/React.createElement("b", null, "Card de produto"), /*#__PURE__*/React.createElement("span", null, "um s\xF3 modelo: linha em verde, nome em Exo, claim, chips de especifica\xE7\xE3o e a\xE7\xE3o. A cor da linha aparece s\xF3 na barra lateral.")), /*#__PURE__*/React.createElement("div", {
+    className: "two"
+  }, /*#__PURE__*/React.createElement(ProductCard, {
+    lineKey: "tec",
+    line: "Linha TEC \xB7 Adjuvantes ORV7",
+    name: "ORV7 Drop Power",
+    claim: "Emulsificante, dispersante e antiespumante em um s\xF3 produto.",
+    rail: true,
+    specs: [{
+      label: "Dose",
+      value: "30 a 200 mL/ha"
+    }, {
+      label: "Embalagem",
+      value: "5 L"
+    }],
+    action: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+      className: "ovx-mono"
+    }, "Todas as culturas"), /*#__PURE__*/React.createElement(LinkAction, {
+      href: "#"
+    }, "Ficha t\xE9cnica"))
+  }), /*#__PURE__*/React.createElement(ProductCard, {
+    lineKey: "tec",
+    line: "Linha TEC \xB7 Adjuvantes ORV7",
+    name: "ORV7 Aero Guard",
+    claim: "Gota uniforme na aplica\xE7\xE3o a\xE9rea e de precis\xE3o.",
+    rail: true,
+    specs: [{
+      label: "Aplicação",
+      value: "Aérea"
+    }, {
+      label: "Embalagem",
+      value: "5 L"
+    }],
+    action: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+      className: "ovx-mono"
+    }, "Todas as culturas"), /*#__PURE__*/React.createElement(LinkAction, {
+      href: "#"
+    }, "Ficha t\xE9cnica"))
+  }))), /*#__PURE__*/React.createElement("section", {
+    className: "sec"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "sh"
+  }, /*#__PURE__*/React.createElement("b", null, "Ficha r\xE1pida"), /*#__PURE__*/React.createElement("span", null, "tabela de dose com numerais tabulares e escala de pH; dado t\xE9cnico sempre respira mais que UI comum.")), /*#__PURE__*/React.createElement("div", {
+    className: "ovx-tablewrap"
+  }, /*#__PURE__*/React.createElement(DoseTable, {
+    rows: [["Soja", "120 mL/ha", "80 L/ha"], ["Milho", "150 mL/ha", "100 L/ha"], ["Algodão", "180 mL/ha", "120 L/ha"]]
+  })), /*#__PURE__*/React.createElement(PhScale, {
+    value: 4.2
+  })), /*#__PURE__*/React.createElement("section", {
+    className: "sec"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "sh"
+  }, /*#__PURE__*/React.createElement("b", null, "Documentos"), /*#__PURE__*/React.createElement("span", null, "ficha t\xE9cnica e FISPQ, sempre com tipo, nome e tamanho.")), /*#__PURE__*/React.createElement("div", {
+    className: "docs"
+  }, /*#__PURE__*/React.createElement(DocLink, {
+    type: "PDF",
+    name: "Ficha t\xE9cnica",
+    size: "1,2 MB"
+  }), /*#__PURE__*/React.createElement(DocLink, {
+    type: "FISPQ",
+    name: "FISPQ",
+    size: "380 KB"
+  }))));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(Demo, null));
+</script></div></body></html>

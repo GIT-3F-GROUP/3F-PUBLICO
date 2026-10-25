@@ -1,0 +1,3 @@
+Construção da logo BARYGEN: anatomia (símbolo, nome e atividade), a unidade H, as proporções de cada arranjo, a área de proteção e os tamanhos mínimos.
+
+A unidade é **H**, a altura das letras de BARYGEN (13,11 no arquivo). Horizontal principal: palheta de 3,3 H a 0,85 H do nome. Horizontal símbolo e nome: 2,5 H a 1,0 H. Verticais: 3,2 H, centralizada, a 0,8 H do nome. SEMENTES mede 0,48 H e fica 0,42 H abaixo do nome. Área de proteção: 1 H em todos os lados. Mínimos de altura: horizontal principal 40 px, símbolo e nome 24 px, vertical principal 72 px, vertical símbolo e nome 40 px, nome e atividade 24 px, nome 12 px, símbolo 16 px.

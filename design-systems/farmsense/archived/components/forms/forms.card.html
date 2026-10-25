@@ -1,0 +1,40 @@
+<!-- @dsCard group="Components" viewport="700x400" name="Forms" subtitle="Campos, seleção, marcação e busca." -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>Forms</title><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:18px;background:var(--bege-perola);font-family:var(--font-sans);color:var(--verde-sombra)}.k{font-size:9px;letter-spacing:.12em;text-transform:uppercase;opacity:.5;display:block;margin-bottom:8px}.pane{border-radius:var(--r-md);padding:16px}.pane-l{background:rgba(0,65,65,.035);border:1px solid rgba(0,65,65,.08)}.pane-d{background:var(--verde-sombra);color:#fff}</style></head>
+<body><div id="root"></div><script type="text/babel">
+const { Button, IconButton, Chip, NeonDot, Kicker, SectionHeader, Tile, GlassCard, Logo, Divider, Surface, Icon, Input, Textarea, Select, Checkbox, Radio, Switch, SearchField, KpiTile, StatRow, DataTable, BarMeter, Sparkline, ProgressRing, Alert, StatusPill, Tooltip, EmptyState, Skeleton, RuleCard, Tabs, DotNav, Breadcrumb, Pagination, TopBar, LogoCard, Swatch, PatternLayer, QuoteBlock } = window.FarmSenseDesignSystem_c4c636;
+const { useState } = React;
+function Demo(){ 
+  const [on,setOn]=useState(true);
+  return (<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:14}}>
+    <div className="pane pane-l" style={{display:'grid',gap:14}}>
+      <Input label="Nome do talhão" value="Aurora — soja 24/25" hint="412 ha · MT 242, km 38" onChange={()=>{}} />
+      <Select label="Cultura" options={['Soja','Milho','Algodão','Pastagem cultivada']} onChange={()=>{}} />
+      <Textarea label="Observação da visita" rows={3} value="Potássio baixo no setor norte. Faltam 22 unidades." onChange={()=>{}} />
+    </div>
+    <div style={{display:'grid',gap:14}}>
+      <div className="pane pane-d" style={{display:'grid',gap:14}}>
+        <SearchField tone="dark" value="soja · 24/25" trailing={<Chip tone="neon">12 talhões</Chip>} onChange={()=>{}} />
+        <Input tone="dark" label="Buscar safra" value="24/25" onChange={()=>{}} />
+        <Switch tone="dark" label="Alertas ao vivo" checked={on} onChange={()=>setOn(!on)} />
+      </div>
+      <div className="pane pane-l" style={{display:'grid',gap:10}}>
+        <span className="k" style={{margin:0}}>Escopo contratado</span>
+        <Checkbox label="Amostragem em grade 2 ha" checked onChange={()=>{}} />
+        <Checkbox label="Mapa de zonas de manejo" checked onChange={()=>{}} />
+        <Checkbox label="Treinamento de equipes" onChange={()=>{}} />
+        <Divider spacing="4px" />
+        <Radio name="p" label="Diagnóstico · 1 visita" onChange={()=>{}} />
+        <Radio name="p" label="Acompanhamento · 12 visitas" checked onChange={()=>{}} />
+        <Switch label="Relatório mensal por e-mail" checked onChange={()=>{}} />
+      </div>
+    </div>
+  </div>); }
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+if (window.lucide) window.lucide.createIcons();
+</script></body></html>

@@ -1,0 +1,33 @@
+<!-- @dsCard group="Components" viewport="700x380" name="Navigation" subtitle="Barra, abas, trilha, paginação e sumário." -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>Navigation</title><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:18px;background:var(--bege-perola);font-family:var(--font-sans);color:var(--verde-sombra)}.k{font-size:9px;letter-spacing:.12em;text-transform:uppercase;opacity:.5;display:block;margin-bottom:8px}.pane{border-radius:var(--r-md);padding:16px}.pane-l{background:rgba(0,65,65,.035);border:1px solid rgba(0,65,65,.08)}.pane-d{background:var(--verde-sombra);color:#fff}</style></head>
+<body><div id="root"></div><script type="text/babel">
+const { Button, IconButton, Chip, NeonDot, Kicker, SectionHeader, Tile, GlassCard, Logo, Divider, Surface, Icon, Input, Textarea, Select, Checkbox, Radio, Switch, SearchField, KpiTile, StatRow, DataTable, BarMeter, Sparkline, ProgressRing, Alert, StatusPill, Tooltip, EmptyState, Skeleton, RuleCard, Tabs, DotNav, Breadcrumb, Pagination, TopBar, LogoCard, Swatch, PatternLayer, QuoteBlock } = window.FarmSenseDesignSystem_c4c636;
+const { useState } = React;
+function Demo(){ 
+  const [tab,setTab]=useState('Sensoriamento');
+  const [pg,setPg]=useState(3);
+  return (<div style={{display:'grid',gap:14}}>
+    <div className="pane pane-d" style={{padding:0,overflow:'hidden'}}>
+      <TopBar base="../.." items={['Serviços','Casos','Sobre','Contato']} active="Serviços" actions={<Button variant="neon" size="sm">Falar com a consultoria</Button>} /></div>
+    <div className="pane pane-l" style={{padding:0,background:'#fff'}}>
+      <TopBar base="../.." tone="light" items={['Talhões','Mapas','Relatórios']} active="Mapas" actions={<Button size="sm" variant="ghost-light">Entrar</Button>} /></div>
+    <div style={{display:'grid',gridTemplateColumns:'1.4fr 1fr',gap:14}}>
+      <div className="pane pane-l"><span className="k">Tabs</span><Tabs items={['Diagnóstico','Sensoriamento','Recomendação','Acompanhamento']} value={tab} onChange={setTab} />
+        <p className="body-sm t-70" style={{margin:'12px 0 0'}}>Aba ativa: <strong>{tab}</strong></p></div>
+      <div className="pane pane-d"><span className="k" style={{opacity:.55}}>Tabs · escuro</span><Tabs tone="dark" items={['24/25','23/24','22/23']} value="24/25" onChange={()=>{}} /></div>
+    </div>
+    <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 120px',gap:14}}>
+      <div className="pane pane-l"><span className="k">Breadcrumb</span><Breadcrumb items={[{label:'Fazendas',href:'#'},{label:'São Bento',href:'#'},'Talhão Aurora']} /></div>
+      <div className="pane pane-l"><span className="k">Pagination</span><Pagination page={pg} total={12} onChange={setPg} /></div>
+      <div className="pane pane-d" style={{display:'grid',placeItems:'center'}}><DotNav items={[{id:'a',label:'Cores'},{id:'b',label:'Tipografia'},{id:'c',label:'Logo'},{id:'d',label:'Componentes'}]} value="b" onChange={()=>{}} /></div>
+    </div>
+  </div>); }
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+if (window.lucide) window.lucide.createIcons();
+</script></body></html>

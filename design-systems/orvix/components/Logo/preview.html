@@ -1,0 +1,15 @@
+<!-- @dsCard group="Logo" height=300 subtitle="A principal primeiro; quadrada, Elemento X e Clube ORVIX. Branca no escuro, preta no claro" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.c{display:grid;place-items:center;gap:10px;padding:24px 16px;min-height:150px;border-radius:var(--radius-md);background:var(--surface-1);border:1px solid var(--border)}.c code{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}.full{grid-column:1/-1}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const h = React.createElement, F = React.Fragment;
+const { Logo } = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return h("div", { className: "g" },
+    h("div", { className: "c full" }, h(Logo, { variant: "principal", size: "xl" }), h("code", null, 'variant="principal"')),
+    [["quadrada", "lg"], ["elemento-x", "lg"], ["clube", "lg"]].map(([v, s]) =>
+      h("div", { className: "c", key: v }, h(Logo, { variant: v, size: s }), h("code", null, 'variant="' + v + '"'))));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(h(Demo));
+</script></div></body></html>

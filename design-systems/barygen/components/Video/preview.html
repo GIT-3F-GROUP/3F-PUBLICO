@@ -1,0 +1,352 @@
+<!-- @dsCard group="Marca" height=3600 subtitle="Encerramento com a logo (padrão e opcionais), legenda de nome e posição na tela" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN · Vídeo</title>
+<style>
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--ff-body);font-size:16px;line-height:1.55}
+.pg{padding:48px 56px 72px;max-width:1120px;margin:0 auto}
+.ey{font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--text-accent)}
+h2{font-size:40px;font-weight:800;line-height:1.06;margin:12px 0 16px}
+h3{font-size:22px;font-weight:800;line-height:1.1;margin:0}
+h4{font-size:16px;font-weight:800;margin:0;line-height:1.2}
+.lead{font-size:18px;color:var(--text-soft);max-width:62ch;margin:0}
+p{margin:0 0 12px;max-width:68ch}
+.sec{margin-top:64px}
+.sec-h{display:flex;gap:16px;align-items:baseline;margin-bottom:8px}
+.num{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--text-accent)}
+.desc{font-size:15px;color:var(--text-soft);margin:0 0 16px;max-width:72ch}
+.barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 16px}
+.seg{display:inline-flex;border:1.5px solid var(--text-body);border-radius:8px;overflow:hidden}
+.seg .bry-btn{border:0;border-radius:0}
+.seg .bry-btn[aria-pressed="true"]{background:var(--text-body);color:var(--brand-amarelo-suave)}
+.card{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.info{padding:16px 20px 20px;display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:start}
+.info .tag{font-size:11px;letter-spacing:.2em;color:var(--text-accent);font-weight:700;grid-column:1/-1;text-transform:uppercase}
+.info p{grid-column:1;margin:4px 0 0;color:var(--text-soft);font-size:14px}
+.info .bry-btn{grid-column:2;grid-row:2/span 2;align-self:center}
+.opc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.opc .info{grid-template-columns:1fr}
+.opc .info .bry-btn{grid-column:1;grid-row:auto;justify-self:start;margin-top:8px}
+.selo-opc{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--surface-sunken);color:var(--text-soft);padding:2px 8px;border-radius:99px;margin-left:6px;vertical-align:1px}
+.selo-pad{background:var(--brand-preto);color:var(--brand-amarelo-principal)}
+/* palco do encerramento */
+.enc{--stage:#000000;--ink:#ffffff}
+.enc.claro{--stage:#FBF9F5;--ink:#000000}
+.palco{background:var(--stage);cursor:pointer;display:block;width:100%;border:0;padding:0;margin:0}
+.palco svg{display:block;width:100%;height:auto}
+.l{fill:var(--ink)}
+/* quadro de vídeo simulado (cena de campo) */
+.cena{position:relative;aspect-ratio:16/9;container-type:inline-size;overflow:hidden;cursor:pointer;
+  background:radial-gradient(50% 60% at 72% 30%,#fff6d8 0%,transparent 70%),linear-gradient(#bfd6e6 0%,#e6dfc4 48%,#b99f45 52%,#8f7a2c 100%)}
+.pessoa{position:absolute;right:14cqw;bottom:-6cqw;width:30cqw;height:44cqw;filter:blur(.5cqw);opacity:.5}
+.pessoa::before{content:'';position:absolute;left:50%;top:0;width:13cqw;height:15cqw;margin-left:-6.5cqw;border-radius:50%;background:#3a3220}
+.pessoa::after{content:'';position:absolute;left:0;top:16cqw;width:30cqw;height:30cqw;border-radius:12cqw 12cqw 0 0;background:#3a3220}
+.leg{position:absolute;left:6cqw;bottom:6cqw;color:#fff;display:flex;align-items:center;gap:1.6cqw;font-family:var(--ff-body);
+  text-shadow:0 .08cqw .5cqw rgba(0,0,0,.55),0 0 .15cqw rgba(0,0,0,.4)}
+/* gradiente de proteção atrás da legenda */
+.leg{isolation:isolate}
+.leg::before{content:"";position:absolute;inset:-70% -45% -70% -25%;z-index:-1;background:radial-gradient(ellipse closest-side at 45% 50%,rgba(0,0,0,.62),rgba(0,0,0,.35) 60%,transparent)}
+.col{display:inline-flex;flex-direction:column;align-items:flex-start}
+.rw{overflow:hidden;padding:.6cqw 2cqw;margin:-.6cqw -2cqw}
+.rw.cima{padding-bottom:.6cqw;margin-bottom:0}
+.rw.baixo{padding-top:.6cqw;margin-top:0}
+.nome{font-weight:800;font-size:3.3cqw;line-height:1.05;text-transform:uppercase;letter-spacing:.01em;white-space:nowrap}
+.linha{height:.3cqw;width:calc(100% + 4cqw);margin-left:-2cqw;border-radius:1cqw;background:linear-gradient(90deg,rgba(246,162,0,0) 0%,#F6A200 14%,#F6A200 86%,rgba(246,162,0,0) 100%);position:relative}
+.cargo{font-size:1.8cqw;font-weight:500;line-height:1.25;white-space:nowrap}
+.emp{font-size:1.25cqw;font-weight:600;letter-spacing:.24em;text-transform:uppercase;line-height:1.5;margin-top:.25cqw;white-space:nowrap}
+.sym{height:6.6cqw;width:auto;flex:none;overflow:visible;filter:drop-shadow(0 .08cqw .4cqw rgba(0,0,0,.4))}
+/* tabelas */
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+th{text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:700;padding:10px 12px 10px 0;border-bottom:1.5px solid var(--rule-strong)}
+td{padding:10px 12px 10px 0;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+td:first-child{font-weight:600;white-space:nowrap}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.duo{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:20px}
+.passos{list-style:none;margin:0;padding:0;font-size:14px;color:var(--text-soft)}
+.passos li{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--rule-soft)}
+.passos b{font-variant-numeric:tabular-nums;color:var(--text-body)}
+.regras{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;font-size:14px;color:var(--text-soft)}
+.regras li{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:12px;padding:12px 14px}
+.regras b{color:var(--text-body)}
+.nota{font-size:13px;color:var(--text-muted);margin-top:12px}
+@media (max-width:900px){.opc,.duo,.regras{grid-template-columns:1fr}}
+@media (max-width:640px){.pg{padding:32px 16px 48px}h2{font-size:30px}}
+@media (max-width:640px){table{display:block;overflow-x:auto;max-width:100%}}
+</style></head><body>
+<main class="pg">
+  <div class="ey">Marca · Vídeo</div>
+  <h2>Vídeo</h2>
+  <p class="lead">O que todo vídeo da BARYGEN leva: o <b>encerramento com a logo</b>, a <b>legenda de nome</b> de quem fala e a <b>posição de cada elemento</b> na tela. O padrão é um só. As variações existem, mas só entram quando forem pedidas.</p>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">01</span><h3>Encerramento padrão</h3></div>
+    <p class="desc">Todo vídeo termina com a entrada da logo <b>Linha de origem</b>. É a entrada principal da marca e não precisa ser pedida. Clique no quadro para ver de novo.</p>
+    <div class="barra">
+      <div class="seg" role="group" aria-label="Fundo do quadro"><button class="bry-btn bry-btn--sm" id="escuro" aria-pressed="true">Fundo preto</button><button class="bry-btn bry-btn--sm" id="claro" aria-pressed="false">Fundo claro</button></div>
+    </div>
+    <div class="enc" id="encPadrao"></div>
+    <div class="duo">
+      <div>
+        <h4>Sequência</h4>
+        <ul class="passos" style="margin-top:8px">
+          <li><b>0,0 a 2,0 s</b>A linha amarela entra pela esquerda como um traço curto, se estica sobre o nome e se comprime até virar um ponto.</li>
+          <li><b>1,0 a 2,9 s</b>Da linha saem BARY para cima e GEN para baixo, primeiro as letras do centro; depois assentam na linha do nome.</li>
+          <li><b>2,1 a 2,7 s</b>O ponto corre para a esquerda até o centro da palheta.</li>
+          <li><b>2,7 a 3,5 s</b>A palheta cresce a partir do ponto.</li>
+          <li><b>2,85 a 3,7 s</b>SEMENTES aparece sob o nome, letra a letra.</li>
+          <li><b>3,3 a 4,3 s</b>A hélice de DNA é escrita de cima para baixo, por último.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Especificação</h4>
+        <table><tbody>
+          <tr><td>Duração</td><td>cerca de 4,3 s até a logo completa</td></tr>
+          <tr><td>Fundo</td><td>Preto (padrão) ou claro #FBF9F5</td></tr>
+          <tr><td>Versão</td><td>Logo principal (horizontal principal), sempre com a palheta amarela e a hélice preta · letras brancas no fundo preto, pretas no fundo claro</td></tr>
+          <tr><td>Posição</td><td>Centralizada no quadro: cai na área livre de todos os formatos</td></tr>
+          <tr><td>Curvas</td><td>Saída suave <code>cubic-bezier(.16,.84,.44,1)</code> · forte <code>(.7,0,.15,1)</code> · entrada e saída <code>(.4,0,.2,1)</code></td></tr>
+        </tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">02</span><h3>Encerramentos opcionais</h3></div>
+    <p class="desc"><b>Somente quando solicitados.</b> Três alternativas, em ordem de preferência. Fora de um pedido explícito, vale sempre o encerramento padrão.</p>
+    <div class="opc" id="encOpc"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">03</span><h3>Legenda de nome</h3></div>
+    <p class="desc">A legenda de quem fala, padrão <b>Da palheta</b>. A palheta aparece à esquerda, a hélice é escrita e a linha amarela sai dela, começando e terminando em transparência. O nome sobe em caixa alta e negrito; o cargo e a empresa ou a fazenda descem. A legenda entra, fica 3 segundos e sai. A sombra do texto garante a leitura em cena clara ou escura.</p>
+    <div class="barra">
+      <button class="bry-btn bry-btn--primary bry-btn--sm" id="repLeg">Reproduzir</button>
+      <div class="seg" role="group" aria-label="Quem aparece"><button class="bry-btn bry-btn--sm" id="equipe" aria-pressed="true">Equipe BARYGEN</button><button class="bry-btn bry-btn--sm" id="produtor" aria-pressed="false">Produtor rural</button></div>
+    </div>
+    <div class="card"><div class="cena" id="cenaLeg" role="img" aria-label="Quadro de vídeo com a legenda de nome"></div>
+      <div class="info"><div class="tag">Padrão BARYGEN</div><h4>Da palheta</h4><p>O símbolo aparece à esquerda, a hélice é escrita e a linha sai dele. O nome sobe e os dados descem.</p></div></div>
+    <div class="duo">
+      <div>
+        <h4>Medidas</h4>
+        <table>
+          <thead><tr><th>Peça</th><th>% da largura do quadro</th><th>Em 1920 px</th></tr></thead>
+          <tbody>
+            <tr><td>Símbolo</td><td class="n">6,6% de altura</td><td class="n">127 px</td></tr>
+            <tr><td>Nome</td><td>3,3% · ExtraBold, caixa alta, entrelinha 1,05</td><td class="n">63 px</td></tr>
+            <tr><td>Linha amarela</td><td>0,3% de espessura · pontas transparentes até 14%</td><td class="n">6 px</td></tr>
+            <tr><td>Cargo</td><td>1,8% · Medium</td><td class="n">35 px</td></tr>
+            <tr><td>Empresa ou fazenda</td><td>1,25% · SemiBold, caixa alta, espaçamento 0,24 em</td><td class="n">24 px</td></tr>
+            <tr><td>Espaço símbolo → texto</td><td class="n">1,6%</td><td class="n">31 px</td></tr>
+          </tbody>
+        </table>
+        <p class="nota">Fonte Be Vietnam Pro, texto branco. Sombra do texto: <code>0 0,08% 0,5% rgba(0,0,0,.55)</code> e <code>0 0 0,15% rgba(0,0,0,.4)</code>.</p>
+      </div>
+      <div>
+        <h4>Tempo</h4>
+        <ul class="passos" style="margin-top:8px">
+          <li><b>0,0 a 0,65 s</b>A palheta cresce.</li>
+          <li><b>0,45 a 1,2 s</b>A hélice é escrita de cima para baixo.</li>
+          <li><b>0,4 a 1,2 s</b>A linha sai do símbolo para a direita.</li>
+          <li><b>0,8 a 1,6 s</b>O nome sobe de dentro da linha.</li>
+          <li><b>0,9 a 1,8 s</b>O cargo e a empresa descem.</li>
+          <li><b>+ 3,0 s</b>A legenda fica parada na tela.</li>
+          <li><b>Saída</b>A entrada ao contrário, 1,4 vez mais rápida.</li>
+        </ul>
+        <table style="margin-top:12px"><tbody>
+          <tr><td>Equipe</td><td>Nome · Cargo · BARYGEN Sementes</td></tr>
+          <tr><td>Produtor rural</td><td>Nome do produtor · Proprietário · Nome da fazenda</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">04</span><h3>Posição na tela por formato</h3></div>
+    <p class="desc">O que precisa ser lido fica dentro da área livre de cada formato. As margens e os desenhos de cada quadro estão na página <b>Mídias sociais</b>.</p>
+    <table>
+      <thead><tr><th>Formato</th><th>Encerramento</th><th>Legenda de nome</th></tr></thead>
+      <tbody>
+        <tr><td>Vertical 9:16 · normal</td><td>Centralizado</td><td>Sobe: a base dela fica acima dos 18% inferiores (346 px)</td></tr>
+        <tr><td>Vertical 9:16 · patrocinado</td><td>Centralizado</td><td>Sobe mais: acima dos 35% inferiores (672 px)</td></tr>
+        <tr><td>Feed 4:5</td><td>Centralizado</td><td>Canto inferior esquerdo, dentro da margem de 6%</td></tr>
+        <tr><td>Horizontal 16:9</td><td>Centralizado</td><td>Canto inferior esquerdo, dentro da margem de 5%</td></tr>
+      </tbody>
+    </table>
+    <ul class="regras">
+      <li><b>Uma peça, vários formatos.</b> Uma peça feita para mais de um formato segue a regra mais apertada entre eles. Se o vídeo pode virar patrocinado depois, edite já com 35%.</li>
+      <li><b>Sem movimento.</b> Quando o sistema pede menos movimento, a logo e a legenda aparecem já montadas, sem animação.</li>
+      <li><b>Sem efeitos extras.</b> Nada de brilhos, partículas, laços ou texturas animadas além do que está nesta página.</li>
+    </ul>
+  </section>
+</main>
+<script>
+(() => {
+  const LOGO = window.BarygenDesignSystem_a84d4b.BARYGEN_LOGO;
+  const P = LOGO.paths.H; // horizontal principal: palheta, hélice, BARYGEN e SEMENTES
+  const NS = 'http://www.w3.org/2000/svg';
+  const E = 'cubic-bezier(.16,.84,.44,1)', IO = 'cubic-bezier(.4,0,.2,1)', FORTE = 'cubic-bezier(.7,0,.15,1)';
+  const AM = '#F6A200', PC = { x: 19.4, y: 21.67 }, LC = 67.72;
+  const semMovimento = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let uid = 0;
+  const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+  const A = (node, kf, o) => node.animate(kf, Object.assign({ fill: 'both', easing: E }, o));
+  const origem = (node, o) => { node.style.transformBox = 'fill-box'; node.style.transformOrigin = o; };
+  const origemPx = (node, x, y) => { node.style.transformBox = 'view-box'; node.style.transformOrigin = x + 'px ' + y + 'px'; };
+  function varrer(c, node, lado, o) {
+    const b = node.getBBox(), p = .8, id = 'r' + (uid++);
+    const cp = el('clipPath', { id }, c.defs);
+    const r = el('rect', { x: b.x - p, y: b.y - p, width: b.width + 2 * p, height: b.height + 2 * p }, cp);
+    origem(r, { esquerda: 'left center', direita: 'right center', cima: 'center top', baixo: 'center bottom' }[lado]);
+    node.setAttribute('clip-path', 'url(#' + id + ')');
+    const hz = lado === 'esquerda' || lado === 'direita';
+    return A(r, { transform: [hz ? 'scaleX(0)' : 'scaleY(0)', 'scale(1)'] }, o);
+  }
+  const cx = n => { const b = n.getBBox(); return b.x + b.width / 2; };
+  const Y = 17.15, NX0 = 49.95, NX1 = 135.44, NCX = (NX0 + NX1) / 2;
+  const kf = (...q) => q;
+  function grupo(c, nodes, attrs = {}, parent = c.name) { const g = el('g', attrs, parent); nodes.forEach(n => g.appendChild(n)); return g; }
+  function recorte(c, x, y, w, h) { const id = 'k' + (uid++), cp = el('clipPath', { id }, c.defs); const r = el('rect', { x, y, width: w, height: h }, cp); return { url: 'url(#' + id + ')', r }; }
+  function dupla(c, t0, dist = 15, dur = 900, passo = 100) {
+    c.L.forEach((l, i) => { const cima = i < 4, k = cima ? i : i - 4;
+      A(l, { opacity: [0, 1], transform: [`translateY(${cima ? -dist : dist}px)`, 'translateY(0)'] }, { duration: dur, delay: t0 + k * passo + (cima ? 0 : passo * 1.4) }); });
+  }
+  // SEMENTES aparece sob o nome, letra a letra
+  function sementes(c, t0) { c.S.forEach((l, i) => A(l, { opacity: [0, 1], transform: ['translateY(3px)', 'translateY(0)'] }, { duration: 500, delay: t0 + i * 45 })); }
+  function escreverHelice(c, t0, dur = 900) { A(c.hel, { opacity: [0, 1] }, { duration: 1, delay: t0 }); varrer(c, c.hel, 'cima', { duration: dur, delay: t0, easing: IO }); }
+
+  const ENC = [
+    { t: 'Linha de origem', ordem: 'Padrão', dur: '4,3 s', d: 'Uma linha amarela entra, se estica e se comprime até virar um ponto. Dela sai BARY para cima e GEN para baixo, e SEMENTES aparece embaixo. O ponto vai para a esquerda, vira a palheta, e a hélice é escrita por último.',
+      f(c) {
+        const lin = el('line', { x1: NX0, x2: NX1, y1: Y, y2: Y, stroke: AM, 'stroke-width': .9, 'stroke-linecap': 'round' }, c.fx);
+        origemPx(lin, NCX, Y);
+        A(lin, kf({ transform: 'translateX(-100px) scaleX(.08)', easing: E }, { transform: 'translateX(0) scaleX(.08)', offset: .2, easing: FORTE },
+                  { transform: 'translateX(0) scaleX(1)', offset: .5, easing: IO }, { transform: 'translateX(0) scaleX(.012)' }), { duration: 2000, easing: 'linear' });
+        A(lin, { opacity: [1, 0] }, { duration: 1, delay: 2000, fill: 'forwards' });
+        const pt = el('circle', { cx: NCX, cy: Y, r: .8, fill: AM }, c.fx);
+        A(pt, { opacity: [0, 1] }, { duration: 1, delay: 1990 });
+        A(pt, { transform: ['translate(0,0)', `translate(${PC.x - NCX}px,${PC.y - Y}px)`] }, { duration: 650, delay: 2050, easing: FORTE });
+        A(pt, { opacity: [1, 0] }, { duration: 200, delay: 2800, fill: 'forwards' });
+        const ct = recorte(c, -30, -30, 200, Y + 30), cb = recorte(c, -30, Y, 200, 50);
+        grupo(c, c.L.slice(0, 4), { 'clip-path': ct.url }); grupo(c, c.L.slice(4), { 'clip-path': cb.url });
+        const sob = 6.95;
+        c.L.forEach((l, i) => { const s = i < 4 ? 1 : -1, t0 = 1000 + (1 - Math.abs(cx(l) - NCX) / 43) * 520;
+          A(l, { transform: [`translateY(${s * 13.8}px)`, `translateY(${-s * sob}px)`] }, { duration: 750, delay: t0 });
+          A(l, { transform: [`translateY(${-s * sob}px)`, 'translateY(0)'] }, { duration: 700, delay: 2150, easing: FORTE, fill: 'forwards' }); });
+        A(ct.r, { transform: ['translateY(0)', 'translateY(9px)'] }, { duration: 700, delay: 2150, easing: FORTE });
+        A(cb.r, { transform: ['translateY(0)', 'translateY(-9px)'] }, { duration: 700, delay: 2150, easing: FORTE });
+        origemPx(c.pal, PC.x, PC.y);
+        A(c.pal, { transform: ['scale(0)', 'scale(1)'] }, { duration: 800, delay: 2650 });
+        sementes(c, 2850);
+        escreverHelice(c, 3300, 1000);
+      } },
+    { t: 'Hélice gigante', ordem: 'Opcional · 2', dur: '2,7 s', d: 'A hélice é escrita enorme, no centro, em amarelo. Ela encolhe e voa para o lugar enquanto a palheta acende, e as letras entram alternadas, uma de cima e outra de baixo, com SEMENTES por último.',
+      f(c) {
+        origemPx(c.sym, PC.x, PC.y);
+        const dx = LC - PC.x;
+        A(c.pal, { opacity: [0, 1] }, { duration: 500, delay: 1350 });
+        A(c.hel, { fill: [AM, AM, c.cor.hel], offset: [0, .78, 1] }, { duration: 1850, easing: 'linear' });
+        varrer(c, c.hel, 'cima', { duration: 1000, easing: IO });
+        A(c.sym, kf({ transform: `translateX(${dx}px) scale(1.75)` }, { transform: `translateX(${dx}px) scale(1.75)`, offset: .55, easing: FORTE }, { transform: 'translateX(0) scale(1)' }), { duration: 1950, easing: 'linear' });
+        c.L.forEach((l, i) => A(l, { opacity: [0, 1], transform: [`translateY(${i % 2 ? 32 : -32}px)`, 'translateY(0)'] }, { duration: 750, delay: 1500 + i * 75 }));
+        sementes(c, 2150);
+      } },
+    { t: 'Giro do grão', ordem: 'Opcional · 3', dur: '2,6 s', d: 'O quadro começa tomado pela palheta, e a imagem se afasta girando. Quando a logo assenta, BARY desce, GEN sobe e SEMENTES aparece.',
+      f(c) {
+        origemPx(c.logo, 29.5, 19);
+        A(c.logo, { transform: ['scale(40) rotate(-170deg)', 'scale(1) rotate(0deg)'] }, { duration: 1900, easing: FORTE });
+        A(c.hel, { opacity: [0, 0, 1], offset: [0, .6, 1] }, { duration: 1900, easing: 'linear' });
+        dupla(c, 1550, 16, 800, 70);
+        sementes(c, 2050);
+      } },
+    { t: 'Três tempos', ordem: 'Opcional · 4', dur: '3,1 s', d: 'Primeiro tempo: BARY e GEN ocupam o quadro em letras grandes, uma em cima e outra embaixo, correndo em sentidos opostos. Segundo: encolhem e se encaixam. Terceiro: a palheta surge, a hélice é escrita e SEMENTES aparece.',
+      f(c) {
+        const gB = grupo(c, c.L.slice(0, 4)), gG = grupo(c, c.L.slice(4)); origem(gB, 'center'); origem(gG, 'center');
+        const S = 2.05, bx = LC - cx(gB), gx = LC - cx(gG);
+        A(gB, kf({ transform: `translate(${bx - 150}px,-12px) scale(${S})`, easing: E }, { transform: `translate(${bx - 7}px,-12px) scale(${S})`, offset: .26 },
+                 { transform: `translate(${bx + 7}px,-12px) scale(${S})`, offset: .6, easing: FORTE }, { transform: 'translate(0,0) scale(1)' }), { duration: 2000, easing: 'linear' });
+        A(gG, kf({ transform: `translate(${gx + 150}px,21px) scale(${S})`, easing: E }, { transform: `translate(${gx + 7}px,21px) scale(${S})`, offset: .26 },
+                 { transform: `translate(${gx - 7}px,21px) scale(${S})`, offset: .6, easing: FORTE }, { transform: 'translate(0,0) scale(1)' }), { duration: 2000, easing: 'linear' });
+        origem(c.pal, 'center');
+        A(c.pal, { transform: ['scale(0) rotate(-120deg)', 'scale(1) rotate(0deg)'] }, { duration: 900, delay: 1500 });
+        escreverHelice(c, 2200, 900);
+        sementes(c, 2400);
+      } }
+  ];
+
+  const encs = [];
+  function cartao(idea, alvo, grande) {
+    const card = document.createElement('article'); card.className = 'card enc';
+    const palco = document.createElement('button'); palco.className = 'palco'; palco.setAttribute('aria-label', 'Reproduzir: ' + idea.t);
+    const info = document.createElement('div'); info.className = 'info';
+    const selo = grande ? '<span class="selo-opc selo-pad">padrão</span>' : '<span class="selo-opc">só quando solicitado</span>';
+    info.innerHTML = `<div class="tag">${idea.ordem} · ${idea.dur}</div><h4>${idea.t}${selo}</h4><p>${idea.d}</p>`;
+    const rep = document.createElement('button'); rep.className = 'bry-btn bry-btn--outline bry-btn--sm'; rep.textContent = 'Repetir'; info.appendChild(rep);
+    card.append(palco, info); alvo.appendChild(card);
+    function tocar() {
+      palco.innerHTML = '';
+      const svg = el('svg', { viewBox: '-24 -20 183.44 83.35', role: 'img', 'aria-label': 'Logo BARYGEN' }, palco);
+      // logo principal: palheta amarela e hélice preta nos dois fundos; as letras ficam pretas no claro e brancas no preto
+      const c = { svg, defs: el('defs', {}, svg), fundo: el('g', {}, svg), cor: { pal: AM, hel: '#000000' } };
+      c.logo = el('g', {}, svg); c.sym = el('g', {}, c.logo);
+      c.pal = el('path', { d: P.palheta, fill: c.cor.pal }, c.sym);
+      c.hel = el('path', { d: P.dna, fill: c.cor.hel }, c.sym);
+      c.name = el('g', {}, c.logo);
+      c.L = [...'BARYGEN'].map(k => el('path', { d: P.nome[k], class: 'l' }, c.name));
+      c.sem = el('g', {}, c.logo);
+      c.S = Object.values(P.sementes).map(d => el('path', { d, class: 'l' }, c.sem));
+      c.fx = el('g', {}, svg);
+      if (!semMovimento) idea.f(c);
+    }
+    palco.addEventListener('click', tocar); rep.addEventListener('click', tocar);
+    tocar(); encs.push({ card, tocar });
+  }
+  cartao(ENC[0], document.getElementById('encPadrao'), true);
+  ENC.slice(1).forEach(i => cartao(i, document.getElementById('encOpc'), false));
+  const bE = document.getElementById('escuro'), bC = document.getElementById('claro');
+  const fundo = claro => { encs.forEach(k => k.card.classList.toggle('claro', claro)); bE.setAttribute('aria-pressed', !claro); bC.setAttribute('aria-pressed', claro); encs.forEach(k => k.tocar()); };
+  bE.addEventListener('click', () => fundo(false)); bC.addEventListener('click', () => fundo(true));
+
+  // legenda de nome · padrão "Da palheta"
+  const TEXTOS = { equipe: { nome: 'Fulano de Tal', cargo: 'Diretor comercial', emp: 'BARYGEN Sementes' }, produtor: { nome: 'Nome do Produtor', cargo: 'Proprietário', emp: 'Nome da Fazenda' } };
+  let quem = 'equipe';
+  const h = (tag, cls, parent, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; if (parent) parent.appendChild(e); return e; };
+  // símbolo da logo principal: palheta amarela e hélice preta
+  function simbolo(parent) {
+    const s = el('svg', { viewBox: '0 0 38.8 43.35', class: 'sym', 'aria-hidden': 'true' });
+    const pal = el('path', { d: P.palheta, fill: AM }, s);
+    const hel = el('path', { d: P.dna, fill: '#000000' }, s);
+    parent.appendChild(s); return { s, pal, hel };
+  }
+  function legenda(palco) {
+    const t = TEXTOS[quem], c = { anims: [] };
+    c.leg = h('div', 'leg', palco); c.sym = simbolo(c.leg); c.col = h('div', 'col', c.leg);
+    c.nomeW = h('div', 'rw cima', c.col); c.nome = h('div', 'nome', c.nomeW, t.nome);
+    c.linha = h('div', 'linha', c.col);
+    c.baixoW = h('div', 'rw baixo', c.col); c.cargo = h('div', 'cargo', c.baixoW, t.cargo); c.emp = h('div', 'emp', c.baixoW, t.emp);
+    c.A = (node, k, opt) => { const a = node.animate(k, Object.assign({ fill: 'both', easing: E }, opt)); c.anims.push(a); return a; };
+    c.linha.style.transformOrigin = 'left center';
+    c.sym.pal.style.transformBox = 'fill-box'; c.sym.pal.style.transformOrigin = 'center';
+    c.A(c.sym.pal, { transform: ['scale(0)', 'scale(1)'] }, { duration: 650 });
+    c.A(c.sym.hel, { clipPath: ['inset(0 0 100% 0)', 'inset(0 0 0 0)'] }, { duration: 750, delay: 450, easing: IO });
+    c.A(c.linha, { transform: ['scaleX(0)', 'scaleX(1)'] }, { duration: 800, delay: 400, easing: FORTE });
+    c.A(c.nome, { transform: ['translateY(125%)', 'translateY(0)'] }, { duration: 800, delay: 800 });
+    c.A(c.cargo, { transform: ['translateY(-140%)', 'translateY(0)'] }, { duration: 700, delay: 900 });
+    c.A(c.emp, { transform: ['translateY(-330%)', 'translateY(0)'] }, { duration: 800, delay: 1010 });
+    return c;
+  }
+  const cena = document.getElementById('cenaLeg');
+  let atual = null, espera = 0;
+  const FICA = 3000;
+  const sair = () => { if (atual) atual.anims.forEach(a => { a.playbackRate = -1.4; a.play(); }); };
+  function entrar() {
+    clearTimeout(espera); cena.innerHTML = ''; h('div', 'pessoa', cena); atual = legenda(cena);
+    if (semMovimento) { atual.anims.forEach(a => a.finish()); return; }
+    const fim = Math.max(...atual.anims.map(a => a.effect.getComputedTiming().endTime));
+    espera = setTimeout(sair, fim + FICA);
+  }
+  cena.addEventListener('click', entrar); document.getElementById('repLeg').addEventListener('click', entrar);
+  const bQ = document.getElementById('equipe'), bP = document.getElementById('produtor');
+  const setQ = v => { quem = v ? 'produtor' : 'equipe'; bQ.setAttribute('aria-pressed', !v); bP.setAttribute('aria-pressed', v); entrar(); };
+  bQ.addEventListener('click', () => setQ(false)); bP.addEventListener('click', () => setQ(true));
+  entrar();
+})();
+</script>
+</body></html>

@@ -1,0 +1,62 @@
+/* FarmSense — Cores. Oito tokens, nada mais.
+   Quatro beges, dois verdes, dois neons. Branco é neutro de papel. */
+:root{
+  /* Bege — escala térmica */
+  --bege-perola:#F7F3ED;
+  --bege-rastro:#F3EAD9;
+  --bege-estrada:#E7D7BC;
+  --bege-escuro:#D8BE98;
+  /* Verde — dossel */
+  --verde-sombra:#004141;
+  --verde-anil:#00655C;
+  /* Neon — só detalhe */
+  --verde-neon:#0ADC14;
+  --ciano-neon:#33FFC2;
+  /* Neutro */
+  --branco:#FFFFFF;
+
+  /* RGB triplets para composição de alfa */
+  --rgb-verde-sombra:0,65,65; /* @kind color */
+  --rgb-verde-anil:0,101,92; /* @kind color */
+  --rgb-verde-neon:10,220,20; /* @kind color */
+  --rgb-ciano-neon:51,255,194; /* @kind color */
+  --rgb-branco:255,255,255; /* @kind color */
+  --rgb-bege-escuro:216,190,152; /* @kind color */
+
+  /* Hierarquia de tinta por opacidade */
+  --ink-100:1; /* @kind other */
+  --ink-085:.85; /* @kind other */
+  --ink-070:.70; /* @kind other */
+  --ink-055:.55; /* @kind other */
+  --ink-040:.40; /* @kind other */
+  --ink-022:.22; /* @kind other */
+
+  /* Aliases semânticos — superfície clara (default) */
+  --surface-base:var(--bege-perola);
+  --surface-raised:var(--bege-rastro);
+  --surface-accent:var(--bege-estrada);
+  --surface-accent-strong:var(--bege-escuro);
+  --surface-paper:var(--branco);
+  --surface-card:rgba(255,255,255,.55);
+  --text-title:var(--verde-sombra);
+  --text-body:rgba(0,65,65,.70);
+  --text-meta:rgba(0,65,65,.55);
+  --text-ghost:rgba(0,65,65,.40);
+  --border-hairline:rgba(0,65,65,.12);
+  --border-strong:rgba(0,65,65,.25);
+
+  /* Aliases semânticos — superfície escura */
+  --surface-dark:var(--verde-sombra);
+  --surface-dark-raised:var(--verde-anil);
+  --surface-dark-card:rgba(255,255,255,.06);
+  --text-title-dark:var(--branco);
+  --text-body-dark:rgba(255,255,255,.70);
+  --text-meta-dark:rgba(255,255,255,.55);
+  --border-hairline-dark:rgba(255,255,255,.14);
+
+  /* Sinal — o neon é indicador, nunca tinta de texto corrido */
+  --signal-live:var(--ciano-neon);
+  --signal-on:var(--verde-neon);
+  --signal-glow:0 0 14px var(--ciano-neon),0 0 4px rgba(51,255,194,.8); /* @kind shadow */
+  --signal-glow-green:0 0 14px var(--verde-neon),0 0 4px rgba(10,220,20,.8); /* @kind shadow */
+}

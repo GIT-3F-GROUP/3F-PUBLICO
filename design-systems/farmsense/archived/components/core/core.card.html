@@ -1,0 +1,62 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Core" subtitle="Botões, chips, vidro, tiles, ícones e marca." -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>Core</title><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:18px;background:var(--bege-perola);font-family:var(--font-sans);color:var(--verde-sombra)}.k{font-size:9px;letter-spacing:.12em;text-transform:uppercase;opacity:.5;display:block;margin-bottom:8px}.pane{border-radius:var(--r-md);padding:16px}.pane-l{background:rgba(0,65,65,.035);border:1px solid rgba(0,65,65,.08)}.pane-d{background:var(--verde-sombra);color:#fff}</style></head>
+<body><div id="root"></div><script type="text/babel">
+const { Button, IconButton, Chip, NeonDot, Kicker, SectionHeader, Tile, GlassCard, Logo, Divider, Surface, Icon, Input, Textarea, Select, Checkbox, Radio, Switch, SearchField, KpiTile, StatRow, DataTable, BarMeter, Sparkline, ProgressRing, Alert, StatusPill, Tooltip, EmptyState, Skeleton, RuleCard, Tabs, DotNav, Breadcrumb, Pagination, TopBar, LogoCard, Swatch, PatternLayer, QuoteBlock } = window.FarmSenseDesignSystem_c4c636;
+const { useState } = React;
+function Demo(){ 
+  return (<div style={{display:'grid',gap:14}}>
+    <div className="pane pane-l"><span className="k">Button · variantes claras</span>
+      <div className="row-tight" style={{gap:10}}>
+        <Button withArrow>Solicitar diagnóstico</Button>
+        <Button variant="ghost-light">Ver casos</Button>
+        <Button variant="ghost-light" size="sm">Pequeno</Button>
+        <Button size="lg">Grande</Button>
+        <Button disabled>Desabilitado</Button>
+        <IconButton label="Buscar"><Icon name="search" size={16} /></IconButton>
+      </div></div>
+    <div className="pane pane-d"><span className="k" style={{opacity:.55}}>Button · variantes escuras</span>
+      <div className="row-tight" style={{gap:10}}>
+        <Button variant="primary-light" withArrow>Primário</Button>
+        <Button variant="neon">Ação ao vivo</Button>
+        <Button variant="ghost-dark">Secundário</Button>
+        <IconButton label="Menu" tone="dark"><Icon name="menu" size={16} /></IconButton>
+      </div></div>
+    <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:14}}>
+      <div className="pane pane-l"><span className="k">Chip</span>
+        <div className="row-tight" style={{gap:6}}>
+          <Chip>Soja 24/25</Chip><Chip>412 ha</Chip><Chip tone="outline">Sorriso, MT</Chip>
+          <Chip dot>Saudável</Chip><Chip tone="solid">v 1.0</Chip>
+        </div></div>
+      <div className="pane pane-d"><span className="k" style={{opacity:.55}}>Chip · escuro</span>
+        <div className="row-tight" style={{gap:6}}>
+          <Chip tone="dark">Talhão Aurora</Chip><Chip tone="neon" dot>Ao vivo</Chip><Chip tone="neon-green" dot>Estação ON</Chip>
+        </div></div>
+    </div>
+    <div style={{display:'grid',gridTemplateColumns:'1.2fr 1fr',gap:14}}>
+      <div className="pane pane-l" style={{padding:0,background:'var(--bege-rastro)',position:'relative',overflow:'hidden'}}>
+        <PatternLayer pattern="curvas-tonal" corner="tr" />
+        <div style={{position:'relative',padding:16}}>
+          <SectionHeader num="04.1">Vidro tonal sobre bege</SectionHeader>
+          <GlassCard tone="tone"><div className="h3">Produtividade 28 % acima</div><Divider spacing="12px" /><span className="body-sm t-70">Talhão Aurora · soja 24/25</span></GlassCard>
+        </div></div>
+      <div className="pane pane-d" style={{position:'relative',overflow:'hidden'}}>
+        <PatternLayer pattern="grade" corner={null} />
+        <div style={{position:'relative'}}>
+          <Kicker tone="neon">Vidro sobre sombra</Kicker>
+          <GlassCard tone="dark" accent="ciano" style={{marginTop:10}}><div className="row-tight" style={{gap:8}}><NeonDot pulse /><span className="body-sm">Leitura NDVI ao vivo</span></div></GlassCard>
+        </div></div>
+    </div>
+    <div className="pane pane-l"><span className="k">Icon · Lucide, traço 1,5</span>
+      <div className="row" style={{gap:22,opacity:.85}}>
+        {['map-pin','trending-up','layers','crosshair','sprout','satellite-dish','droplets','ruler','file-text','calendar'].map(n=><Icon key={n} name={n} size={24} />)}
+      </div></div>
+  </div>); }
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+if (window.lucide) window.lucide.createIcons();
+</script></body></html>

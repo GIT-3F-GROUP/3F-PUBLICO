@@ -1,0 +1,38 @@
+<!-- @dsCard height=300 -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN</title>
+<style>
+html,body{margin:0;height:100%}
+body{background:var(--brand-amarelo-suave)}
+/* capa = seção Van Gogh: o padrão de milho à direita, a forma em degradê à esquerda com a logo e o nome */
+.capa{position:relative;width:960px;height:300px;box-sizing:border-box;overflow:hidden;isolation:isolate;border-block:18px solid var(--brand-amarelo-detalhe);
+  background:#a86f12 var(--bry-padrao-van-gogh) repeat 0 0/230px 230px}
+.capa .bry-vangogh__forma{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.txt{position:absolute;left:52px;top:50%;transform:translateY(-50%)}
+.logo svg{display:block;height:60px;width:auto}
+.tag{margin:20px 0 0;font-family:var(--ff-body);font-size:15px;line-height:1.4;font-weight:500;color:var(--text-soft)}
+.tag .bry-wordmark{color:var(--brand-preto)}
+</style></head><body>
+<!--
+cover: a Van Gogh section. Corn pattern (230 × 230 px module, original size) fills the right side; never any text on it.
+shape: enters at the top, leaves at the base and touches the left edge, palheta curve, gradient amarelo principal → amarelo contraste,
+thin amarelo detalhe stroke on the curved part only. Thin amarelo detalhe faixas at the top and at the base.
+inside the shape: logo horizontal principal in monocromática preta (yellow background) and "BARYGEN Seeds Corporation do Brasil".
+-->
+<div class="capa">
+  <svg class="bry-vangogh__forma" viewBox="0 0 1440 560" preserveAspectRatio="xMinYMid slice" aria-hidden="true">
+    <defs><linearGradient id="capa-grad" x1="0" y1="0" x2=".35" y2="1"><stop offset="0" stop-color="#f6a200"/><stop offset="1" stop-color="#e18800"/></linearGradient></defs>
+    <path fill="url(#capa-grad)" d="M0 0 H535 C 628 34 654 122 610 206 C 562 298 582 384 666 444 C 728 488 750 530 734 560 H0 Z"/>
+    <path class="bry-borda-curva" d="M535 0 C 628 34 654 122 610 206 C 562 298 582 384 666 444 C 728 488 750 530 734 560"/>
+  </svg>
+  <div class="txt">
+    <div class="logo" role="img" aria-label="BARYGEN"></div>
+    <p class="tag"><span class="bry-wordmark">BARY<b>GEN</b></span> Seeds Corporation do Brasil</p>
+  </div>
+</div>
+<script>
+(() => {
+  const L = window.BarygenDesignSystem_a84d4b.BARYGEN_LOGO;
+  document.querySelector('.logo').innerHTML = L.svg({ type: 'horizontal', version: 'mono-preta' });
+})();
+</script>
+</body></html>

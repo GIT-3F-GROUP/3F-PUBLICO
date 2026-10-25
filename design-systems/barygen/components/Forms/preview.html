@@ -1,0 +1,39 @@
+<!-- @dsCard group="Components" height=340 subtitle="Campos, seleção, opções, upload" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN</title>
+<script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{padding:20px;background:var(--brand-amarelo-suave);font-family:var(--ff-body)}.lab{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:8px}</style>
+</head><body><div id="root"></div><script type="text/babel">
+const B=window.BarygenDesignSystem_a84d4b;
+const {Field,Input,Textarea,Select,InputGroup,Checkbox,Radio,Switch,Range,SearchBox,Upload,QtyStepper}=B;
+function Card(){const [q,setQ]=React.useState(120);const [on,setOn]=React.useState(true);
+ return <div style={{display:'grid',gap:18}}>
+ <div className="bry-row" style={{gap:20,alignItems:'flex-start'}}>
+  <Field label="Nome completo" helper="Como consta no documento."><Input placeholder="Digite seu nome"/></Field>
+  <Field label="E-mail" required state="error" helper="Informe um e-mail válido."><Input state="error" defaultValue="nome@errado"/></Field>
+  <Field label="Telefone" state="success" helper="Número confirmado."><Input state="success" defaultValue="(65) 9 9999-0000"/></Field>
+ </div>
+ <div className="bry-row" style={{gap:20,alignItems:'flex-start'}}>
+  <Field label="Estado"><Select options={['Mato Grosso','Goiás','Mato Grosso do Sul']}/></Field>
+  <Field label="Área plantada"><InputGroup addon="ha"><Input placeholder="0"/></InputGroup></Field>
+  <Field label="Código"><Input disabled defaultValue="BG307-MAX"/></Field>
+  <div><div className="lab">Sacas</div><QtyStepper value={q} onChange={setQ} step={10}/></div>
+ </div>
+ <div className="bry-row" style={{gap:28,alignItems:'flex-start'}}>
+  <div className="bry-stack" style={{gap:10}}>
+   <Checkbox label="Quero receber o catálogo" defaultChecked/>
+   <Checkbox label="Tenho interesse em silagem"/>
+   <Checkbox label="Indisponível na região" disabled/>
+  </div>
+  <div className="bry-stack" style={{gap:10}}>
+   <Radio name="c" label="Safra verão" defaultChecked/><Radio name="c" label="Safrinha"/><Radio name="c" label="Irrigado"/>
+  </div>
+  <div className="bry-stack" style={{gap:12}}>
+   <Switch label="Notificações" checked={on} onChange={e=>setOn(e.target.checked)}/>
+   <Range label="População" min={40} max={90} defaultValue={62}/>
+  </div>
+  <SearchBox placeholder="Buscar híbrido, região, evento..."/>
+  <Upload/>
+ </div>
+</div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<Card/>);
+</script></body></html>

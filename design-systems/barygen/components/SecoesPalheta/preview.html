@@ -1,0 +1,175 @@
+<!-- @dsCard group="Effects" height=3600 subtitle="Seções alternativas com as curvas da palheta: bordas, formas contínuas, faixas e contornos de borda a borda" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN · Seções da palheta</title>
+<style>
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--ff-body);font-size:16px;line-height:1.55}
+.pg{padding:48px 56px 72px;max-width:1120px;margin:0 auto}
+.ey{font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--text-accent)}
+h2{font-size:40px;font-weight:800;line-height:1.06;margin:12px 0 16px}
+h2 span{font-weight:600}
+h3{font-size:22px;font-weight:800;line-height:1.1;margin:0}
+.lead{font-size:18px;color:var(--text-soft);max-width:62ch;margin:0}
+p{margin:0 0 12px;max-width:68ch}
+.sec{margin-top:64px}
+.sec-h{display:flex;gap:16px;align-items:baseline;margin-bottom:8px}
+.num{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--text-accent)}
+.desc{font-size:14px;color:var(--text-soft);margin:0 0 16px;max-width:76ch}
+.demo{border-radius:16px;overflow:hidden;border:1px solid var(--rule-soft)}
+.regras{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.regras div{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;padding:14px 16px;font-size:14px;color:var(--text-soft)}
+.regras b{display:block;color:var(--text-body);margin-bottom:2px}
+.regras .nao{border-color:var(--fn-error)}
+.regras .nao b{color:var(--fn-error-fg)}
+.origem{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:center;margin-top:24px;background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;padding:20px 24px}
+.origem svg{width:100%;height:auto;display:block}
+.origem .pal{fill:var(--c-principal-100);stroke:var(--brand-preto);stroke-width:.18}
+.origem .ext{fill:none;stroke:var(--brand-amarelo-principal);stroke-width:.5;stroke-linecap:round}
+h4.t{font-family:var(--ff-display);text-transform:uppercase;font-weight:800;font-size:36px;line-height:1.05;margin:12px 0 12px;max-width:16ch}
+h4.t span{font-weight:600;color:var(--brand-amarelo-principal)}
+/* A */
+.a-hero{background:var(--brand-preto);color:var(--text-on-dark);padding:56px 56px 128px}
+.a-hero p,.d-sec p{color:var(--text-on-dark-muted);font-size:16px;max-width:46ch}
+.a-hero .bry-eyebrow,.d-sec .bry-eyebrow,.c-top .bry-eyebrow{color:var(--brand-amarelo-principal)}
+.a-hero .bry-curva{color:var(--brand-amarelo-suave)}
+.a-baixo{background:var(--brand-amarelo-suave);padding:8px 56px 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mini{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;padding:16px;font-size:13px;color:var(--text-soft)}
+.mini b{display:block;font-family:var(--ff-display);text-transform:uppercase;font-size:15px;font-weight:800;color:var(--text-body)}
+/* B */
+.b-sec{background:linear-gradient(160deg,var(--brand-amarelo-principal),var(--brand-amarelo-contraste));color:var(--text-body);min-height:400px;display:grid;grid-template-columns:1fr 1fr}
+.b-sec .bry-forma-fluxo{color:var(--brand-preto)}
+.b-txt{padding:56px}
+.b-txt p{font-size:16px;max-width:40ch;color:var(--text-soft)}
+.b-txt .bry-eyebrow{color:var(--text-body)}
+.b-kpi{align-self:center;justify-self:end;margin-right:64px;color:var(--brand-amarelo-suave);text-align:right}
+.b-kpi b{display:block;font-family:var(--ff-display);font-weight:800;font-size:56px;line-height:1;color:var(--brand-amarelo-principal)}
+.b-kpi span{font-size:14px;color:var(--text-on-dark-muted)}
+/* C */
+.c-top{background:var(--brand-preto);color:var(--text-on-dark);padding:48px 56px 8px}
+.c-top p{color:var(--text-on-dark-muted);max-width:52ch}
+.c-faixa{display:block;width:100%;height:clamp(80px,12vw,150px);background:var(--brand-amarelo-suave)}
+.c-faixa .pr{fill:var(--brand-preto)}
+.c-base{background:var(--brand-amarelo-suave);padding:8px 56px 48px;font-size:15px;color:var(--text-soft)}
+/* D */
+.d-sec{background:#000;color:var(--text-on-dark);padding:64px 56px;min-height:300px}
+.d-sec .bry-forma-fluxo{color:#2e2e2e}
+pre{margin:16px 0 0;background:var(--c-principal-50);color:var(--text-body);border:1px solid var(--rule-soft);border-radius:12px;padding:16px 18px;font-family:var(--ff-mono);font-size:11.5px;line-height:1.6;overflow:auto;white-space:pre}
+pre .c{color:var(--text-muted)}
+@media (max-width:900px){.regras,.a-baixo{grid-template-columns:1fr}.b-sec{grid-template-columns:1fr}.b-kpi{justify-self:start;margin:0 56px 48px;text-align:left}.origem{grid-template-columns:1fr}}
+@media (max-width:640px){.pg{padding:32px 16px 48px}h2{font-size:30px}.a-hero,.b-txt,.c-top,.d-sec{padding-left:24px;padding-right:24px}.a-baixo,.c-base{padding-left:24px;padding-right:24px}}
+</style></head><body>
+<main class="pg">
+  <div class="ey">Marca · Seções alternativas</div>
+  <h2>Seções <span>da palheta</span></h2>
+  <p class="lead">Seções alternativas que usam as curvas da palheta: formas contínuas e curvilíneas que atravessam a seção de borda a borda, de um lado ao outro ou de cima a baixo. Não precisam ser a palheta inteira, mas mantêm o ritmo das curvas dela. As seções principais continuam sendo as limpas; estas são o destaque da página.</p>
+
+  <div class="origem">
+    <svg viewBox="-4 -4 82 52" aria-label="A curva da palheta estendida em uma borda de seção">
+      <g data-pal></g>
+      <path class="ext" d="M0.96 36.82 C -1.34 30.7, 1 19.93, 2.95 13.76 C 4.77 8.03, 7.8 0.61, 14.76 0.02 C 19.98 -0.42, 27.05 5.32, 30.73 8.73 C 38 15.4, 50 22, 76 15"/>
+    </svg>
+    <div>
+      <p style="margin:0"><b>Instruções de curva.</b> A palheta tem um lado longo e quase reto à esquerda, uma virada larga no topo e uma descida mais rápida para a ponta da direita. Estendida, essa sequência vira uma linha sem trechos retos: sobe devagar, vira e desce mais rápido. Toda curva destas seções segue esse ritmo, com assimetria e velocidades diferentes, nunca uma onda regular. Os pontos de controle de cada curva estão nos códigos abaixo.</p>
+    </div>
+  </div>
+  <div class="regras">
+    <div><b>De borda a borda</b>A forma sempre encosta em pelo menos duas bordas da seção: atravessa de um lado ao outro ou de cima a baixo.</div>
+    <div><b>Uma forma por transição</b>Uma curva entre duas seções, no máximo uma forma de fluxo por seção e uma seção alternativa por página.</div>
+    <div><b>Cores sólidas da marca</b>A curva toma a cor da seção seguinte. Preto e amarelo primeiro.</div>
+    <div><b>Altura com limite</b>Bordas entre 40 e 120 px (<code>clamp(40px, 8vw, 120px)</code>), legíveis no celular.</div>
+    <div><b>Texto livre da forma</b>Nenhum texto atravessa a curva; respiro mínimo de 32 px até ela.</div>
+    <div class="nao"><b>✕ Forma solta no meio</b>Nada de forma grande solta dentro da seção nem contêiner orgânico. E o DNA nunca vai dentro de uma forma que não é a palheta.</div>
+  </div>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">01</span><h3>Borda curva</h3></div>
+    <p class="desc">O fim de uma seção escura vira uma curva, de um lado ao outro, que entrega a página à próxima. Um fio amarelo acompanha a borda.</p>
+    <div class="demo">
+      <div class="a-hero bry-sec-palheta">
+        <div class="bry-eyebrow bry-eyebrow-rule">Híbridos de milho · Safra 26/27</div>
+        <h4 class="t">Genética para o <span>campo brasileiro.</span></h4>
+        <p>Híbridos desenvolvidos e testados nas regiões produtoras, com acompanhamento técnico do plantio à colheita.</p>
+        <svg class="bry-curva bry-curva--base" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 58 C 210 6 520 -8 790 30 C 1030 64 1190 112 1440 46 L1440 120 L0 120 Z"/>
+          <path class="bry-curva__fio" d="M0 58 C 210 6 520 -8 790 30 C 1030 64 1190 112 1440 46"/>
+        </svg>
+      </div>
+      <div class="a-baixo">
+        <div class="mini"><b>BG307 Max</b>Ciclo precoce · alto teto</div>
+      </div>
+    </div>
+<pre><span class="c">&lt;!-- dentro de uma seção com class="bry-sec-palheta"; a cor é a da seção seguinte --&gt;</span>
+&lt;svg class="bry-curva bry-curva--base" style="color:var(--brand-amarelo-suave)" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"&gt;
+  &lt;path d="M0 58 C 210 6 520 -8 790 30 C 1030 64 1190 112 1440 46 L1440 120 L0 120 Z"/&gt;
+  &lt;path class="bry-curva__fio" d="M0 58 C 210 6 520 -8 790 30 C 1030 64 1190 112 1440 46"/&gt;
+&lt;/svg&gt;</pre>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">02</span><h3>Forma contínua de cima a baixo</h3></div>
+    <p class="desc">Uma forma grande entra pelo topo e sai pela base, encostada na borda direita, com um fio fino de amarelo detalhe no trecho curvo. Ela divide a seção em duas áreas, texto de um lado e dado do outro, sem caixa nem linha reta.</p>
+    <div class="demo">
+      <div class="b-sec bry-sec-palheta">
+        <svg class="bry-forma-fluxo" viewBox="0 0 1440 560" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+          <path d="M1440 0 H905 C 812 34 786 122 830 206 C 878 298 858 384 774 444 C 712 488 690 530 706 560 H1440 Z"/>
+          <path class="bry-borda-curva" d="M905 0 C 812 34 786 122 830 206 C 878 298 858 384 774 444 C 712 488 690 530 706 560"/>
+        </svg>
+        <div class="b-txt">
+          <div class="bry-eyebrow">Resultados</div>
+          <h4 class="t" style="color:var(--text-body)">O resultado se mostra na lavoura.</h4>
+          <p>Produtividade média em campos demonstrativos, comparada à safra anterior. Dado de exemplo.</p>
+          <a class="bry-btn bry-btn--secondary" href="#">Ver os campos</a>
+        </div>
+        <div class="b-kpi"><b>218 sc/ha</b><span>▲ 12% vs. safra anterior</span></div>
+      </div>
+    </div>
+<pre>&lt;section class="bry-sec-palheta"&gt;
+  &lt;svg class="bry-forma-fluxo" style="color:var(--brand-preto)" viewBox="0 0 1440 560" preserveAspectRatio="xMaxYMid slice" aria-hidden="true"&gt;
+    &lt;path d="M1440 0 H905 C 812 34 786 122 830 206 C 878 298 858 384 774 444 C 712 488 690 530 706 560 H1440 Z"/&gt;
+    &lt;path class="bry-borda-curva" d="M905 0 C 812 34 786 122 830 206 C 878 298 858 384 774 444 C 712 488 690 530 706 560"/&gt;
+  &lt;/svg&gt; …</pre>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">03</span><h3>Faixa de transição</h3></div>
+    <p class="desc">Entre o preto e o claro, uma faixa amarela de espessura variável atravessa de um lado ao outro: larga de um lado, fina do outro. As duas bordas são curvas diferentes, por isso a faixa nunca parece uma onda copiada.</p>
+    <div class="demo">
+      <div class="c-top"><div class="bry-eyebrow">Portal do produtor</div><h4 class="t">Seus talhões em um só lugar.</h4><p>Pedidos, recomendações e agenda de visitas técnicas.</p></div>
+      <svg class="c-faixa" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
+        <defs><linearGradient id="faixa-grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f6a200"/><stop offset="1" stop-color="#e18800"/></linearGradient></defs>
+        <path class="am" fill="url(#faixa-grad)" d="M0 0 H1440 V44 C 1180 104 900 128 600 98 C 360 74 170 110 0 148 Z"/>
+        <path class="pr" d="M0 0 H1440 V14 C 1160 68 880 88 590 62 C 350 42 160 74 0 106 Z"/>
+      </svg>
+      <div class="c-base">A faixa vai do amarelo principal ao amarelo contraste e marca a passagem para a área de trabalho.</div>
+    </div>
+<pre>&lt;svg viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true"&gt;
+  &lt;defs&gt;&lt;linearGradient id="faixa-grad" x1="0" x2="1"&gt;&lt;stop offset="0" stop-color="#f6a200"/&gt;&lt;stop offset="1" stop-color="#e18800"/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;
+  &lt;path fill="url(#faixa-grad)" d="M0 0 H1440 V44 C 1180 104 900 128 600 98 C 360 74 170 110 0 148 Z"/&gt;
+  &lt;path fill="var(--brand-preto)" d="M0 0 H1440 V14 C 1160 68 880 88 590 62 C 350 42 160 74 0 106 Z"/&gt;
+&lt;/svg&gt;</pre>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">04</span><h3>Contornos sutis</h3></div>
+    <p class="desc">Linhas finas que repetem a mesma curva em alturas diferentes, como curvas de nível de um terreno ou um papel antigo. Atravessam a seção de baixo até a borda direita, no lado oposto ao texto, em preto tom sobre tom: no preto absoluto, as linhas são só um preto mais claro. Também podem ser amarelo com baixa opacidade.</p>
+    <div class="demo">
+      <div class="d-sec bry-sec-palheta">
+        <svg class="bry-forma-fluxo" viewBox="0 0 1440 400" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+          <path class="bry-contorno" d="M640 420 C 780 300 930 210 1100 236 C 1250 258 1350 330 1480 300"/>
+          <path class="bry-contorno" d="M700 420 C 820 260 960 160 1130 184 C 1270 204 1370 262 1480 230"/>
+          <path class="bry-contorno" d="M770 420 C 870 220 1000 108 1160 128 C 1290 146 1390 196 1480 160"/>
+          <path class="bry-contorno" d="M850 420 C 930 180 1040 56 1190 70 C 1310 82 1400 128 1480 92"/>
+          <path class="bry-contorno" d="M940 420 C 990 150 1090 6 1220 14 C 1330 22 1410 60 1480 26"/>
+        </svg>
+        <div class="bry-eyebrow">Pesquisa</div>
+        <h4 class="t">Cada região, <span>um posicionamento.</span></h4>
+        <p>Ensaios regionais para recomendar o híbrido certo para cada talhão.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+(() => {
+  const L = window.BarygenDesignSystem_a84d4b.BARYGEN_LOGO;
+  document.querySelectorAll('[data-pal]').forEach(g => { g.innerHTML = `<path class="pal" d="${L.paths.H.palheta}"/>`; });
+})();
+</script>
+</body></html>

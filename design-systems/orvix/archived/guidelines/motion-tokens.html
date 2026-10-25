@@ -1,0 +1,22 @@
+<!-- @dsCard group="Movimento" viewport="700x220" name="Durações e curvas" subtitle="Movimento lento e contínuo. Nada elástico, nada brusco" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>body{margin:0;padding:16px;background:#080C12}.g{display:grid;grid-template-columns:1fr 1fr;gap:22px}.rows{display:flex;flex-direction:column;gap:7px;font:var(--type-caption);color:var(--text-muted)}.rows b{color:var(--text-body);font-family:var(--font-mono);font-size:10px}.bar{position:relative;height:5px;background:var(--grafite-700);border-radius:999px;overflow:hidden}.bar i{position:absolute;inset:0;background:var(--verde-500);transform-origin:left;animation:sw 4.2s infinite}@keyframes sw{0%{transform:scaleX(0)}70%{transform:scaleX(1)}100%{transform:scaleX(1)}}</style>
+</head><body><div class="g">
+<div class="rows">
+<div><b>--dur-instant</b> 140ms · troca de estado imediata</div>
+<div><b>--dur-fast</b> 240ms · hover, press, foco</div>
+<div><b>--dur-base</b> 360ms · superfície, painel</div>
+<div><b>--dur-slow</b> 520ms · abertura de diálogo</div>
+<div><b>--dur-reveal</b> 820ms · revelação no scroll</div>
+<div><b>--dur-scene</b> 1200ms · troca de cena</div>
+</div>
+<div class="rows">
+<div><b>--ease-precise</b> .22,.7,.24,1 · padrão da marca</div>
+<div class="bar"><i style="animation-timing-function:cubic-bezier(.22,.7,.24,1)"></i></div>
+<div><b>--ease-out</b> .25,1,.5,1 · entrada</div>
+<div class="bar"><i style="animation-timing-function:cubic-bezier(.25,1,.5,1)"></i></div>
+<div><b>--ease-drift</b> .45,.05,.55,.95 · deriva longa</div>
+<div class="bar"><i style="animation-timing-function:cubic-bezier(.45,.05,.55,.95)"></i></div>
+</div>
+</div></body></html>

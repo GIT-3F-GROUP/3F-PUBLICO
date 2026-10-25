@@ -1,0 +1,142 @@
+<!-- @dsCard group="Marca" height=3080 subtitle="A palheta e a hélice de DNA soltas, de uma cor só, como elementos de design; a hélice tom sobre tom" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN · Elementos da marca</title>
+<style>
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--ff-body);font-size:16px;line-height:1.55}
+.pg{padding:48px 56px 72px;max-width:1120px;margin:0 auto}
+.ey{font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--text-accent)}
+h2{font-size:40px;font-weight:800;line-height:1.06;margin:12px 0 16px}
+h2 span{font-weight:600}
+h3{font-size:22px;font-weight:800;line-height:1.1;margin:0}
+.lead{font-size:18px;color:var(--text-soft);max-width:62ch;margin:0}
+.desc{font-size:15px;color:var(--text-soft);max-width:70ch;margin:0 0 18px}
+.sec{margin-top:64px}
+.sec-h{display:flex;gap:16px;align-items:baseline;margin-bottom:12px}
+.num{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--text-accent)}
+code{font-family:var(--ff-mono);font-size:12px}
+.nw{white-space:nowrap}
+
+/* peças */
+.pecas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.peca{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;overflow:hidden}
+.peca .palco{height:200px;display:grid;place-items:center}
+.peca .palco svg{height:130px;width:auto;display:block}
+.peca .t{padding:14px 16px;font-size:13.5px;color:var(--text-soft);border-top:1px solid var(--rule-soft)}
+.peca .t b{display:block;color:var(--text-body);font-size:14px}
+
+/* cenas tom sobre tom */
+.cenas{display:grid;gap:16px}
+.cena{position:relative;isolation:isolate;overflow:hidden;border-radius:16px;padding:52px 52px 48px;min-height:300px;display:flex;flex-direction:column;justify-content:center}
+.cena .el{position:absolute;z-index:-1;pointer-events:none}
+.cena .el svg{display:block;width:100%;height:auto}
+.cena h4{font-family:var(--ff-display);font-size:34px;font-weight:800;line-height:1.05;text-transform:uppercase;margin:12px 0 10px;max-width:18ch}
+.cena h4 span{font-weight:600}
+.cena p{margin:0;max-width:44ch}
+.cena.preto{background:#000;color:var(--text-on-dark)}
+.cena.preto p{color:var(--text-on-dark-muted)}
+.cena.preto .bry-eyebrow{color:var(--brand-amarelo-principal)}
+.cena.amarelo{background:linear-gradient(150deg,var(--brand-amarelo-detalhe),var(--brand-amarelo-principal) 55%,var(--brand-amarelo-contraste));color:var(--brand-preto)}
+.cena.amarelo p{color:var(--text-soft)}
+.cena.amarelo .bry-eyebrow{color:var(--brand-preto)}
+.cena.claro{background:var(--tom-claro-suave);border:1px solid var(--rule-soft)}
+.cena.claro p{color:var(--text-soft)}
+.cena-leg{font-size:13px;color:var(--text-muted);margin:-6px 0 6px}
+
+/* regras */
+.regras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.regra{border-radius:14px;border:1px solid var(--rule-soft);background:var(--brand-branco);overflow:hidden}
+.regra .palco{height:170px;position:relative;overflow:hidden;display:grid;place-items:center}
+.regra .palco > svg{height:110px;width:auto;display:block}
+.regra .t{padding:14px 16px;font-size:14px;color:var(--text-soft);border-top:1px solid var(--rule-soft)}
+.regra .t b{display:block;color:var(--text-body)}
+.sim{color:var(--fn-success);font-weight:800}.nao{color:var(--fn-error);font-weight:800}
+.regra .el{display:block}.regra .el svg{display:block;width:100%;height:auto}
+.regra .solo svg{display:block;height:120px;width:auto}
+.sobre{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:var(--ff-display);text-transform:uppercase;font-weight:800;font-size:20px;color:var(--brand-preto)}
+.marca-falsa{display:flex;align-items:center;gap:10px}
+.marca-falsa svg{height:64px;width:auto;display:block}
+.marca-falsa b{font-family:var(--ff-display);font-size:30px;letter-spacing:.02em}
+.espalhados{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);place-items:center;padding:10px}
+.espalhados svg{height:34px;width:auto}
+
+@media (max-width:900px){.pecas,.regras{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.pg{padding:32px 16px 48px}h2{font-size:30px}.cena{padding:40px 22px;min-height:260px}.cena h4{font-size:26px}}
+</style></head><body>
+<main class="pg">
+  <div class="ey">Marca · Elementos</div>
+  <h2>Elementos <span>da marca</span></h2>
+  <p class="lead">A palheta e a hélice de DNA, soltas e de uma cor só, também são peças de design. Não com frequência: entram como forma de fundo, grandes e discretas, para dar profundidade a uma peça. Nunca substituem a logo.</p>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">01</span><h3>A palheta</h3></div>
+    <p class="desc">A silhueta da palheta, sem a hélice. Serve de forma de fundo tom sobre tom, grande e cortada pela borda, como no rodapé, e dá origem às curvas das seções da palheta. Arquivos em Assets › Elementos.</p>
+    <div class="pecas">
+      <div class="peca"><div class="palco" style="background:#000"><span data-el="palheta:#f6a200"></span></div><div class="t"><b>Palheta amarela</b><code class="nw">Elemento BARYGEN palheta amarela.svg</code></div></div>
+      <div class="peca"><div class="palco" style="background:var(--brand-amarelo-principal)"><span data-el="palheta:#000000"></span></div><div class="t"><b>Palheta preta</b><code class="nw">Elemento BARYGEN palheta preta.svg</code></div></div>
+      <div class="peca"><div class="palco" style="background:var(--tom-preto-3)"><span data-el="palheta:#ffffff"></span></div><div class="t"><b>Palheta branca</b><code class="nw">Elemento BARYGEN palheta branca.svg</code></div></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">02</span><h3>A hélice de DNA</h3></div>
+    <p class="desc">A hélice sozinha, de pé, como está no símbolo. É a peça mais interessante para o tom sobre tom: grande, num tom vizinho ao do fundo, ela vira uma textura da marca sem disputar com o texto.</p>
+    <div class="pecas">
+      <div class="peca"><div class="palco" style="background:var(--brand-amarelo-principal)"><span data-el="dna:#000000"></span></div><div class="t"><b>Hélice preta</b><code class="nw">Elemento BARYGEN hélice DNA preta.svg</code></div></div>
+      <div class="peca"><div class="palco" style="background:var(--tom-preto-3)"><span data-el="dna:#ffffff"></span></div><div class="t"><b>Hélice branca</b><code class="nw">Elemento BARYGEN hélice DNA branca.svg</code></div></div>
+      <div class="peca"><div class="palco" style="background:#000"><span data-el="dna:#f6a200"></span></div><div class="t"><b>Hélice amarela</b><code class="nw">Elemento BARYGEN hélice DNA amarela.svg</code></div></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">03</span><h3>A hélice tom sobre tom</h3></div>
+    <p class="desc">Um passo de tom acima do fundo: preto 2 sobre o preto, amarelo detalhe sobre o principal, areia sobre o suave. Grande, cortada por uma borda, no lado oposto ao texto. Uma por peça.</p>
+    <div class="cenas">
+      <div class="cena preto">
+        <span class="el" data-el="dna:var(--tom-preto-2)" style="right:6%;top:-70px;width:230px" aria-hidden="true"></span>
+        <div class="bry-eyebrow">Pesquisa e desenvolvimento</div>
+        <h4>Genética <span>que se vê no campo.</span></h4>
+        <p>Hélice em preto 2 (#141414) sobre o preto absoluto.</p>
+      </div>
+      <div class="cena amarelo">
+        <span class="el" data-el="dna:var(--brand-amarelo-detalhe)" style="right:8%;bottom:-90px;width:240px" aria-hidden="true"></span>
+        <div class="bry-eyebrow">Lançamento</div>
+        <h4>BG307 Max <span>chegou.</span></h4>
+        <p>Hélice em amarelo detalhe sobre o degradê do principal ao contraste.</p>
+      </div>
+      <div class="cena claro">
+        <span class="el" data-el="dna:var(--tom-claro-areia)" style="right:10%;top:-50px;width:220px" aria-hidden="true"></span>
+        <div class="bry-eyebrow">Tecnologia</div>
+        <h4>Do laboratório <span>ao talhão.</span></h4>
+        <p>Hélice em areia (#F4EFE5) sobre o suave.</p>
+      </div>
+    </div>
+    <p class="desc" style="margin-top:16px">No código: <code>BARYGEN_LOGO.svg({ type: 'dna', color })</code> e <code>BARYGEN_LOGO.svg({ type: 'palheta', color })</code>, com qualquer cor da marca ou token (<code>var(--tom-preto-2)</code>). Os dois saem sem título, como decoração (<code>aria-hidden</code>).</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">04</span><h3>Regras</h3></div>
+    <div class="regras">
+      <div class="regra"><div class="palco" style="background:#000"><span class="el" data-el="dna:var(--tom-preto-2)" style="position:absolute;right:18px;top:-30px;width:110px"></span></div>
+        <div class="t"><b><span class="sim">✓</span> Uma cor, tom sobre tom</b>Um tom vizinho ao do fundo, grande e cortado pela borda.</div></div>
+      <div class="regra"><div class="palco" style="background:var(--brand-amarelo-principal)"><span class="el" data-el="palheta:var(--brand-amarelo-detalhe)" style="position:absolute;right:-40px;bottom:-60px;width:200px"></span></div>
+        <div class="t"><b><span class="sim">✓</span> Palheta como forma de fundo</b>Sempre de uma cor e sem a hélice, saindo pela borda.</div></div>
+      <div class="regra"><div class="palco" style="background:var(--tom-claro-suave)"><div class="marca-falsa"><span data-el="dna:#000000"></span><b>BARYGEN</b></div></div>
+        <div class="t"><b><span class="nao">✕</span> No lugar da logo</b>Elemento não é marca. Para assinar, a logo oficial ou o símbolo completo.</div></div>
+      <div class="regra"><div class="palco" style="background:var(--tom-claro-suave)"><svg viewBox="0 0 40 40" aria-hidden="true" data-circulo></svg></div>
+        <div class="t"><b><span class="nao">✕</span> Hélice dentro de outra forma</b>Círculo, quadrado, pílula ou selo com a hélice parecem um outro símbolo.</div></div>
+      <div class="regra"><div class="palco" style="background:var(--brand-amarelo-principal)"><span class="solo" data-el="dna:#000000"></span><b class="sobre">Lançamento BG307 Max</b></div>
+        <div class="t"><b><span class="nao">✕</span> Alto contraste atrás do texto</b>Hélice preta sobre o amarelo, atrás de um título, briga com o texto. Atrás de texto, só tom sobre tom.</div></div>
+      <div class="regra"><div class="palco" style="background:var(--tom-claro-suave)"><div class="espalhados" id="espalhados"></div></div>
+        <div class="t"><b><span class="nao">✕</span> Muitas cópias espalhadas</b>A hélice não vira padrão nem ícone repetido. Uma por peça.</div></div>
+    </div>
+  </section>
+</main>
+<script>
+(() => {
+  const L = window.BarygenDesignSystem_a84d4b.BARYGEN_LOGO;
+  const el = v => { const [type, color] = v.split(/:(.+)/); return L.svg({ type, color, title: '' }); };
+  document.querySelectorAll('[data-el]').forEach(n => { n.innerHTML = el(n.dataset.el); });
+  document.querySelectorAll('[data-circulo]').forEach(n => { n.innerHTML = `<circle cx="20" cy="20" r="19" fill="#f6a200"/><path fill="#000" transform="translate(2.55 -2.92)" d="${L.paths.H.dna}"/>`; });
+  document.getElementById('espalhados').innerHTML = Array.from({ length: 12 }, () => el('dna:var(--brand-amarelo-principal)')).join('');
+})();
+</script>
+</body></html>

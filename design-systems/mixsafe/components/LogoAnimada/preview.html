@@ -1,0 +1,641 @@
+<!-- @dsCard group="Marca" height=1100 width=1200 subtitle="A animação principal é a 06 Órbita. As outras oito existem, mas só entram quando pedidas." -->
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><title>LogoAnimada, mixsafe</title></head>
+<body class="ms-body">
+<div class="ms-palco"><style>
+  :root {
+    --azul-04: #0B364B; --azul-03: #2A5062; --azul-02: #45809C; --azul-01: #6298B7;
+    --verde-80: #13A538; --branco: #FFFFFF; --tom: #F0F2F4;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--azul-04); color: var(--branco);
+    font-family: var(--font-texto);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .x-header {
+    max-width: 1500px; margin: 0 auto; padding: 28px 16px 10px;
+    display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-end; justify-content: space-between;
+  }
+  h1 { font-weight: 500; font-size: clamp(20px, 2.4vw, 28px); letter-spacing: -.01em; }
+  h1 small { display: block; margin-top: 4px; font-size: 13px; font-weight: 400; color: rgba(255,255,255,.62); letter-spacing: 0; }
+  .paleta { display: flex; gap: 6px; }
+  .paleta i { width: 22px; height: 22px; border-radius: 6px; border: 1px solid rgba(255,255,255,.18); }
+
+  .mosaico {
+    max-width: 1500px; margin: 0 auto; padding: 0;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  }
+  @media (max-width: 960px) { .mosaico { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .mosaico { grid-template-columns: 1fr; } }
+
+  .celula {
+    position: relative; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,.09); cursor: zoom-in; outline: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  }
+  .celula:focus-visible { box-shadow: 0 0 0 3px rgba(19,165,56,.55); }
+  .celula.foco { position: fixed; inset: 0; z-index: 50; aspect-ratio: auto; border-radius: 0; border: 0; cursor: zoom-out; }
+
+  .palco { position: absolute; inset: 0 0 9% 0; display: grid; place-items: center; container-type: size; }
+  .celula.foco .palco { inset: 0; }
+  .palco > .logo { grid-area: 1 / 1; }
+  .fantasma { pointer-events: none; }
+  .particulas-tela { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .choque {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    border: 2px solid var(--branco); border-radius: 999px; opacity: 0; pointer-events: none;
+  }
+
+  .logo {
+    display: flex; align-items: center; white-space: nowrap;
+    font-family: Exo, sans-serif; font-size: min(8.4cqw, 22cqh); line-height: 1; font-weight: 500; letter-spacing: -0.01em;
+  }
+  .icone { width: 1.22em; height: 1.22em; flex: none; margin-right: .26em; overflow: visible;
+           filter: drop-shadow(0 0 .035em rgba(255,255,255,.28)); }
+  .icone .anel { fill: none; stroke: var(--branco); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+  .icone .nucleo, .icone .gota-origem, .icone .cabecas circle { fill: var(--branco); }
+  .icone .splash { fill: none; stroke: var(--branco); stroke-width: 3; }
+
+  .palavra { position: relative; padding-right: .4em; }
+  .parte-mix { display: inline-block; font-weight: 800; font-style: italic; }
+  .parte-safe { font-weight: 500; font-style: italic; }
+  .letra { display: inline-block; transform-origin: 50% 80%; }
+  .base { display: inline-block; width: 0; height: 0; }
+
+  .registro { position: absolute; left: calc(100% - .36em); width: .3em; height: .3em; overflow: visible; }
+  .registro circle { fill: none; stroke: var(--branco); stroke-width: 7; }
+  .registro text { fill: var(--branco); font-family: inherit; font-weight: 600; font-size: 54px; }
+  .registro .gota { fill: var(--branco); }
+  .registro .onda { fill: none; stroke: var(--branco); stroke-width: 3; }
+
+  .rotulo {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 14px 12px;
+    display: flex; gap: 10px; align-items: baseline; pointer-events: none;
+    font-size: 12.5px; line-height: 1.35; color: rgba(255,255,255,.7);
+  }
+  .rotulo .num { white-space: nowrap; color: var(--verde-80); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .rotulo b { color: var(--branco); font-weight: 500; margin-right: 6px; }
+  .tag {
+    display: inline-block; margin-right: 8px; padding: 0 7px; border-radius: 999px;
+    font-size: 10.5px; line-height: 16px; color: rgba(255,255,255,.8); border: 1px solid rgba(255,255,255,.25);
+  }
+  .tag.nova { color: #7FD69A; border-color: rgba(19,165,56,.7); }
+  .tag.ajustada { color: #A9CCE0; border-color: rgba(98,152,183,.8); }
+  .celula.foco .rotulo { font-size: 15px; padding: 18px 22px; }
+
+.principal { display: inline-block; padding: 2px 10px; border-radius: 999px; background: #13a538; color: #062231; font-size: 11px; font-weight: 700; letter-spacing: .02em; }
+.quadro:nth-child(6) { outline: 2px solid #13a538; outline-offset: 3px; border-radius: 14px; }
+</style><main class="mosaico" id="mosaico"></main><script>
+// ================= utilidades =================
+const cl = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const fase = (t, a, b) => cl((t - a) / (b - a));
+const outCubic = p => 1 - Math.pow(1 - p, 3);
+const outQuart = p => 1 - Math.pow(1 - p, 4);
+const inOutCubic = p => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+const outBack = (p, s = 1.70158) => 1 + (s + 1) * Math.pow(p - 1, 3) + s * Math.pow(p - 1, 2);
+const mola = p => p >= 1 ? 1 : 1 - Math.exp(-6 * p) * Math.cos(10.5 * p);
+function outBounce(p) {
+  const n = 7.5625, d = 2.75;
+  if (p < 1 / d) return n * p * p;
+  if (p < 2 / d) return n * (p -= 1.5 / d) * p + .75;
+  if (p < 2.5 / d) return n * (p -= 2.25 / d) * p + .9375;
+  return n * (p -= 2.625 / d) * p + .984375;
+}
+const pop = (t, t0, dur, s) => { const p = cl((t - t0) / dur); return p ? outBack(p, s) : 0; };
+function aleatorio(seed) {
+  return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let x = Math.imul(seed ^ seed >>> 15, 1 | seed);
+    x = x + Math.imul(x ^ x >>> 7, 61 | x) ^ x; return ((x ^ x >>> 14) >>> 0) / 4294967296; };
+}
+const NS = 'http://www.w3.org/2000/svg';
+const ANEIS = 3, RASTROS = 4, SEGURA = 1800, SOME = 400;
+const L0 = 90, RY = 21.5;            // cápsula: meia-largura e meia-altura
+function capsula(L, H) {
+  L = Math.max(0, L); H = Math.max(.5, Math.min(H, Math.max(L, .5)));
+  const a = Math.max(0, L - H);
+  return `M${-a},${-H}L${a},${-H}A${H},${H} 0 0 1 ${a},${H}L${-a},${H}A${H},${H} 0 0 1 ${-a},${-H}Z`;
+}
+function pontoCapsula(u, L, H) {
+  const a = L - H; let d = u * (4 * a + 2 * Math.PI * H);
+  if (d < 2 * a) return [-a + d, -H]; d -= 2 * a;
+  if (d < Math.PI * H) { const th = -Math.PI / 2 + d / H; return [a + H * Math.cos(th), H * Math.sin(th)]; } d -= Math.PI * H;
+  if (d < 2 * a) return [a - d, H]; d -= 2 * a;
+  const th = Math.PI / 2 + d / H; return [-a + H * Math.cos(th), H * Math.sin(th)];
+}
+
+// ================= estado padrão = logo final =================
+function estado() {
+  return {
+    logoOp: 1, logo: { x: 0, y: 0, sc: 1 }, clip: null, wordClip: null, wordMask: null, choque: null, ghostOp: 0,
+    icon: { x: 0, y: 0, rot: 0, sc: 1, op: 1 },
+    rings: [0, 1, 2].map(i => ({ a: i * 60, rx: L0, ry: RY, op: 1, dash: 1, x: 0, y: 0, tx: 0, g: null })),
+    nuc: 1, nucY: 0, nucOp: 1, origem: null, heads: null,
+    letters: Array.from({ length: 7 }, () => ({ x: 0, y: 0, rot: 0, sc: 1, sx: 1, sy: 1, op: 1, blur: 0 })),
+    mixClip: false,
+    reg: { sc: 1, sx: 1, rot: 0, x: 0, y: 0, op: 1 },
+    drip: 0,
+  };
+}
+
+// ================= trechos compartilhados =================
+function rastros(S, i, f, t) {
+  const a = f(t), vel = Math.abs(a - f(t - 16)) / 16 * 1000, forca = cl((vel - 150) / 900);
+  S.rings[i].g = [1, 2, 3, 4].map(k => ({ a: f(t - k * 14), op: .3 * (1 - k / 5) * forca }));
+}
+const desliza = (S, c, t, a, b, e = inOutCubic) => { S.icon.x = c.m.dxIcon * (1 - e(fase(t, a, b))); };
+function mixSobe(S, c, t, t0) {
+  S.mixClip = true;
+  for (let j = 0; j < 3; j++) S.letters[j].y = (1 - outCubic(cl((t - t0 - j * 80) / 520))) * 1.1 * c.m.fs;
+}
+function safeEntra(S, c, t, t0) {
+  for (let j = 3; j < 7; j++) {
+    const p = outQuart(cl((t - t0 - (j - 3) * 80) / 600)), L = S.letters[j];
+    L.op = p; L.x = (1 - p) * .45 * c.m.fs; L.blur = (1 - p) * .05 * c.m.fs;
+  }
+}
+function seloSurge(S, t, t0, gira = true) {
+  const p = cl((t - t0) / 500);
+  S.reg.sc = p ? outBack(p, 2) : 0;
+  S.reg.rot = gira ? -140 * (1 - outCubic(p)) : 0;
+}
+const pinga = (S, t, t0) => { S.drip = cl((t - t0) / 2000); };
+function letrasQuicam(S, c, t, t0) {
+  S.letters.forEach((L, j) => {
+    const p = cl((t - t0 - j * 60 - (j >= 3 ? 200 : 0)) / 550);
+    L.y = -(1 - outBounce(p)) * .7 * c.m.fs; L.op = cl(p * 4);
+  });
+}
+
+// ================= as 9 ideias =================
+// 01 · Giro rápido (mantida)
+function vGiro(S, c, t) {
+  const ang = (i, tt) => { const p = fase(tt, 0, 2600);
+    return i * 60 * inOutCubic(cl((p - .35) / .65)) + 2160 * (1 - outQuart(p)); };
+  const pg = fase(t, 0, 2600);
+  for (let i = 0; i < 3; i++) { S.rings[i].a = ang(i, t); S.rings[i].ry = 6 + (RY - 6) * outCubic(pg); rastros(S, i, tt => ang(i, tt), t); }
+  S.nuc = pop(t, 2150, 550, 2.6);
+  S.icon.sc = outBack(cl(t / 900), 1.4) * (1 + .06 * Math.sin(Math.PI * fase(t, 2550, 2950)));
+  desliza(S, c, t, 2950, 3750);
+  mixSobe(S, c, t, 3350); safeEntra(S, c, t, 3950);
+  seloSurge(S, t, 4650); pinga(S, t, 5350);
+}
+
+// 02 · Três gotas (ajustada: cápsulas giram desde que surgem)
+function vTresGotas(S, c, t) {
+  const m = c.m, quedas = [0, 700, 1400, 2100], QUEDA = 450;
+  // giro: acelera no começo e reduz no final, até o símbolo chegar à esquerda
+  const giro = tt => 900 * (1 - inOutCubic(fase(tt, 450, 3800)));
+  let ativa = 0;
+  quedas.forEach((s, i) => { if (t >= s) ativa = i; });
+  const s0 = quedas[ativa], q = cl((t - s0) / QUEDA), sp = fase(t, s0 + QUEDA, s0 + QUEDA + 550);
+  S.origem = { y: -420 * (1 - q * q), sy: 1 + .45 * q, op: t < s0 + QUEDA ? 1 : 0,
+               splashR: (ativa === 3 ? 70 : 125) * outCubic(sp), splashOp: t >= s0 + QUEDA ? .55 * (1 - sp) : 0 };
+  let tranco = 0;
+  S.rings.forEach((r, i) => {
+    const bate = quedas[i] + QUEDA, p = cl((t - bate) / 650);
+    r.rx = L0 * (p ? outBack(p, 1.6) : 0); r.ry = RY * outCubic(p); r.op = p > 0 ? 1 : 0;
+    r.a = i * 60 + giro(t);
+    rastros(S, i, tt => i * 60 + giro(tt), t);
+    tranco += .04 * Math.sin(Math.PI * fase(t, bate, bate + 220));
+  });
+  tranco += .05 * Math.sin(Math.PI * fase(t, 2550, 2800));
+  S.icon.sc = 1 + tranco;
+  S.nuc = pop(t, 2550, 350, 2.4);
+  desliza(S, c, t, 3000, 3800);
+  // letras caem como gotas: esticadas, achatam no chão e assentam
+  S.letters.forEach((L, j) => {
+    const p = cl((t - 3500 - j * 70 - (j >= 3 ? 250 : 0)) / 650);
+    if (p < .45) {
+      const k = p / .45;
+      L.y = -.8 * m.fs * (1 - k * k); L.sy = 1.5 - .3 * k; L.sx = .7 + .1 * k; L.op = cl(k * 3);
+    } else if (p < .7) {
+      const r = Math.sin(Math.PI * (p - .45) / .25);
+      L.sy = 1 - .25 * r; L.sx = 1 + .18 * r;
+    } else L.sy = 1 + .06 * Math.sin(Math.PI * (p - .7) / .3);
+  });
+  seloSurge(S, t, 4700, false); pinga(S, t, 5300);
+}
+
+// 03 · Gota de origem (ajustada: cápsulas giram até chegar à esquerda)
+function vGota(S, c, t) {
+  const giro = tt => 900 * (1 - outQuart(fase(tt, 1500, 3500)));   // gira até o fim do deslize
+  const q = cl(t / 650), sp = fase(t, 650, 1400);
+  S.origem = { y: -420 * (1 - q * q), sy: 1 + .45 * q, op: t < 650 ? 1 : 0,
+               splashR: 170 * outCubic(sp), splashOp: t >= 650 ? .6 * (1 - sp) : 0 };
+  for (let i = 0; i < 3; i++) {
+    const g = outCubic(cl((t - 650 - i * 120) / 750)), f = inOutCubic(cl((t - 1500 - i * 80) / 900)), r = S.rings[i];
+    r.rx = L0 * g; r.ry = L0 * g - (L0 - RY) * f; r.op = g > 0 ? 1 : 0;
+    r.a = i * 60 * f + giro(t);
+    rastros(S, i, tt => i * 60 * inOutCubic(cl((tt - 1500 - i * 80) / 900)) + giro(tt), t);
+  }
+  S.nuc = pop(t, 650, 350, 2);
+  desliza(S, c, t, 2700, 3500);
+  letrasQuicam(S, c, t, 3200);
+  seloSurge(S, t, 4300, false); pinga(S, t, 4900);
+}
+
+// 04 · Vórtice (ajustada: ícone do vórtice, texto da 03)
+function vVortice(S, c, t) {
+  const R = tt => 1100 * (1 - outCubic(fase(tt, 0, 2600)));
+  for (let i = 0; i < 3; i++) { S.rings[i].a = i * 60 + R(t); rastros(S, i, tt => i * 60 + R(tt), t); }
+  S.icon.sc = 1 + 2.2 * (1 - outCubic(fase(t, 0, 2000))); S.icon.op = cl(t / 400);
+  S.nuc = pop(t, 1700, 500, 2.4);
+  desliza(S, c, t, 1800, 2600);
+  letrasQuicam(S, c, t, 2300);
+  seloSurge(S, t, 3400); pinga(S, t, 4000);
+}
+
+// 05 · Partículas (ajustada: a palavra sai de dentro das cápsulas durante o giro)
+const giroParticulas = tt => 1080 * Math.pow(1 - fase(tt, 0, 4800), 2);   // reduz até a palavra sair inteira
+function vParticulas(S, c, t) {
+  const P = c.pt, ctx = c.ctx, m = c.m;
+  if (!P) return;
+  ctx.clearRect(0, 0, m.w, m.h); ctx.fillStyle = '#fff';
+  const giro = giroParticulas, gr = giro(t) * Math.PI / 180;
+
+  // partículas formam o ícone (sem mudança)
+  const fim = fase(t, 1900, 2400);
+  if (fim < 1) for (const q of P.icone) {
+    const p = outCubic(cl((t - 150 - q.d) / 1500));
+    if (p <= 0) continue;
+    const x = q.sx + (q.tx - q.sx) * p, y = q.sy + (q.ty - q.sy) * p, w = (1 - p) * 2.1 + gr;
+    ctx.globalAlpha = cl(p * 5) * (1 - fim);
+    ctx.beginPath();
+    ctx.arc(P.cx + (x * Math.cos(w) - y * Math.sin(w)) * P.k, P.cy + (x * Math.sin(w) + y * Math.cos(w)) * P.k,
+            4.5 * P.k * (1 - .5 * fim), 0, 2 * Math.PI);
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  S.rings.forEach((r, i) => {
+    r.op = fim; r.a = i * 60 + giro(t);
+    rastros(S, i, tt => i * 60 + giro(tt), t);
+  });
+  S.nuc = pop(t, 2100, 450, 2.4);
+
+  // o ícone vai para a esquerda e a palavra, no tamanho real, sai do centro dele para a direita
+  desliza(S, c, t, 2500, 4000);
+  S.letters.forEach((L, j) => { L.x = m.w0 * (1 - inOutCubic(fase(t - j * 50, 2500, 4500))); });
+  if (t < 4850) {
+    const centro = m.icPal + S.icon.x;                 // centro do ícone nas coordenadas da palavra
+    const a = centro - .05 * m.fs, b = centro + .45 * m.fs;
+    S.wordMask = `linear-gradient(90deg, transparent ${a.toFixed(1)}px, #000 ${b.toFixed(1)}px)`;
+  }
+  seloSurge(S, t, 4900); pinga(S, t, 5500);
+}
+
+// 06 · Órbita (nova)
+function vOrbita(S, c, t) {
+  const m = c.m, p = fase(t, 0, 2400), rastro = .08 + .92 * inOutCubic(fase(t, 800, 2400));
+  const junta = inOutCubic(fase(t, 2400, 2800));
+  S.icon.sc = outBack(cl(t / 500), 1.6);
+  S.heads = [];
+  S.rings.forEach((r, i) => {
+    const u = 2.2 * outCubic(p) + i * .33;
+    r.dash = rastro; r.dashOff = -(u - rastro);
+    const [ex, ey] = pontoCapsula(u % 1, L0, RY), ra = i * Math.PI / 3;
+    const hx = ex * Math.cos(ra) - ey * Math.sin(ra), hy = ex * Math.sin(ra) + ey * Math.cos(ra);
+    S.heads.push({ x: hx * (1 - junta), y: hy * (1 - junta), op: t < 2750 ? cl(t / 200) : 0 });
+  });
+  S.nuc = pop(t, 2750, 400, 2.6);
+  desliza(S, c, t, 3000, 3800);
+  S.wordClip = t < 5000 ? 'inset(-80% -60% 0 -10%)' : null;
+  S.letters.forEach((L, j) => {
+    const q = cl((t - 3400 - j * 55 - (j >= 3 ? 250 : 0)) / 600);
+    L.y = (1 - (q ? outBack(q, 2.2) : 0)) * 1.1 * m.fs;
+  });
+  seloSurge(S, t, 4600); pinga(S, t, 5200);
+}
+
+// 07 · Enchimento (nova)
+function vEnchimento(S, c, t) {
+  const m = c.m, W = m.logoW, H = m.logoH;
+  if (t < 3400) {
+    const nivel = H * 1.12 - H * 1.45 * inOutCubic(fase(t, 300, 3300)), amp = .07 * H, pts = [];
+    for (let k = 0; k <= 48; k++) {
+      const x = -.1 * W + 1.2 * W * k / 48;
+      const y = nivel + amp * Math.sin(x / W * 2 * Math.PI * 1.5 + t / 260) + amp * .45 * Math.sin(x / W * 2 * Math.PI * 3.4 - t / 170);
+      pts.push(`${x.toFixed(1)}px ${y.toFixed(1)}px`);
+    }
+    pts.push(`${(1.1 * W).toFixed(1)}px ${(1.6 * H).toFixed(1)}px`, `${(-.1 * W).toFixed(1)}px ${(1.6 * H).toFixed(1)}px`);
+    S.clip = `polygon(${pts.join(',')})`;
+    S.ghostOp = .16;
+  }
+  const env = Math.sin(Math.PI * fase(t, 900, 2900));
+  S.rings.forEach((r, i) => { r.a = i * 60 + 7 * env * Math.sin(t / 160 + i * 2); });
+  pinga(S, t, 3900);
+}
+
+// 08 · Pulso (ajustada: cápsulas giram até a última onda)
+function vPulso(S, c, t) {
+  const m = c.m, batidas = [700, 1400, 2100], VEL = 110;          // ms por em da onda final
+  const giro = tt => 540 * (1 - (1 - Math.pow(1 - fase(tt, 700, 3000), 2)));   // gira até a última onda
+  let bate = 0, onda = null;
+  batidas.forEach((b, i) => {
+    bate += .5 * Math.sin(Math.PI * fase(t, b, b + 250));
+    if (t >= b) onda = { r: 110 * outCubic(fase(t, b, b + 600)), op: .5 * (1 - fase(t, b, b + 600)) };
+    const p = cl((t - b - 80) / 500), r = S.rings[i];
+    r.rx = L0 * (p ? outBack(p, 2.2) : 0); r.ry = RY * outCubic(p); r.op = p > 0 ? 1 : 0;
+    r.a = i * 60 + giro(t);
+    rastros(S, i, tt => i * 60 + giro(tt), t);
+  });
+  bate += .8 * Math.sin(Math.PI * fase(t, 3000, 3300));
+  S.nuc = pop(t, 0, 400, 2.4) * (1 + bate);
+  S.icon.sc = 1 + .04 * Math.min(1, bate);
+  desliza(S, c, t, 2300, 2900);
+  if (t >= 3000) onda = { r: (t - 3000) / VEL * m.fs / m.k, op: .45 * (1 - fase(t, 3000, 4300)) };
+  if (onda) S.origem = { y: 0, sy: 1, op: 0, splashR: onda.r, splashOp: onda.op };
+  // a onda da última batida passa pelas letras e levanta cada uma
+  S.letters.forEach((L, j) => {
+    const q = cl((t - 3100 - (m.lc[j].x - m.icC.x) / m.fs * VEL) / 500);
+    L.op = cl(q * 4); L.y = -.4 * m.fs * Math.sin(Math.PI * q);
+    L.sc = q ? .5 + .5 * outBack(cl(q * 1.8), 2) : 0;
+  });
+  const tr = 3100 + (m.regC.x - m.icC.x) / m.fs * VEL;
+  seloSurge(S, t, tr, false); pinga(S, t, tr + 600);
+}
+
+// 09 · Carimbo (nova)
+function vCarimbo(S, c, t) {
+  const m = c.m, p = cl((t - 200) / 450);
+  S.logo.sc = (3.5 - 2.5 * p * p) * (1 - .04 * Math.sin(Math.PI * fase(t, 650, 850)));
+  S.logoOp = cl(p * 3);
+  if (t > 650) {
+    const amp = .05 * m.fs * Math.exp(-(t - 650) / 130);
+    S.logo.x = Math.sin(t * .09) * amp; S.logo.y = Math.cos(t * .13) * amp;
+  }
+  const q = fase(t, 650, 1300);
+  if (t >= 650 && q < 1) S.choque = { w: m.logoW * (.95 + .5 * outCubic(q)), h: m.logoH * (1.3 + 1.4 * outCubic(q)), op: .5 * (1 - q) };
+  const g = fase(t, 1300, 1900);
+  S.rings.forEach((r, i) => { r.a = i * 60 + 120 * (g ? outBack(g, 1.6) : 0); });
+  S.nuc = 1 + .45 * Math.sin(Math.PI * fase(t, 1350, 1750));
+  const rp = cl((t - 2100) / 300);
+  S.reg.sc = rp ? 4 - 3 * rp * rp : 0; S.reg.op = cl(rp * 3);
+  if (t > 2400) { const a = 8 * Math.exp(-(t - 2400) / 110); S.reg.x = Math.sin(t * .1) * a; S.reg.y = Math.cos(t * .14) * a; }
+  pinga(S, t, 2800);
+}
+
+const FUNDOS = [
+  'linear-gradient(160deg, #2A5062 0%, #0B364B 65%)',
+  'radial-gradient(110% 90% at 50% 38%, #2A5062 0%, #0B364B 72%)',
+  'linear-gradient(200deg, #45809C -20%, #2A5062 25%, #0B364B 75%)',
+  'radial-gradient(90% 80% at 18% 8%, #45809C 0%, #2A5062 35%, #0B364B 80%)',
+];
+
+const IDEIAS = [
+  { nome: 'Giro rápido', tag: 'mantida', desc: 'Entra girando rápido, desacelera e forma o mix.', fn: vGiro, dur: 7350, fundo: 0 },
+  { nome: 'Três gotas', tag: 'mantida', desc: 'Cada gota abre uma cápsula que já surge girando; a última vira o ponto central.', fn: vTresGotas, dur: 7300, fundo: 1 },
+  { nome: 'Gota de origem', tag: 'mantida', desc: 'Uma gota cai, as ondas viram cápsulas e elas giram até o símbolo chegar à esquerda.', fn: vGota, dur: 6900, fundo: 2 },
+  { nome: 'Vórtice', tag: 'mantida', desc: 'Ícone em espiral como antes; o texto agora cai e quica, como na 03.', fn: vVortice, dur: 6000, fundo: 3 },
+  { nome: 'Partículas', tag: 'ajustada', desc: 'Partículas formam o símbolo; girando, ele vai para a esquerda e a palavra sai de dentro das cápsulas.', fn: vParticulas, dur: 7500, fundo: 1, particulas: true },
+  { nome: 'Órbita', tag: 'mantida', desc: 'Três pontos orbitam rápido, deixam o rastro das cápsulas e se juntam no centro.', fn: vOrbita, dur: 7200, fundo: 0 },
+  { nome: 'Enchimento', tag: 'mantida', desc: 'A logo se enche de líquido, de baixo para cima.', fn: vEnchimento, dur: 5900, fundo: 3, fantasma: true },
+  { nome: 'Pulso', tag: 'mantida', desc: 'O centro bate como coração, cada batida abre uma cápsula, elas giram até a última onda e a onda levanta as letras.', fn: vPulso, dur: 6700, fundo: 2 },
+  { nome: 'Carimbo', tag: 'mantida', desc: 'A logo desce como carimbo, a mistura dá um giro e o ® carimba por último.', fn: vCarimbo, dur: 4800, fundo: 1 },
+];
+
+// ================= montagem =================
+const letrasHTML = s => [...s].map(l => `<span class="letra">${l}</span>`).join('');
+
+function criar(v, idx) {
+  const art = document.createElement('article');
+  art.className = 'celula'; art.tabIndex = 0; art.style.background = FUNDOS[v.fundo];
+  art.setAttribute('aria-label', `Ideia ${idx + 1}: ${v.nome}`);
+  art.innerHTML = `
+    <div class="palco">
+      <div class="logo">
+        <svg class="icone" viewBox="-100 -100 200 200" aria-hidden="true">
+          <circle class="splash" r="0"/>
+          <g class="aneis"></g>
+          <circle class="nucleo" r="11"/>
+          <g class="cabecas"><circle r="7"/><circle r="7"/><circle r="7"/></g>
+          <path class="gota-origem" d="M0,-30 C0,-30 13,-11 13,-2 A13,13 0 1 1 -13,-2 C-13,-11 0,-30 0,-30Z"/>
+        </svg>
+        <span class="palavra"><span class="parte-mix">${letrasHTML('mix')}</span><span class="parte-safe">${letrasHTML('safe')}</span><span class="base"></span><svg class="registro" viewBox="0 0 100 100" aria-hidden="true"><g class="gota-g"><path class="gota" d="M0,0 C0,0 9,13 9,19 A9,9 0 1 1 -9,19 C-9,13 0,0 0,0Z"/></g><ellipse class="onda" cx="50" cy="0" rx="0" ry="0"/><g class="selo"><circle cx="50" cy="50" r="43"/><text x="50" y="52" text-anchor="middle" dominant-baseline="central">R</text></g></svg></span>
+      </div>
+      <div class="choque"></div>
+    </div>
+    <footer class="rotulo">${idx === 5 ? '<span class="principal">animação principal da logo</span>' : `<span class="num">ANI-${String(idx + 1).padStart(2, '0')}</span>`}<span><b>${v.nome}</b>${v.desc}</span></footer>`;
+
+  const q = s => art.querySelector(s);
+  const c = {
+    v, art, m: null, inicio: performance.now(), visivel: true,
+    el: {
+      palco: q('.palco'), logo: q('.logo'), icone: q('.icone'), nucleo: q('.nucleo'),
+      splash: q('.splash'), gotaOrigem: q('.gota-origem'), palavra: q('.palavra'),
+      parteMix: q('.parte-mix'), letras: [...art.querySelectorAll('.letra')], base: q('.base'),
+      registro: q('.registro'), selo: q('.selo'), gotaG: q('.gota-g'), gota: q('.gota'), onda: q('.onda'),
+      choque: q('.choque'), cabecas: [...art.querySelectorAll('.cabecas circle')],
+    },
+    aneis: [],
+  };
+
+  const aneis = q('.aneis');
+  for (let i = 0; i < ANEIS; i++) {
+    const grupo = [];
+    for (let k = RASTROS; k >= 0; k--) {
+      const e = document.createElementNS(NS, 'path');
+      e.setAttribute('class', 'anel'); e.setAttribute('pathLength', 1);
+      aneis.appendChild(e); grupo[k] = e;
+    }
+    grupo[0].setAttribute('d', capsula(L0, RY));
+    grupo[0].setAttribute('transform', `rotate(${i * 60})`);
+    c.aneis.push(grupo);
+  }
+
+  if (v.fantasma) {
+    const f = c.el.logo.cloneNode(true);
+    f.classList.add('fantasma');
+    f.querySelectorAll('.gota-g, .onda, .gota-origem, .splash, .cabecas').forEach(n => n.remove());
+    c.el.palco.insertBefore(f, c.el.logo);
+    c.fantasma = f;
+  }
+  if (v.particulas) {
+    c.cv = document.createElement('canvas');
+    c.cv.className = 'particulas-tela';
+    c.el.palco.appendChild(c.cv);
+    c.ctx = c.cv.getContext('2d');
+  }
+  art.addEventListener('click', () => focar(c));
+  art.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); focar(c); } });
+  art._c = c;
+  return c;
+}
+
+function medir(c) {
+  const E = c.el;
+  E.logo.style.transform = 'none';
+  E.icone.style.transform = 'none';
+  E.letras.forEach(l => { l.style.transform = 'none'; });
+  const fs = parseFloat(getComputedStyle(E.logo).fontSize);
+  const b = E.base.getBoundingClientRect().top;
+  const pal = E.palavra.getBoundingClientRect();
+  const topo = (b - pal.top - .74 * fs) + 'px';
+  E.registro.style.top = topo;
+  if (c.fantasma) c.fantasma.querySelector('.registro').style.top = topo;
+  const pr = E.palco.getBoundingClientRect(), ic = E.icone.getBoundingClientRect();
+  const rg = E.registro.getBoundingClientRect(), lg = E.logo.getBoundingClientRect();
+  const lr = E.letras.map(l => l.getBoundingClientRect());
+  const icx = ic.left + ic.width / 2, icy = ic.top + ic.height / 2, dy = (b - .31 * fs) - icy;
+  const scx = pr.left + pr.width / 2, scy = pr.top + pr.height / 2;
+  c.m = {
+    fs, dy, w: pr.width, h: pr.height, icW: ic.width, k: ic.width / 200, logoW: lg.width, logoH: lg.height,
+    dxIcon: scx - icx,
+    lx: lr.map(r => icx - (r.left + r.width / 2)),
+    ly: lr.map(r => icy + dy - (r.top + r.height / 2)),
+    chao: (b - rg.top) * 100 / rg.width,
+    icC: { x: icx - scx, y: icy + dy - scy },
+    lc: lr.map(r => ({ x: r.left + r.width / 2 - scx, y: r.top + r.height / 2 - scy })),
+    regC: { x: rg.left + rg.width / 2 - scx, y: rg.top + rg.height / 2 - scy },
+    icPal: icx - pal.left,
+    w0: (icx + (scx - icx)) - lr[6].right - .15 * fs,   // palavra toda escondida atrás do centro do ícone
+  };
+  if (c.cv) prepararParticulas(c, pr, lr, b, fs, icx, icy, dy);
+}
+
+function prepararParticulas(c, pr, lr, b, fs, icx, icy, dy) {
+  const m = c.m, dpr = Math.min(2, devicePixelRatio || 1);
+  c.cv.width = Math.round(m.w * dpr); c.cv.height = Math.round(m.h * dpr);
+  c.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const rnd = aleatorio(4242);
+
+  const icone = [];
+  for (let i = 0; i < 3; i++) for (let n = 0; n < 40; n++) {
+    const [ex, ey] = pontoCapsula(n / 40, L0, RY), ra = i * Math.PI / 3;
+    const ang = rnd() * 2 * Math.PI, raio = 150 + rnd() * 250;
+    icone.push({ tx: ex * Math.cos(ra) - ey * Math.sin(ra), ty: ex * Math.sin(ra) + ey * Math.cos(ra),
+                 sx: Math.cos(ang) * raio, sy: Math.sin(ang) * raio, d: rnd() * 500 });
+  }
+
+  c.pt = { icone, k: m.k, cx: icx - pr.left + m.dxIcon, cy: icy + dy - pr.top };
+}
+
+// ================= aplica o estado no DOM =================
+function aplicar(c, S) {
+  const m = c.m, E = c.el, I = S.icon;
+  E.logo.style.opacity = S.logoOp;
+  E.logo.style.transform = `translate(${S.logo.x}px,${S.logo.y}px) scale(${S.logo.sc})`;
+  E.logo.style.clipPath = S.clip || 'none';
+  if (c.fantasma) c.fantasma.style.opacity = S.ghostOp;
+
+  E.icone.style.transform = `translate(${I.x}px,${I.y + m.dy}px) rotate(${I.rot}deg) scale(${I.sc})`;
+  E.icone.style.opacity = I.op;
+  S.rings.forEach((r, i) => {
+    const els = c.aneis[i], d = capsula(r.rx, r.ry), base = `translate(${r.x} ${r.y})`;
+    for (let k = 0; k <= RASTROS; k++) {
+      const e = els[k];
+      e.setAttribute('d', d);
+      if (k === 0) {
+        e.setAttribute('transform', `${base} rotate(${r.a}) translate(${r.tx} 0)`);
+        let op = r.op;
+        if (r.dash < .999) { e.style.strokeDasharray = `${r.dash} ${1 - r.dash + .0001}`; e.style.strokeDashoffset = r.dashOff ?? 0; if (r.dash < .002) op = 0; }
+        else { e.style.strokeDasharray = 'none'; e.style.strokeDashoffset = 0; }
+        e.style.opacity = op;
+      } else {
+        const g = r.g && r.g[k - 1];
+        if (g) { e.setAttribute('transform', `${base} rotate(${g.a})`); e.style.opacity = g.op * r.op; }
+        else e.style.opacity = 0;
+      }
+    }
+  });
+
+  E.nucleo.setAttribute('transform', `translate(0 ${S.nucY}) scale(${Math.max(0, S.nuc)})`);
+  E.nucleo.style.opacity = S.nucOp;
+  E.cabecas.forEach((h, i) => {
+    const H = S.heads && S.heads[i];
+    h.style.opacity = H ? H.op : 0;
+    if (H) h.setAttribute('transform', `translate(${H.x} ${H.y})`);
+  });
+
+  const O = S.origem;
+  E.gotaOrigem.style.opacity = O ? O.op : 0;
+  E.splash.style.opacity = O ? O.splashOp : 0;
+  if (O) {
+    E.gotaOrigem.setAttribute('transform', `translate(0 ${O.y}) scale(.85 ${O.sy})`);
+    E.splash.setAttribute('r', O.splashR);
+  }
+
+  const Ch = S.choque;
+  E.choque.style.opacity = Ch ? Ch.op : 0;
+  if (Ch) { E.choque.style.width = Ch.w + 'px'; E.choque.style.height = Ch.h + 'px'; }
+
+  S.letters.forEach((L, j) => {
+    const el = E.letras[j];
+    el.style.transform = `translate(${L.x}px,${L.y}px) rotate(${L.rot}deg) scale(${L.sc * L.sx},${L.sc * L.sy})`;
+    el.style.opacity = L.op;
+    el.style.filter = L.blur > .05 ? `blur(${L.blur}px)` : 'none';
+  });
+  E.parteMix.style.clipPath = S.mixClip ? 'inset(-60% -30% 0 -30%)' : 'none';
+  E.palavra.style.clipPath = S.wordClip || 'none';
+  E.palavra.style.webkitMaskImage = E.palavra.style.maskImage = S.wordMask || 'none';
+
+  // ® e a gota
+  const R = S.reg, pd = S.drip;
+  const recuo = pd > 0 ? -4 * Math.sin(Math.PI * cl((pd - .55) / .12)) : 0;
+  E.selo.setAttribute('transform', `translate(${50 + R.x} ${50 + R.y + recuo}) rotate(${R.rot}) scale(${R.sx * R.sc} ${R.sc}) translate(-50 -50)`);
+  E.selo.style.opacity = R.op;
+
+  const ponta = 92;
+  let sx = 0, sy = 0, ty = 0, op = 1;
+  if (pd > 0 && pd < .35) { const f = outCubic(pd / .35); sx = f; sy = f; }
+  else if (pd >= .35 && pd < .55) { const q = inOutCubic((pd - .35) / .2); sx = 1 - .14 * q; sy = 1 + .35 * q; }
+  else if (pd >= .55 && pd < .78) {
+    const q = (pd - .55) / .23;
+    sx = .86 + .04 * q; sy = 1.35 - .2 * q;
+    ty = (m.chao - ponta - 28 * sy) * q * q;
+    op = q > .85 ? 1 - (q - .85) / .15 : 1;
+  }
+  E.gotaG.setAttribute('transform', `translate(50 ${ponta + ty}) scale(${sx} ${sy})`);
+  E.gota.style.opacity = sx ? op : 0;
+  const po = cl((pd - .76) / .24);
+  E.onda.setAttribute('cy', m.chao);
+  E.onda.setAttribute('rx', 44 * outCubic(po));
+  E.onda.setAttribute('ry', 7 * outCubic(po));
+  E.onda.style.opacity = po > 0 ? .8 * (1 - po) : 0;
+}
+
+// ================= relógio =================
+const celulas = [];
+const mosaico = document.getElementById('mosaico');
+const reduzir = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let fontesProntas = false, emFoco = null;
+
+IDEIAS.forEach((v, i) => { const c = criar(v, i); celulas.push(c); mosaico.appendChild(c.art); });
+
+const ro = new ResizeObserver(ents => { if (fontesProntas) ents.forEach(en => medir(en.target.closest('.celula')._c)); });
+const io = new IntersectionObserver(ents => ents.forEach(en => { en.target._c.visivel = en.isIntersecting; }));
+celulas.forEach(c => { ro.observe(c.el.palco); io.observe(c.art); });
+
+function focar(c) {
+  if (emFoco && emFoco !== c) emFoco.art.classList.remove('foco');
+  const entra = emFoco !== c;
+  c.art.classList.toggle('foco', entra);
+  emFoco = entra ? c : null;
+  document.body.style.overflow = entra ? 'hidden' : '';
+  c.inicio = performance.now();
+}
+addEventListener('keydown', e => { if (e.key === 'Escape' && emFoco) focar(emFoco); });
+
+function quadro(agora) {
+  for (const c of celulas) {
+    if (!c.m || !(c.visivel || c === emFoco)) continue;
+    const total = c.v.dur + SEGURA + SOME;
+    const t = reduzir ? c.v.dur + 100 : (agora - c.inicio) % total;
+    const S = estado();
+    c.v.fn(S, c, t);
+    if (!reduzir && t > c.v.dur + SEGURA) S.logoOp = 1 - cl((t - c.v.dur - SEGURA) / SOME);
+    aplicar(c, S);
+  }
+  requestAnimationFrame(quadro);
+}
+
+document.fonts.ready.then(() => {
+  fontesProntas = true;
+  const agora = performance.now();
+  celulas.forEach(c => { medir(c); c.inicio = agora; });
+  requestAnimationFrame(quadro);
+});
+</script></div>
+</body>
+</html>

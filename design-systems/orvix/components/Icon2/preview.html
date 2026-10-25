@@ -1,0 +1,95 @@
+<!-- @dsCard group="Iconografia" height=200 subtitle="Glifo Lucide por mask-image, herda currentColor. Tamanhos 14, 16 e 20px" page -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.ovx-stage{padding:18px;background:radial-gradient(120% 130% at 10% 0%,var(--surface-1) 0%,var(--bg-deep) 60%)}.row{display:flex;gap:18px;align-items:center;margin-bottom:16px;flex-wrap:wrap}.lbl{font:var(--type-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--text-subtle);width:100%}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const {
+  Icon
+} = window.ORVIXDesignSystem_019de6;
+const SET = ["droplet", "droplets", "spray-can", "target", "crosshair", "flask-conical", "beaker", "gauge", "wind", "sprout", "wrench", "shield-check", "file-text", "download", "factory"];
+function Demo() {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lbl"
+  }, "Herda currentColor"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'flex',
+      gap: 14,
+      color: 'var(--text-body)'
+    }
+  }, SET.slice(0, 8).map(n => /*#__PURE__*/React.createElement(Icon, {
+    key: n,
+    name: n,
+    size: 20
+  }))), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'flex',
+      gap: 14,
+      color: 'var(--verde-400)'
+    }
+  }, SET.slice(8).map(n => /*#__PURE__*/React.createElement(Icon, {
+    key: n,
+    name: n,
+    size: 20
+  })))), /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lbl"
+  }, "Tamanhos"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'flex',
+      gap: 14,
+      alignItems: 'center',
+      color: 'var(--text-body)'
+    }
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "target",
+    size: 14
+  }), /*#__PURE__*/React.createElement(Icon, {
+    name: "target",
+    size: 16
+  }), /*#__PURE__*/React.createElement(Icon, {
+    name: "target",
+    size: 20
+  }), /*#__PURE__*/React.createElement(Icon, {
+    name: "target",
+    size: 28
+  })), /*#__PURE__*/React.createElement("span", {
+    className: "orvix-mono"
+  }, "14 \xB7 16 \xB7 20 \xB7 28")), /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lbl"
+  }, "Em uso"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'flex',
+      gap: 9,
+      alignItems: 'center',
+      font: 'var(--type-body-sm)',
+      color: 'var(--text-muted)'
+    }
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "check",
+    size: 16,
+    style: {
+      color: 'var(--verde-400)'
+    }
+  }), "Calda mais fluida pela adequa\xE7\xE3o qu\xEDmica"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'flex',
+      gap: 9,
+      alignItems: 'center',
+      font: 'var(--type-body-sm)',
+      color: 'var(--text-muted)'
+    }
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "check",
+    size: 16,
+    style: {
+      color: 'var(--verde-400)'
+    }
+  }), "Gota uniforme com menor deriva")));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(Demo, null));
+</script></div></body></html>

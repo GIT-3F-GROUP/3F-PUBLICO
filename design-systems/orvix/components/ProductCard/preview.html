@@ -1,0 +1,19 @@
+<!-- @dsCard group="Produto" height=360 subtitle="Ficha de produto com a cor da linha e card de linha" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.stack{display:flex;flex-direction:column;gap:12px}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;align-items:start}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const h = React.createElement, F = React.Fragment;
+const { ProductCard, LineCard, LinkAction } = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return h("div", { className: "g" },
+    h(ProductCard, {
+      lineKey: "orv7", line: "Adjuvante premium", name: "ORV7 Drop Power",
+      claim: "Emulsificante, dispersante e antiespumante em um só produto.",
+      specs: [{ label: "Dose", value: "30 a 200 mL/ha" }, { label: "Embalagem", value: "5 L" }],
+      action: h(LinkAction, { href: "#" }, "Ver ficha técnica")
+    }),
+    h(LineCard, { lineKey: "orv7", badge: "Linha premium", name: "Adjuvantes e ORV7", promise: "Calda estável, gota uniforme e alvo bem coberto." }));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(h(Demo));
+</script></div></body></html>

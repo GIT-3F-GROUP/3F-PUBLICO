@@ -1,0 +1,80 @@
+<!-- @dsCard group="Effects" height=1720 subtitle="Principais limpos, tom sobre tom em amarelo e em preto, degradês, papel e as cores terciárias de uso raro" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN · Fundos de seção</title>
+<style>
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--ff-body);font-size:16px;line-height:1.55}
+.pg{padding:32px 40px 48px;max-width:1120px;margin:0 auto}
+h3{font-size:20px;font-weight:800;margin:0 0 4px}
+.desc{font-size:14px;color:var(--text-soft);margin:0 0 14px;max-width:72ch}
+.bloco+.bloco{margin-top:36px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid.tres{grid-template-columns:repeat(3,1fr)}
+.sec{height:210px;border-radius:14px;padding:26px 28px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid var(--rule-soft)}
+.sec .ey{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--brand-amarelo-principal)}
+.sec .tt{font-family:var(--ff-display);font-weight:800;font-size:26px;line-height:1.05;text-transform:uppercase;margin-top:8px}
+.sec .tt span{font-weight:600;color:var(--brand-amarelo-principal)}
+.claro .ey{color:var(--text-accent)}
+.claro .tt span{color:var(--text-accent)}
+.tom .ey{color:var(--brand-preto)}
+.tom .tt span{color:var(--brand-preto)}
+.terc{opacity:1}
+.selo{display:inline-block;margin-left:8px;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--rule-soft);border-radius:99px;padding:2px 8px;vertical-align:middle}
+.leg{font-size:12.5px;color:var(--text-muted);margin-top:8px}
+.leg b{color:var(--text-body)}
+code{font-family:var(--ff-mono);font-size:11.5px}
+.regras{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;font-size:14px;color:var(--text-soft)}
+.regras div{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:12px;padding:12px 14px}
+.regras b{display:block;color:var(--text-body)}
+@media (max-width:900px){.grid,.grid.tres,.regras{grid-template-columns:1fr}}
+.palheta-tom{position:absolute;right:-70px;top:-60px;width:220px;z-index:-1;display:block}
+.palheta-tom svg{width:100%;height:auto;display:block}
+.sec{overflow:hidden}
+</style></head><body><main class="pg">
+<div class="bloco">
+  <h3>Principais</h3>
+  <p class="desc">Limpos, sem efeito. São o padrão de todas as páginas e peças. No escuro, o fundo é o preto absoluto (#000).</p>
+  <div class="grid">
+    <div><div class="sec bry-sec-dark-1"><div class="ey">Preto absoluto</div><div class="tt">Feito para a rentabilidade <span>do produtor.</span></div></div><div class="leg"><b>Preto</b> · <code>.bry-sec-dark-1</code> · o padrão institucional</div></div>
+    <div><div class="sec bry-sec-light-1 claro"><div class="ey">Claro</div><div class="tt">Feito para a rentabilidade <span>do produtor.</span></div></div><div class="leg"><b>Suave</b> · <code>.bry-sec-light-1</code> · o fundo de leitura</div></div>
+  </div>
+</div>
+<div class="bloco">
+  <h3>Tom sobre tom</h3>
+  <p class="desc">A forma preferida de dar destaque: tons da mesma cor, sem contraste brusco. Amarelo com amarelo, preto com preto. Texto e logo em preto sobre os amarelos; sobre os pretos, em suave e amarelo.</p>
+  <div class="grid">
+    <div><div class="sec bry-sec-tom-amarelo-grad tom"><div class="ey">Amarelo tom sobre tom</div><div class="tt">Do detalhe <span>ao contraste.</span></div></div><div class="leg"><b>Amarelo</b> · <code>.bry-sec-tom-amarelo-grad</code> · detalhe → principal → contraste</div></div>
+    <div><div class="sec bry-sec-tom-amarelo-claro tom"><div class="ey">Amarelo claro</div><div class="tt">Luz de <span>fim de tarde.</span></div></div><div class="leg"><b>Claro</b> · <code>.bry-sec-tom-amarelo-claro</code> · amarelo claro → detalhe</div></div>
+    <div><div class="sec bry-sec-tom-preto-grad"><div class="ey">Preto tom sobre tom</div><div class="tt">Preto sobre <span>preto.</span></div></div><div class="leg"><b>Preto</b> · <code>.bry-sec-tom-preto-grad</code> · uma luz de preto mais claro no canto</div></div>
+    <div><div class="sec bry-sec-tom-preto bry-sec-palheta" style="position:relative"><span class="palheta-tom" aria-hidden="true"></span><div class="ey">Preto absoluto com camada</div><div class="tt">A palheta <span>em preto.</span></div></div><div class="leg"><b>Camadas</b> · <code>--tom-preto-1/2/3</code> · formas e cartões em pretos próximos</div></div>
+  </div>
+</div>
+<div class="bloco">
+  <h3>Alternativos · degradês e papel</h3>
+  <p class="desc">Para heróis, capas, aberturas e encerramentos: no máximo um alternativo por página.</p>
+  <div class="grid">
+    <div><div class="sec bry-sec-grad-ambar"><div class="ey">Degradê âmbar</div><div class="tt">Luz amarela <span>no canto.</span></div></div><div class="leg"><b>Âmbar</b> · <code>.bry-sec-grad-ambar</code> · do preto ao amarelo, pelo canto superior direito</div></div>
+    <div><div class="sec bry-sec-grad-aurora claro"><div class="ey">Degradê aurora</div><div class="tt">Halo amarelo <span>no claro.</span></div></div><div class="leg"><b>Aurora</b> · <code>.bry-sec-grad-aurora</code> · a versão clara</div></div>
+    <div><div class="sec bry-sec-papel claro"><div class="ey">Papel</div><div class="tt">A história <span>da semente.</span></div></div><div class="leg"><b>Papel</b> · <code>.bry-sec-papel</code> · linhas e pontos sutis, para conteúdo editorial</div></div>
+    <div><div class="sec bry-sec-grad-ambar bry-tex-pontos bry-tex-pontos--escuro bry-tex-pontos--fade-lado"><div class="ey">Combinação</div><div class="tt">Degradê com <span>textura no canto.</span></div></div><div class="leg">Degradê âmbar com a textura de pontos sumindo para o lado</div></div>
+  </div>
+</div>
+<div class="bloco">
+  <h3>Terciários · uso raro <span class="selo">marrom e laranjado</span></h3>
+  <p class="desc">Sombra marrom e laranjado são cores terciárias. Entram raramente, numa peça especial, nunca como fundo padrão nem em sequência.</p>
+  <div class="grid">
+    <div><div class="sec bry-sec-grad-marrom"><div class="ey">Degradê marrom</div><div class="tt">Do preto à <span>sombra marrom.</span></div></div><div class="leg"><b>Marrom</b> · <code>.bry-sec-grad-marrom</code> · sobe da base</div></div>
+    <div><div class="sec bry-sec-grad-laranjado"><div class="ey">Degradê laranjado</div><div class="tt">O laranjado <span>entra pela base.</span></div></div><div class="leg"><b>Laranjado</b> · <code>.bry-sec-grad-laranjado</code> · do canto inferior esquerdo</div></div>
+  </div>
+</div>
+<div class="regras">
+  <div><b>Principal primeiro</b>A página começa e se resolve com os fundos limpos. Tom sobre tom é o destaque preferido; o degradê, o ocasional.</div>
+  <div><b>Sem caixa de alto contraste</b>Nada de caixa preta sobre o claro nem caixa branca sobre o preto. Cartões e blocos usam um tom da mesma cor do fundo.</div>
+  <div><b>Texto sobre o lado escuro</b>No degradê, o texto fica na parte mais escura. Os nomes antigos <code>dark-3</code>, <code>dark-4</code>, <code>light-2</code> e <code>light-4</code> abrem o marrom, o âmbar, o papel e a aurora.</div>
+</div>
+</main>
+<script>
+(() => {
+  const L = window.BarygenDesignSystem_a84d4b.BARYGEN_LOGO;
+  document.querySelectorAll('.palheta-tom').forEach(el => { el.innerHTML = L.svg({ type: 'palheta', color: 'var(--tom-preto-3)' }); });
+})();
+</script>
+</body></html>

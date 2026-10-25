@@ -1,0 +1,32 @@
+<!-- @dsCard group="Cores" height=520 subtitle="Tom sobre tom: toda caixa à frente é sempre um pouco mais clara que a de trás, nunca mais escura" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.lbl{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}.ttl{font-family:var(--font-display);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin:0 0 10px}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.esc{display:flex;align-items:stretch;border-radius:var(--radius-card);overflow:hidden;border:var(--hairline)}.esc>div{flex:1;min-width:0;overflow-wrap:anywhere;min-height:92px;padding:10px 8px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px}.esc b{font-family:var(--font-mono);font-size:11px;font-weight:400;color:inherit}.esc span{font-size:11px;opacity:.82}.ex{border-radius:var(--radius-card);padding:14px;border:var(--hairline)}.ex .c{border-radius:var(--radius-md);padding:12px;border:var(--hairline)}.ex .f{margin-top:8px;height:34px;border-radius:var(--radius-sm);border:1px solid var(--field-border);display:flex;align-items:center;padding:0 10px;font:var(--type-body-sm);color:var(--text-muted)}.ok,.no{display:flex;align-items:flex-start;gap:6px;font:var(--type-body-sm);margin-top:8px}.ok{color:var(--text-accent)}.no{color:var(--text-muted)}.no b{color:var(--text-danger);font-weight:800}p.r{margin:14px 0 0;font:var(--type-body-sm);color:var(--text-body)}.ex--no{--a:var(--grafite-700);--b:var(--grafite-800);--c:var(--grafite-1000)}[data-theme="light"] .ex--no{--a:var(--branco);--b:var(--web-2);--c:var(--web-3)}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const h = React.createElement, F = React.Fragment;
+const { Icon } = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return h(F, null,
+    h("p", { className: "ttl" }, "Escada do tema escuro · do fundo para a frente"),
+    h("div", { className: "esc" },
+      [["preto", "#101720", "bg"], ["grafite-800", "#18202a", "surface-1"], ["grafite-700", "#212b33", "surface-2"], ["grafite-600", "#2d373b", "surface-3"], ["grafite-500", "#3a4448", "surface-4"]].map(([n, x, s]) =>
+        h("div", { key: n, style: { background: "var(--" + n + ")", color: "var(--claro)" } }, h("b", null, n), h("span", null, s + " · " + x)))),
+    h("p", { className: "ttl", style: { marginTop: 14 } }, "Escada do tema claro"),
+    h("div", { className: "esc" },
+      [["web-1", "#f0f2f4", "bg"], ["branco-50", "#fbfcfd", "surface-1 · fundo-grafite"], ["branco", "#ffffff", "surface-2 a 4"]].map(([n, x, s]) =>
+        h("div", { key: n, style: { background: "var(--" + n + ")", color: "var(--preto)" } }, h("b", null, n), h("span", null, s + " · " + x)))),
+    h("div", { className: "g", style: { marginTop: 14 } },
+      h("div", null,
+        h("div", { className: "ex", style: { background: "var(--bg)" } },
+          h("div", { className: "c", style: { background: "var(--surface-2)" } }, h("span", { className: "lbl" }, "card um passo acima"),
+            h("div", { className: "f", style: { background: "var(--field-bg)" } }, "campo: um tom mais claro"))),
+        h("div", { className: "ok" }, h(Icon, { name: "check", size: 14 }), "Fundo mais escuro atrás; card e campo sobem em claridade.")),
+      h("div", null,
+        h("div", { className: "ex ex--no", style: { background: "var(--a)" } },
+          h("div", { className: "c", style: { background: "var(--b)" } }, h("span", { className: "lbl" }, "card mais escuro que o fundo"),
+            h("div", { className: "f", style: { background: "var(--c)" } }, "campo afundado, mais escuro"))),
+        h("div", { className: "no" }, h("b", null, "×"), "Nenhuma camada à frente pode ser mais escura que a de trás."))),
+    h("p", { className: "r" }, "A caixa de baixo não precisa ser a mais escura: dado o tom dela, a próxima à frente é sempre um tom mais clara. Trilho de abas, área de mídia e campo também sobem um tom; nada afunda."));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(h(Demo));
+</script></div></body></html>

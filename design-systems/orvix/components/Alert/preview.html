@@ -1,0 +1,19 @@
+<!-- @dsCard group="Feedback" height=380 subtitle="Alerta por tom, toast de vidro e status inline" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.stack{display:flex;flex-direction:column;gap:12px}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;align-items:start}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const h = React.createElement, F = React.Fragment;
+const { Alert, Toast, InlineStatus } = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return h("div", { className: "stack" },
+    h(Alert, { tone: "warning", title: "Dado técnico pendente de conferência" }, "Confirme a dose no rótulo vigente antes de publicar."),
+    h(Alert, { tone: "success", title: "Ficha publicada" }, "A página do produto já reflete o cadastro da base técnica."),
+    h(Alert, { tone: "danger", title: "Contaminação cruzada detectada" }, "Registre a limpeza do circuito antes da próxima calda."),
+    h(Alert, { tone: "info" }, "Dados técnicos vêm da base técnica de produtos."),
+    h("div", { className: "row" },
+      h(Toast, { icon: "check-circle-2", progress: 64 }, "Lead registrado. O consultor entra em contato."),
+      h(InlineStatus, null, "Dados sincronizados com a base técnica")));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(h(Demo));
+</script></div></body></html>

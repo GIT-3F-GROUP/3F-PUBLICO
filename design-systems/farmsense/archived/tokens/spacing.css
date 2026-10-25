@@ -1,0 +1,10 @@
+/* FarmSense — Espaçamento. Escala de 4 px com saltos editoriais. */
+:root{
+  --s-1:4px;--s-2:8px;--s-3:12px;--s-4:16px;--s-5:24px;
+  --s-6:32px;--s-7:48px;--s-8:64px;--s-9:96px;--s-10:128px;
+  --gutter:24px; /* @kind spacing */
+  --wrap-max:1280px; /* @kind spacing */
+  --wrap-tight:980px; /* @kind spacing */
+  --measure:66ch; /* @kind spacing */
+  --bp-xs:540px; /* @kind spacing */--bp-sm:820px;--bp-md:1280px;--bp-lg:1600px;
+}

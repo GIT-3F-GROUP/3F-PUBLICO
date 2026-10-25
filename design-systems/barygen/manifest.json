@@ -1,0 +1,802 @@
+{
+  "manifestVersion": 3,
+  "name": "BARYGEN Design System",
+  "namespace": "BarygenDesignSystem_a84d4b",
+  "files": [
+    "assets/Elementos/README.md",
+    "assets/Icone de app/README.md",
+    "assets/Logos/README.md",
+    "assets/notes/SKILL.from-standalone.md",
+    "catalogo/elementos.html",
+    "components/Accordion/Accordion.d.ts",
+    "components/Accordion/README.md",
+    "components/Alert/Alert.d.ts",
+    "components/Alert/README.md",
+    "components/Avatar/Avatar.d.ts",
+    "components/Avatar/README.md",
+    "components/AvatarGroup/AvatarGroup.d.ts",
+    "components/AvatarGroup/README.md",
+    "components/Badge/Badge.d.ts",
+    "components/Badge/README.md",
+    "components/BgDark1/README.md",
+    "components/BgLight1/README.md",
+    "components/BgScrims/README.md",
+    "components/Breadcrumb/Breadcrumb.d.ts",
+    "components/Breadcrumb/README.md",
+    "components/Button/Button.d.ts",
+    "components/Button/README.md",
+    "components/ButtonGroup/ButtonGroup.d.ts",
+    "components/ButtonGroup/README.md",
+    "components/CTAStrip/CTAStrip.d.ts",
+    "components/CTAStrip/README.md",
+    "components/Card/Card.d.ts",
+    "components/Card/README.md",
+    "components/Checkbox/Checkbox.d.ts",
+    "components/Checkbox/README.md",
+    "components/Chip/Chip.d.ts",
+    "components/Chip/README.md",
+    "components/Core/README.md",
+    "components/Data/README.md",
+    "components/Dropdown/Dropdown.d.ts",
+    "components/Dropdown/README.md",
+    "components/EffectsHover/README.md",
+    "components/EmptyState/EmptyState.d.ts",
+    "components/EmptyState/README.md",
+    "components/Feedback/README.md",
+    "components/Field/Field.d.ts",
+    "components/Field/README.md",
+    "components/Forms/README.md",
+    "components/Fundos/README.md",
+    "components/Hero/Hero.d.ts",
+    "components/Hero/README.md",
+    "components/Icon/Icon.d.ts",
+    "components/Icon/README.md",
+    "components/IconButton/IconButton.d.ts",
+    "components/IconButton/README.md",
+    "components/Index/README.md",
+    "components/Index2/Login.jsx",
+    "components/Index2/Pedidos.jsx",
+    "components/Index2/Preferencias.jsx",
+    "components/Index2/README.md",
+    "components/Index2/Shell.jsx",
+    "components/Index2/VisaoGeral.jsx",
+    "components/Index3/Campos.jsx",
+    "components/Index3/Contato.jsx",
+    "components/Index3/Hibrido.jsx",
+    "components/Index3/Home.jsx",
+    "components/Index3/README.md",
+    "components/Index3/Sections.jsx",
+    "components/Input/Input.d.ts",
+    "components/Input/README.md",
+    "components/InputGroup/InputGroup.d.ts",
+    "components/InputGroup/README.md",
+    "components/KPI/KPI.d.ts",
+    "components/KPI/README.md",
+    "components/LoginCard/LoginCard.d.ts",
+    "components/LoginCard/README.md",
+    "components/Logo/Logo.d.ts",
+    "components/Logo/README.md",
+    "components/LogoConstrucao/README.md",
+    "components/LogoElementos/README.md",
+    "components/LogoUso/README.md",
+    "components/LogoVersoes/README.md",
+    "components/MidiasSociais/README.md",
+    "components/Modal/Modal.d.ts",
+    "components/Modal/README.md",
+    "components/Navbar/Navbar.d.ts",
+    "components/Navbar/README.md",
+    "components/Navigation/README.md",
+    "components/Pagination/Pagination.d.ts",
+    "components/Pagination/README.md",
+    "components/Patterns/README.md",
+    "components/PillTabs/PillTabs.d.ts",
+    "components/PillTabs/README.md",
+    "components/ProductCard/ProductCard.d.ts",
+    "components/ProductCard/README.md",
+    "components/Progress/Progress.d.ts",
+    "components/Progress/README.md",
+    "components/QtyStepper/QtyStepper.d.ts",
+    "components/QtyStepper/README.md",
+    "components/Radio/README.md",
+    "components/Radio/Radio.d.ts",
+    "components/Range/README.md",
+    "components/Range/Range.d.ts",
+    "components/SearchBox/README.md",
+    "components/SearchBox/SearchBox.d.ts",
+    "components/SecoesPalheta/README.md",
+    "components/SectionDivider/README.md",
+    "components/SectionDivider/SectionDivider.d.ts",
+    "components/Select/README.md",
+    "components/Select/Select.d.ts",
+    "components/SideMenu/README.md",
+    "components/SideMenu/SideMenu.d.ts",
+    "components/SiteFooter/README.md",
+    "components/SiteFooter/SiteFooter.d.ts",
+    "components/Skeleton/README.md",
+    "components/Skeleton/Skeleton.d.ts",
+    "components/Spinner/README.md",
+    "components/Spinner/Spinner.d.ts",
+    "components/Stage/README.md",
+    "components/Stage/Stage.d.ts",
+    "components/Steps/README.md",
+    "components/Steps/Steps.d.ts",
+    "components/Switch/README.md",
+    "components/Switch/Switch.d.ts",
+    "components/Table/README.md",
+    "components/Table/Table.d.ts",
+    "components/Tabs/README.md",
+    "components/Tabs/Tabs.d.ts",
+    "components/Textarea/README.md",
+    "components/Textarea/Textarea.d.ts",
+    "components/Textura/README.md",
+    "components/Toast/README.md",
+    "components/Toast/Toast.d.ts",
+    "components/Tooltip/README.md",
+    "components/Tooltip/Tooltip.d.ts",
+    "components/Upload/README.md",
+    "components/Upload/Upload.d.ts",
+    "components/Video/README.md",
+    "components/bundle.css",
+    "components/bundle.js",
+    "components/lib/react-dom.production.min.js",
+    "components/lib/react.production.min.js",
+    "docs/_ds_bundle.js",
+    "docs/_ds_manifest.json",
+    "fonts/BeVietnamPro-Black.ttf",
+    "fonts/BeVietnamPro-Bold.ttf",
+    "fonts/BeVietnamPro-BoldItalic.ttf",
+    "fonts/BeVietnamPro-ExtraBold.ttf",
+    "fonts/BeVietnamPro-Italic.ttf",
+    "fonts/BeVietnamPro-Medium.ttf",
+    "fonts/BeVietnamPro-MediumItalic.ttf",
+    "fonts/BeVietnamPro-Regular.ttf",
+    "fonts/BeVietnamPro-SemiBold.ttf",
+    "fonts/Commissioner-400.woff2",
+    "fonts/Commissioner-500.woff2",
+    "fonts/Commissioner-600.woff2",
+    "fonts/Commissioner-700.woff2",
+    "guidelines/brand-area-protecao.card.html",
+    "guidelines/brand-composicao-nome.card.html",
+    "guidelines/brand-iconografia.card.html",
+    "guidelines/brand-logo-por-fundo.card.html",
+    "guidelines/brand-logos-principais.card.html",
+    "guidelines/brand-marcas-reduzidas.card.html",
+    "guidelines/colors-cmyk.card.html",
+    "guidelines/colors-combinacoes.card.html",
+    "guidelines/colors-escala-claro.card.html",
+    "guidelines/colors-escala-contraste.card.html",
+    "guidelines/colors-escala-detalhe.card.html",
+    "guidelines/colors-escala-laranjado.card.html",
+    "guidelines/colors-escala-marrom.card.html",
+    "guidelines/colors-escala-preto.card.html",
+    "guidelines/colors-escala-principal.card.html",
+    "guidelines/colors-escala-suave.card.html",
+    "guidelines/colors-funcionais.card.html",
+    "guidelines/colors-oficiais.card.html",
+    "guidelines/colors-proporcao.card.html",
+    "guidelines/spacing-elevacao.card.html",
+    "guidelines/spacing-escala.card.html",
+    "guidelines/spacing-grid.card.html",
+    "guidelines/spacing-raios.card.html",
+    "guidelines/type-escala.card.html",
+    "guidelines/type-familia.card.html",
+    "guidelines/type-pesos.card.html",
+    "guidelines/type-rotulos.card.html",
+    "guidelines/type-titulos.card.html",
+    "tokens.css",
+    "ui_kits/portal-do-produtor/README.md",
+    "ui_kits/site-institucional/README.md"
+  ],
+  "libraries": [
+    {
+      "name": "react",
+      "version": "18.3.1",
+      "global": "React",
+      "file": "components/lib/react.production.min.js"
+    },
+    {
+      "name": "react-dom",
+      "version": "18.3.1",
+      "global": "ReactDOM",
+      "file": "components/lib/react-dom.production.min.js"
+    }
+  ],
+  "components": [
+    {
+      "name": "Avatar",
+      "summary": "Avatar circular com iniciais (ou foto) — consultores, usuários do portal."
+    },
+    {
+      "name": "AvatarGroup",
+      "summary": "Pilha de avatares com contador — equipe de consultores de uma região."
+    },
+    {
+      "name": "Badge",
+      "summary": "Selo de status ou etiqueta de produto — texto curto, caixa alta, pílula."
+    },
+    {
+      "name": "Button",
+      "summary": "Botão de ação — a hierarquia da tela nasce dele: um primário, o resto secundário/contorno/fantasma."
+    },
+    {
+      "name": "ButtonGroup",
+      "summary": "Grupo segmentado de botões para alternar recortes de um mesmo dado (dia/semana/safra)."
+    },
+    {
+      "name": "Card",
+      "summary": "Cartão base — a caixa de conteúdo padrão do sistema (raio 14px, borda 1px, sem sombra em repouso)."
+    },
+    {
+      "name": "Chip",
+      "summary": "Filtro selecionável de uma lista — safra, finalidade, região."
+    },
+    {
+      "name": "BARYGEN_ICONS"
+    },
+    {
+      "name": "Icon",
+      "summary": "Ícone de linha oficial da BARYGEN — use sempre que uma interface precisar de um glifo; nunca desenhe SVG novo à mão."
+    },
+    {
+      "name": "IconButton",
+      "summary": "Botão quadrado (42px) ou circular para uma ação sem texto — busca, fechar, avançar."
+    },
+    {
+      "name": "Logo",
+      "summary": "Logo oficial BARYGEN em SVG, com a versão escolhida pelo fundo; na dúvida entre arranjos, use a horizontal."
+    },
+    {
+      "name": "BARYGEN_LOGO"
+    },
+    {
+      "name": "Tooltip",
+      "summary": "Bolha preta de apoio, sempre acima do alvo."
+    },
+    {
+      "name": "Accordion",
+      "summary": "Perguntas frequentes e fichas técnicas dobradas."
+    },
+    {
+      "name": "KPI",
+      "summary": "Indicador de resultado — produtividade, campos, ciclo."
+    },
+    {
+      "name": "ProductCard",
+      "summary": "Cartão de híbrido — 280px, topo preto (ou amarelo) com o ícone da marca."
+    },
+    {
+      "name": "Table",
+      "summary": "Tabela de conteúdo técnico — cabeçalho micro em caixa alta, linhas de 14px."
+    },
+    {
+      "name": "Alert",
+      "summary": "Aviso fixo no fluxo da página — resultado de envio, estoque, atualização técnica."
+    },
+    {
+      "name": "EmptyState",
+      "summary": "Estado vazio com caminho de saída — nunca uma tela em branco."
+    },
+    {
+      "name": "Modal",
+      "summary": "Janela de confirmação — decisão que não pode acontecer por engano."
+    },
+    {
+      "name": "Progress",
+      "summary": "Barra de progresso determinada (envio, preenchimento de cadastro)."
+    },
+    {
+      "name": "Skeleton",
+      "summary": "Placeholder de carregamento com brilho horizontal."
+    },
+    {
+      "name": "Spinner",
+      "summary": "Carregamento indeterminado — anel neutro com topo amarelo-contraste."
+    },
+    {
+      "name": "Toast",
+      "summary": "Confirmação flutuante e passageira — preta, com selo amarelo."
+    },
+    {
+      "name": "Checkbox",
+      "summary": "Caixa de marcação de 18px com accent-color amarelo-contraste."
+    },
+    {
+      "name": "Field",
+      "summary": "Invólucro de campo: rótulo, controle e mensagem de apoio na vertical."
+    },
+    {
+      "name": "Input",
+      "summary": "Campo de texto padrão — 11px/14px de padding, borda 1.5px, raio 8px."
+    },
+    {
+      "name": "InputGroup",
+      "summary": "Campo com unidade colada — área em hectares, sacas, valores."
+    },
+    {
+      "name": "QtyStepper",
+      "summary": "Contador de quantidade — sacas, bolsas, hectares inteiros."
+    },
+    {
+      "name": "Radio",
+      "summary": "Escolha única em lista curta (2–4 opções) — safra verão, safrinha, irrigado."
+    },
+    {
+      "name": "Range",
+      "summary": "Controle deslizante para faixas aproximadas (população, área)."
+    },
+    {
+      "name": "SearchBox",
+      "summary": "Campo de busca com o ícone oficial à esquerda."
+    },
+    {
+      "name": "Select",
+      "summary": "Lista suspensa com a seta oficial (SVG embutido no CSS)."
+    },
+    {
+      "name": "Switch",
+      "summary": "Chave de preferência com efeito imediato (não precisa de \"Salvar\")."
+    },
+    {
+      "name": "Textarea",
+      "summary": "Campo de texto longo — altura mínima de 96px, redimensionável na vertical."
+    },
+    {
+      "name": "Upload",
+      "summary": "Área de envio de arquivo com borda tracejada."
+    },
+    {
+      "name": "Breadcrumb",
+      "summary": "Trilha de navegação — sempre no topo do conteúdo, nunca dentro de cartão."
+    },
+    {
+      "name": "Dropdown",
+      "summary": "Menu suspenso de conta e ações secundárias — sombra nível 3, largura 220px."
+    },
+    {
+      "name": "Navbar",
+      "summary": "Barra superior da marca: logo à esquerda, links no centro, uma ação à direita."
+    },
+    {
+      "name": "Pagination",
+      "summary": "Paginação numérica de listas longas (catálogo, notícias, campos)."
+    },
+    {
+      "name": "PillTabs",
+      "summary": "Alternador compacto em pílula para recortes curtos — grãos, silagem, ambos."
+    },
+    {
+      "name": "SideMenu",
+      "summary": "Menu lateral de 240px para portais e sistemas."
+    },
+    {
+      "name": "Steps",
+      "summary": "Indicador de progresso de formulário longo — cadastro, pedido, inscrição em evento."
+    },
+    {
+      "name": "Tabs",
+      "summary": "Abas de conteúdo de uma mesma página — características, posicionamento, resultados."
+    },
+    {
+      "name": "CTAStrip",
+      "summary": "Faixa amarela de conversão, entre seções."
+    },
+    {
+      "name": "Hero",
+      "summary": "Herói de página ou de produto, sobre o fundo escuro (padrão) ou claro da marca; em destaque, sobre um degradê (dark-3 marrom, dark-4 âmbar, light-4 aurora)."
+    },
+    {
+      "name": "LoginCard",
+      "summary": "Cartão de acesso — logo centralizada, campos, botão de largura total."
+    },
+    {
+      "name": "SectionDivider",
+      "summary": "Divisor de parte, em página longa — preto, título grande, números de apoio."
+    },
+    {
+      "name": "SiteFooter",
+      "summary": "Rodapé institucional preto, 1,4fr + três colunas de links."
+    },
+    {
+      "name": "Stage",
+      "summary": "Palco de demonstração — a caixa em que o manual exibe componentes."
+    },
+    {
+      "name": "BgDark1",
+      "group": "Effects",
+      "summary": "Preto puro — padrão institucional, sem ornamento",
+      "page": true
+    },
+    {
+      "name": "BgLight1",
+      "group": "Effects",
+      "summary": "Fundo de leitura padrão (#FBF9F5)",
+      "page": true
+    },
+    {
+      "name": "BgScrims",
+      "group": "Effects",
+      "summary": "Legibilidade sobre imagem — scrim e cápsula",
+      "page": true
+    },
+    {
+      "name": "Core",
+      "group": "Components",
+      "summary": "Botões, selos, chips, avatares, tooltip",
+      "page": true
+    },
+    {
+      "name": "Data",
+      "group": "Components",
+      "summary": "Tabela, indicadores, cartão de híbrido, acordeão",
+      "page": true
+    },
+    {
+      "name": "EffectsHover",
+      "group": "Effects",
+      "summary": "24 comportamentos de hover e press — passe o mouse para ver",
+      "page": true
+    },
+    {
+      "name": "Feedback",
+      "group": "Components",
+      "summary": "Alertas, toast, modal, progresso, vazio",
+      "page": true
+    },
+    {
+      "name": "Forms",
+      "group": "Components",
+      "summary": "Campos, seleção, opções, upload",
+      "page": true
+    },
+    {
+      "name": "Fundos",
+      "group": "Effects",
+      "summary": "Fundos de seção: os principais, limpos (escuro e claro), e os alternativos, com degradês entre o preto e as cores da marca e o papel com linhas sutis.",
+      "page": true
+    },
+    {
+      "name": "Index",
+      "group": "Catálogo",
+      "summary": "Índice do catálogo visual",
+      "page": true
+    },
+    {
+      "name": "Index2",
+      "group": "Portal do produtor",
+      "summary": "Acesso, visão geral, campos, pedidos e preferências",
+      "page": true
+    },
+    {
+      "name": "Index3",
+      "group": "Site institucional",
+      "summary": "Home, híbrido, campos, eventos e contato — clicável",
+      "page": true
+    },
+    {
+      "name": "LogoConstrucao",
+      "group": "Marca",
+      "summary": "Construção da logo BARYGEN: anatomia, o módulo B, a malha, as proporções e as medidas das versões horizontal e vertical.",
+      "page": true
+    },
+    {
+      "name": "LogoElementos",
+      "group": "Marca",
+      "summary": "Os elementos da logo separados (palheta, hélice de DNA, símbolo e logotipo), os nomes de cada peça no SVG e as cores que os elementos podem receber.",
+      "page": true
+    },
+    {
+      "name": "LogoUso",
+      "group": "Marca",
+      "summary": "Regras de uso da logo: quando usar horizontal, vertical ou só o símbolo, tamanhos mínimos, ícone de app para a App Store e usos incorretos.",
+      "page": true
+    },
+    {
+      "name": "LogoVersoes",
+      "group": "Marca",
+      "summary": "As quatro versões da logo (principal, principal branca, monocromática preta e monocromática branca) nos arranjos horizontal e vertical, e qual usar em cada fun…",
+      "page": true
+    },
+    {
+      "name": "MidiasSociais",
+      "group": "Marca",
+      "summary": "Regras para publicações no Instagram e no Facebook: formatos (9:16, 4:5 e 16:9) e margens de segurança para publicação normal e patrocinada.",
+      "page": true
+    },
+    {
+      "name": "Navigation",
+      "group": "Components",
+      "summary": "Barra, abas, trilha, paginação, passos, menus",
+      "page": true
+    },
+    {
+      "name": "Patterns",
+      "group": "Components",
+      "summary": "Herói, faixa de conversão, acesso, rodapé",
+      "page": true
+    },
+    {
+      "name": "SecoesPalheta",
+      "group": "Effects",
+      "summary": "Seções alternativas com as curvas da palheta: borda curva, forma contínua de cima a baixo, faixa de transição e contornos sutis, sempre de borda a borda.",
+      "page": true
+    },
+    {
+      "name": "Textura",
+      "group": "Effects",
+      "summary": "A única textura da marca: pontos adensados com opacidade de 0 a 15%, a ser usada com cautela.",
+      "page": true
+    },
+    {
+      "name": "Video",
+      "group": "Marca",
+      "summary": "Padrão de vídeo da BARYGEN: o encerramento com a logo (padrão e opcionais), a legenda de nome e a posição de cada elemento na tela.",
+      "page": true
+    }
+  ],
+  "assetGroups": [
+    {
+      "name": "Logos",
+      "tile": "l",
+      "order": [
+        "Logo_BARYGEN_horizontal_principal.svg",
+        "Logo_BARYGEN_horizontal_principal_branca.svg",
+        "Logo_BARYGEN_horizontal_monocromatica_branca.svg",
+        "Logo_BARYGEN_horizontal_monocromatica_preta.svg",
+        "Logo_BARYGEN_vertical_principal.svg",
+        "Logo_BARYGEN_vertical_principal_branca.svg",
+        "Logo_BARYGEN_vertical_monocromatica_branca.svg",
+        "Logo_BARYGEN_vertical_monocromatica_preta.svg"
+      ],
+      "files": [
+        {
+          "path": "assets/Logos/Logo_BARYGEN_horizontal_principal.svg",
+          "id": "6f22a5b66c0bc5a7045f163aef3290eb"
+        },
+        {
+          "path": "assets/Logos/Logo_BARYGEN_horizontal_principal_branca.svg",
+          "id": "748a666c722732197754718ae5e99c47"
+        },
+        {
+          "path": "assets/Logos/Logo_BARYGEN_horizontal_monocromatica_branca.svg",
+          "id": "aca14f306435786e98cbe9632d840c90"
+        },
+        {
+          "path": "assets/Logos/Logo_BARYGEN_horizontal_monocromatica_preta.svg",
+          "id": "5512341b2dacd3f72f18f37116a6dbd6"
+        },
+        {
+          "path": "assets/Logos/Logo_BARYGEN_vertical_principal.svg",
+          "id": "20acfa9ae9574be5a22126753cfa2499"
+        },
+        {
+          "path": "assets/Logos/Logo_BARYGEN_vertical_principal_branca.svg",
+          "id": "59aa6b500deefafb16c9bf7a6d07d340"
+        },
+        {
+          "path": "assets/Logos/Logo_BARYGEN_vertical_monocromatica_branca.svg",
+          "id": "34b66443ba9d8d1483f9a43052788b38"
+        },
+        {
+          "path": "assets/Logos/Logo_BARYGEN_vertical_monocromatica_preta.svg",
+          "id": "cec40ccdb19d1f0099b6bb29f817e4f5"
+        }
+      ]
+    },
+    {
+      "name": "Elementos",
+      "order": [
+        "Simbolo_BARYGEN_principal.svg",
+        "Simbolo_BARYGEN_monocromatico_branco.svg",
+        "Simbolo_BARYGEN_monocromatico_preto.svg",
+        "Elemento_BARYGEN_palheta_amarelo.svg",
+        "Elemento_BARYGEN_palheta_preta.svg",
+        "Elemento_BARYGEN_palheta_branca.svg",
+        "Elemento_BARYGEN_helice_dna_preto.svg",
+        "Elemento_BARYGEN_helice_dna_branco.svg",
+        "Elemento_BARYGEN_helice_dna_amarelo.svg",
+        "Logotipo_BARYGEN_preto.svg",
+        "Logotipo_BARYGEN_branco.svg"
+      ],
+      "files": [
+        {
+          "path": "assets/Elementos/Simbolo_BARYGEN_principal.svg",
+          "id": "885ae1caee36d99267088c24109fe161"
+        },
+        {
+          "path": "assets/Elementos/Simbolo_BARYGEN_monocromatico_branco.svg",
+          "id": "0d459e08484ac58cd88272277ac77386"
+        },
+        {
+          "path": "assets/Elementos/Simbolo_BARYGEN_monocromatico_preto.svg",
+          "id": "7523eef78e80304dbfed55c256b9324a"
+        },
+        {
+          "path": "assets/Elementos/Elemento_BARYGEN_palheta_amarelo.svg",
+          "id": "a56437531c14aa6dfab43d272a55e9e4"
+        },
+        {
+          "path": "assets/Elementos/Elemento_BARYGEN_palheta_preta.svg",
+          "id": "51ef359ec10b93d94c4e333c5fcfd6a8"
+        },
+        {
+          "path": "assets/Elementos/Elemento_BARYGEN_palheta_branca.svg",
+          "id": "5ff1f9a5fcae8d0990bb34bdeef4b050"
+        },
+        {
+          "path": "assets/Elementos/Elemento_BARYGEN_helice_dna_preto.svg",
+          "id": "a4410f03d0112f5785cbdd7a447881c3"
+        },
+        {
+          "path": "assets/Elementos/Elemento_BARYGEN_helice_dna_branco.svg",
+          "id": "93e8e8da6c99306cbea42fbfd8446d44"
+        },
+        {
+          "path": "assets/Elementos/Elemento_BARYGEN_helice_dna_amarelo.svg",
+          "id": "76c5b5a48f6083ac4381c68286689bdc"
+        },
+        {
+          "path": "assets/Elementos/Logotipo_BARYGEN_preto.svg",
+          "id": "183dd2a34f6e637c040ddef2a4406079"
+        },
+        {
+          "path": "assets/Elementos/Logotipo_BARYGEN_branco.svg",
+          "id": "dde8d18f6334fb13c7ad0ff46ce121c8"
+        }
+      ]
+    },
+    {
+      "name": "Ícone de app",
+      "order": [
+        "App_Icon_BARYGEN_preto_1024.svg",
+        "App_Icon_BARYGEN_amarelo_1024.svg"
+      ],
+      "files": [
+        {
+          "path": "assets/Ícone de app/App_Icon_BARYGEN_preto_1024.svg",
+          "id": "96630362723d287e014da8815a98a3ac"
+        },
+        {
+          "path": "assets/Ícone de app/App_Icon_BARYGEN_amarelo_1024.svg",
+          "id": "97827ec4f42715917692ab61a577190c"
+        }
+      ]
+    },
+    {
+      "name": "notes"
+    },
+    {
+      "name": "Icone de app"
+    }
+  ],
+  "storage": {
+    "files": {
+      "assets/Elementos/Elemento_BARYGEN_helice_dna_amarelo.svg": {
+        "store": "blob",
+        "id": "76c5b5a48f6083ac4381c68286689bdc",
+        "bytes": 2713,
+        "type": "image/svg+xml"
+      },
+      "assets/Elementos/Elemento_BARYGEN_helice_dna_branco.svg": {
+        "store": "blob",
+        "id": "93e8e8da6c99306cbea42fbfd8446d44",
+        "bytes": 2712,
+        "type": "image/svg+xml"
+      },
+      "assets/Elementos/Elemento_BARYGEN_helice_dna_preto.svg": {
+        "store": "blob",
+        "id": "a4410f03d0112f5785cbdd7a447881c3",
+        "bytes": 2711,
+        "type": "image/svg+xml"
+      },
+      "assets/Elementos/Elemento_BARYGEN_palheta_amarelo.svg": {
+        "store": "blob",
+        "id": "a56437531c14aa6dfab43d272a55e9e4",
+        "bytes": 451,
+        "type": "image/svg+xml"
+      },
+      "assets/Elementos/Elemento_BARYGEN_palheta_branca.svg": {
+        "store": "blob",
+        "id": "5ff1f9a5fcae8d0990bb34bdeef4b050",
+        "bytes": 450,
+        "type": "image/svg+xml"
+      },
+      "assets/Elementos/Elemento_BARYGEN_palheta_preta.svg": {
+        "store": "blob",
+        "id": "51ef359ec10b93d94c4e333c5fcfd6a8",
+        "bytes": 449,
+        "type": "image/svg+xml"
+      },
+      "assets/Elementos/Logotipo_BARYGEN_branco.svg": {
+        "store": "blob",
+        "id": "dde8d18f6334fb13c7ad0ff46ce121c8",
+        "bytes": 5115,
+        "type": "image/svg+xml"
+      },
+      "assets/Elementos/Logotipo_BARYGEN_preto.svg": {
+        "store": "blob",
+        "id": "183dd2a34f6e637c040ddef2a4406079",
+        "bytes": 5114,
+        "type": "image/svg+xml"
+      },
+      "assets/Elementos/Simbolo_BARYGEN_monocromatico_branco.svg": {
+        "store": "blob",
+        "id": "0d459e08484ac58cd88272277ac77386",
+        "bytes": 2974,
+        "type": "image/svg+xml"
+      },
+      "assets/Elementos/Simbolo_BARYGEN_monocromatico_preto.svg": {
+        "store": "blob",
+        "id": "7523eef78e80304dbfed55c256b9324a",
+        "bytes": 2973,
+        "type": "image/svg+xml"
+      },
+      "assets/Elementos/Simbolo_BARYGEN_principal.svg": {
+        "store": "blob",
+        "id": "885ae1caee36d99267088c24109fe161",
+        "bytes": 2994,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/Logo_BARYGEN_horizontal_monocromatica_branca.svg": {
+        "store": "blob",
+        "id": "aca14f306435786e98cbe9632d840c90",
+        "bytes": 7912,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/Logo_BARYGEN_horizontal_monocromatica_preta.svg": {
+        "store": "blob",
+        "id": "5512341b2dacd3f72f18f37116a6dbd6",
+        "bytes": 7911,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/Logo_BARYGEN_horizontal_principal.svg": {
+        "store": "blob",
+        "id": "6f22a5b66c0bc5a7045f163aef3290eb",
+        "bytes": 7932,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/Logo_BARYGEN_horizontal_principal_branca.svg": {
+        "store": "blob",
+        "id": "748a666c722732197754718ae5e99c47",
+        "bytes": 7939,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/Logo_BARYGEN_vertical_monocromatica_branca.svg": {
+        "store": "blob",
+        "id": "34b66443ba9d8d1483f9a43052788b38",
+        "bytes": 11223,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/Logo_BARYGEN_vertical_monocromatica_preta.svg": {
+        "store": "blob",
+        "id": "cec40ccdb19d1f0099b6bb29f817e4f5",
+        "bytes": 11222,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/Logo_BARYGEN_vertical_principal.svg": {
+        "store": "blob",
+        "id": "20acfa9ae9574be5a22126753cfa2499",
+        "bytes": 11243,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/Logo_BARYGEN_vertical_principal_branca.svg": {
+        "store": "blob",
+        "id": "59aa6b500deefafb16c9bf7a6d07d340",
+        "bytes": 11250,
+        "type": "image/svg+xml"
+      },
+      "assets/Ícone de app/App_Icon_BARYGEN_amarelo_1024.svg": {
+        "store": "blob",
+        "id": "97827ec4f42715917692ab61a577190c",
+        "bytes": 3090,
+        "type": "image/svg+xml"
+      },
+      "assets/Ícone de app/App_Icon_BARYGEN_preto_1024.svg": {
+        "store": "blob",
+        "id": "96630362723d287e014da8815a98a3ac",
+        "bytes": 3120,
+        "type": "image/svg+xml"
+      }
+    },
+    "blobBytesUsed": 111498
+  }
+}

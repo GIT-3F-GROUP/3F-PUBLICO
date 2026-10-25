@@ -1,0 +1,19 @@
+<!-- @dsCard group="Formulários" height=360 subtitle="Rótulo, hint, unidade, seleção, consentimento e alternância" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.stack{display:flex;flex-direction:column;gap:12px}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;align-items:start}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const h = React.createElement, F = React.Fragment;
+const { Field, Input, Select, Checkbox, Switch } = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return h("div", { className: "g" },
+    h("div", { className: "stack" },
+      h(Field, { label: "Município", hint: "Onde está a lavoura", htmlFor: "mun" }, h(Input, { id: "mun", iconLeft: "map-pin", placeholder: "Sorriso" })),
+      h(Field, { label: "Volume de calda", htmlFor: "vol" }, h(Input, { id: "vol", mono: true, unit: "L/ha", defaultValue: "80" }))),
+    h("div", { className: "stack" },
+      h(Field, { label: "Cultura", htmlFor: "cult" }, h(Select, { id: "cult", placeholder: "Selecione", options: ["Soja", "Milho", "Algodão", "Feijão"] })),
+      h(Checkbox, { label: "Aceito receber conteúdo técnico", description: "Consentimento de marketing, desmarcado por padrão" }),
+      h(Switch, { label: "Notificar por WhatsApp" })));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(h(Demo));
+</script></div></body></html>

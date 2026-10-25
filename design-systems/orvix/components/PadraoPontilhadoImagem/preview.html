@@ -1,0 +1,39 @@
+<!-- @dsCard group="Padrões de Fundo" height=760 subtitle="Padrão pontilhado ORVIX sobre imagem: as nove referências aprovadas (FP-01 a FP-09) para HTML e vídeo" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.lbl{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}.ttl{font-family:var(--font-display);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin:0 0 10px}.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}.it{margin:0}.it img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:var(--radius-md);border:var(--hairline);background:var(--surface-1)}.it figcaption{margin-top:8px;display:flex;flex-direction:column;gap:2px}.it b{font-family:var(--font-mono);font-size:11px;font-weight:400;color:var(--text-accent)}.it strong{font:var(--type-body-sm);font-weight:700;color:var(--text-strong)}.it span{font-size:12px;line-height:1.4;color:var(--text-muted)}.regras{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}.regras ul{margin:0;padding-left:18px;font:var(--type-body-sm);color:var(--text-body)}.regras li{margin:3px 0}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const h = React.createElement, F = React.Fragment;
+const { Eyebrow } = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return h(F, null,
+    h("div", { className: "g" },
+      [
+      ["/_blob/7d3273efc5734f6fab0afc267b0b9070", "FP-01", "Pontos de luz em onda", "Em uso no ESTRUTURALLE (vers\u00e3o A)."],
+      ["/_blob/2fd3f3c13be8964087fac2174a3d8e67", "FP-02", "Pontos de luz nas faixas do X", "Raio cresce em tr\u00eas faixas, na inclina\u00e7\u00e3o do X."],
+      ["/_blob/3f16aa46ef907f50149839e376a50702", "FP-03", "Pontos de sombra em onda", "Os pontos escurecem a imagem."],
+      ["/_blob/4207ef088bb34a8ad0efa2a35e5b7ef0", "FP-04", "Pontos de sombra nas faixas do X", "Pontos de 3 px a 30, 60 e 100%."],
+      ["/_blob/3cfd35f92893b169106c32fec55821d5", "FP-05", "Tela perfurada", "Modelo escuro. Em uso no ESTRUTURALLE (vers\u00e3o B)."],
+      ["/_blob/b01cc2ed13082bd6c6a2f0d502bec42f", "FP-06", "Pontos no verde do produto, em onda", "Cor do produto a 30%."],
+      ["/_blob/0cece73f9da8bcb39ba1fce04045f5c3", "FP-07", "Pontos no verde do produto, nas faixas do X", "Cor do produto a 30, 60 e 100% de 34%."],
+      ["/_blob/5361c77559f340e82efcb7cf31392685", "FP-08", "Base fechada em pontos, com malha de luz", "\u00danica \u00e1rea fechada aprovada."],
+      ["/_blob/a0801496bd235aeaff232b86c9f716d8", "FP-09", "Pontos de luz s\u00f3 nas sombras", "A malha aparece s\u00f3 onde a imagem \u00e9 escura."]
+      ].map(([src, c, t, d]) => h("figure", { className: "it", key: c },
+        h("img", { src, alt: c + ": " + t, loading: "lazy" }),
+        h("figcaption", null, h("b", null, c), h("strong", null, t), h("span", null, d))))),
+    h("div", { className: "regras" },
+      h("div", null, h("p", { className: "ttl" }, "Regras sobre imagem"),
+        h("ul", null,
+          h("li", null, "A cor da filmagem não muda. Nada de camada cinza ou azulada: escurece por curva."),
+          h("li", null, "O ponto é a própria imagem mais clara ou mais escura, ou a cor do produto em baixa opacidade. Nunca um ponto cinza chapado."),
+          h("li", null, "Pontos pequenos e próximos (11 px entre centros). Sem desenhos, molduras ou áreas fechadas, exceto FP-08."),
+          h("li", null, "A textura fica parada; a imagem é que se move por baixo dela."))),
+      h("div", null, h("p", { className: "ttl" }, "Recusados"),
+        h("ul", null,
+          h("li", null, "Malha fina uniforme, inclinada ou quadrada."),
+          h("li", null, "Malha que some no centro ou cresce da base; adensamento que fecha no escuro."),
+          h("li", null, "Meio-tom pelo brilho; pernas do X num canto; faixas largas."),
+          h("li", null, "Tela perfurada clara ou média; pontos no Verde 80; imagem em cor única.")))));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(h(Demo));
+</script></div></body></html>

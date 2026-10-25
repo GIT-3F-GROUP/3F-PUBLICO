@@ -1,0 +1,15 @@
+/* FarmSense — Elevação. Sombras são frias e verdes, nunca cinzas. */
+:root{
+  --sh-0:none; /* @kind shadow */
+  --sh-1:0 1px 2px rgba(0,65,65,.05);
+  --sh-2:0 4px 12px rgba(0,65,65,.06);
+  --sh-3:0 12px 30px rgba(0,65,65,.08);
+  --sh-4:0 24px 60px rgba(0,65,65,.10);
+  --sh-5:0 40px 100px rgba(0,65,65,.14);
+  --sh-inset-light:inset 0 1px 0 rgba(255,255,255,.6);
+  --sh-inset-dark:inset 0 1px 0 rgba(255,255,255,.06);
+  --sh-neon:0 0 0 1px rgba(51,255,194,.4),0 8px 24px -8px rgba(51,255,194,.6);
+  --sh-neon-green:0 0 0 1px rgba(10,220,20,.4),0 8px 24px -8px rgba(10,220,20,.6);
+  --blur-glass:16px; /* @kind other */
+  --sat-glass:140%; /* @kind other */
+}

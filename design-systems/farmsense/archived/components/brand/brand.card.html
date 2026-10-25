@@ -1,0 +1,41 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Brand" subtitle="Marca aplicada, amostras, padrões e citação." -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>Brand</title><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:18px;background:var(--bege-perola);font-family:var(--font-sans);color:var(--verde-sombra)}.k{font-size:9px;letter-spacing:.12em;text-transform:uppercase;opacity:.5;display:block;margin-bottom:8px}.pane{border-radius:var(--r-md);padding:16px}.pane-l{background:rgba(0,65,65,.035);border:1px solid rgba(0,65,65,.08)}.pane-d{background:var(--verde-sombra);color:#fff}</style></head>
+<body><div id="root"></div><script type="text/babel">
+const { Button, IconButton, Chip, NeonDot, Kicker, SectionHeader, Tile, GlassCard, Logo, Divider, Surface, Icon, Input, Textarea, Select, Checkbox, Radio, Switch, SearchField, KpiTile, StatRow, DataTable, BarMeter, Sparkline, ProgressRing, Alert, StatusPill, Tooltip, EmptyState, Skeleton, RuleCard, Tabs, DotNav, Breadcrumb, Pagination, TopBar, LogoCard, Swatch, PatternLayer, QuoteBlock } = window.FarmSenseDesignSystem_c4c636;
+const { useState } = React;
+function Demo(){ 
+  return (<div style={{display:'grid',gap:14}}>
+    <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:8}}>
+      <LogoCard base="../.." background="perola" tag="Pérola · cor" />
+      <LogoCard base="../.." background="estrada" tag="Estrada · cor" />
+      <LogoCard base="../.." background="sombra" tag="Sombra · mono branca" />
+      <LogoCard base="../.." background="anil" shape="compacta" tag="Anil · compacta" />
+    </div>
+    <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:8}}>
+      <Swatch name="Bege Pérola" hex="#F7F3ED" rgb="247, 243, 237" tag="Surface · default" minHeight={140} />
+      <Swatch name="Bege Estrada" hex="#E7D7BC" rgb="231, 215, 188" tag="Accent" minHeight={140} />
+      <Swatch name="Verde Sombra" hex="#004141" rgb="0, 65, 65" tag="Ink · primary" dark minHeight={140} />
+      <Swatch name="Ciano Neon" hex="#33FFC2" rgb="51, 255, 194" tag="Neon · detalhe" minHeight={140} />
+    </div>
+    <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:8}}>
+      {[['curvas-neon','Curvas neon',1],['grade','Grade aérea',1],['alvo','Alvo de precisão',1],['estratos','Perfil de solo',1]].map(([p,l])=>(
+        <div key={p} style={{position:'relative',overflow:'hidden',height:110,borderRadius:'var(--r-sm)',background:'var(--verde-sombra)'}}>
+          <PatternLayer pattern={p} corner="tr" />
+          <span className="k" style={{position:'absolute',left:10,bottom:6,color:'#fff',opacity:.6,margin:0}}>{l}</span>
+        </div>))}
+    </div>
+    <div className="pane pane-l" style={{background:'var(--bege-rastro)',position:'relative',overflow:'hidden',padding:24}}>
+      <PatternLayer pattern="curvas-tonal" corner="tr" />
+      <div style={{position:'relative'}}>
+        <QuoteBlock author="Nome Sobrenome" role="Eng. Agr., CEO">A precisão começa antes do plantio — começa na conversa com o produtor.</QuoteBlock>
+      </div></div>
+  </div>); }
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+if (window.lucide) window.lucide.createIcons();
+</script></body></html>

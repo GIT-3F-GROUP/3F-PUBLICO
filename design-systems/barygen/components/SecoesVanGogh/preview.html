@@ -1,0 +1,259 @@
+<!-- @dsCard group="Effects" height=9330 subtitle="O padrão de milho Van Gogh como fundo de seção: indicado quando o assunto é a própria BARYGEN. Texto sempre na forma amarela, faixas e sequências" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN · Seções Van Gogh</title>
+<style>
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--ff-body);font-size:16px;line-height:1.55}
+.pg{padding:48px 56px 72px;max-width:1120px;margin:0 auto}
+.ey{font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--text-accent)}
+h2{font-size:40px;font-weight:800;line-height:1.06;margin:12px 0 16px}
+h2 span{font-weight:600}
+h3{font-size:22px;font-weight:800;line-height:1.1;margin:0}
+.lead{font-size:18px;color:var(--text-soft);max-width:62ch;margin:0}
+.desc{font-size:15px;color:var(--text-soft);max-width:70ch;margin:0 0 18px}
+.sec{margin-top:64px}
+.sec-h{display:flex;gap:16px;align-items:baseline;margin-bottom:12px}
+.num{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--text-accent)}
+code{font-family:var(--ff-mono);font-size:12px}
+.demo{border-radius:16px;overflow:hidden;border:1px solid var(--rule-soft)}
+.demo + .leg{font-size:13px;color:var(--text-muted);margin-top:10px}
+.tt{font-family:var(--ff-display);text-transform:uppercase;font-weight:800;font-size:40px;line-height:1.05;margin:12px 0 14px}
+.tt span{font-weight:600}
+.big{font-family:var(--ff-display);font-weight:800;font-size:56px;line-height:1;margin:14px 0 8px}
+.acoes{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+/* módulo */
+.modulo{display:grid;grid-template-columns:auto minmax(0,1fr);gap:32px;align-items:center;background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:16px;padding:40px 28px 28px}
+.tile{width:230px;height:230px;background:var(--bry-padrao-van-gogh) 0 0/230px 230px;border-radius:4px;position:relative}
+.cota{position:absolute;font-size:11px;font-weight:700;color:var(--text-accent);letter-spacing:.06em}
+.cota.h{left:0;right:0;top:-20px;text-align:center}
+.repete{height:230px;border-radius:12px;background:var(--bry-padrao-van-gogh) 0 0/230px 230px repeat}
+/* regras */
+.regras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.regra{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;overflow:hidden}
+.regra .palco{height:170px;position:relative;overflow:hidden;background:var(--bry-padrao-van-gogh) 0 0/230px 230px}
+.regra .t{padding:14px 16px;font-size:14px;color:var(--text-soft)}
+.regra .t b{display:block;color:var(--text-body)}
+.sim{color:var(--fn-success);font-weight:800}.nao{color:var(--fn-error);font-weight:800}
+.mini-forma{position:absolute;inset:0;width:100%;height:100%}
+.mini-txt{position:absolute;font-family:var(--ff-display);font-weight:800;text-transform:uppercase;font-size:18px;line-height:1.1}
+.caixa-solta{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--brand-amarelo-principal);padding:14px 18px;border-radius:12px;font-weight:800;font-size:13px;text-transform:uppercase;font-family:var(--ff-display)}
+.faixas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.fx span{display:block;font-size:13px;color:var(--text-muted);margin-top:8px}
+.fx-sec{height:150px;border-radius:12px;background:var(--bry-padrao-van-gogh) 0 0/230px 230px;border-block:var(--f) solid var(--brand-amarelo-detalhe)}
+.partes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 18px}
+.parte{background:var(--brand-amarelo-suave);border:1px solid rgba(89,51,0,.08);border-radius:12px;padding:14px 16px;font-size:14px;color:var(--text-soft)}
+.parte > b:first-child{display:block;font-family:var(--ff-display);text-transform:uppercase;font-weight:800;font-size:13px;letter-spacing:.06em;color:var(--text-body);margin-bottom:4px}
+.palco-seq i,.palco-quebra i{position:absolute;left:0;right:0;height:10px;background:var(--brand-amarelo-detalhe)}
+.palco-seq .fx-t,.palco-quebra .fx-t{top:0}.palco-seq .fx-b,.palco-quebra .fx-b{bottom:0}.palco-seq .fx-m{top:80px}
+.pontas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 18px}
+.ponta{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;overflow:hidden}
+.ponta-palco{height:240px;background:var(--bry-padrao-van-gogh) 0 0/230px 230px;border-block:8px solid var(--brand-amarelo-detalhe)}
+.ponta-palco svg,.palco-mini svg{display:block;width:100%;height:100%}
+.ponta .t{padding:12px 14px;font-size:13.5px;color:var(--text-soft)}
+.ponta .t b{display:block;color:var(--text-body)}
+.palco-mini svg{position:absolute;inset:0}
+.palco-mini i{position:absolute;left:0;right:0;height:10px;background:var(--brand-amarelo-detalhe);z-index:1}
+.palco-mini .fx-t{top:0}.palco-mini .fx-b{bottom:0}
+.palco-quebra{background:var(--bry-padrao-van-gogh) 0 0/230px 230px}.palco-seq i,.palco-quebra i{z-index:1}
+.palco-quebra::after{content:"";position:absolute;left:0;right:0;top:85px;bottom:0;background:var(--bry-padrao-van-gogh) 0 0/230px 230px}
+.quando{background:var(--tom-claro-creme);border:1px solid var(--tom-claro-linha);border-radius:16px;padding:28px 28px 24px;margin-top:40px}
+.quando-h .num{text-transform:uppercase}
+.quando-h h3{margin:8px 0 10px}
+.usos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.uso{background:var(--brand-branco);border:1px solid var(--tom-claro-linha);border-radius:12px;padding:16px 18px;font-size:14px;color:var(--text-soft)}
+.uso > b{display:block;font-family:var(--ff-display);text-transform:uppercase;font-weight:800;font-size:14px;letter-spacing:.04em;color:var(--text-body)}
+.uso-sim{border:2px solid var(--brand-amarelo-principal)}
+.uso ul{margin:8px 0 10px;padding-left:18px}
+.uso li{margin:2px 0}
+.uso > span{display:block;font-size:13px;color:var(--text-muted)}
+.teste{margin:16px 0 0;font-size:15px;color:var(--text-soft)}
+@media (max-width:900px){.usos{grid-template-columns:minmax(0,1fr)}.pontas{grid-template-columns:repeat(2,minmax(0,1fr))}.faixas,.partes{grid-template-columns:minmax(0,1fr)}.regras{grid-template-columns:minmax(0,1fr)}.modulo{grid-template-columns:minmax(0,1fr)}.tt{font-size:32px}.big{font-size:44px}}
+@media (max-width:640px){.pg{padding:32px 16px 48px}h2{font-size:30px}}
+</style></head><body>
+<main class="pg">
+  <div class="ey">Efeitos · Seções alternativas</div>
+  <h2>Seções <span>Van Gogh</span></h2>
+  <p class="lead">O padrão de milho Van Gogh vira fundo de seção. Ele é tratado como imagem: nunca recebe texto por cima. O texto entra numa forma grande, em degradê entre o amarelo principal e o amarelo contraste, que entra pelo topo, sai pela base e encosta na borda direita ou esquerda. Toda seção Van Gogh abre e fecha com uma faixa fina de amarelo detalhe, de 15 a 50 px conforme a tela.</p>
+
+  <section class="sec quando">
+    <div class="quando-h">
+      <span class="num">Quando usar</span>
+      <h3>O fundo da própria <span class="bry-wordmark">BARY<b>GEN</b></span></h3>
+      <p class="desc">No dia a dia, o Van Gogh é uma alternativa rara, que entra quando alguém pede. A exceção é a empresa: <b>quando o assunto é só a</b> <span class="bry-wordmark">BARY<b>GEN</b></span>, sua origem e quem ela é, o milho pintado é o fundo indicado, e vale sugerir o uso mesmo sem pedido.</p>
+    </div>
+    <div class="usos">
+      <div class="uso uso-sim"><b>Indicado · pode sugerir</b><ul><li>Quem somos e "Sobre a BARYGEN"</li><li>História e origem da empresa</li><li>Propósito, valores e manifesto</li><li>Apresentação institucional da BARYGEN</li><li>Abertura de relatório anual e datas da empresa</li></ul><span>Numa página só sobre a BARYGEN, cabe uma sequência Van Gogh inteira.</span></div>
+      <div class="uso"><b>Só quando pedirem</b><ul><li>Home e páginas com vários assuntos</li><li>Híbridos, catálogo e campanhas de produto</li><li>Resultados de campo</li><li>Eventos e notícias</li></ul><span>Se a empresa divide o assunto com outra coisa, o Van Gogh fica de fora, a não ser que peçam.</span></div>
+      <div class="uso"><b>Não usar</b><ul><li>Portal do produtor e sistemas</li><li>Formulários, tabelas e fichas técnicas</li><li>Materiais de mais de uma empresa do 3F Group</li></ul><span>Materiais do grupo seguem o design system do 3F Group.</span></div>
+    </div>
+    <p class="teste"><b>O teste:</b> tirando o produto, o evento ou a campanha, o assunto continua sendo a BARYGEN? Então o Van Gogh é bem-vindo.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">01</span><h3>O padrão</h3></div>
+    <div class="modulo">
+      <div class="tile" role="img" aria-label="Um módulo do padrão de milho Van Gogh, 230 por 230 px"><span class="cota h">230 × 230 px</span></div>
+      <div>
+        <p class="desc"><b>Um módulo de 230 × 230 px</b>, que se repete na horizontal e na vertical sem emenda aparente. Use sempre no tamanho original: nunca amplie, reduza, gire ou recorte o módulo. Arquivo: <code>Padrão milho Van Gogh 230 px.png</code>, em Assets › Padrões. No código, <code>.bry-sec-vangogh</code> já aplica o padrão.</p>
+        <div class="repete" role="img" aria-label="O padrão repetido"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">02</span><h3>Faixas de amarelo detalhe</h3></div>
+    <p class="desc">Uma faixa no topo e outra na base, sempre em amarelo detalhe. A espessura acompanha a tela: 15 px no celular, até 50 px nas telas grandes (<code>--vg-faixa: clamp(15px, 3.4vw + 2px, 50px)</code>). A classe <code>.bry-sec-vangogh</code> já aplica as duas.</p>
+    <div class="faixas">
+      <div class="fx"><div class="fx-sec" style="--f:15px"></div><span>Celular · 15 px</span></div>
+      <div class="fx"><div class="fx-sec" style="--f:28px"></div><span>Tablet · cerca de 28 px</span></div>
+      <div class="fx"><div class="fx-sec" style="--f:50px"></div><span>Tela grande · 50 px</span></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">03</span><h3>Forma à direita · degradê do principal ao contraste</h3></div>
+    <p class="desc">O padrão aparece à esquerda; a forma entra pelo topo, sai pela base e encosta na borda direita, com a mesma curva da palheta, um degradê do amarelo principal ao amarelo contraste e um fio fino de amarelo detalhe na curva. Todo o texto fica dentro dela.</p>
+    <div class="demo">
+      <section class="bry-sec-vangogh">
+        <svg class="bry-vangogh__forma" viewBox="0 0 1440 560" preserveAspectRatio="xMaxYMid slice" aria-hidden="true"><defs><linearGradient id="vg-grad-1" x1="0" y1="0" x2=".35" y2="1"><stop offset="0" stop-color="#f6a200"/><stop offset="1" stop-color="#e18800"/></linearGradient></defs><path fill="url(#vg-grad-1)" d="M1440 0 H905 C 812 34 786 122 830 206 C 878 298 858 384 774 444 C 712 488 690 530 706 560 H1440 Z"/><path class="bry-borda-curva" d="M905 0 C 812 34 786 122 830 206 C 878 298 858 384 774 444 C 712 488 690 530 706 560"/></svg>
+        <div class="bry-vangogh__texto">
+          <div class="bry-eyebrow">Híbrido de milho · Lançamento</div>
+          <div class="tt">Feito para a rentabilidade <span>do produtor.</span></div>
+          <p>BG307 Max: o híbrido que fará frente aos melhores do mercado nos próximos anos. Veja a espiga de perto em um campo demonstrativo.</p>
+          <div class="acoes"><button class="bry-btn bry-btn--secondary">Encontrar um campo</button></div>
+        </div>
+      </section>
+    </div>
+    <p class="leg"><code>&lt;section class="bry-sec-vangogh"&gt;</code> + a forma <code>.bry-vangogh__forma</code> (curva à direita) + <code>.bry-vangogh__texto</code></p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">04</span><h3>Forma à esquerda · degradê invertido</h3></div>
+    <p class="desc">O mesmo desenho espelhado: a forma encosta na borda esquerda e o padrão fica à direita. Aqui o degradê começa no amarelo contraste, mais quente, e termina no principal; o texto continua em preto.</p>
+    <div class="demo">
+      <section class="bry-sec-vangogh bry-sec-vangogh--esquerda bry-sec-vangogh--contraste">
+        <svg class="bry-vangogh__forma" viewBox="0 0 1440 560" preserveAspectRatio="xMinYMid slice" aria-hidden="true"><defs><linearGradient id="vg-grad-2" x1="0" y1="0" x2=".35" y2="1"><stop offset="0" stop-color="#e18800"/><stop offset="1" stop-color="#f6a200"/></linearGradient></defs><path fill="url(#vg-grad-2)" d="M0 0 H535 C 628 34 654 122 610 206 C 562 298 582 384 666 444 C 728 488 750 530 734 560 H0 Z"/><path class="bry-borda-curva" d="M535 0 C 628 34 654 122 610 206 C 562 298 582 384 666 444 C 728 488 750 530 734 560"/></svg>
+        <div class="bry-vangogh__texto">
+          <div class="bry-eyebrow">Resultados · Safra 26/27</div>
+          <div class="big">218 sc/ha</div>
+          <p>Produtividade média nos campos demonstrativos acompanhados por consultores técnicos. Dado de exemplo.</p>
+          <div class="acoes"><button class="bry-btn bry-btn--secondary">Ver os campos</button></div>
+        </div>
+      </section>
+    </div>
+    <p class="leg"><code>.bry-sec-vangogh--esquerda</code> + <code>.bry-sec-vangogh--contraste</code></p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">05</span><h3>Fechamento de página com a logo</h3></div>
+    <p class="desc">Sobre o amarelo, a logo vai em monocromática preta. Bom para o fim de uma página, antes do rodapé.</p>
+    <div class="demo">
+      <section class="bry-sec-vangogh">
+        <svg class="bry-vangogh__forma" viewBox="0 0 1440 560" preserveAspectRatio="xMaxYMid slice" aria-hidden="true"><defs><linearGradient id="vg-grad-3" x1="0" y1="0" x2=".35" y2="1"><stop offset="0" stop-color="#e18800"/><stop offset="1" stop-color="#f6a200"/></linearGradient></defs><path fill="url(#vg-grad-3)" d="M1440 0 H905 C 812 34 786 122 830 206 C 878 298 858 384 774 444 C 712 488 690 530 706 560 H1440 Z"/><path class="bry-borda-curva" d="M905 0 C 812 34 786 122 830 206 C 878 298 858 384 774 444 C 712 488 690 530 706 560"/></svg>
+        <div class="bry-vangogh__texto">
+          <span data-logo aria-label="BARYGEN" role="img"></span>
+          <div class="tt" style="margin-top:28px">Fale com um consultor <span>da sua região.</span></div>
+          <div class="acoes"><button class="bry-btn bry-btn--secondary">Quero plantar BARYGEN</button></div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">06</span><h3>Sequência de seções Van Gogh</h3></div>
+    <p class="desc">Uma seção Van Gogh pode ser seguida por outra. Juntas, elas formam uma sequência dentro de <code>.bry-vangogh-seq</code>, e a forma passa a ser uma só, dividida entre as seções:</p>
+    <div class="partes">
+      <div class="parte"><b>Primeira seção</b>A forma pode nascer dentro da seção, <b>sem tocar o topo</b>, ou vir do topo. Sempre sai pela base.</div>
+      <div class="parte"><b>Seções do meio</b>A forma atravessa de cima a baixo, ligando a anterior à seguinte.</div>
+      <div class="parte"><b>Última seção</b>A forma vem do topo e pode terminar dentro da seção, <b>sem tocar a base</b>, ou sair pela base.</div>
+    </div>
+    <p class="desc"><b>Uma das pontas sempre encosta.</b> Se a primeira seção começa sem tocar o topo, a última termina tocando a base. Se a primeira vem do topo, a última pode ou não tocar a base. A forma também pode encostar nas duas pontas. O que não pode é uma sequência solta no começo e no fim.</p>
+    <div class="pontas"><div class="ponta"><div class="ponta-palco"><svg viewBox="0 0 1440 1120" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="vgp-0" gradientUnits="userSpaceOnUse" x1="760" y1="0" x2="1440" y2="0"><stop offset="0" stop-color="#f6a200"/><stop offset="1" stop-color="#e18800"/></linearGradient></defs><path fill="url(#vgp-0)" d="M1440 64 C 1280 40 1060 18 930 52 C 830 78 800 150 830 230 C 862 318 760 420 760 560 H1440 Z"/><path class="bry-borda-curva" d="M1440 64 C 1280 40 1060 18 930 52 C 830 78 800 150 830 230 C 862 318 760 420 760 560"/><g transform="translate(0 560)"><path fill="url(#vgp-0)" d="M1440 0 H760 C 760 90 850 150 838 260 C 826 370 760 430 760 560 H1440 Z"/><path class="bry-borda-curva" d="M760 0 C 760 90 850 150 838 260 C 826 370 760 430 760 560"/></g></svg></div><div class="t"><b><span class="sim">✓</span> Solta no início, encosta no fim</b>A primeira não toca o topo; então a última sai pela base.</div></div><div class="ponta"><div class="ponta-palco"><svg viewBox="0 0 1440 1120" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="vgp-1" gradientUnits="userSpaceOnUse" x1="760" y1="0" x2="1440" y2="0"><stop offset="0" stop-color="#f6a200"/><stop offset="1" stop-color="#e18800"/></linearGradient></defs><path fill="url(#vgp-1)" d="M1440 0 H760 C 760 90 850 150 838 260 C 826 370 760 430 760 560 H1440 Z"/><path class="bry-borda-curva" d="M760 0 C 760 90 850 150 838 260 C 826 370 760 430 760 560"/><g transform="translate(0 560)"><path fill="url(#vgp-1)" d="M1440 0 H760 C 760 120 860 200 840 300 C 820 400 790 470 900 506 C 1020 546 1260 520 1440 496 Z"/><path class="bry-borda-curva" d="M760 0 C 760 120 860 200 840 300 C 820 400 790 470 900 506 C 1020 546 1260 520 1440 496"/></g></svg></div><div class="t"><b><span class="sim">✓</span> Encosta no início, solta no fim</b>A primeira vem do topo; a última pode terminar dentro da seção.</div></div><div class="ponta"><div class="ponta-palco"><svg viewBox="0 0 1440 1120" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="vgp-2" gradientUnits="userSpaceOnUse" x1="760" y1="0" x2="1440" y2="0"><stop offset="0" stop-color="#f6a200"/><stop offset="1" stop-color="#e18800"/></linearGradient></defs><path fill="url(#vgp-2)" d="M1440 0 H760 C 760 90 850 150 838 260 C 826 370 760 430 760 560 H1440 Z"/><path class="bry-borda-curva" d="M760 0 C 760 90 850 150 838 260 C 826 370 760 430 760 560"/><g transform="translate(0 560)"><path fill="url(#vgp-2)" d="M1440 0 H760 C 760 90 850 150 838 260 C 826 370 760 430 760 560 H1440 Z"/><path class="bry-borda-curva" d="M760 0 C 760 90 850 150 838 260 C 826 370 760 430 760 560"/></g></svg></div><div class="t"><b><span class="sim">✓</span> Encosta nas duas pontas</b>A forma vem do topo e sai pela base, de ponta a ponta.</div></div><div class="ponta"><div class="ponta-palco"><svg viewBox="0 0 1440 1120" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="vgp-3" gradientUnits="userSpaceOnUse" x1="760" y1="0" x2="1440" y2="0"><stop offset="0" stop-color="#f6a200"/><stop offset="1" stop-color="#e18800"/></linearGradient></defs><path fill="url(#vgp-3)" d="M1440 64 C 1280 40 1060 18 930 52 C 830 78 800 150 830 230 C 862 318 760 420 760 560 H1440 Z"/><path class="bry-borda-curva" d="M1440 64 C 1280 40 1060 18 930 52 C 830 78 800 150 830 230 C 862 318 760 420 760 560"/><g transform="translate(0 560)"><path fill="url(#vgp-3)" d="M1440 0 H760 C 760 120 860 200 840 300 C 820 400 790 470 900 506 C 1020 546 1260 520 1440 496 Z"/><path class="bry-borda-curva" d="M760 0 C 760 120 860 200 840 300 C 820 400 790 470 900 506 C 1020 546 1260 520 1440 496"/></g></svg></div><div class="t"><b><span class="nao">✕</span> Solta nas duas pontas</b>Não pode: a forma ficaria boiando. Uma das pontas sempre encosta.</div></div></div>
+    <p class="desc">O milho corre contínuo de uma seção para a outra, sem emenda: o padrão fica no invólucro da sequência, não em cada seção. As faixas de amarelo detalhe ficam só no começo e no fim da sequência, nunca entre as seções.</p>
+    <div class="demo">
+      <div class="bry-vangogh-seq">
+        <section class="bry-sec-vangogh">
+          <svg class="bry-vangogh__forma" viewBox="0 0 1440 560" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="vgs-a1" gradientUnits="userSpaceOnUse" x1="760" y1="0" x2="1440" y2="0"><stop offset="0" stop-color="#f6a200"/><stop offset="1" stop-color="#e18800"/></linearGradient></defs><path fill="url(#vgs-a1)" d="M1440 64 C 1280 40 1060 18 930 52 C 830 78 800 150 830 230 C 862 318 760 420 760 560 H1440 Z"/><path class="bry-borda-curva" d="M1440 64 C 1280 40 1060 18 930 52 C 830 78 800 150 830 230 C 862 318 760 420 760 560"/></svg>
+          <div class="bry-vangogh__texto">
+            <div class="bry-eyebrow">Quem somos</div>
+            <div class="tt">Genética que nasce <span>no campo.</span></div>
+            <p>A BARYGEN é a indústria de sementes do 3F Group. Cada híbrido é selecionado e testado nas lavouras brasileiras antes de chegar ao produtor. Texto de exemplo.</p>
+          </div>
+        </section>
+        <section class="bry-sec-vangogh">
+          <svg class="bry-vangogh__forma" viewBox="0 0 1440 560" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="vgs-a2" gradientUnits="userSpaceOnUse" x1="760" y1="0" x2="1440" y2="0"><stop offset="0" stop-color="#f6a200"/><stop offset="1" stop-color="#e18800"/></linearGradient></defs><path fill="url(#vgs-a2)" d="M1440 0 H760 C 760 90 850 150 838 260 C 826 370 760 430 760 560 H1440 Z"/><path class="bry-borda-curva" d="M760 0 C 760 90 850 150 838 260 C 826 370 760 430 760 560"/></svg>
+          <div class="bry-vangogh__texto">
+            <div class="bry-eyebrow">Origem · Propósito</div>
+            <div class="tt">Do campo, <span>para o campo.</span></div>
+            <p>Levar ao produtor a genética que faz diferença na colheita. Texto de exemplo.</p>
+            <div class="acoes"><button class="bry-btn bry-btn--secondary">Conheça a nossa história</button></div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <p class="leg">Página "Sobre a BARYGEN": o assunto é só a empresa, o caso em que o Van Gogh é indicado. Duas seções: a primeira não toca o topo, por isso a última sai pela base. Faixas só nas pontas.</p>
+
+    <div class="demo" style="margin-top:32px">
+      <div class="bry-vangogh-seq">
+        <section class="bry-sec-vangogh bry-sec-vangogh--esquerda">
+          <svg class="bry-vangogh__forma" viewBox="0 0 1440 560" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="vgs-b1" gradientUnits="userSpaceOnUse" x1="760" y1="0" x2="1440" y2="0"><stop offset="0" stop-color="#f6a200"/><stop offset="1" stop-color="#e18800"/></linearGradient></defs><path fill="url(#vgs-b1)" d="M1440 0 H760 C 760 90 850 150 838 260 C 826 370 760 430 760 560 H1440 Z"/><path class="bry-borda-curva" d="M760 0 C 760 90 850 150 838 260 C 826 370 760 430 760 560"/></svg>
+          <div class="bry-vangogh__texto">
+            <div class="bry-eyebrow">01 · Escolha</div>
+            <div class="tt">O híbrido certo <span>para a sua área.</span></div>
+            <p>Ciclo, porte e sanidade pensados para cada região de plantio.</p>
+          </div>
+        </section>
+        <section class="bry-sec-vangogh bry-sec-vangogh--esquerda">
+          <svg class="bry-vangogh__forma" viewBox="0 0 1440 560" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="vgs-b2" gradientUnits="userSpaceOnUse" x1="760" y1="0" x2="1440" y2="0"><stop offset="0" stop-color="#f6a200"/><stop offset="1" stop-color="#e18800"/></linearGradient></defs><path fill="url(#vgs-b2)" d="M1440 0 H760 C 760 90 850 150 838 260 C 826 370 760 430 760 560 H1440 Z"/><path class="bry-borda-curva" d="M760 0 C 760 90 850 150 838 260 C 826 370 760 430 760 560"/></svg>
+          <div class="bry-vangogh__texto">
+            <div class="bry-eyebrow">02 · Plantio</div>
+            <div class="tt">Consultor perto <span>do começo ao fim.</span></div>
+            <p>Consultores técnicos visitam a lavoura nas fases mais importantes da safra.</p>
+          </div>
+        </section>
+        <section class="bry-sec-vangogh bry-sec-vangogh--esquerda">
+          <svg class="bry-vangogh__forma" viewBox="0 0 1440 560" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="vgs-b3" gradientUnits="userSpaceOnUse" x1="760" y1="0" x2="1440" y2="0"><stop offset="0" stop-color="#f6a200"/><stop offset="1" stop-color="#e18800"/></linearGradient></defs><path fill="url(#vgs-b3)" d="M1440 0 H760 C 760 120 860 200 840 300 C 820 400 790 470 900 506 C 1020 546 1260 520 1440 496 Z"/><path class="bry-borda-curva" d="M760 0 C 760 120 860 200 840 300 C 820 400 790 470 900 506 C 1020 546 1260 520 1440 496"/></svg>
+          <div class="bry-vangogh__texto">
+            <div class="bry-eyebrow">03 · Colheita</div>
+            <div class="tt">Resultado <span>que aparece no caixa.</span></div>
+            <div class="acoes"><button class="bry-btn bry-btn--secondary">Falar com um consultor</button></div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <p class="leg">Três seções com a forma à esquerda (<code>.bry-sec-vangogh--esquerda</code>): a forma vem do topo da primeira e termina dentro da última, sem tocar a base.</p>
+    <p class="desc" style="margin-top:18px"><b>No código:</b> as seções ficam dentro de <code>&lt;div class="bry-vangogh-seq"&gt;</code>. Cada forma usa <code>preserveAspectRatio="none"</code> e um degradê horizontal com <code>gradientUnits="userSpaceOnUse"</code> (de x 760 a 1440). Nas junções a curva passa em x 760, na vertical, por isso as partes se encaixam em qualquer altura. Os três desenhos (início solto, de ponta a ponta e fim solto) estão no README desta seção.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">07</span><h3>Regras</h3></div>
+    <div class="regras">
+      <div class="regra"><div class="palco"><svg class="mini-forma" viewBox="0 0 1440 560" preserveAspectRatio="xMaxYMid slice" aria-hidden="true"><defs><linearGradient id="vg-mini" x1="0" y1="0" x2=".35" y2="1"><stop offset="0" stop-color="#f6a200"/><stop offset="1" stop-color="#e18800"/></linearGradient></defs><path fill="url(#vg-mini)" d="M1440 0 H905 C 812 34 786 122 830 206 C 878 298 858 384 774 444 C 712 488 690 530 706 560 H1440 Z"/><path fill="none" stroke="#fbba00" stroke-width="3" vector-effect="non-scaling-stroke" d="M905 0 C 812 34 786 122 830 206 C 878 298 858 384 774 444 C 712 488 690 530 706 560"/></svg><span class="mini-txt" style="right:18px;top:60px;color:#000">Texto<br>na forma</span></div>
+        <div class="t"><b><span class="sim">✓</span> Forma de cima a baixo</b>Entra pelo topo, sai pela base e encosta numa borda. Degradê entre amarelo principal e amarelo contraste, com um fio fino de amarelo detalhe na curva.</div></div>
+      <div class="regra"><div class="palco"><span class="mini-txt" style="left:18px;top:58px;color:#fff">Texto sobre<br>o padrão</span></div>
+        <div class="t"><b><span class="nao">✕</span> Texto direto sobre o padrão</b>O padrão é imagem: nenhum título, texto, ícone ou logo por cima dele.</div></div>
+      <div class="regra"><div class="palco"><div class="caixa-solta">Caixa solta</div></div>
+        <div class="t"><b><span class="nao">✕</span> Caixa solta no meio</b>Cartão flutuando sobre o padrão não vale. A forma sempre atravessa a seção e encosta numa borda.</div></div>
+      <div class="regra"><div class="palco" style="background-size:460px 460px"></div>
+        <div class="t"><b><span class="nao">✕</span> Mudar o tamanho do padrão</b>Sempre 230 × 230 px. Nada de ampliar, reduzir, girar ou recortar o módulo.</div></div>
+      <div class="regra"><div class="palco"><svg class="mini-forma" viewBox="0 0 1440 560" preserveAspectRatio="xMaxYMid slice" aria-hidden="true"><path fill="#000" d="M1440 0 H905 C 812 34 786 122 830 206 C 878 298 858 384 774 444 C 712 488 690 530 706 560 H1440 Z"/></svg></div>
+        <div class="t"><b><span class="nao">✕</span> Forma em outra cor</b>Só o degradê entre amarelo principal e amarelo contraste. Nada de preto, branco ou terciárias.</div></div>
+      <div class="regra"><div class="palco" style="filter:saturate(.2)"></div>
+        <div class="t"><b><span class="nao">✕</span> Filtro ou efeito no padrão</b>Sem desbotar, escurecer, desfocar ou aplicar textura por cima.</div></div>
+      <div class="regra"><div class="palco palco-seq"><i class="fx-t"></i><i class="fx-b"></i></div>
+        <div class="t"><b><span class="sim">✓</span> Faixas só nas pontas</b>Numa sequência, a faixa de amarelo detalhe abre a primeira seção e fecha a última. O milho segue contínuo no meio.</div></div>
+      <div class="regra"><div class="palco palco-seq"><i class="fx-t"></i><i class="fx-m"></i><i class="fx-b"></i></div>
+        <div class="t"><b><span class="nao">✕</span> Faixa entre as seções</b>Dentro de uma sequência não há faixa nem fio separando as seções.</div></div>
+      <div class="regra"><div class="palco palco-mini"><svg viewBox="0 0 1440 1120" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="vgp-r" gradientUnits="userSpaceOnUse" x1="760" y1="0" x2="1440" y2="0"><stop offset="0" stop-color="#f6a200"/><stop offset="1" stop-color="#e18800"/></linearGradient></defs><path fill="url(#vgp-r)" d="M1440 64 C 1280 40 1060 18 930 52 C 830 78 800 150 830 230 C 862 318 760 420 760 560 H1440 Z"/><path class="bry-borda-curva" d="M1440 64 C 1280 40 1060 18 930 52 C 830 78 800 150 830 230 C 862 318 760 420 760 560"/><g transform="translate(0 560)"><path fill="url(#vgp-r)" d="M1440 0 H760 C 760 120 860 200 840 300 C 820 400 790 470 900 506 C 1020 546 1260 520 1440 496 Z"/><path class="bry-borda-curva" d="M760 0 C 760 120 860 200 840 300 C 820 400 790 470 900 506 C 1020 546 1260 520 1440 496"/></g></svg><i class="fx-t"></i><i class="fx-b"></i></div>
+        <div class="t"><b><span class="nao">✕</span> Solta nas duas pontas</b>Numa sequência, a forma sempre encosta no topo da primeira seção, na base da última, ou nos dois.</div></div>
+      <div class="regra"><div class="palco palco-quebra"><i class="fx-t"></i><i class="fx-b"></i></div>
+        <div class="t"><b><span class="nao">✕</span> Padrão recomeçando</b>Cada seção com o próprio fundo cria uma emenda no milho. O padrão fica no invólucro <code>.bry-vangogh-seq</code>.</div></div>
+    </div>
+    <p class="desc" style="margin-top:18px">No celular, o padrão vira uma faixa de 230 px no topo da seção e o texto vem logo abaixo, num bloco amarelo de borda a borda. No máximo uma seção ou uma sequência Van Gogh por página.</p>
+  </section>
+</main>
+<script>
+(() => {
+  const L = window.BarygenDesignSystem_a84d4b.BARYGEN_LOGO;
+  document.querySelectorAll('[data-logo]').forEach(el => { el.innerHTML = L.svg({ type: 'horizontal', version: 'mono-preta', height: 56 }); });
+})();
+</script>
+</body></html>

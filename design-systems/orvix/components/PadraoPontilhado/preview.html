@@ -1,0 +1,25 @@
+<!-- @dsCard group="Padrões de Fundo" height=560 subtitle="Padrão pontilhado ORVIX tom sobre tom: as três bases, em onda e nas faixas do X. No escuro o ponto é um tom mais claro que a base; no claro, um tom mais escuro" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.lbl{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}.ttl{font-family:var(--font-display);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin:0 0 10px}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.tile{border-radius:var(--radius-card);border:var(--hairline);min-height:190px}.tile .ovx-pp__conteudo{padding:16px;display:flex;flex-direction:column;gap:6px;min-height:190px}.tile h3{margin:auto 0 0;font-family:var(--font-display);font-weight:800;font-size:20px;line-height:1.1;color:var(--text-strong)}.par{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}.ok,.no{display:flex;align-items:center;gap:6px;font:var(--type-body-sm);margin-top:8px}.ok{color:var(--text-accent)}.no{color:var(--text-muted)}.no b{color:var(--text-danger);font-weight:800}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const h = React.createElement, F = React.Fragment;
+const { PadraoPontilhado, Eyebrow, Icon } = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return h(F, null,
+    h("div", { className: "g" },
+      [["preto", "Base preto", "bg-deep · preto ORVIX"], ["grafite", "Base grafite", "fundo-grafite · grafite-800"], ["degrade", "Base degradê", "grafite-800 → preto"]].map(([b, t, s]) =>
+        h(PadraoPontilhado, { key: b, className: "tile ovx-fundo--" + b },
+          h(Eyebrow, null, "Tom sobre tom"), h("span", { className: "lbl" }, s), h("h3", null, t)))),
+    h("div", { className: "par" },
+      h("div", null,
+        h(PadraoPontilhado, { desenho: "faixas", className: "tile ovx-fundo--preto" },
+          h(Eyebrow, null, "Faixas do X"), h("span", { className: "lbl" }, "raios 0,7 / 1,1 / 1,6 px · faixas de 205 px"), h("h3", null, "Mesma inclinação das pernas do X")),
+        h("div", { className: "ok" }, h(Icon, { name: "check", size: 14 }), "No escuro, pontos um tom mais claros que a base; no claro, um tom mais escuros.")),
+      h("div", null,
+        h("div", { "data-theme": "dark" }, h(PadraoPontilhado, { className: "tile ovx-fundo--grafite", style: { "--pontilhado-ponto": "rgba(8,12,18,.7)" } },
+          h(Eyebrow, { muted: true }, "Não use no escuro"), h("span", { className: "lbl" }, "ponto mais escuro que a base"), h("h3", null, "Fura o fundo e quebra o tom sobre tom"))),
+        h("div", { className: "no" }, h("b", null, "×"), "No escuro, ponto mais escuro que a base é proibido. No claro é o contrário: o ponto é um tom mais escuro."))));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(h(Demo));
+</script></div></body></html>

@@ -1,0 +1,3 @@
+Padrão de vídeo da BARYGEN: o encerramento com a logo (padrão e opcionais), a legenda de nome e a posição de cada elemento na tela.
+
+Todo vídeo termina com o encerramento **Linha de origem** (cerca de 4,3 s, logo centralizada, fundo preto ou claro). **Hélice gigante**, **Giro do grão** e **Três tempos** são opcionais e só entram quando forem pedidos. A legenda de nome segue o padrão **Da palheta**: símbolo à esquerda, hélice escrita, linha amarela com pontas transparentes, nome em caixa alta subindo, cargo e empresa ou fazenda descendo. Fica 3 s e sai. As margens de cada formato estão na página Mídias sociais.

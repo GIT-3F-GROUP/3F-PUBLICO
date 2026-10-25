@@ -1,0 +1,3 @@
+Botões: anatomia e tamanhos, a diferença entre botão, selo, chip e avatar, todas as variantes, qual botão usar em cada estilo de seção, botões de ícone e regras.
+
+Retângulo com cantos de 8 px, texto em negrito sem caixa alta; alturas 36, 44 (padrão) e 56 px. Variantes novas: `tom-preto` (camada de preto no preto absoluto), `tom-amarelo` (camada de amarelo claro sobre os amarelos), `vidro` (vidro amarelo sobre foto ou vídeo, ocasional) e `seta` (texto com seta que anda no hover). Dentro de seções escuras, o secundário vira tom sobre tom e o link fica amarelo; dentro de seções amarelas, o primário vira preto.

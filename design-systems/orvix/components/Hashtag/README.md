@@ -1,0 +1,3 @@
+# Hashtag
+
+Hashtag da comunidade.

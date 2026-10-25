@@ -1,0 +1,20 @@
+<!-- @dsCard group="Navegação" height=240 subtitle="Header de vidro com link ativo, trilha e abas" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.stack{display:flex;flex-direction:column;gap:12px}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;align-items:start}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const h = React.createElement, F = React.Fragment;
+const { Navbar, Breadcrumbs, Tabs, Logo, Button } = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return h("div", { className: "stack" },
+    h(Navbar, {
+      logo: h(Logo, { variant: "principal-sem-assinatura", size: "md" }),
+      current: "Linhas",
+      links: [{ label: "Tecnologia de Aplicação" }, { label: "Linhas" }, { label: "Blog" }, { label: "Sobre" }, { label: "Contato" }],
+      actions: h(Button, { variant: "primary", size: "sm" }, "Falar com consultor")
+    }),
+    h(Breadcrumbs, { items: [{ label: "Linhas", href: "#" }, { label: "Adjuvantes", href: "#" }, { label: "ORV7 Drop Power" }] }),
+    h(Tabs, { variant: "pill", tabs: ["Calda", "Gota", "Alvo"], value: "Gota" }));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(h(Demo));
+</script></div></body></html>

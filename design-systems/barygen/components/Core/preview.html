@@ -1,0 +1,34 @@
+<!-- @dsCard group="Components" height=300 subtitle="Botões, selos, chips, avatares, tooltip" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN</title>
+<script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{padding:20px;background:var(--brand-amarelo-suave);font-family:var(--ff-body)}.lab{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:8px}</style>
+</head><body><div id="root"></div><script type="text/babel">
+const B=window.BarygenDesignSystem_a84d4b;
+const {Button,IconButton,ButtonGroup,Badge,Chip,Avatar,AvatarGroup,Tooltip,Icon,Logo}=B;
+function Card(){return <div style={{display:'grid',gridTemplateColumns:'minmax(0,1fr)',gap:18}}>
+ <div><div className="lab">Botões</div><div className="bry-row">
+  <Button variant="primary">Primário</Button><Button variant="secondary">Secundário</Button>
+  <Button variant="outline">Contorno</Button><Button variant="ghost">Fantasma</Button>
+  <Button variant="danger">Destrutivo</Button><Button variant="link">Link de ação</Button>
+  <Button variant="primary" loading>Enviando</Button><Button variant="primary" disabled>Inativo</Button>
+ </div></div>
+ <div><div className="lab">Tamanhos · ícone · grupo</div><div className="bry-row">
+  <Button variant="primary" size="sm">Pequeno</Button>
+  <Button variant="primary" iconLeft={<Icon name="baixar" size={16} strokeWidth={2}/>}>Baixar catálogo</Button>
+  <Button variant="primary" size="lg">Grande</Button>
+  <IconButton label="Buscar" variant="secondary"><Icon name="buscar" size={17} strokeWidth={2}/></IconButton>
+  <IconButton label="Avançar" variant="primary" round><Icon name="avancar" size={17} strokeWidth={2}/></IconButton>
+  <ButtonGroup value="semana" options={[{value:'dia',label:'Dia'},{value:'semana',label:'Semana'},{value:'safra',label:'Safra'}]}/>
+ </div></div>
+ <div><div className="lab">Selos, chips, avatares</div><div className="bry-row">
+  <Badge tone="brand">Lançamento</Badge><Badge tone="dark">BG307 Max</Badge>
+  <Badge tone="success" dot>Disponível</Badge><Badge tone="warning" dot>Últimos lotes</Badge>
+  <Badge tone="error" dot>Esgotado</Badge><Badge tone="info" dot>Em análise</Badge><Badge tone="neutral">Arquivado</Badge>
+  <Chip>Safra verão</Chip><Chip selected>Safrinha</Chip><Chip removable>Alta densidade</Chip>
+  <Avatar initials="JM" size="sm"/><Avatar initials="BG" tone="dark" size="md"/>
+  <AvatarGroup people={[{initials:'NZ'},{initials:'FF'},{initials:'JM'},{initials:'AL'}]}/>
+  <Tooltip label="Consultor da sua região"/>
+ </div></div>
+</div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<Card/>);
+</script></body></html>

@@ -1,0 +1,26 @@
+<!-- @dsCard group="Components" height=380 subtitle="Alertas, toast, modal, progresso, vazio" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN</title>
+<script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{padding:20px;background:var(--brand-amarelo-suave);font-family:var(--ff-body)}.lab{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:8px}</style>
+</head><body><div id="root"></div><script type="text/babel">
+const B=window.BarygenDesignSystem_a84d4b;
+const {Alert,Toast,Modal,Progress,Skeleton,Spinner,EmptyState,Button}=B;
+function Card(){return <div style={{display:'grid',gridTemplateColumns:'minmax(0,1fr)',gap:16}}>
+ <Alert tone="success" title="Cadastro confirmado.">Você receberá o catálogo da safra 26/27 por e-mail.</Alert>
+ <Alert tone="warning" title="Últimos lotes disponíveis.">O BG307 Max está com estoque limitado na sua região.</Alert>
+ <Alert tone="error" title="Não foi possível enviar.">Verifique sua conexão e tente novamente.</Alert>
+ <Alert tone="info" title="Posicionamento atualizado.">Nova recomendação de população para o cerrado.</Alert>
+ <div className="bry-row" style={{gap:24,alignItems:'center'}}>
+  <Toast onClose={()=>{}}>Presença confirmada no 1º VIP Tour</Toast>
+  <Progress value={64}/><Spinner/>
+ </div>
+ <div className="bry-row" style={{gap:20,alignItems:'flex-start'}}>
+  <div style={{flex:'1 1 320px'}}><Modal embedded title="Confirmar presença?" actions={<><Button variant="ghost">Voltar</Button><Button variant="primary">Confirmar</Button></>}>
+   Sua vaga no 1º VIP Tour BARYGEN será reservada. A confirmação é intransferível e pode ser cancelada até 25/05.</Modal></div>
+  <div style={{flex:'1 1 240px'}}><EmptyState title="Nenhum campo encontrado" action={<Button variant="outline" size="sm">Limpar filtros</Button>}>
+   Ajuste os filtros ou amplie a região de busca para ver campos demonstrativos.</EmptyState></div>
+  <div style={{flex:'0 0 200px'}}><Skeleton/></div>
+ </div>
+</div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<Card/>);
+</script></body></html>

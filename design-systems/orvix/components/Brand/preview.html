@@ -1,0 +1,76 @@
+<!-- @dsCard group="Marca" height=900 subtitle="Os elementos de marca em uso: logo, eyebrow, cabeçalho de seção, callout, citação, hashtag e cápsula. Um bloco por elemento" page -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.blk{display:flex;flex-direction:column;gap:12px;padding:16px;border-radius:var(--radius-card);border:1px solid var(--border);background:var(--surface-1)}.lbl{font-family:var(--font-display);font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}.row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.full{grid-column:1/-1}.lg{display:grid;place-items:center;padding:36px 24px;border-radius:var(--radius-md);background:var(--surface-2);border:1px solid var(--border);min-height:200px}.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.trio>div{display:grid;place-items:center;padding:24px;min-height:150px;border-radius:var(--radius-md);background:var(--surface-2);border:1px solid var(--border)}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const {
+  Logo,
+  Eyebrow,
+  SectionHeading,
+  Callout,
+  PullQuote,
+  Hashtag,
+  Capsule,
+  TerritoryBadge
+} = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "g"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "blk full"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lbl"
+  }, "Logo \xB7 sempre monocrom\xE1tica, branca no escuro e preta no claro"), /*#__PURE__*/React.createElement("div", {
+    className: "lg"
+  }, /*#__PURE__*/React.createElement(Logo, {
+    variant: "principal",
+    size: "2xl"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "trio"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Logo, {
+    variant: "principal-sem-assinatura",
+    size: "xl"
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Logo, {
+    variant: "elemento-x",
+    size: "xl"
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Logo, {
+    variant: "clube",
+    size: "lg"
+  })))), /*#__PURE__*/React.createElement("div", {
+    className: "blk"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lbl"
+  }, "Eyebrow e cabe\xE7alho de se\xE7\xE3o"), /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement(Eyebrow, {
+    ornament: "rule"
+  }, "Tecnologia de aplica\xE7\xE3o"), /*#__PURE__*/React.createElement(Eyebrow, {
+    ornament: "dot",
+    muted: true
+  }, "Ficha t\xE9cnica"), /*#__PURE__*/React.createElement(Eyebrow, {
+    ornament: "chevron"
+  }, "ORV7")), /*#__PURE__*/React.createElement(SectionHeading, {
+    eyebrow: "Do preparo da calda ao alvo",
+    title: "Tr\xEAs frentes de a\xE7\xE3o, um \xFAnico objetivo.",
+    lead: "A arquitetura t\xE9cnica da ORVIX trabalha calda, gota e alvo de forma integrada."
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "blk"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lbl"
+  }, "Callout e cita\xE7\xE3o"), /*#__PURE__*/React.createElement(Callout, {
+    source: "Tese ORVIX"
+  }, "O segredo n\xE3o est\xE1 s\xF3 na dose. Est\xE1 na fisiologia."), /*#__PURE__*/React.createElement(PullQuote, {
+    author: "Nome Sobrenome",
+    role: "diretor comercial"
+  }, "O sucesso do agricultor \xE9 o sucesso da ORVIX.")), /*#__PURE__*/React.createElement("div", {
+    className: "blk"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lbl"
+  }, "Origem, hashtag e c\xE1psula"), /*#__PURE__*/React.createElement(TerritoryBadge, null), /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement(Hashtag, null), /*#__PURE__*/React.createElement(Capsule, {
+    icon: "map-pin"
+  }, "Sorriso, MT"))));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(Demo, null));
+</script></div></body></html>

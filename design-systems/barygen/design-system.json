@@ -1,0 +1,267 @@
+{
+  "v": 3,
+  "assetGroups": {
+    "Elementos": {
+      "files": {
+        "Elemento BARYGEN hélice DNA amarela.svg": {
+          "blob": "c951b9dd82467043a97207318d83b650",
+          "name": "Elemento BARYGEN hélice DNA amarela.svg",
+          "size": 2750,
+          "type": "image/svg+xml"
+        },
+        "Elemento BARYGEN hélice DNA branca.svg": {
+          "blob": "963574bbdc1fadc71e3e852ac943772c",
+          "name": "Elemento BARYGEN hélice DNA branca.svg",
+          "size": 2749,
+          "type": "image/svg+xml"
+        },
+        "Elemento BARYGEN hélice DNA preta.svg": {
+          "blob": "71b9c9f776f3ef740110f28340ab5ed6",
+          "name": "Elemento BARYGEN hélice DNA preta.svg",
+          "size": 2748,
+          "type": "image/svg+xml"
+        },
+        "Elemento BARYGEN palheta amarela.svg": {
+          "blob": "7f4851064cc90693b432d0acfe42e4ac",
+          "name": "Elemento BARYGEN palheta amarela.svg",
+          "size": 412,
+          "type": "image/svg+xml"
+        },
+        "Elemento BARYGEN palheta branca.svg": {
+          "blob": "4ad6b079c049a44ea869e68b54465b33",
+          "name": "Elemento BARYGEN palheta branca.svg",
+          "size": 411,
+          "type": "image/svg+xml"
+        },
+        "Elemento BARYGEN palheta preta.svg": {
+          "blob": "142d6219052323164c2b22e7b67b2f5b",
+          "name": "Elemento BARYGEN palheta preta.svg",
+          "size": 410,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Elementos da marca",
+      "order": [
+        "Elemento BARYGEN palheta amarela.svg",
+        "Elemento BARYGEN palheta preta.svg",
+        "Elemento BARYGEN palheta branca.svg",
+        "Elemento BARYGEN hélice DNA preta.svg",
+        "Elemento BARYGEN hélice DNA branca.svg",
+        "Elemento BARYGEN hélice DNA amarela.svg"
+      ],
+      "tile": "m"
+    },
+    "Favicon": {
+      "files": {
+        "Favicon BARYGEN-180.png": {
+          "blob": "ab797e0311d64ad0ab2a314675f62294",
+          "name": "Favicon BARYGEN-180.png",
+          "size": 6671,
+          "type": "image/png"
+        },
+        "Favicon BARYGEN-32.png": {
+          "blob": "1123eac8a01d9cce041adf2c6aef1179",
+          "name": "Favicon BARYGEN-32.png",
+          "size": 1190,
+          "type": "image/png"
+        },
+        "Favicon BARYGEN.svg": {
+          "blob": "d0e2330377033e94719ce295fd9c96bc",
+          "name": "Favicon BARYGEN.svg",
+          "size": 3036,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Favicon",
+      "order": [
+        "Favicon BARYGEN.svg",
+        "Favicon BARYGEN-32.png",
+        "Favicon BARYGEN-180.png"
+      ],
+      "tile": "m"
+    },
+    "Logos": {
+      "files": {
+        "Logo BARYGEN horizontal principal monocromática branca.svg": {
+          "blob": "53c8f03b0355f6ea34eebb6a212841ea",
+          "name": "Logo BARYGEN horizontal principal monocromática branca.svg",
+          "size": 11078,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN horizontal principal monocromática preta.svg": {
+          "blob": "87f624e84c982767a14b7dfd6c2bdb51",
+          "name": "Logo BARYGEN horizontal principal monocromática preta.svg",
+          "size": 11077,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN horizontal principal.svg": {
+          "blob": "384d7f698367c19400f66e16270f16e5",
+          "name": "Logo BARYGEN horizontal principal.svg",
+          "size": 11151,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN horizontal símbolo e nome monocromática branca.svg": {
+          "blob": "8f48a4c54ed201f0eb46af7a9cafc062",
+          "name": "Logo BARYGEN horizontal símbolo e nome monocromática branca.svg",
+          "size": 7923,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN horizontal símbolo e nome monocromática preta.svg": {
+          "blob": "f83d02328bb526a3632b384ac51f2d22",
+          "name": "Logo BARYGEN horizontal símbolo e nome monocromática preta.svg",
+          "size": 7922,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN horizontal símbolo e nome.svg": {
+          "blob": "363c0282ef0d9d8c4fd60355b0e1ef48",
+          "name": "Logo BARYGEN horizontal símbolo e nome.svg",
+          "size": 7981,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN nome e atividade monocromática branca.svg": {
+          "blob": "b089a99209aa667f0cb947735d66fcc9",
+          "name": "Logo BARYGEN nome e atividade monocromática branca.svg",
+          "size": 8226,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN nome e atividade monocromática preta.svg": {
+          "blob": "61a03aa9bd6555a956314f0ce59b6d43",
+          "name": "Logo BARYGEN nome e atividade monocromática preta.svg",
+          "size": 8225,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN nome monocromática branca.svg": {
+          "blob": "e914460dcbd15b9c070a69de210dc3f4",
+          "name": "Logo BARYGEN nome monocromática branca.svg",
+          "size": 5109,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN nome monocromática preta.svg": {
+          "blob": "7a7ff7aa60d25080a52bcfe0077da9cd",
+          "name": "Logo BARYGEN nome monocromática preta.svg",
+          "size": 5108,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN vertical principal monocromática branca.svg": {
+          "blob": "f418dc726cf8b5b9d6893b56a4dcaa53",
+          "name": "Logo BARYGEN vertical principal monocromática branca.svg",
+          "size": 16788,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN vertical principal monocromática preta.svg": {
+          "blob": "f6fccde31a20c886978c40b80c7121ca",
+          "name": "Logo BARYGEN vertical principal monocromática preta.svg",
+          "size": 16787,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN vertical principal.svg": {
+          "blob": "c358aa4736c3a0c1cb4e0b012ea99b3d",
+          "name": "Logo BARYGEN vertical principal.svg",
+          "size": 16861,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN vertical símbolo e nome monocromática branca.svg": {
+          "blob": "e43d0ec77d6742df2eb4d2595eb4ee6d",
+          "name": "Logo BARYGEN vertical símbolo e nome monocromática branca.svg",
+          "size": 12658,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN vertical símbolo e nome monocromática preta.svg": {
+          "blob": "b7eed2026e68fe61af0b83c8ae3a4697",
+          "name": "Logo BARYGEN vertical símbolo e nome monocromática preta.svg",
+          "size": 12657,
+          "type": "image/svg+xml"
+        },
+        "Logo BARYGEN vertical símbolo e nome.svg": {
+          "blob": "2b00573c763d7347188c8c9e6b8e4186",
+          "name": "Logo BARYGEN vertical símbolo e nome.svg",
+          "size": 12716,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Logos",
+      "order": [
+        "Logo BARYGEN horizontal principal.svg",
+        "Logo BARYGEN horizontal principal monocromática preta.svg",
+        "Logo BARYGEN horizontal principal monocromática branca.svg",
+        "Logo BARYGEN horizontal símbolo e nome.svg",
+        "Logo BARYGEN horizontal símbolo e nome monocromática preta.svg",
+        "Logo BARYGEN horizontal símbolo e nome monocromática branca.svg",
+        "Logo BARYGEN vertical principal.svg",
+        "Logo BARYGEN vertical principal monocromática preta.svg",
+        "Logo BARYGEN vertical principal monocromática branca.svg",
+        "Logo BARYGEN vertical símbolo e nome.svg",
+        "Logo BARYGEN vertical símbolo e nome monocromática preta.svg",
+        "Logo BARYGEN vertical símbolo e nome monocromática branca.svg",
+        "Logo BARYGEN nome e atividade monocromática preta.svg",
+        "Logo BARYGEN nome e atividade monocromática branca.svg",
+        "Logo BARYGEN nome monocromática preta.svg",
+        "Logo BARYGEN nome monocromática branca.svg"
+      ],
+      "tile": "l"
+    },
+    "Padroes": {
+      "files": {
+        "Padrão milho Van Gogh 230 px.png": {
+          "blob": "6416f2f64619b19443fc8084f8452d77",
+          "name": "Padrão milho Van Gogh 230 px.png",
+          "size": 33008,
+          "type": "image/png"
+        }
+      },
+      "name": "Padrões",
+      "order": [
+        "Padrão milho Van Gogh 230 px.png"
+      ],
+      "tile": "m"
+    },
+    "notes": {
+      "files": {},
+      "name": "notes",
+      "order": []
+    }
+  },
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-10-08T11:39:57Z",
+    "v": 1
+  },
+  "docs": {
+    "readme": "project/README.md",
+    "sections": [
+      "project/ui_kits/portal-do-produtor/README.md",
+      "project/ui_kits/site-institucional/README.md"
+    ]
+  },
+  "groups": [
+    "Logos",
+    "Padroes",
+    "notes",
+    "Elementos",
+    "Favicon"
+  ],
+  "lastChange": {
+    "at": "2026-10-16T23:59:00Z",
+    "by": "Claude",
+    "note": "Nova página Marca › Posts (25 modelos aprovados) e seção Foto e infográfico em Carrosséis. Regras novas: elementos naturais com desenho natural e amarelo detalhe nunca como fundo.",
+    "via": "Claude Code"
+  },
+  "layout": "files",
+  "libraries": [
+    {
+      "file": "components/lib/react.production.min.js",
+      "global": "React",
+      "name": "react",
+      "version": "18.3.1"
+    },
+    {
+      "file": "components/lib/react-dom.production.min.js",
+      "global": "ReactDOM",
+      "name": "react-dom",
+      "version": "18.3.1"
+    }
+  ],
+  "namespace": "BarygenDesignSystem_a84d4b",
+  "sections": {},
+  "title": "BARYGEN Design System"
+}

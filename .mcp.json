@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "3f-group-design": {
+      "command": "node",
+      "args": ["mcp/index.js"]
+    }
+  }
+}

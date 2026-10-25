@@ -1,0 +1,103 @@
+<!-- @dsCard group="Catálogo" height=2260 subtitle="O mapa do design system: o que existe, onde está e as regras que valem para tudo" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN · Mapa do design system</title>
+<style>
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--ff-body);font-size:var(--fs-body);line-height:1.55}
+.topo{position:relative;isolation:isolate;overflow:hidden;padding:var(--sec-y-sm) 0}
+.topo .forma{position:absolute;right:-60px;bottom:-90px;width:clamp(200px,32vw,380px);z-index:-1}
+.topo .forma svg{display:block;width:100%;height:auto}
+.topo h1{margin-top:20px;font-size:var(--fs-h1);font-weight:800;line-height:1.02;text-transform:uppercase}
+.topo h1 span{font-weight:600;color:var(--brand-amarelo-principal)}
+.topo p{margin-top:16px;font-size:var(--fs-body-lg);color:var(--text-on-dark-muted);max-width:52ch}
+.grupo{margin-top:var(--sec-y-sm)}
+.grupo-h{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
+.grupo-h h2{font-size:var(--fs-h5);font-weight:800;text-transform:uppercase}
+.grupo-h span{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:16px}
+.item{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;padding:18px 20px}
+.item b{display:block;font-family:var(--ff-display);font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.02em}
+.item p{margin-top:6px;font-size:14px;color:var(--text-soft);line-height:1.5}
+.item .onde{display:block;margin-top:10px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+.regras{margin-top:var(--sec-y-sm);background:var(--brand-amarelo-claro);border-radius:16px;padding:clamp(20px,3vw,36px)}
+.regras h2{font-size:var(--fs-h5);font-weight:800;text-transform:uppercase}
+.regras ul{margin-top:16px;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px 24px}
+.regras li{font-size:14px;color:var(--text-soft);padding-left:16px;position:relative}
+.regras li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:2px;background:var(--brand-preto)}
+.regras li b{color:var(--text-body)}
+.fim{padding-bottom:var(--sec-y)}
+</style></head><body>
+<header class="topo bry-sec-tom-preto-grad">
+  <span class="forma" aria-hidden="true"></span>
+  <div class="bry-wrap">
+    <span data-logo aria-label="BARYGEN" role="img"></span>
+    <h1>Mapa do <span>design system.</span></h1>
+    <p>Tudo o que existe na <span class="bry-wordmark">BARY<b>GEN</b></span>, onde encontrar e as regras que valem para qualquer peça, tela ou vídeo.</p>
+  </div>
+</header>
+<main class="bry-wrap fim">
+  <section class="grupo">
+    <div class="grupo-h"><span>01</span><h2>Marca</h2></div>
+    <div class="cards">
+      <div class="item"><b>Construção da logo</b><p>Anatomia, unidade H, proporções, área de proteção e tamanhos mínimos.</p><span class="onde">Marca</span></div>
+      <div class="item"><b>Versões da logo</b><p>Os 16 arquivos oficiais e qual usar em cada fundo.</p><span class="onde">Marca · Assets › Logos</span></div>
+      <div class="item"><b>Uso da logo</b><p>Horizontal, vertical ou símbolo; ícone de app, favicon; o que não fazer.</p><span class="onde">Marca · Assets › Favicon</span></div>
+      <div class="item"><b>Elementos da marca</b><p>A palheta e a hélice de DNA soltas, para o design; a hélice tom sobre tom.</p><span class="onde">Marca · Assets › Elementos</span></div>
+      <div class="item"><b>Vídeo</b><p>Encerramento padrão, opcionais e a legenda de nome.</p><span class="onde">Marca</span></div>
+      <div class="item"><b>Posts</b><p>Modelos aprovados de post no 9:16 e no 4:5.</p><span class="onde">Marca</span></div>
+      <div class="item"><b>Carrosséis</b><p>Modelos aprovados de carrossel: o que é fixo e o que é livre.</p><span class="onde">Marca</span></div>
+      <div class="item"><b>Mídias sociais</b><p>Margens de segurança de Reels, Stories, feed e horizontal.</p><span class="onde">Marca</span></div>
+    </div>
+  </section>
+  <section class="grupo">
+    <div class="grupo-h"><span>02</span><h2>Fundos e seções</h2></div>
+    <div class="cards">
+      <div class="item"><b>Fundos</b><p>Principais limpos, tom sobre tom, degradês, papel e terciários de uso raro.</p><span class="onde">Efeitos</span></div>
+      <div class="item"><b>Tom sobre tom</b><p>Amarelo com amarelo, preto com preto, caixas claras e o vidro amarelo.</p><span class="onde">Efeitos</span></div>
+      <div class="item"><b>Seções claras</b><p>Suave, branco e creme, alternados ou repetidos em sequência.</p><span class="onde">Efeitos</span></div>
+      <div class="item"><b>Seções da palheta</b><p>Bordas, formas contínuas, faixa de transição e contornos.</p><span class="onde">Efeitos</span></div>
+      <div class="item"><b>Seções Van Gogh</b><p>O padrão de milho como fundo; indicado quando o assunto é a própria BARYGEN. Faixas e sequências contínuas.</p><span class="onde">Efeitos · Assets › Padrões</span></div>
+      <div class="item"><b>Textura</b><p>Pontos de 0 a 15%, com cautela.</p><span class="onde">Efeitos</span></div>
+      <div class="item"><b>Gradientes de proteção</b><p>A camada escura que garante o texto sobre foto.</p><span class="onde">Efeitos</span></div>
+    </div>
+  </section>
+  <section class="grupo">
+    <div class="grupo-h"><span>03</span><h2>Componentes</h2></div>
+    <div class="cards">
+      <div class="item"><b>Botões</b><p>Tamanhos, variantes e qual botão em cada seção.</p><span class="onde">Componentes</span></div>
+      <div class="item"><b>Core</b><p>Selos, chips, avatares e tooltip.</p><span class="onde">Componentes</span></div>
+      <div class="item"><b>Formulários</b><p>Campos, seleção, opções e envio de arquivos.</p><span class="onde">Componentes</span></div>
+      <div class="item"><b>Navegação</b><p>Barra, abas, trilha, paginação e etapas.</p><span class="onde">Componentes</span></div>
+      <div class="item"><b>Dados</b><p>Tabela, indicadores, cartão de híbrido e acordeão.</p><span class="onde">Componentes</span></div>
+      <div class="item"><b>Padrões</b><p>Herói, faixa de CTA, login e rodapé claro e escuro.</p><span class="onde">Componentes</span></div>
+    </div>
+  </section>
+  <section class="grupo">
+    <div class="grupo-h"><span>04</span><h2>Telas prontas</h2></div>
+    <div class="cards">
+      <div class="item"><b>Site institucional</b><p>Home, híbrido, campos, eventos e contato, com seção Van Gogh.</p><span class="onde">Site institucional</span></div>
+      <div class="item"><b>Portal do produtor</b><p>Acesso, visão geral, pedidos e preferências.</p><span class="onde">Portal do produtor</span></div>
+      <div class="item"><b>Catálogo de elementos</b><p>Todos os elementos de interface, em todas as variantes e estados.</p><span class="onde">catalogo/elementos.html</span></div>
+    </div>
+  </section>
+  <section class="regras">
+    <h2>Regras que valem para tudo</h2>
+    <ul>
+      <li><span class="bry-wordmark">BARY<b>GEN</b></span> sempre em caixa alta: BARY SemiBold, GEN ExtraBold.</li>
+      <li><b>Teto de 56 px</b> para qualquer texto; corpo de 16 a 30 px.</li>
+      <li><b>Texto fluido:</b> os títulos diminuem com a tela, de 56 a 32 px.</li>
+      <li><b>Preto e amarelo</b> são as principais; marrom e laranjado, raros.</li>
+      <li><b>Tom sobre tom</b>, nunca caixa de alto contraste.</li>
+      <li><b>Sem travessão</b> e <b>sem palavra partida</b> em duas linhas.</li>
+      <li><b>Controles compactos</b> no desenho, com toque de 44 px.</li>
+      <li><b>Um primário</b> por tela; o amarelo nunca vai sobre o amarelo.</li>
+      <li><b>Contraste</b> de 4,5 : 1 no texto, conferido antes de publicar.</li>
+    </ul>
+  </section>
+</main>
+<script>
+(() => {
+  const L = window.BarygenDesignSystem_a84d4b.BARYGEN_LOGO;
+  document.querySelector('[data-logo]').innerHTML = L.svg({ type: 'horizontal', version: 'colorida-escuro', height: 44 });
+  document.querySelector('.forma').innerHTML = L.svg({ type: 'palheta', color: 'var(--tom-preto-3)', title: '' });
+})();
+</script>
+</body></html>

@@ -1,0 +1,162 @@
+<!-- @dsCard group="Components" height=3400 subtitle="Anatomia, variantes, qual botão em cada estilo de seção, botões de ícone e regras" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN · Botões</title>
+<style>
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--ff-body);font-size:16px;line-height:1.55}
+.pg{padding:48px 56px 72px;max-width:1120px;margin:0 auto}
+.ey{font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--text-accent)}
+h2{font-size:40px;font-weight:800;line-height:1.06;margin:12px 0 16px}
+h2 span{font-weight:600}
+h3{font-size:22px;font-weight:800;line-height:1.1;margin:0}
+h4{font-size:14px;font-weight:800;margin:0 0 4px;font-family:var(--ff-body);text-transform:none;letter-spacing:0}
+.lead{font-size:18px;color:var(--text-soft);max-width:62ch;margin:0}
+.desc{font-size:15px;color:var(--text-soft);max-width:70ch;margin:0 0 18px}
+.sec{margin-top:64px}
+.sec-h{display:flex;gap:16px;align-items:baseline;margin-bottom:12px}
+.num{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--text-accent)}
+code{font-family:var(--ff-mono);font-size:12px}
+.acoes{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.ic{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ic.g{width:18px;height:18px}
+/* anatomia */
+.anat{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:16px;padding:32px 28px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:end}
+.anat .med{margin-top:14px;font-size:13px;color:var(--text-soft);line-height:1.6}
+.anat .med b{display:block;color:var(--text-body);font-size:15px}
+.regua{position:relative;display:inline-flex}
+.regua::after{content:attr(data-h);position:absolute;left:calc(100% + 10px);top:0;bottom:0;display:flex;align-items:center;font-size:11px;font-weight:700;color:var(--text-accent);border-left:1px dashed var(--text-accent);padding-left:6px;white-space:nowrap}
+/* não confundir */
+.comp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.comp .card{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;overflow:hidden}
+.comp .palco{height:120px;display:grid;place-items:center;background:var(--brand-amarelo-suave)}
+.comp .t{padding:14px 16px;font-size:13.5px;color:var(--text-soft)}
+/* variantes */
+.vars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.var{border:1px solid var(--rule-soft);border-radius:14px;overflow:hidden;background:var(--brand-branco)}
+.var .palco{height:132px;display:grid;place-items:center;position:relative;overflow:hidden}
+.var .t{padding:14px 16px;font-size:13.5px;color:var(--text-soft)}
+.var .t code{color:var(--text-muted)}
+.foto{background:radial-gradient(ellipse 60% 55% at 78% 22%,rgba(251,186,0,.75),transparent 60%),radial-gradient(ellipse 50% 60% at 18% 90%,rgba(225,136,0,.5),transparent 65%),linear-gradient(170deg,#2b1c05 0%,#120c03 55%,#000 100%)}
+/* por seção */
+.secoes{display:grid;gap:16px}
+.cena{border-radius:16px;overflow:hidden;border:1px solid var(--rule-soft);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;padding:32px 36px}
+.cena .tt{font-family:var(--ff-display);text-transform:uppercase;font-weight:800;font-size:24px;line-height:1.1}
+.cena .tt small{display:block;font-family:var(--ff-body);text-transform:none;font-weight:500;font-size:14px;margin-top:6px;opacity:.85}
+.cena .rot{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}
+.vg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);padding:0;gap:0;min-height:220px;align-items:stretch}
+.vg .padrao{grid-column:1;grid-row:1;background:var(--bry-padrao-van-gogh) 0 0/230px 230px}
+.vg .bry-vangogh__texto{grid-column:2;grid-row:1}
+.vg .bry-vangogh__texto{padding:32px 36px;max-width:none;background:linear-gradient(160deg,var(--brand-amarelo-principal),var(--brand-amarelo-contraste));border-left:3px solid var(--brand-amarelo-detalhe);align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+/* ícone */
+.icones{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:16px;padding:28px;display:flex;flex-wrap:wrap;gap:32px;align-items:center}
+.icones figure{margin:0;display:grid;justify-items:center;gap:8px;font-size:12px;color:var(--text-muted)}
+/* regras */
+.regras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.regra{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;padding:16px 18px;font-size:14px;color:var(--text-soft)}
+.regra b{display:block;color:var(--text-body);margin-bottom:4px}
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;overflow:hidden}
+th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);text-align:left;padding:12px 16px;border-bottom:1px solid var(--rule-soft);font-weight:700}
+td{padding:12px 16px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+tr:last-child td{border-bottom:0}
+@media (max-width:900px){.anat,.vars,.regras{grid-template-columns:minmax(0,1fr)}.comp{grid-template-columns:repeat(2,minmax(0,1fr))}.cena{grid-template-columns:minmax(0,1fr)}.vg{grid-template-columns:minmax(0,1fr)}.vg .padrao{height:160px}.vg .bry-vangogh__texto{grid-column:1;grid-row:2}.vg .bry-vangogh__texto{border-left:0;border-top:3px solid var(--brand-amarelo-detalhe)}}
+@media (max-width:640px){.pg{padding:32px 16px 48px}h2{font-size:30px}.comp{grid-template-columns:minmax(0,1fr)}table{display:block;overflow-x:auto}}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-baixar" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+  <symbol id="i-avancar" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-voltar" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-buscar" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+</svg>
+<main class="pg">
+  <div class="ey">Componentes · Botões</div>
+  <h2>Botões</h2>
+  <p class="lead">O botão é a ação da tela. Ele é sempre um retângulo compacto de cantos de 8 px, com texto em negrito e sem caixa alta, em três alturas. O desenho é discreto, mas a área de toque nunca fica abaixo de 44 px. Cada estilo de seção tem os seus botões: o amarelo some sobre o amarelo e o preto some sobre o preto.</p>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">01</span><h3>Anatomia e tamanhos</h3></div>
+    <div class="anat">
+      <div><span class="regua" data-h="32 px"><button class="bry-btn bry-btn--primary bry-btn--sm">Ver ficha</button></span>
+        <div class="med"><b>Pequeno · sm</b>32 px de altura, 12 px nas laterais, texto 13 px. Para barras, tabelas e cartões. A área de toque invisível chega a 44 px.</div></div>
+      <div><span class="regua" data-h="40 px"><button class="bry-btn bry-btn--primary"><svg class="ic"><use href="#i-baixar"/></svg>Baixar catálogo</button></span>
+        <div class="med"><b>Médio · md (padrão)</b>40 px de altura, 20 px nas laterais, texto 14 px, ícone 16 px a 8 px do texto. Área de toque de 44 px.</div></div>
+      <div><span class="regua" data-h="48 px"><button class="bry-btn bry-btn--primary bry-btn--lg">Encontrar um campo</button></span>
+        <div class="med"><b>Grande · lg</b>48 px de altura, 24 px nas laterais, texto 15 px. Só para a chamada principal de heróis e faixas.</div></div>
+    </div>
+    <p class="desc" style="margin-top:14px">Tudo na escala de 8 px (4 px é o meio passo): alturas 32, 40 e 48; laterais 12, 20 e 24; 8 px entre ícone e texto; 16 px entre botões vizinhos. Cantos de 8 px em todos os tamanhos. Borda de 1,5 px nos botões de contorno. Como na Apple, o botão é pequeno no desenho e generoso no toque: a área clicável vai além da borda até 44 px.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">02</span><h3>Botão não é selo, chip nem avatar</h3></div>
+    <div class="comp">
+      <div class="card"><div class="palco"><button class="bry-btn bry-btn--primary">Comprar</button></div><div class="t"><h4>Botão</h4>Retângulo, cantos de 8 px, 40 px de altura, texto 14 px em negrito, sem caixa alta. Executa uma ação.</div></div>
+      <div class="card"><div class="palco"><span class="bry-badge bry-badge--brand">Lançamento</span></div><div class="t"><h4>Selo</h4>Pílula pequena (cerca de 19 px), texto de 10 px em caixa alta e espaçado. Só informa, não se clica.</div></div>
+      <div class="card"><div class="palco"><span class="bry-chip is-selected">Safrinha</span></div><div class="t"><h4>Chip</h4>Pílula com borda, 32 px de altura, texto 13 px. Filtra ou seleciona uma opção de uma lista.</div></div>
+      <div class="card"><div class="palco"><span class="bry-avatar bry-avatar--md">JM</span></div><div class="t"><h4>Avatar</h4>Círculo com iniciais ou foto. Representa uma pessoa.</div></div>
+    </div>
+    <p class="desc" style="margin-top:14px">Por isso o botão nunca é pílula e nunca é um círculo com letras. O único botão redondo é o de ícone para avançar e voltar.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">03</span><h3>Variantes</h3></div>
+    <div class="vars">
+      <div class="var"><div class="palco bry-sec-light-1"><button class="bry-btn bry-btn--primary">Encontrar um campo</button></div><div class="t"><h4>Primário <code>primary</code></h4>Amarelo principal. A ação principal da tela, uma só.</div></div>
+      <div class="var"><div class="palco bry-sec-light-1"><button class="bry-btn bry-btn--secondary">Ver os campos</button></div><div class="t"><h4>Secundário <code>secondary</code></h4>Preto. A segunda ação no claro; a principal sobre o amarelo.</div></div>
+      <div class="var"><div class="palco bry-sec-light-1"><button class="bry-btn bry-btn--outline">Ficha técnica</button></div><div class="t"><h4>Contorno <code>outline</code></h4>Borda de 1,5 px. Ação alternativa, no claro ou no amarelo.</div></div>
+      <div class="var"><div class="palco bry-sec-light-1"><button class="bry-btn bry-btn--ghost">Cancelar</button></div><div class="t"><h4>Fantasma <code>ghost</code></h4>Sem fundo. Ações de menor peso: cancelar, voltar, filtros.</div></div>
+      <div class="var"><div class="palco bry-sec-light-1"><button class="bry-btn bry-btn--seta">Ver ficha técnica</button></div><div class="t"><h4>Seta <code>seta</code></h4>Novo. Texto com uma seta que anda no hover. Para levar a outra página, no fim de cartões e seções.</div></div>
+      <div class="var"><div class="palco bry-sec-light-1"><button class="bry-btn bry-btn--link">Esqueci minha senha</button></div><div class="t"><h4>Link <code>link</code></h4>Sublinhado, dentro do texto ou de formulários.</div></div>
+      <div class="var"><div class="palco bry-sec-tom-preto"><button class="bry-btn bry-btn--tom-preto">Ver talhões</button></div><div class="t"><h4>Tom sobre tom preto <code>tom-preto</code></h4>Novo. Camada de preto mais claro. A segunda ação no preto absoluto.</div></div>
+      <div class="var"><div class="palco bry-sec-tom-amarelo-grad"><button class="bry-btn bry-btn--tom-amarelo">Saiba mais</button></div><div class="t"><h4>Tom sobre tom amarelo <code>tom-amarelo</code></h4>Novo. Camada de amarelo claro. A segunda ação sobre os amarelos.</div></div>
+      <div class="var"><div class="palco bry-sec-dark-1"><button class="bry-btn bry-btn--on-dark">Ficha técnica</button></div><div class="t"><h4>Contorno no escuro <code>on-dark</code></h4>Borda suave no preto, em degradês escuros e sobre foto.</div></div>
+      <div class="var"><div class="palco foto"><button class="bry-btn bry-btn--vidro">Assistir ao vídeo</button></div><div class="t"><h4>Vidro amarelo <code>vidro</code></h4>Novo. Ocasional, só sobre foto ou vídeo. Sem desfoque, vira sólido.</div></div>
+      <div class="var"><div class="palco bry-sec-light-1"><button class="bry-btn bry-btn--danger">Excluir pedido</button></div><div class="t"><h4>Perigo <code>danger</code></h4>Só para ações destrutivas, sempre com confirmação.</div></div>
+      <div class="var"><div class="palco bry-sec-light-1"><button class="bry-btn bry-btn--primary" disabled>Enviar</button></div><div class="t"><h4>Desabilitado</h4>38% de opacidade, sem clique. Diga por perto o que falta para habilitar.</div></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">04</span><h3>Qual botão em cada seção</h3></div>
+    <p class="desc">O sistema já ajusta sozinho o que mudaria de cor: dentro de uma seção escura, o secundário vira tom sobre tom e o link fica amarelo; dentro de uma seção amarela, o primário vira preto e o link fica preto.</p>
+    <div class="secoes">
+      <div class="cena bry-sec-light-1"><div><div class="rot" style="color:var(--text-accent)">Claro · suave e branco</div><div class="tt">Primário, contorno e seta<small>A combinação mais comum do site e do portal.</small></div></div><div class="acoes"><button class="bry-btn bry-btn--primary">Encontrar um campo</button><button class="bry-btn bry-btn--outline">Ficha técnica</button><button class="bry-btn bry-btn--seta">Ver todos</button></div></div>
+      <div class="cena bry-sec-dark-1"><div><div class="rot" style="color:var(--brand-amarelo-principal)">Preto absoluto</div><div class="tt">Primário e tom sobre tom<small>O secundário vira uma camada de preto; a seta fica amarela.</small></div></div><div class="acoes"><button class="bry-btn bry-btn--primary">Novo pedido</button><button class="bry-btn bry-btn--secondary">Ver talhões</button><button class="bry-btn bry-btn--seta">Histórico</button></div></div>
+      <div class="cena bry-sec-grad-ambar"><div><div class="rot" style="color:var(--brand-amarelo-principal)">Degradê âmbar · herói</div><div class="tt">Primário grande e contorno<small>Tamanho grande para a chamada do herói.</small></div></div><div class="acoes"><button class="bry-btn bry-btn--primary bry-btn--lg">Encontrar um campo</button><button class="bry-btn bry-btn--on-dark bry-btn--lg">Ficha técnica</button></div></div>
+      <div class="cena bry-sec-tom-amarelo-grad"><div><div class="rot">Amarelo tom sobre tom</div><div class="tt">Preto e amarelo claro<small>O primário vira preto sozinho; o secundário é a camada de amarelo claro.</small></div></div><div class="acoes"><button class="bry-btn bry-btn--primary">Quero plantar BARYGEN</button><button class="bry-btn bry-btn--tom-amarelo">Saiba mais</button></div></div>
+      <div class="cena vg"><div class="padrao" role="img" aria-label="Padrão de milho Van Gogh"></div><div class="bry-vangogh__texto"><div class="rot">Seção Van Gogh · dentro da forma</div><div class="tt">Preto e seta<small>Nunca botão sobre o padrão: só dentro da forma amarela.</small></div><div class="acoes" style="margin-top:20px"><button class="bry-btn bry-btn--primary">Encontrar um campo</button><button class="bry-btn bry-btn--seta">Ver os campos</button></div></div></div>
+      <div class="cena foto" style="color:var(--text-on-dark)"><div><div class="rot" style="color:var(--brand-amarelo-principal)">Foto ou vídeo</div><div class="tt">Primário e vidro<small>O vidro amarelo entra no lugar do contorno, de vez em quando.</small></div></div><div class="acoes"><button class="bry-btn bry-btn--primary">Agendar visita</button><button class="bry-btn bry-btn--vidro">Assistir ao vídeo</button></div></div>
+    </div>
+    <table style="margin-top:16px">
+      <thead><tr><th>Seção</th><th>Ação principal</th><th>Outras ações</th><th>Nunca</th></tr></thead>
+      <tbody>
+        <tr><td>Claro (suave, branco, papel, aurora)</td><td>Primário</td><td>Contorno, fantasma, seta, link</td><td>Vidro, contorno no escuro</td></tr>
+        <tr><td>Preto e tom sobre tom preto</td><td>Primário</td><td>Tom sobre tom preto, contorno no escuro, seta</td><td>Secundário preto (some)</td></tr>
+        <tr><td>Degradês escuros</td><td>Primário</td><td>Contorno no escuro, seta</td><td>Tom sobre tom amarelo</td></tr>
+        <tr><td>Amarelo, faixa de CTA e forma Van Gogh</td><td>Secundário (preto)</td><td>Tom sobre tom amarelo, contorno, seta</td><td>Primário amarelo (some)</td></tr>
+        <tr><td>Foto e vídeo</td><td>Primário</td><td>Vidro amarelo, contorno no escuro</td><td>Fantasma, link</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">05</span><h3>Botões de ícone</h3></div>
+    <div class="icones">
+      <figure><button class="bry-btn bry-btn--secondary bry-btn--icon bry-btn--sm" aria-label="Buscar"><svg class="ic"><use href="#i-buscar"/></svg></button>32 px</figure>
+      <figure><button class="bry-btn bry-btn--secondary bry-btn--icon" aria-label="Buscar"><svg class="ic g"><use href="#i-buscar"/></svg></button>40 px</figure>
+      <figure><button class="bry-btn bry-btn--outline bry-btn--icon" aria-label="Baixar"><svg class="ic g"><use href="#i-baixar"/></svg></button>contorno</figure>
+      <figure><button class="bry-btn bry-btn--primary bry-btn--icon bry-btn--lg bry-btn--round" aria-label="Avançar"><svg class="ic g"><use href="#i-avancar"/></svg></button>redondo, 48 px</figure>
+      <figure><button class="bry-btn bry-btn--outline bry-btn--icon bry-btn--round" aria-label="Voltar"><svg class="ic g"><use href="#i-voltar"/></svg></button>redondo, 40 px</figure>
+    </div>
+    <p class="desc" style="margin-top:14px">Quadrado com cantos de 8 px, nas mesmas alturas dos botões de texto (32, 40 e 48 px), com área de toque de 44 px. O redondo só existe para avançar e voltar (carrosséis, etapas); ele nunca leva letras, para não ser confundido com avatar. Todo botão de ícone tem um rótulo para o VoiceOver (<code>label</code>).</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">06</span><h3>Regras</h3></div>
+    <div class="regras">
+      <div class="regra"><b>Um primário por tela</b>A ação principal é uma só. As outras são secundário, contorno, fantasma ou seta.</div>
+      <div class="regra"><b>Ordem</b>Na página, a ação principal vem primeiro, à esquerda. Em diálogos, ela fica à direita, como no iOS.</div>
+      <div class="regra"><b>16 px entre botões</b>Botões lado a lado ficam a 16 px (8 px em barras densas). No celular estreito, empilham e ocupam a largura toda (classe <code>.bry-acoes</code>).</div>
+      <div class="regra"><b>Texto curto e com verbo</b>Até três palavras, em caixa normal: "Baixar catálogo", "Ver os campos". Sem exclamação e sem caixa alta.</div>
+      <div class="regra"><b>Nunca sobre o padrão nem sobre foto sem proteção</b>Na seção Van Gogh, só dentro da forma. Sobre foto, com gradiente de proteção ou vidro.</div>
+      <div class="regra"><b>Foco sempre visível</b>Anel de 2 px a 2 px do botão: amarelo contraste no claro e no escuro, preto sobre o amarelo.</div>
+    </div>
+  </section>
+</main>
+</body></html>

@@ -1,0 +1,14 @@
+<!-- @dsCard group="Iconografia" height=170 subtitle="Glifos Lucide embutidos no bundle, herdam currentColor" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:12px 8px}.c{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--text-strong)}.c b{font-family:var(--font-mono);font-size:11px;font-weight:400;color:var(--text-muted)}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const h = React.createElement, F = React.Fragment;
+const { Icon } = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return h("div", { className: "g" },
+    ["droplet", "droplets", "target", "crosshair", "spray-can", "flask-conical", "beaker", "gauge", "wind", "sprout", "leaf", "tractor", "plane", "wrench", "shield-check", "file-text", "download", "activity", "thermometer"]
+      .map((n) => h("div", { className: "c", key: n }, h(Icon, { name: n, size: 20 }), h("b", null, n))));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(h(Demo));
+</script></div></body></html>

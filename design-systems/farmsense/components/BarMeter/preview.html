@@ -1,0 +1,28 @@
+<!-- @dsCard group="Data" height=170 -->
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>BarMeter</title>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{margin:0;padding:16px;background:var(--bege-perola);font-family:var(--font-sans);color:var(--verde-sombra)}.k{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;opacity:.75;display:block;margin:0 0 10px}.pane{border-radius:var(--r-md);padding:16px}.pane-l{background:rgba(0,65,65,.035);border:1px solid rgba(0,65,65,.08)}.pane-d{background:var(--verde-sombra);color:#fff}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const { BarMeter } = window.FarmSenseDesignSystem_c4c636;
+const { useState } = React;
+function Demo(){
+  
+  return (
+<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12}}>
+  <div className="pane pane-l" style={{display:'grid',gap:10,alignContent:'start'}}>
+    <BarMeter label="Aurora" value={82.4} max={90} display="82,4" fill="sombra" />
+    <BarMeter label="Chapada" value={74.9} max={90} display="74,9" fill="anil" />
+    <BarMeter label="Cerrado-N." value={69.2} max={90} display="69,2" fill="bege" />
+  </div>
+  <div className="pane pane-d" style={{display:'grid',gap:10,alignContent:'start'}}>
+    <BarMeter tone="dark" label="NDVI" value={0.78} max={1} display="0,78" fill="neon" />
+    <BarMeter tone="dark" label="Umidade" value={62} max={100} display="62 %" fill="neon" />
+  </div>
+</div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>
