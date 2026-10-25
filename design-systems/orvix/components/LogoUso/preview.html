@@ -1,0 +1,34 @@
+<!-- @dsCard group="Logo" height=1390 subtitle="Qual logo entra em cada situação, em que tamanho e em que cor. Um guia de decisão, não uma tabela" page -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}
+.ovx-stage{display:flex;flex-direction:column;gap:var(--space-4)}
+.step{display:grid;grid-template-columns:48px 1fr;gap:var(--space-4);padding:var(--pad-card);border-radius:var(--radius-card);background:var(--surface-card);border:1px solid var(--border)}
+.n{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--verde-a40);font-family:var(--font-display);font-weight:800;font-size:16px;color:var(--text-accent)}
+.step h3{margin:0 0 var(--space-2);font-family:var(--font-display);font-weight:800;font-size:16px;text-transform:uppercase;color:var(--text-strong)}
+.step p{margin:0;font:var(--type-body-sm);color:var(--text-muted);max-width:76ch}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-3);margin-top:var(--space-3)}
+.opt{display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:var(--radius-md);border:1px solid var(--border);background:var(--claro-a03)}
+.opt .sw{display:grid;place-items:center;height:96px;border-radius:var(--radius-sm)}
+.sw--p{background:var(--grafite-700);border:1px solid var(--border)}.sw--b{background:#fff;border:1px solid var(--web-3)}
+.opt b{font-family:var(--font-display);font-weight:800;font-size:12px;text-transform:uppercase;color:var(--text-body)}
+.opt span{font:var(--type-caption);color:var(--text-muted)}
+.opt code{font:var(--type-mono);color:var(--text-subtle)}
+.ban{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--space-3)}
+.ban div{padding:12px 14px;border-radius:var(--radius-md);border:1px solid rgba(192,57,43,.35);background:rgba(192,57,43,.06);font:var(--type-body-sm);color:var(--text-muted)}
+.ban div b{display:block;color:var(--text-body);font-weight:500;margin-bottom:2px}
+</style></head><body><div class="ovx-stage">
+<section class="step"><span class="n">1</span><div><h3>Comece pela principal</h3><p>Em toda peça a primeira pergunta é: a principal cabe com pelo menos 80px de altura em tela (cerca de 21mm no impresso) e o processo reproduz pontos e transparência? Se sim, a decisão acabou.</p>
+<div class="opts"><div class="opt"><div class="sw sw--p"><img src="/_blob/319c85b4a15f2b9661f9558975cdf54e" alt="" style="height:56px"></div><b>Capa, abertura e fechamento</b><span>a partir de 80px, para AGROQUÍMICA ficar legível</span><code>Logo variant="principal" size="2xl"</code></div>
+<div class="opt"><div class="sw sw--p"><img src="/_blob/319c85b4a15f2b9661f9558975cdf54e" alt="" style="height:72px"></div><b>Capa, slide, anúncio</b><span>lg ou xl, com área de proteção igual à altura do X</span><code>Logo variant="principal" size="xl" protect</code></div>
+<div class="opt"><div class="sw sw--b"><img src="/_blob/99d1e572cb82297f7babbb86f84b2d3d" alt="" style="height:56px"></div><b>Tema claro e impresso branco</b><span>a mesma logo em preto; o tema escolhe sozinho</span><code>tone="auto"</code></div></div></div></section>
+<section class="step"><span class="n">2</span><div><h3>Espaço pequeno, quadrado ou estreito</h3><p>Quando a principal ficaria com menos de 80px ou o espaço é quadrado, troque de versão em vez de encolher. Abaixo de 32px, nem o X pontilhado: use só a escrita ORVIX, sem detalhes.</p>
+<div class="opts"><div class="opt"><div class="sw sw--p"><img src="/_blob/9cab002f3bb5ebe4c8a25cdca9cd8554" alt="" style="height:80px"></div><b>Avatar, perfil, selo</b><span>quadrada, mínimo 40px</span><code>variant="quadrada"</code></div>
+<div class="opt"><div class="sw sw--p"><img src="/_blob/3d3c722f4e7207f389a8f961448d0b69" alt="" style="height:64px"></div><b>Favicon, ícone, marcador</b><span>Elemento X, mínimo 16px</span><code>variant="elemento-x"</code></div>
+<div class="opt"><div class="sw sw--p"><img src="/_blob/00dbc2dfede08926f53e92da61b7bef7" alt="" style="height:48px"></div><b>Header compacto, assinatura de vídeo</b><span>principal sem AGROQUÍMICA, quando o descritor ficaria ilegível</span><code>variant="principal-sem-assinatura"</code></div></div></div></section>
+<section class="step"><span class="n">3</span><div><h3>A produção não reproduz pontos ou transparência</h3><p>Serigrafia, bordado, gravação, adesivo de uma cor: troque pela terciária certa. Nunca adapte a principal deixando as pernas sólidas.</p>
+<div class="opts"><div class="opt"><div class="sw sw--p"><img src="/_blob/fe4a3cfc622fdf3b93ea00be0bbe50dc" alt="" style="height:52px"></div><b>Reproduz uma perna pontilhada</b><span>X com detalhe mínimo</span><code>variant="detalhe-minimo"</code></div>
+<div class="opt"><div class="sw sw--p"><img src="/_blob/6acfff50fcf3e7eef45422bc5b972b9f" alt="" style="height:52px"></div><b>Não reproduz ponto nenhum</b><span>sem detalhes: bordado e recorte pequeno</span><code>variant="sem-detalhes"</code></div>
+<div class="opt"><div class="sw sw--p"><img src="/_blob/d2532e2c26f5d81d2637dfa96e294105" alt="" style="height:56px"></div><b>Vai animar</b><span>para vídeos, só em motion</span><code>variant="video"</code></div></div></div></section>
+<section class="step"><span class="n">4</span><div><h3>Sobre foto, grafismo e cor</h3><p>Sobre foto a logo vai sempre com scrim ou cápsula de vidro, em branco. O Elemento ORVIX é grafismo de apoio em opacidade baixa e não substitui a logo. A cor é sempre monocromática: branca no escuro, preta no claro.</p>
+<div class="ban"><div><b>Nunca três pernas sólidas</b>sem a diferença de transparência os pontos viram bagunça visual</div><div><b>Nunca um X verde</b>nem qualquer elemento em cor de produto, cinza ou verde</div><div><b>Nunca esticar, girar ou inclinar</b>a única inclinação da marca é a da própria perna do X</div><div><b>Nunca outra logo</b>só os oito arquivos oficiais e as quatro versões sem assinatura</div></div></div></section>
+</div></body></html>

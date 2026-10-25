@@ -1,0 +1,90 @@
+<!-- @dsCard group="Feedback" height=440 subtitle="Alertas por tom, toast de vidro, diálogo, skeleton e estado vazio" page -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.ovx-stage{padding:20px;background:radial-gradient(120% 130% at 88% 6%,#152029 0%,var(--bg-deep) 62%)}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;align-items:start}.stack{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const {
+  Alert,
+  Toast,
+  Tooltip,
+  Dialog,
+  Skeleton,
+  Spinner,
+  EmptyState,
+  InlineStatus,
+  Button,
+  IconButton
+} = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "g"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "stack"
+  }, /*#__PURE__*/React.createElement(Alert, {
+    tone: "success",
+    title: "Ficha publicada"
+  }, "A p\xE1gina do produto j\xE1 reflete o cadastro da base t\xE9cnica."), /*#__PURE__*/React.createElement(Alert, {
+    tone: "warning",
+    title: "Dado pendente de confer\xEAncia"
+  }, "Confirme a dose no r\xF3tulo vigente antes de publicar."), /*#__PURE__*/React.createElement(Alert, {
+    tone: "danger",
+    title: "Contamina\xE7\xE3o cruzada detectada",
+    onClose: () => {}
+  }, "Registre a limpeza do circuito antes da pr\xF3xima calda."), /*#__PURE__*/React.createElement(Alert, {
+    tone: "info"
+  }, "Dados t\xE9cnicos v\xEAm da base t\xE9cnica de produtos."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement(Toast, {
+    progress: 64
+  }, "Lead registrado. O consultor entra em contato."))), /*#__PURE__*/React.createElement("div", {
+    className: "stack"
+  }, /*#__PURE__*/React.createElement(Dialog, {
+    inline: true,
+    title: "Solicitar recomenda\xE7\xE3o t\xE9cnica",
+    sub: "Resposta em at\xE9 1 dia \xFAtil",
+    onClose: () => {},
+    footer: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+      variant: "ghost"
+    }, "Cancelar"), /*#__PURE__*/React.createElement(Button, {
+      variant: "primary"
+    }, "Enviar"))
+  }, "Informe munic\xEDpio, cultura e volume de calda para o consultor calibrar a dose."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 14,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement(Spinner, {
+    size: "sm"
+  }), /*#__PURE__*/React.createElement(Spinner, null), /*#__PURE__*/React.createElement(Spinner, {
+    size: "lg"
+  }), /*#__PURE__*/React.createElement(Tooltip, {
+    label: "Tens\xE3o superficial da calda"
+  }, /*#__PURE__*/React.createElement(IconButton, {
+    icon: "info",
+    label: "Tens\xE3o superficial da calda"
+  })), /*#__PURE__*/React.createElement(InlineStatus, null, "Sincronizado")), /*#__PURE__*/React.createElement("div", {
+    className: "ovx-card",
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 9
+    }
+  }, /*#__PURE__*/React.createElement(Skeleton, {
+    variant: "title",
+    width: "52%"
+  }), /*#__PURE__*/React.createElement(Skeleton, {
+    width: "100%"
+  }), /*#__PURE__*/React.createElement(Skeleton, {
+    width: "82%"
+  })), /*#__PURE__*/React.createElement(EmptyState, {
+    icon: "search-x",
+    title: "Nenhum produto nesta linha"
+  }, "Ajuste o filtro de cultura ou fale com o consultor.")));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(Demo, null));
+</script></div></body></html>

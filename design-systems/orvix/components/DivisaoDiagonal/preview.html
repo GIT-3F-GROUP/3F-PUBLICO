@@ -1,0 +1,83 @@
+<!-- @dsCard group="Layout e Grid" height=520 subtitle="A tela nunca se divide em linha reta: a divisória segue o ângulo da perna do X, 30,5° da vertical" page -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}
+.ovx-stage{display:flex;flex-direction:column;gap:var(--gap)}
+.ex{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.ex h4{margin:0 0 6px}
+.note{margin:0;font:var(--type-caption);color:var(--text-muted)}
+.angle{display:flex;align-items:center;gap:var(--gap);padding:var(--pad-card);border-radius:var(--radius-card);background:var(--surface-card);border:1px solid var(--border)}
+.angle svg{flex:0 0 auto}
+@media (max-width:767px){.ex{grid-template-columns:1fr}}
+</style>
+</head><body><div class="ovx-stage">
+<div id="root"></div>
+<div class="angle">
+<svg width="120" height="84" viewBox="0 0 120 84" fill="none" aria-hidden="true"><path d="M30 2 L120 2 L120 82 L30 82 Z" fill="var(--surface-2)"/><path d="M78 2 L31 82" stroke="var(--verde-500)" stroke-width="2"/><path d="M78 2 L78 82" stroke="var(--claro-a24)" stroke-dasharray="3 3"/><path d="M78 30 A28 28 0 0 0 63 56" stroke="var(--text-muted)" fill="none"/><text x="52" y="52" fill="var(--text-muted)" font-family="ui-monospace,monospace" font-size="11">30,5°</text></svg>
+<div><h4>Um único ângulo</h4><p class="note">A inclinação é lida da perna sólida da logo principal e vive no token <code>--x-leg-angle</code> (30,5° da vertical; <code>--split-angle</code> 120,5° para gradientes e máscaras). Topo à direita, base à esquerda, como a perna direita do X. Abaixo de 640px as metades empilham com hairline reta. Nunca use outro ângulo nem inverta a direção.</p></div>
+</div>
+</div>
+<script>
+const {
+  SplitDiagonal,
+  Eyebrow,
+  Button,
+  Logo
+} = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "ex"
+  }, /*#__PURE__*/React.createElement(SplitDiagonal, {
+    edge: "verde",
+    left: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Eyebrow, {
+      ornament: "rule"
+    }, "Tecnologia de aplica\xE7\xE3o"), /*#__PURE__*/React.createElement("h3", {
+      style: {
+        margin: 0,
+        font: "var(--type-h3)",
+        color: "var(--text-strong)"
+      }
+    }, "Calda est\xE1vel, gota uniforme."), /*#__PURE__*/React.createElement("p", {
+      className: "note"
+    }, "Metade A sobre o preto ORVIX; metade B sobre o padr\xE3o de pontos."), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Button, {
+      variant: "primary",
+      size: "sm"
+    }, "Ver linha TEC"))),
+    right: /*#__PURE__*/React.createElement(Logo, {
+      variant: "elemento",
+      size: "lg"
+    })
+  }), /*#__PURE__*/React.createElement(SplitDiagonal, {
+    at: "42%",
+    paneA: /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "absolute",
+        inset: 0,
+        background: "var(--surface-2)"
+      }
+    }),
+    paneB: /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "absolute",
+        inset: 0,
+        background: "var(--bg-deep)"
+      }
+    }),
+    left: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Eyebrow, {
+      ornament: "dot"
+    }, "Divis\xE3o 42%"), /*#__PURE__*/React.createElement("h3", {
+      style: {
+        margin: 0,
+        font: "var(--type-h3)",
+        color: "var(--text-strong)"
+      }
+    }, "Tom sobre tom.")),
+    right: /*#__PURE__*/React.createElement("p", {
+      className: "note",
+      style: {
+        maxWidth: "26ch"
+      }
+    }, "A propor\xE7\xE3o muda com ", /*#__PURE__*/React.createElement("code", null, "--split-at"), "; o \xE2ngulo n\xE3o muda nunca.")
+  }));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(Demo, null));
+</script></body></html>

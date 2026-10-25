@@ -1,0 +1,11 @@
+{
+  "versao": "01.001",
+  "data": "25/10/2026",
+  "designSystems": [
+    "3fgroup",
+    "orvix",
+    "barygen",
+    "mixsafe",
+    "farmsense"
+  ]
+}

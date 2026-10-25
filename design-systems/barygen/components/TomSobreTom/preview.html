@@ -1,0 +1,212 @@
+<!-- @dsCard group="Effects" height=4320 subtitle="Amarelo com amarelo, preto com preto: o destaque preferido da marca, sem caixas de alto contraste. E o vidro amarelo, ocasional" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN · Tom sobre tom</title>
+<style>
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--ff-body);font-size:16px;line-height:1.55}
+.pg{padding:48px 56px 72px;max-width:1120px;margin:0 auto}
+.ey{font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--text-accent)}
+h2{font-size:40px;font-weight:800;line-height:1.06;margin:12px 0 16px}
+h2 span{font-weight:600}
+h3{font-size:22px;font-weight:800;line-height:1.1;margin:0}
+.lead{font-size:18px;color:var(--text-soft);max-width:62ch;margin:0}
+.desc{font-size:15px;color:var(--text-soft);max-width:68ch;margin:0 0 18px}
+.sec{margin-top:64px}
+.sec-h{display:flex;gap:16px;align-items:baseline;margin-bottom:12px}
+.num{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--text-accent)}
+code{font-family:var(--ff-mono);font-size:12px}
+/* paletas */
+.tons{display:grid;grid-template-columns:repeat(4,1fr);border-radius:14px;overflow:hidden;border:1px solid var(--rule-soft);margin-bottom:20px}
+.tons div{height:96px;padding:14px 16px;display:flex;flex-direction:column;justify-content:flex-end;font-size:12.5px;line-height:1.35}
+.tons b{font-size:13.5px}
+/* demonstrações */
+.demo{border-radius:16px;overflow:hidden;border:1px solid var(--rule-soft)}
+.cena{position:relative;isolation:isolate;overflow:hidden;padding:56px 56px 52px}
+.cena .forma{position:absolute;z-index:-1;pointer-events:none}
+.cena .forma svg{display:block;width:100%;height:auto}
+.cena h4{font-family:var(--ff-display);font-size:34px;font-weight:800;line-height:1.05;text-transform:uppercase;margin:12px 0 10px;max-width:16ch}
+.cena h4 span{font-weight:600}
+.cena p{margin:0;max-width:44ch;font-size:16px}
+.cartoes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.cartao{border-radius:14px;padding:20px 22px;border:1px solid}
+.cartao .lb{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.cartao .vl{font-family:var(--ff-display);font-size:32px;font-weight:800;line-height:1;margin-top:10px}
+.cartao .tx{font-size:13.5px;margin-top:8px}
+/* amarelo */
+.am .bry-eyebrow{color:var(--brand-preto)}
+.am p{color:var(--text-soft)}
+.am .cartao{background:rgba(255,230,161,.55);border-color:rgba(10,10,10,.08)}
+.am .cartao .lb,.am .cartao .tx{color:var(--text-soft)}
+/* preto */
+.pr p{color:var(--text-on-dark-muted)}
+.pr h4 span{color:var(--brand-amarelo-principal)}
+.pr .cartao{background:var(--tom-preto-2);border-color:var(--tom-preto-linha)}
+.pr .cartao .lb,.pr .cartao .tx{color:var(--text-on-dark-muted)}
+.pr .cartao .vl{color:var(--brand-amarelo-principal)}
+.pr .bry-btn--secondary{background:var(--tom-preto-3);color:var(--text-on-dark);border:1px solid var(--tom-preto-linha)}
+.acoes{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+/* claro */
+.cl .bry-eyebrow{color:var(--text-accent)}
+.cl p{color:var(--text-soft)}
+.cl .cartao{padding:20px 22px;border-color:var(--tom-claro-linha)}
+.cl .cartao .lb,.cl .cartao .tx{color:var(--text-muted)}
+.cena .forma.dna svg{width:100%;height:auto}
+.mapa{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mp{border-radius:14px;border:1px solid var(--rule-soft);background:var(--brand-branco);overflow:hidden}
+.mp-palco{height:150px;display:flex;gap:12px;align-items:center;justify-content:center;padding:0 20px;border-bottom:1px solid var(--rule-soft)}
+.mp-cx{padding:0;width:96px;height:80px;display:grid;place-items:center;font-size:12.5px;font-weight:700;color:var(--text-soft)}
+.mp .t{padding:14px 16px;font-size:14px;color:var(--text-soft)}
+.mp .t b{display:block;color:var(--text-body)}
+/* vidro */
+.vidros{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}
+.foto{position:relative;isolation:isolate;overflow:hidden;border-radius:16px;min-height:380px;display:flex;align-items:flex-end;padding:28px;
+  background:radial-gradient(ellipse 60% 55% at 78% 22%,rgba(251,186,0,.85),transparent 60%),radial-gradient(ellipse 50% 60% at 18% 90%,rgba(225,136,0,.55),transparent 65%),linear-gradient(170deg,#2b1c05 0%,#120c03 55%,#000 100%)}
+.foto .rot{position:absolute;top:18px;left:20px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--text-on-dark-muted)}
+.foto .espigas{position:absolute;inset:0;z-index:-1}
+.vidro{padding:22px 24px;max-width:360px}
+.vidro .lb{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.9}
+.vidro .tt{font-family:var(--ff-display);font-size:24px;font-weight:800;text-transform:uppercase;line-height:1.08;margin-top:8px}
+.vidro .tx{font-size:14px;margin-top:8px}
+.amarela{background:linear-gradient(150deg,var(--brand-amarelo-detalhe),var(--brand-amarelo-contraste));align-items:center;justify-content:center}
+.amarela .foto-forma{position:absolute;inset:auto -60px -80px auto;width:300px;z-index:-1}
+.amarela .foto-forma svg{display:block;width:100%;height:auto}
+/* regras */
+.regras{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.regra{border-radius:14px;border:1px solid var(--rule-soft);background:var(--brand-branco);overflow:hidden}
+.regra .palco{height:150px;display:grid;place-items:center;position:relative}
+.regra .caixa{width:58%;height:56%;border-radius:12px;display:grid;place-items:center;font-size:12.5px;font-weight:700}
+.regra .t{padding:14px 16px;font-size:14px;color:var(--text-soft)}
+.regra .t b{display:block;color:var(--text-body)}
+.sim{color:var(--fn-success);font-weight:800}.nao{color:var(--fn-error);font-weight:800}
+@media (max-width:900px){.cartoes,.regras,.vidros,.mapa{grid-template-columns:1fr}.tons{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.pg{padding:32px 16px 48px}h2{font-size:30px}.cena{padding:40px 24px}.cena h4{font-size:28px}}
+</style></head><body>
+<main class="pg">
+  <div class="ey">Efeitos · Tom sobre tom</div>
+  <h2>Tom <span>sobre tom</span></h2>
+  <p class="lead">O destaque preferido da BARYGEN: tons da mesma cor, um sobre o outro. Amarelo com amarelo, preto com preto, claro com claro. A peça ganha profundidade sem caixas de alto contraste, que são evitadas em todo o sistema.</p>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">01</span><h3>Amarelo tom sobre tom</h3></div>
+    <p class="desc">Os quatro amarelos da marca juntos, sem outra cor. Texto, ícones e logo em preto. A palheta pode entrar como forma em amarelo detalhe sobre o principal.</p>
+    <div class="tons">
+      <div style="background:var(--brand-amarelo-claro)"><b>Amarelo claro</b>#FFE6A1 · cartões e camadas</div>
+      <div style="background:var(--brand-amarelo-detalhe)"><b>Amarelo detalhe</b>#FBBA00 · formas e luz</div>
+      <div style="background:var(--brand-amarelo-principal)"><b>Amarelo principal</b>#F6A200 · a base</div>
+      <div style="background:var(--brand-amarelo-contraste)"><b>Amarelo contraste</b>#E18800 · sombra e profundidade</div>
+    </div>
+    <div class="demo">
+      <div class="cena am bry-sec-tom-amarelo-grad">
+        <span class="forma" data-pal="var(--brand-amarelo-detalhe)" style="right:-90px;top:-60px;width:380px" aria-hidden="true"></span>
+        <div class="bry-eyebrow">Resultados · Safra 26/27</div>
+        <h4>Números que <span>falam alto.</span></h4>
+        <p>Cartões em amarelo claro translúcido sobre o degradê de amarelos. Nenhuma caixa branca, nenhuma caixa preta.</p>
+        <div class="cartoes">
+          <div class="cartao"><div class="lb">Produtividade média</div><div class="vl">218 sc/ha</div><div class="tx">Campos demonstrativos</div></div>
+          <div class="cartao"><div class="lb">Campos</div><div class="vl">47</div><div class="tx">Acompanhados por consultores</div></div>
+          <div class="cartao"><div class="lb">Municípios</div><div class="vl">126</div><div class="tx">Dado de exemplo</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="desc" style="margin-top:12px"><code>.bry-sec-tom-amarelo</code> (liso) · <code>.bry-sec-tom-amarelo-grad</code> (detalhe → principal → contraste) · <code>.bry-sec-tom-amarelo-claro</code> (claro → detalhe). Cartões: <code>rgba(255,230,161,.55)</code> com borda <code>rgba(10,10,10,.08)</code>.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">02</span><h3>Preto tom sobre tom</h3></div>
+    <p class="desc">O fundo é sempre o preto absoluto (#000). Cartões, campos, formas e botões secundários são camadas de pretos muito próximos, com borda sutil. O amarelo fica para o dado e para a ação principal.</p>
+    <div class="tons">
+      <div style="background:#000;color:var(--text-on-dark)"><b>Preto absoluto</b>#000000 · o fundo</div>
+      <div style="background:var(--tom-preto-1);color:var(--text-on-dark)"><b>Preto 1</b>#0B0B0B · campos e formas</div>
+      <div style="background:var(--tom-preto-2);color:var(--text-on-dark)"><b>Preto 2</b>#141414 · cartões</div>
+      <div style="background:var(--tom-preto-3);color:var(--text-on-dark)"><b>Preto 3</b>#1F1F1F · cartão elevado e botão</div>
+    </div>
+    <div class="demo">
+      <div class="cena pr bry-sec-tom-preto">
+        <span class="forma" data-pal="var(--tom-preto-2)" style="right:-120px;bottom:-200px;width:520px" aria-hidden="true"></span>
+        <div class="bry-eyebrow">Portal do produtor</div>
+        <h4>Preto sobre <span>preto.</span></h4>
+        <p>Cartões em preto 2 sobre o preto absoluto. O contraste fica no texto, nunca na caixa.</p>
+        <div class="cartoes">
+          <div class="cartao"><div class="lb">Pedidos em aberto</div><div class="vl">3</div><div class="tx">Entrega prevista em setembro</div></div>
+          <div class="cartao"><div class="lb">Talhões</div><div class="vl">12</div><div class="tx">1.840 ha cadastrados</div></div>
+          <div class="cartao"><div class="lb">Consultor</div><div class="vl">MT</div><div class="tx">Atendimento regional</div></div>
+        </div>
+        <div class="acoes"><button class="bry-btn bry-btn--primary">Novo pedido</button><button class="bry-btn bry-btn--secondary">Ver talhões</button></div>
+      </div>
+    </div>
+    <p class="desc" style="margin-top:12px"><code>.bry-sec-tom-preto</code> (preto absoluto) · <code>.bry-sec-tom-preto-grad</code> (uma luz de preto 3 no canto) · camadas <code>--tom-preto-1</code>, <code>-2</code>, <code>-3</code> e borda <code>--tom-preto-linha</code>. Dentro de uma seção escura, KPI, cartão, tabela e acordeão já viram camadas de preto sozinhos; o LoginCard usa <code>surface="dark"</code>.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">03</span><h3>Claro tom sobre tom · caixas claras</h3></div>
+    <p class="desc">No claro, as caixas são camadas de claros muito próximos, com uma borda quase invisível em marrom (<code>--tom-claro-linha</code>). A caixa separa o conteúdo sem pesar: nada de caixa escura, amarela forte ou com sombra marcada sobre o claro.</p>
+    <div class="tons">
+      <div style="background:var(--tom-claro-branco);color:var(--text-body)"><b>Branco</b>#FFFFFF · caixa elevada</div>
+      <div style="background:var(--tom-claro-suave);color:var(--text-body)"><b>Suave</b>#FBF9F5 · o fundo padrão</div>
+      <div style="background:var(--tom-claro-creme);color:var(--text-body)"><b>Creme</b>#FEF7E6 · destaque leve</div>
+      <div style="background:var(--tom-claro-areia);color:var(--text-body)"><b>Areia</b>#F4EFE5 · caixa rebaixada</div>
+    </div>
+    <div class="demo">
+      <div class="cena cl bry-sec-light-1">
+        <span class="forma dna" data-dna="var(--tom-claro-areia)" style="right:40px;top:-40px;width:250px" aria-hidden="true"></span>
+        <div class="bry-eyebrow">Campos demonstrativos</div>
+        <h4>Claro sobre <span>claro.</span></h4>
+        <p>Cartões brancos sobre o suave, com a hélice de DNA em areia ao fundo. O contraste fica no texto e no dado.</p>
+        <div class="cartoes">
+          <div class="cartao bry-caixa-clara"><div class="lb">Produtividade média</div><div class="vl">218 sc/ha</div><div class="tx">Dado de exemplo</div></div>
+          <div class="cartao bry-caixa-clara"><div class="lb">Campos</div><div class="vl">46</div><div class="tx">Em 7 estados</div></div>
+          <div class="cartao bry-caixa-clara bry-caixa-clara--areia"><div class="lb">Nota técnica</div><div class="tx" style="margin-top:10px">Caixa rebaixada em areia: para observações e conteúdo secundário.</div></div>
+        </div>
+        <div class="acoes"><button class="bry-btn bry-btn--primary">Ver campos</button><button class="bry-btn bry-btn--outline">Baixar relatório</button></div>
+      </div>
+    </div>
+    <p class="desc" style="margin-top:20px"><b>Qual caixa em qual seção.</b> A caixa é sempre um passo de tom acima ou abaixo do fundo, nunca um salto.</p>
+    <div class="mapa">
+      <div class="mp"><div class="mp-palco" style="background:var(--tom-claro-suave)"><div class="bry-caixa-clara mp-cx">Branco</div><div class="bry-caixa-clara bry-caixa-clara--areia mp-cx">Areia</div></div><div class="t"><b>Seção suave</b>Caixa branca para elevar, areia para rebaixar.</div></div>
+      <div class="mp"><div class="mp-palco" style="background:var(--tom-claro-branco)"><div class="bry-caixa-clara bry-caixa-clara--suave mp-cx">Suave</div><div class="bry-caixa-clara bry-caixa-clara--creme mp-cx">Creme</div></div><div class="t"><b>Seção branca</b>Caixa suave para agrupar, creme para destacar.</div></div>
+      <div class="mp"><div class="mp-palco" style="background:var(--tom-claro-creme)"><div class="bry-caixa-clara mp-cx">Branco</div></div><div class="t"><b>Seção creme</b>Só a caixa branca, com a borda marrom bem leve.</div></div>
+    </div>
+    <p class="desc" style="margin-top:12px"><code>.bry-caixa-clara</code> (branco) · <code>--suave</code> · <code>--creme</code> · <code>--areia</code> · borda <code>--tom-claro-linha</code> <code>rgba(89,51,0,.10)</code>. Os estilos de seção clara e como usá-los em sequência estão em Efeitos › Seções claras.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">04</span><h3>Vidro amarelo · ocasional</h3></div>
+    <p class="desc">Um painel de amarelo translúcido com desfoque, como o material do iOS. Opção pouco usada e interessante: no máximo um por tela, só sobre foto ou fundo escuro, para uma legenda, um selo ou um dado. Nunca em formulário, tabela ou texto longo.</p>
+    <div class="vidros">
+      <div class="foto">
+        <span class="rot">Foto de lavoura (marcador)</span>
+        <div class="vidro bry-glass-amarelo">
+          <div class="lb">Campo demonstrativo · Sorriso, MT</div>
+          <div class="tt">BG307 Max</div>
+          <div class="tx">218 sc/ha na média dos campos. Dado de exemplo.</div>
+        </div>
+      </div>
+      <div class="foto amarela">
+        <span class="foto-forma" data-pal2="var(--brand-preto)" aria-hidden="true"></span>
+        <div class="vidro bry-glass-amarelo bry-glass-amarelo--claro">
+          <div class="lb">Variante clara</div>
+          <div class="tt">Sobre o amarelo</div>
+          <div class="tx">Texto em preto. Use <code>--claro</code> quando o fundo for amarelo.</div>
+        </div>
+      </div>
+    </div>
+    <p class="desc" style="margin-top:12px"><code>.bry-glass-amarelo</code>: amarelo de 34% a 14%, desfoque de 20 px, borda em amarelo claro e brilho interno de 1 px. Com "Reduzir transparência" ligado, ou sem suporte a desfoque, vira um painel sólido. O texto sobre o vidro precisa de pelo menos 4,5 : 1 contra a parte mais clara da foto atrás.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">05</span><h3>Sem caixas de alto contraste</h3></div>
+    <div class="regras">
+      <div class="regra"><div class="palco" style="background:var(--brand-amarelo-suave)"><div class="caixa" style="background:#000;color:var(--text-on-dark)">Caixa preta</div></div><div class="t"><b><span class="nao">✕</span> Caixa preta sobre o claro</b>O bloco pesa mais que o conteúdo e corta a página.</div></div>
+      <div class="regra"><div class="palco" style="background:#000"><div class="caixa" style="background:#fff;color:var(--text-body)">Caixa branca</div></div><div class="t"><b><span class="nao">✕</span> Caixa branca sobre o preto</b>Ofusca, principalmente em tela escura e no celular.</div></div>
+      <div class="regra"><div class="palco" style="background:#000"><div class="caixa" style="background:var(--tom-preto-2);border:1px solid var(--tom-preto-linha);color:var(--text-on-dark)">Preto 2</div></div><div class="t"><b><span class="sim">✓</span> Tom sobre tom</b>No preto, camadas de preto. No claro, branco, suave, creme e areia. No amarelo, outros amarelos.</div></div>
+    </div>
+    <p class="desc" style="margin-top:16px">Fora da regra: botões, selos e avatares, que são pequenos e precisam de contraste para serem vistos, e as amostras de logo deste manual.</p>
+  </section>
+</main>
+<script>
+(() => {
+  const L = window.BarygenDesignSystem_a84d4b.BARYGEN_LOGO;
+  document.querySelectorAll('[data-pal]').forEach(el => { el.innerHTML = L.svg({ type: 'palheta', color: el.dataset.pal }); });
+  document.querySelectorAll('[data-dna]').forEach(el => { el.innerHTML = L.svg({ type: 'dna', color: el.dataset.dna, title: '' }); });
+  document.querySelectorAll('[data-pal2]').forEach(el => { el.innerHTML = L.svg({ type: 'palheta', color: 'var(--brand-amarelo-detalhe)' }); });
+})();
+</script>
+</body></html>

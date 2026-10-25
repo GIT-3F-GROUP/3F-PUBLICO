@@ -1,0 +1,68 @@
+<!-- @dsCard height=320 -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>FarmSense Design System</title>
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--bege-perola); color:var(--verde-sombra); font-family:var(--font-display); overflow:hidden; }
+  .cover { position:relative; width:960px; height:320px; overflow:hidden; background:var(--bege-perola); }
+  .band { position:absolute; top:0; left:0; width:960px; height:128px; }
+  .band svg { display:block; width:960px; height:128px; }
+  .sombra { fill:var(--verde-sombra); }
+  .anil { fill:var(--verde-anil); }
+  .estrada { fill:var(--bege-estrada); }
+  .escuro { fill:var(--bege-escuro); }
+  .rastro { fill:var(--bege-rastro); }
+  .sinal { fill:var(--ciano-neon); }
+  .blk { rx:var(--r-md); }
+  .curva { fill:none; stroke:var(--ciano-neon); stroke-width:var(--stroke-contour); }
+  .curva-tonal { fill:none; stroke:var(--bege-escuro); stroke-width:var(--stroke-contour); }
+  .words { position:absolute; left:var(--s-6); right:var(--s-6); bottom:var(--s-6); }
+  .name { margin:0; font-size:60px; line-height:.95; font-weight:800; letter-spacing:-.022em; color:var(--verde-sombra); white-space:nowrap; }
+  .tag { margin:var(--s-3) 0 0 2px; max-width:440px; font-family:var(--font-sans); font-size:14px; line-height:20px; font-weight:400; color:var(--text-body); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="band" aria-hidden="true">
+<svg viewBox="0 0 960 128" width="960" height="128">
+<!--
+  blocks      verde-sombra 448×144 (the identity slab, ~half the band) · bege-estrada 192×128 · verde-anil 128×112 · bege-escuro 96×128 · bege-rastro 96×96 relief · ciano-neon 8×8 signal dot only — ≈40% of 960×320
+  arrangement top-band skeleton: a strip of unequal vertical strata bleeding off the top, like the brand's soil-profile surface (.fs-dark-solo) and its "clara → escura → clara" page alternation; the name is too wide for a 440px zone
+  pattern     literal motif — contour lines ("curvas de nível, ancoradas num canto e cortadas pela borda"): five concentric arcs at an s-7 (48px) pitch centred on the slab's top-right corner, ciano-neon on sombra, continuing tonal in bege-escuro across the estrada stratum; one ciano signal dot ("sinal, só detalhe")
+  scales      widths s-9 (96) multiples and s-10 (128); arc pitch s-7; stroke stroke-contour (1px); corners r-md; dot 8px = neon-dot
+-->
+<defs>
+  <clipPath id="c-sombra"><rect x="224" y="-16" width="448" height="144" rx="16"/></clipPath>
+  <clipPath id="c-estrada"><rect x="672" y="-16" width="192" height="144" rx="16"/></clipPath>
+</defs>
+<rect class="escuro blk" x="0" y="-16" width="96" height="144" rx="16"/>
+<rect class="anil blk" x="96" y="-16" width="128" height="128" rx="16"/>
+<rect class="sombra blk" x="224" y="-16" width="448" height="144" rx="16"/>
+<rect class="estrada blk" x="672" y="-16" width="192" height="144" rx="16"/>
+<rect class="rastro blk" x="864" y="-16" width="96" height="112" rx="16"/>
+<g clip-path="url(#c-sombra)">
+  <circle class="curva" cx="672" cy="0" r="48"/>
+  <circle class="curva" cx="672" cy="0" r="96"/>
+  <circle class="curva" cx="672" cy="0" r="144"/>
+  <circle class="curva" cx="672" cy="0" r="192"/>
+  <circle class="curva" cx="672" cy="0" r="240"/>
+</g>
+<g clip-path="url(#c-estrada)">
+  <circle class="curva-tonal" cx="672" cy="0" r="48"/>
+  <circle class="curva-tonal" cx="672" cy="0" r="96"/>
+  <circle class="curva-tonal" cx="672" cy="0" r="144"/>
+  <circle class="curva-tonal" cx="672" cy="0" r="192"/>
+</g>
+<circle class="sinal" cx="558" cy="88" r="4"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">FarmSense Design System</h1>
+<p class="tag">Oito cores, duas famílias, uma marca em duas formas.</p>
+</div>
+</div>
+</body>
+</html>

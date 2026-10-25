@@ -1,0 +1,50 @@
+/* FarmSense — Superfícies de seção.
+   Quatro claras, quatro escuras. Cada uma é um fundo completo, pronto para
+   receber conteúdo. Use .fs-surface como base e uma das variantes. */
+.fs-surface{position:relative;overflow:hidden;isolation:isolate}
+.fs-surface > *{position:relative;z-index:1}
+.fs-surface::before,.fs-surface::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0}
+
+/* ── CLARAS ───────────────────────────────────────────── */
+
+/* 01 · Pérola limpa — leitura longa, editorial, default */
+.fs-light-perola{background:var(--bege-perola);color:var(--verde-sombra)}
+.fs-light-perola::before{background-image:radial-gradient(rgba(0,65,65,.055) 1px,transparent 1px);background-size:22px 22px;opacity:.9}
+.fs-light-perola::after{background:radial-gradient(120% 90% at 50% -10%,rgba(255,255,255,.9),transparent 60%)}
+
+/* 02 · Rastro topográfico — curvas de nível tom-sobre-tom no canto */
+.fs-light-rastro{background:var(--bege-rastro);color:var(--verde-sombra)}
+.fs-light-rastro::before{background-image:url("../assets/patterns/contour-tonal.svg");background-repeat:no-repeat;background-size:cover;background-position:120% -20%;opacity:.5;mix-blend-mode:multiply}
+.fs-light-rastro::after{background:linear-gradient(180deg,rgba(247,243,237,.6),transparent 40%)}
+
+/* 03 · Estrada em vidro — bege quente sob vidro branco, para comercial */
+.fs-light-estrada{background:var(--bege-estrada);color:var(--verde-sombra)}
+.fs-light-estrada::before{background:linear-gradient(140deg,rgba(255,255,255,.55),rgba(255,255,255,.12) 55%,rgba(255,255,255,.4))}
+.fs-light-estrada::after{background-image:url("../assets/patterns/ridge-sombra.svg");background-repeat:no-repeat;background-size:100% 100%;opacity:.45}
+
+/* 04 · Papel impresso — branco com listras tonais de talhão */
+.fs-light-papel{background:var(--branco);color:var(--verde-sombra)}
+.fs-light-papel::before{background:repeating-linear-gradient(120deg,rgba(0,65,65,.045) 0 2px,transparent 2px 14px)}
+.fs-light-papel::after{background:linear-gradient(90deg,rgba(243,234,217,.7) 0 6px,transparent 6px)}
+
+/* ── ESCURAS ──────────────────────────────────────────── */
+
+/* 05 · Sombra em grade — mapeamento aéreo, hero institucional */
+.fs-dark-grade{background:var(--verde-sombra);color:var(--branco)}
+.fs-dark-grade::before{background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 82%);mask-image:radial-gradient(ellipse at center,#000 30%,transparent 82%)}
+.fs-dark-grade::after{background-image:url("../assets/patterns/ridge-neon.svg");background-repeat:no-repeat;background-size:100% 100%}
+
+/* 06 · Sombra topográfica — curvas neon no canto superior direito */
+.fs-dark-relevo{background:var(--verde-sombra);color:var(--branco)}
+.fs-dark-relevo::before{background-image:url("../assets/patterns/contour-neon.svg");background-repeat:no-repeat;background-size:cover;background-position:120% -20%;opacity:.42}
+.fs-dark-relevo::after{background:radial-gradient(90% 70% at 20% 100%,rgba(0,101,92,.55),transparent 65%)}
+
+/* 07 · Anil alvo — anéis concêntricos de precisão + varredura */
+.fs-dark-alvo{background:var(--verde-anil);color:var(--branco)}
+.fs-dark-alvo::before{background:repeating-radial-gradient(circle at 78% 26%,rgba(51,255,194,.14) 0 1px,transparent 1px 46px);-webkit-mask-image:radial-gradient(circle at 78% 26%,#000 0%,transparent 72%);mask-image:radial-gradient(circle at 78% 26%,#000 0%,transparent 72%)}
+.fs-dark-alvo::after{background:linear-gradient(200deg,rgba(0,65,65,.65),transparent 55%)}
+
+/* 08 · Perfil de solo — camadas estratigráficas, seções de dados */
+.fs-dark-solo{background:var(--verde-sombra);color:var(--branco)}
+.fs-dark-solo::before{background:linear-gradient(180deg,rgba(0,65,65,0) 0%,rgba(0,101,92,.5) 52%,rgba(216,190,152,.10) 68%,rgba(0,65,65,.9) 100%)}
+.fs-dark-solo::after{background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);mask-image:linear-gradient(180deg,#000,transparent 70%)}

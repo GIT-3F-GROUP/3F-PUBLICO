@@ -1,0 +1,59 @@
+<!-- @dsCard group="Logo" height=2260 subtitle="Abaixo destes tamanhos a escrita AGROQUÍMICA some e o X pontilhado se deforma. Menor que isso, só a escrita ORVIX sem detalhes" page -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.blk{display:flex;flex-direction:column;gap:12px;padding:16px;border-radius:var(--radius-card);border:var(--hairline);background:var(--surface-1);margin-bottom:14px}.blk h3{margin:0;font-family:var(--font-display);font-weight:800;font-size:15px;text-transform:uppercase;color:var(--text-strong)}.blk p{margin:0;font:var(--type-body-sm);color:var(--text-muted);max-width:80ch}.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}.t{display:flex;flex-direction:column;gap:8px}.sw{display:grid;place-items:center;min-height:120px;padding:14px;border-radius:var(--radius-md);border:var(--hairline);background:var(--surface-2);overflow:hidden}.sw .ovx-logo img{height:var(--h)!important;width:auto;max-width:none}.t b{font-family:var(--font-display);font-weight:800;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-body)}.t span{font:var(--type-caption);color:var(--text-muted)}.t em{font-style:normal;font-family:var(--font-mono);font-size:12px;color:var(--text-accent)}.t--no em{color:var(--text-danger)}.t--no .sw{border-style:dashed}.esc{display:flex;flex-wrap:wrap;align-items:flex-end;gap:22px;padding:16px;border-radius:var(--radius-md);border:var(--hairline);background:var(--surface-2)}.esc div{display:flex;flex-direction:column;align-items:flex-start;gap:6px}.esc .ovx-logo img{height:var(--h)!important;width:auto}.esc code{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}table{width:100%;border-collapse:collapse;font:var(--type-body-sm)}th{text-align:left;padding:8px 10px;font-family:var(--font-display);font-weight:800;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--label-fg);border-bottom:1px solid var(--border-strong)}td{padding:8px 10px;border-bottom:var(--hairline);color:var(--text-body)}td:nth-child(2),td:nth-child(3){font-family:var(--font-mono);font-size:12px;white-space:nowrap}.tw{overflow-x:auto}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const h = React.createElement, F = React.Fragment;
+const { Logo } = window.ORVIXDesignSystem_019de6;
+const tile = (v, px, nome, nota, ok = true) => h("div", { className: "t" + (ok ? "" : " t--no"), key: v + px },
+  h("div", { className: "sw" }, h("div", { style: { "--h": px + "px" } }, h(Logo, { variant: v, alt: nome }))),
+  h("b", null, nome), h("em", null, (ok ? "mínimo " : "errado: ") + px + "px"), h("span", null, nota));
+function Demo() {
+  return h(F, null,
+    h("div", { className: "blk" },
+      h("h3", null, "Com a escrita AGROQUÍMICA"),
+      h("p", null, "Abaixo destes tamanhos a escrita AGROQUÍMICA deixa de ser legível. Cada logo é mostrada exatamente no seu mínimo de altura em tela."),
+      h("div", { className: "g" },
+        tile("principal", 80, "Principal", "também a de vídeo · cerca de 21mm impresso"),
+        tile("detalhe-minimo", 64, "X com detalhe mínimo", "cerca de 17mm impresso"),
+        tile("sem-detalhes", 48, "Sem detalhes", "cerca de 13mm impresso"),
+        tile("principal", 34, "Principal pequena demais", "AGROQUÍMICA some e o X perde os pontos", false))),
+    h("div", { className: "blk" },
+      h("h3", null, "Quadrada com AGROQUÍMICA"),
+      h("p", null, "Na quadrada a escrita é proporcionalmente bem menor: o mínimo sobe para 144px de altura. Abaixo disso, use a quadrada sem assinatura."),
+      h("div", { className: "g" },
+        tile("quadrada", 144, "Quadrada", "cerca de 38mm impresso"),
+        tile("clube", 64, "Clube ORVIX", "cerca de 17mm impresso"))),
+    h("div", { className: "blk" },
+      h("h3", null, "X pontilhado, sem a escrita"),
+      h("p", null, "Sem AGROQUÍMICA a logo desce mais, mas o X pontilhado também tem limite: abaixo dele os pontos se fundem e a perna fica deformada."),
+      h("div", { className: "g" },
+        tile("principal-sem-assinatura", 32, "Principal sem assinatura", "header, rodapé, assinatura de vídeo"),
+        tile("detalhe-minimo-sem-assinatura", 32, "Detalhe mínimo sem assinatura", "produção de uma perna pontilhada"),
+        tile("quadrada-sem-assinatura", 40, "Quadrada sem assinatura", "avatar e ícone"),
+        tile("elemento-x", 32, "Elemento X", "favicon grande, marcador"),
+        tile("principal-sem-assinatura", 18, "X pontilhado pequeno demais", "os pontos viram borrão", false))),
+    h("div", { className: "blk" },
+      h("h3", null, "Abaixo do mínimo: só a escrita ORVIX"),
+      h("p", null, "Quando nenhuma das anteriores cabe, a logo vira só a escrita ORVIX, sem nenhum detalhe no X, no arquivo oficial (a fonte correta da logo). Nunca digite ORVIX em outra fonte para substituir a logo."),
+      h("div", { className: "esc" },
+        [28, 20, 16, 12].map((px) => h("div", { key: px, style: { "--h": px + "px" } }, h(Logo, { variant: "sem-detalhes-sem-assinatura", alt: "ORVIX" }), h("code", null, px + "px")))),
+      h("p", null, "Mínimo absoluto: 12px de altura. Variante: sem-detalhes-sem-assinatura.")),
+    h("div", { className: "blk" },
+      h("h3", null, "Resumo"),
+      h("div", { className: "tw" }, h("table", null,
+        h("thead", null, h("tr", null, h("th", null, "Logo"), h("th", null, "Mínimo em tela"), h("th", null, "Impresso"), h("th", null, "Abaixo disso, use"))),
+        h("tbody", null, [
+          ["Principal e para vídeos", "80px", "21mm", "Principal sem assinatura"],
+          ["X com detalhe mínimo", "64px", "17mm", "Detalhe mínimo sem assinatura"],
+          ["Sem detalhes", "48px", "13mm", "Só a escrita ORVIX"],
+          ["Quadrada", "144px", "38mm", "Quadrada sem assinatura"],
+          ["Clube ORVIX", "64px", "17mm", "Só em peça do Clube"],
+          ["Principal e detalhe mínimo sem assinatura", "32px", "8,5mm", "Só a escrita ORVIX"],
+          ["Quadrada sem assinatura", "40px", "11mm", "Elemento X ou só a escrita ORVIX"],
+          ["Elemento X", "32px", "8,5mm", "Só a escrita ORVIX"],
+          ["Só a escrita ORVIX", "12px", "3mm", "nada menor"],
+        ].map((r) => h("tr", { key: r[0] }, r.map((c, i) => h("td", { key: i }, c)))))))));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(h(Demo));
+</script></div></body></html>

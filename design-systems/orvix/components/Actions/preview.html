@@ -1,0 +1,118 @@
+<!-- @dsCard group="Ações" height=560 subtitle="Botão sólido, sem plástico: Exo ExtraBold em caixa alta, raio 6px, hover que clareia e nunca escurece. Tag é outra coisa: reta, pequena, sem preenchimento" page -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.ovx-stage{padding:20px;background:radial-gradient(120% 130% at 14% 0%,var(--surface-1) 0%,var(--bg-deep) 70%)}.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px}.lbl{font:var(--type-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--text-subtle);width:100%;margin-bottom:2px}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const {
+  Button,
+  IconButton,
+  ButtonGroup,
+  LinkAction
+} = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lbl"
+  }, "Variantes"), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    icon: "phone"
+  }, "Fale com um consultor"), /*#__PURE__*/React.createElement(Button, {
+    variant: "secondary",
+    iconRight: "arrow-right"
+  }, "Linha ORV7"), /*#__PURE__*/React.createElement(Button, {
+    variant: "ghost"
+  }, "Ver bula"), /*#__PURE__*/React.createElement(Button, {
+    variant: "verde-solido"
+  }, "Comprar direto"), /*#__PURE__*/React.createElement(Button, {
+    variant: "alvo"
+  }, "Tecnologia de aplica\xE7\xE3o"), /*#__PURE__*/React.createElement(Button, {
+    variant: "danger",
+    icon: "trash-2"
+  }, "Excluir")), /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lbl"
+  }, "Tamanhos \xB7 xs 24px \xB7 sm 29px \xB7 md 34px"), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    size: "xs"
+  }, "XS"), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    size: "sm"
+  }, "SM"), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    size: "md"
+  }, "MD"), /*#__PURE__*/React.createElement("span", {
+    className: "orvix-mono"
+  }, "md \xE9 o maior tamanho do sistema")), /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lbl"
+  }, "Prim\xE1rio \xB7 repouso, hover (clareia) e press"), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary"
+  }, "Repouso \xB7 verde-700"), /*#__PURE__*/React.createElement("button", {
+    className: "ovx-btn ovx-btn--primary",
+    style: {
+      background: 'var(--action-bg-hover)',
+      borderColor: 'var(--action-border-hover)',
+      color: 'var(--action-fg-hover)'
+    }
+  }, "Hover \xB7 #0E842C"), /*#__PURE__*/React.createElement("button", {
+    className: "ovx-btn ovx-btn--primary",
+    style: {
+      background: 'var(--action-bg-active)',
+      borderColor: 'var(--action-bg-active)',
+      color: 'var(--action-fg-hover)',
+      transform: 'scale(.99)'
+    }
+  }, "Press \xB7 verde-800"), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    loading: true
+  }, "Enviando"), /*#__PURE__*/React.createElement(Button, {
+    variant: "primary",
+    disabled: true
+  }, "Indispon\xEDvel")), /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lbl"
+  }, "\xCDcone, grupo e link"), /*#__PURE__*/React.createElement(IconButton, {
+    icon: "search",
+    label: "Buscar"
+  }), /*#__PURE__*/React.createElement(IconButton, {
+    icon: "sliders-horizontal",
+    label: "Filtros",
+    variant: "accent"
+  }), /*#__PURE__*/React.createElement(IconButton, {
+    icon: "x",
+    label: "Fechar",
+    variant: "bare"
+  }), /*#__PURE__*/React.createElement(IconButton, {
+    icon: "crosshair",
+    label: "Alvo",
+    round: true
+  }), /*#__PURE__*/React.createElement(ButtonGroup, null, /*#__PURE__*/React.createElement("button", {
+    className: "ovx-btn ovx-btn--secondary ovx-btn--sm",
+    "aria-pressed": "true"
+  }, "Calda"), /*#__PURE__*/React.createElement("button", {
+    className: "ovx-btn ovx-btn--secondary ovx-btn--sm"
+  }, "Gota"), /*#__PURE__*/React.createElement("button", {
+    className: "ovx-btn ovx-btn--secondary ovx-btn--sm"
+  }, "Alvo")), /*#__PURE__*/React.createElement(LinkAction, {
+    href: "#"
+  }, "Ver todas as linhas")), /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "lbl"
+  }, "Bot\xE3o nunca se confunde com tag"), /*#__PURE__*/React.createElement(Button, {
+    variant: "secondary",
+    size: "sm"
+  }, "Bot\xE3o secund\xE1rio"), /*#__PURE__*/React.createElement("span", {
+    className: "ovx-tag"
+  }, "tag"), /*#__PURE__*/React.createElement("span", {
+    className: "ovx-tag ovx-tag--selected"
+  }, "tag selecionada"), /*#__PURE__*/React.createElement("span", {
+    className: "orvix-mono"
+  }, "bot\xE3o: Exo ExtraBold, caixa alta, 6px, preenchido ou contornado forte \xB7 tag: Be Vietnam 11px, reta (3px), s\xF3 contorno fino")));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(Demo, null));
+</script></div></body></html>

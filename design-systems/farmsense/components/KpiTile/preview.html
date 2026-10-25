@@ -1,0 +1,22 @@
+<!-- @dsCard group="Data" height=150 -->
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>KpiTile</title>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{margin:0;padding:16px;background:var(--bege-perola);font-family:var(--font-sans);color:var(--verde-sombra)}.k{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;opacity:.75;display:block;margin:0 0 10px}.pane{border-radius:var(--r-md);padding:16px}.pane-l{background:rgba(0,65,65,.035);border:1px solid rgba(0,65,65,.08)}.pane-d{background:var(--verde-sombra);color:#fff}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const { KpiTile } = window.FarmSenseDesignSystem_c4c636;
+const { useState } = React;
+function Demo(){
+  
+  return (
+<div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:12}}>
+  <div className="pane pane-l"><KpiTile label="Sacas / hectare" value="82,4" unit="sc/ha" delta="▲ + 18,1 vs. safra anterior" deltaTone="positivo" /></div>
+  <div className="pane pane-l"><KpiTile label="Área monitorada" value="1 470" unit="ha" delta="12 talhões · 4 culturas" /></div>
+  <div className="pane pane-d"><KpiTile tone="dark" label="Vigor médio" value="0,78" unit="ndvi" delta="▲ + 0,06 nas últimas 24 h" deltaTone="neon" /></div>
+</div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

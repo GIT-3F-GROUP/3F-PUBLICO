@@ -1,0 +1,11 @@
+/* FarmSense — Fontes da marca
+   Be Vietnam Pro (400, 500, 800 — normal + itálico).
+   Arquivos .ttf oficiais em assets/fonts/. Também disponível gratuitamente
+   no Google Fonts: https://fonts.google.com/specimen/Be+Vietnam+Pro
+   Fallback editorial: Georgia (serifada de sistema, itálico). */
+@font-face{font-family:"Be Vietnam Pro";font-weight:400;font-style:normal;font-display:swap;src:url("../assets/fonts/BeVietnamPro-Regular.ttf") format("truetype")}
+@font-face{font-family:"Be Vietnam Pro";font-weight:400;font-style:italic;font-display:swap;src:url("../assets/fonts/BeVietnamPro-Italic.ttf") format("truetype")}
+@font-face{font-family:"Be Vietnam Pro";font-weight:500;font-style:normal;font-display:swap;src:url("../assets/fonts/BeVietnamPro-Medium.ttf") format("truetype")}
+@font-face{font-family:"Be Vietnam Pro";font-weight:500;font-style:italic;font-display:swap;src:url("../assets/fonts/BeVietnamPro-MediumItalic.ttf") format("truetype")}
+@font-face{font-family:"Be Vietnam Pro";font-weight:800;font-style:normal;font-display:swap;src:url("../assets/fonts/BeVietnamPro-ExtraBold.ttf") format("truetype")}
+@font-face{font-family:"Be Vietnam Pro";font-weight:800;font-style:italic;font-display:swap;src:url("../assets/fonts/BeVietnamPro-ExtraBoldItalic.ttf") format("truetype")}

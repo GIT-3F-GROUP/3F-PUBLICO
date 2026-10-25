@@ -1,0 +1,556 @@
+/* FarmSense Design System — components/bundle.css
+   Carregada depois de tokens.css. Cores, sombras, espaços, raios, opacidades,
+   breakpoints, traços, vidro, famílias e estilos de texto vivem em tokens.json
+   (compilados em tokens.css); aqui fica tudo o que os tokens não declaram:
+   triplets RGB, escala tipográfica fluida, movimento, superfícies, padrões,
+   base editorial, componentes e os 118 efeitos nomeados. */
+
+/* — Cores: triplets RGB para composição de alfa — */
+:root{
+  --rgb-verde-sombra:0,65,65;
+  --rgb-verde-anil:0,101,92;
+  --rgb-verde-neon:10,220,20;
+  --rgb-ciano-neon:51,255,194;
+  --rgb-branco:255,255,255;
+  --rgb-bege-escuro:216,190,152;
+}
+
+/* — Tipografia: pesos, escala fluida, entrelinhas e tracking como variáveis — */
+:root{
+  --fw-regular:400;
+  --fw-medium:500;
+  --fw-bold:800;
+
+  --fs-display:clamp(36px,4.6vw,68px);
+  --fs-h1:clamp(28px,3.2vw,44px);
+  --fs-h2:clamp(24px,2.6vw,34px);
+  --fs-h3:22px;
+  --fs-h4:17px;
+  --fs-body-lg:19px;
+  --fs-body:16px;
+  --fs-body-sm:14px;
+  --fs-label:12px;
+  --fs-micro:11px;
+  --fs-nano:10px;
+
+  --lh-display:.98;
+  --lh-h1:1.02;
+  --lh-h2:1.04;
+  --lh-h3:1.2;
+  --lh-body:1.55;
+  --lh-body-lg:1.5;
+
+  --ls-display:-.022em;
+  --ls-h1:-.018em;
+  --ls-h2:-.015em;
+  --ls-h3:-.01em;
+  --ls-body:0;
+  --ls-label:.14em;
+  --ls-kicker:.18em;
+}
+
+/* — Espaço e traço: medida de leitura e hairlines compostas — */
+:root{
+  --measure:66ch;
+  --hairline-light:1px solid rgba(0,65,65,.12);
+  --hairline-dark:1px solid rgba(255,255,255,.14);
+}
+
+/* FarmSense — Movimento.
+   Nada quica. Tudo desliza com desaceleração de campo:
+   entrada rápida, chegada longa. Nunca acima de 900 ms. */
+:root{
+  --d-instant:80ms; /* @kind other */
+  --d-fast:150ms; /* @kind other */
+  --d-base:240ms; /* @kind other */
+  --d-slow:420ms; /* @kind other */
+  --d-slower:700ms; /* @kind other */
+  --d-ambient:900ms; /* @kind other */
+
+  --e-standard:cubic-bezier(.2,.7,.2,1); /* @kind other */
+  --e-entrance:cubic-bezier(.16,1,.3,1); /* @kind other */
+  --e-exit:cubic-bezier(.5,0,.9,.4); /* @kind other */
+  --e-linear:linear; /* @kind other */
+  --e-contour:cubic-bezier(.35,.02,.15,1); /* @kind other */
+  --e-scan:cubic-bezier(.65,0,.35,1); /* @kind other */
+
+  --hover-lift:-1px; /* @kind other */
+  --hover-lift-card:-3px; /* @kind other */
+  --press-scale:.985; /* @kind other */
+  --hover-opacity:.86; /* @kind other */
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+
+/* FarmSense — Superfícies de seção.
+   Quatro claras, quatro escuras. Cada uma é um fundo completo, pronto para
+   receber conteúdo. Use .fs-surface como base e uma das variantes. */
+.fs-surface{position:relative;overflow:hidden;isolation:isolate}
+.fs-surface > *{position:relative;z-index:1}
+.fs-surface::before,.fs-surface::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0}
+
+/* ── CLARAS ───────────────────────────────────────────── */
+
+/* 01 · Pérola limpa — leitura longa, editorial, default */
+.fs-light-perola{background:var(--bege-perola);color:var(--verde-sombra)}
+.fs-light-perola::before{background-image:radial-gradient(rgba(0,65,65,.055) 1px,transparent 1px);background-size:22px 22px;opacity:.9}
+.fs-light-perola::after{background:radial-gradient(120% 90% at 50% -10%,rgba(255,255,255,.9),transparent 60%)}
+
+/* 02 · Rastro topográfico — curvas de nível tom-sobre-tom no canto */
+.fs-light-rastro{background:var(--bege-rastro);color:var(--verde-sombra)}
+.fs-light-rastro::before{background-image:url("../assets/Patterns/contour-tonal.svg");background-repeat:no-repeat;background-size:cover;background-position:120% -20%;opacity:.5;mix-blend-mode:multiply}
+.fs-light-rastro::after{background:linear-gradient(180deg,rgba(247,243,237,.6),transparent 40%)}
+
+/* 03 · Estrada em vidro — bege quente sob vidro branco, para comercial */
+.fs-light-estrada{background:var(--bege-estrada);color:var(--verde-sombra)}
+.fs-light-estrada::before{background:linear-gradient(140deg,rgba(255,255,255,.55),rgba(255,255,255,.12) 55%,rgba(255,255,255,.4))}
+.fs-light-estrada::after{background-image:url("../assets/Patterns/ridge-sombra.svg");background-repeat:no-repeat;background-size:100% 100%;opacity:.45}
+
+/* 04 · Papel impresso — branco com listras tonais de talhão */
+.fs-light-papel{background:var(--branco);color:var(--verde-sombra)}
+.fs-light-papel::before{background:repeating-linear-gradient(120deg,rgba(0,65,65,.045) 0 2px,transparent 2px 14px)}
+.fs-light-papel::after{background:linear-gradient(90deg,rgba(243,234,217,.7) 0 6px,transparent 6px)}
+
+/* ── ESCURAS ──────────────────────────────────────────── */
+
+/* 05 · Sombra em grade — mapeamento aéreo, hero institucional */
+.fs-dark-grade{background:var(--verde-sombra);color:var(--branco)}
+.fs-dark-grade::before{background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 82%);mask-image:radial-gradient(ellipse at center,#000 30%,transparent 82%)}
+.fs-dark-grade::after{background-image:url("../assets/Patterns/ridge-neon.svg");background-repeat:no-repeat;background-size:100% 100%}
+
+/* 06 · Sombra topográfica — curvas neon no canto superior direito */
+.fs-dark-relevo{background:var(--verde-sombra);color:var(--branco)}
+.fs-dark-relevo::before{background-image:url("../assets/Patterns/contour-neon.svg");background-repeat:no-repeat;background-size:cover;background-position:120% -20%;opacity:.42}
+.fs-dark-relevo::after{background:radial-gradient(90% 70% at 20% 100%,rgba(0,101,92,.55),transparent 65%)}
+
+/* 07 · Anil alvo — anéis concêntricos de precisão + varredura */
+.fs-dark-alvo{background:var(--verde-anil);color:var(--branco)}
+.fs-dark-alvo::before{background:repeating-radial-gradient(circle at 78% 26%,rgba(51,255,194,.14) 0 1px,transparent 1px 46px);-webkit-mask-image:radial-gradient(circle at 78% 26%,#000 0%,transparent 72%);mask-image:radial-gradient(circle at 78% 26%,#000 0%,transparent 72%)}
+.fs-dark-alvo::after{background:linear-gradient(200deg,rgba(0,65,65,.65),transparent 55%)}
+
+/* 08 · Perfil de solo — camadas estratigráficas, seções de dados */
+.fs-dark-solo{background:var(--verde-sombra);color:var(--branco)}
+.fs-dark-solo::before{background:linear-gradient(180deg,rgba(0,65,65,0) 0%,rgba(0,101,92,.5) 52%,rgba(216,190,152,.10) 68%,rgba(0,65,65,.9) 100%)}
+.fs-dark-solo::after{background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);mask-image:linear-gradient(180deg,#000,transparent 70%)}
+
+/* FarmSense — Padrões ambientais.
+   Curvas de nível, grade de mapeamento, alvos, camadas de solo, listras tonais.
+   Toda camada é decorativa: position:absolute; inset:0; pointer-events:none.
+   Regra: o padrão vive no canto e é cortado pela borda — nunca centralizado inteiro. */
+.fs-layer{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+
+/* — Curvas de nível (SVG oficial da marca) — */
+.fs-contour{position:absolute;inset:0;pointer-events:none;background-repeat:no-repeat;background-size:cover}
+.fs-contour--neon{background-image:url("../assets/Patterns/contour-neon.svg");opacity:.4}
+.fs-contour--tonal{background-image:url("../assets/Patterns/contour-tonal.svg");opacity:.55;mix-blend-mode:multiply}
+.fs-contour--sombra{background-image:url("../assets/Patterns/contour-sombra.svg");opacity:.6}
+.fs-ridge{position:absolute;inset:0;pointer-events:none;background-repeat:no-repeat;background-size:100% 100%}
+.fs-ridge--neon{background-image:url("../assets/Patterns/ridge-neon.svg")}
+.fs-ridge--sombra{background-image:url("../assets/Patterns/ridge-sombra.svg");opacity:.5}
+.fs-corner-tr{background-position:120% -20%}
+.fs-corner-tl{background-position:-20% -20%}
+.fs-corner-br{background-position:120% 120%}
+.fs-corner-bl{background-position:-20% 120%}
+
+/* — Grade de mapeamento aéreo — */
+.fs-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse at center,#000 30%,transparent 80%)}
+.fs-grid--fine{background-size:14px 14px}
+.fs-grid--wide{background-size:112px 112px}
+.fs-grid--light{background-image:linear-gradient(rgba(0,65,65,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,65,65,.06) 1px,transparent 1px)}
+.fs-grid--neon{background-image:linear-gradient(rgba(51,255,194,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(51,255,194,.10) 1px,transparent 1px)}
+
+/* — Malha de amostragem (pontos) — */
+.fs-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(0,65,65,.10) 1px,transparent 1px);background-size:18px 18px}
+.fs-dots--dark{background-image:radial-gradient(rgba(255,255,255,.10) 1px,transparent 1px)}
+.fs-dots--neon{background-image:radial-gradient(rgba(51,255,194,.22) 1px,transparent 1px);background-size:26px 26px}
+
+/* — Alvo tecnológico (anéis concêntricos de precisão) — */
+.fs-target{position:absolute;inset:0;pointer-events:none;background:repeating-radial-gradient(circle at 78% 26%,rgba(51,255,194,.16) 0 1px,transparent 1px 46px);-webkit-mask-image:radial-gradient(circle at 78% 26%,#000 0%,transparent 70%);mask-image:radial-gradient(circle at 78% 26%,#000 0%,transparent 70%)}
+.fs-target--light{background:repeating-radial-gradient(circle at 78% 26%,rgba(0,65,65,.10) 0 1px,transparent 1px 46px)}
+.fs-target--center{background-position:center;background:repeating-radial-gradient(circle at 50% 50%,rgba(51,255,194,.14) 0 1px,transparent 1px 38px);-webkit-mask-image:radial-gradient(circle,#000 0%,transparent 72%);mask-image:radial-gradient(circle,#000 0%,transparent 72%)}
+
+/* — Varredura de sensor (linhas de radar) — */
+.fs-sweep{position:absolute;inset:0;pointer-events:none;background:conic-gradient(from 0deg at 78% 26%,rgba(51,255,194,.18),transparent 22%,transparent 100%);-webkit-mask-image:radial-gradient(circle at 78% 26%,#000 0%,transparent 62%);mask-image:radial-gradient(circle at 78% 26%,#000 0%,transparent 62%)}
+
+/* — Camadas de solo (perfil estratigráfico) — */
+.fs-strata{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,65,65,0) 0%,rgba(0,65,65,0) 46%,rgba(0,101,92,.35) 46%,rgba(0,101,92,.35) 58%,rgba(216,190,152,.16) 58%,rgba(216,190,152,.16) 72%,rgba(0,65,65,.45) 72%,rgba(0,65,65,.45) 100%)}
+.fs-strata--light{background:linear-gradient(180deg,rgba(247,243,237,0) 0%,rgba(247,243,237,0) 46%,rgba(231,215,188,.7) 46%,rgba(231,215,188,.7) 58%,rgba(216,190,152,.75) 58%,rgba(216,190,152,.75) 72%,rgba(0,65,65,.12) 72%,rgba(0,65,65,.12) 100%)}
+
+/* — Listras tonais (talhão / linhas de plantio) — */
+.fs-stripes{background:repeating-linear-gradient(120deg,rgba(0,65,65,.06) 0 2px,transparent 2px 14px)}
+.fs-stripes--dark{background:repeating-linear-gradient(120deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px)}
+.fs-stripes--neon{background:repeating-linear-gradient(120deg,rgba(51,255,194,.08) 0 2px,transparent 2px 18px)}
+.fs-rows{background:repeating-linear-gradient(90deg,rgba(0,65,65,.05) 0 1px,transparent 1px 9px)}
+
+/* — Máscaras de proteção (gradiente de leitura sobre imagem/padrão) — */
+.fs-scrim-b{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 40%,rgba(0,65,65,.75) 100%)}
+.fs-scrim-t{position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,transparent 40%,rgba(0,65,65,.75) 100%)}
+.fs-scrim-l{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,65,65,.8) 0%,transparent 62%)}
+.fs-vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 40%,rgba(0,65,65,.35) 100%)}
+
+/* FarmSense — Base editorial.
+   Classes utilitárias que reproduzem o manual de marca original.
+   Valores idênticos aos do documento-fonte. */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:var(--font-sans);font-weight:400;font-size:16px;line-height:1.5;background:var(--bege-perola);color:var(--verde-sombra)}
+img,svg{display:block;max-width:100%}
+a{color:var(--verde-anil);text-decoration:none;border-bottom:1px solid rgba(0,101,92,.35);transition:color var(--d-fast) var(--e-standard),border-color var(--d-fast) var(--e-standard)}
+a:hover{color:var(--verde-sombra);border-color:var(--verde-sombra)}
+.on-dark a{color:var(--ciano-neon);border-bottom-color:rgba(51,255,194,.4)}
+.on-dark a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.6)}
+
+/* — Containers — */
+.wrap{max-width:var(--wrap-max);margin:0 auto;padding:var(--s-8) var(--s-6)}
+.wrap-tight{max-width:var(--wrap-tight);margin:0 auto;padding:var(--s-8) var(--s-6)}
+
+/* — Tinta por opacidade — */
+.on-light{color:var(--verde-sombra)}
+.on-dark{color:var(--branco)}
+.t-100{opacity:var(--ink-100)}.t-85{opacity:var(--ink-085)}.t-70{opacity:var(--ink-070)}.t-55{opacity:var(--ink-055)}.t-40{opacity:var(--ink-040)}.t-22{opacity:var(--ink-022)}
+.muted{opacity:var(--ink-055)}
+
+/* — Escala tipográfica — */
+/* Família, tamanho fixo, entrelinha, peso e tracking: classes geradas em tokens.css
+   a partir de tokens.json. Aqui fica só o que os tokens não expressam. */
+.display{font-size:var(--fs-display);margin:0}
+.h1{font-size:var(--fs-h1);margin:0}
+.h2{font-size:var(--fs-h2);margin:0}
+.h3{margin:0}
+.h4{margin:0}
+.label{text-transform:uppercase}
+.serif{font-family:var(--font-serif);font-style:italic;font-weight:400}
+.mono-num{font-variant-numeric:tabular-nums}
+.kicker{text-transform:uppercase;opacity:var(--ink-055);display:inline-flex;align-items:center;gap:var(--s-2)}
+.kicker::before{content:"";width:28px;height:1px;background:currentColor;opacity:.6}
+.eyebrow-num{opacity:var(--ink-055)}
+.section-header{display:flex;align-items:baseline;gap:var(--s-5);margin-bottom:var(--s-7);flex-wrap:wrap}
+
+/* — Grid — */
+.grid{display:grid;gap:var(--s-5)}
+.g-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.g-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+@media(max-width:900px){.g-2,.g-3,.g-4,.g-5{grid-template-columns:1fr 1fr}.g-6{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.g-2,.g-3,.g-4,.g-5,.g-6{grid-template-columns:1fr}}
+.row{display:flex;gap:var(--s-5);align-items:center;flex-wrap:wrap}
+.row-tight{display:flex;gap:var(--s-2);align-items:center;flex-wrap:wrap}
+.stack{display:flex;flex-direction:column;gap:var(--s-4)}
+.center{text-align:center}.right{text-align:right}
+
+/* — Botões — */
+.btn{font-family:var(--font-sans);font-weight:500;font-size:14px;letter-spacing:.01em;padding:12px 22px;border-radius:var(--r-pill);display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:0;text-decoration:none;border-bottom:0;transition:transform var(--d-fast) var(--e-standard),box-shadow var(--d-base) var(--e-standard),background var(--d-base) var(--e-standard),opacity var(--d-base) var(--e-standard)}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0) scale(.985)}
+.btn[disabled],.btn.is-disabled{opacity:.4;pointer-events:none}
+.btn-primary-dark{background:var(--verde-sombra);color:#fff}
+.btn-primary-light{background:var(--bege-perola);color:var(--verde-sombra)}
+.btn-ghost-dark{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn-ghost-light{background:transparent;color:var(--verde-sombra);border:1px solid rgba(0,65,65,.25)}
+.btn-neon{background:var(--ciano-neon);color:var(--verde-sombra);box-shadow:var(--sh-neon)}
+.btn-sm{padding:8px 16px;font-size:13px}
+.btn-lg{padding:16px 28px;font-size:15px}
+.btn .chev{width:14px;height:14px}
+
+/* — Chips — */
+.chip{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:var(--r-pill);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.chip-tone-dark{background:rgba(255,255,255,.08);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.12)}
+.chip-tone-light{background:rgba(0,65,65,.07);color:var(--verde-sombra)}
+.chip-neon{background:rgba(51,255,194,.12);color:var(--ciano-neon);border:1px solid rgba(51,255,194,.4)}
+.chip-neon-green{background:rgba(10,220,20,.12);color:var(--verde-neon);border:1px solid rgba(10,220,20,.4)}
+.chip-outline{background:transparent;color:var(--verde-sombra);border:1px solid rgba(0,65,65,.25)}
+.chip-solid{background:var(--verde-sombra);color:#fff}
+
+/* — Ponto de sinal — */
+.neon-dot{width:8px;height:8px;border-radius:50%;background:var(--ciano-neon);box-shadow:var(--signal-glow);display:inline-block;flex:0 0 auto}
+.neon-dot.green{background:var(--verde-neon);box-shadow:var(--signal-glow-green)}
+.neon-dot.mute{background:rgba(0,65,65,.3);box-shadow:none}
+
+/* — Vidro — */
+.glass{position:relative;border-radius:var(--r-lg);backdrop-filter:blur(var(--blur-glass)) saturate(var(--sat-glass));-webkit-backdrop-filter:blur(var(--blur-glass)) saturate(var(--sat-glass));padding:var(--s-6);overflow:hidden}
+.glass-dark{background:linear-gradient(140deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.10);box-shadow:var(--sh-inset-dark);color:#fff}
+.glass-dark.with-neon{border:1px solid rgba(51,255,194,.22);box-shadow:inset 0 1px 0 rgba(51,255,194,.18),0 0 0 1px rgba(51,255,194,.04)}
+.glass-dark.with-neon-green{border:1px solid rgba(10,220,20,.22);box-shadow:inset 0 1px 0 rgba(10,220,20,.18)}
+.glass-light{background:linear-gradient(140deg,rgba(255,255,255,.65),rgba(255,255,255,.35));border:1px solid rgba(255,255,255,.8);box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 12px 40px rgba(0,65,65,.06);color:var(--verde-sombra)}
+.glass-tone{background:linear-gradient(140deg,rgba(255,255,255,.55),rgba(255,255,255,.18));border:1px solid rgba(0,65,65,.06);box-shadow:0 12px 30px rgba(0,65,65,.05);color:var(--verde-sombra)}
+
+/* — Tiles — */
+.tile{border-radius:var(--r-md);padding:var(--s-5);background:rgba(0,65,65,.04);border:1px solid rgba(0,65,65,.08)}
+.tile-dark{border-radius:var(--r-md);padding:var(--s-5);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.tile-print{border:1px solid rgba(0,65,65,.18);border-radius:var(--r-md);padding:var(--s-5)}
+
+/* — KPI — */
+.kpi{display:flex;flex-direction:column;gap:6px}
+.kpi .v{font-family:var(--font-sans);font-weight:800;font-size:48px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.kpi .v sup{font-size:.42em;font-weight:500;letter-spacing:0;vertical-align:super;opacity:.7;margin-left:4px}
+.kpi .lab{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+.kpi .delta{font-size:12px;font-variant-numeric:tabular-nums}
+
+/* — Swatch — */
+.swatch{position:relative;border-radius:var(--r-md);padding:var(--s-5);display:flex;flex-direction:column;justify-content:space-between;min-height:200px;overflow:hidden}
+.swatch .hex{font-family:var(--font-sans);font-weight:500;letter-spacing:.04em;font-size:13px}
+.swatch .name{font-family:var(--font-sans);font-weight:800;font-size:20px;letter-spacing:-.01em}
+.swatch .rgb{font-size:11px;opacity:.55;letter-spacing:.05em}
+.swatch.dark{color:#fff}.swatch.dark .rgb{opacity:.7}
+.swatch.light{color:var(--verde-sombra)}
+.swatch .corner-tag{position:absolute;top:var(--s-4);right:var(--s-4);font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}
+
+/* — Regras faça / não faça — */
+.rule{display:flex;gap:var(--s-3);align-items:flex-start;padding:var(--s-4);border-radius:var(--r-sm);background:rgba(0,65,65,.04)}
+.rule.ok{border-left:3px solid var(--verde-anil)}
+.rule.no{border-left:3px solid var(--verde-sombra);background:rgba(0,65,65,.08)}
+.rule .icon{flex:0 0 auto;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:700;background:rgba(0,65,65,.1);color:var(--verde-sombra)}
+.rule.ok .icon{background:var(--verde-sombra);color:var(--ciano-neon)}
+
+/* — Fios — */
+hr.hairline{border:0;height:1px;background:currentColor;opacity:.15;margin:var(--s-6) 0}
+.vrule{width:1px;align-self:stretch;background:currentColor;opacity:.15}
+
+/* — Cartão de logo — */
+.logo-card{border-radius:var(--r-md);padding:var(--s-6) var(--s-5);min-height:200px;display:flex;align-items:center;justify-content:center;position:relative}
+.logo-card img{width:78%;max-width:320px;height:auto}
+.logo-card.has-compact img{width:55%;max-width:180px}
+.logo-card.bg-perola{background:var(--bege-perola)}
+.logo-card.bg-rastro{background:var(--bege-rastro)}
+.logo-card.bg-estrada{background:var(--bege-estrada)}
+.logo-card.bg-escuro{background:var(--bege-escuro)}
+.logo-card.bg-sombra{background:var(--verde-sombra)}
+.logo-card.bg-anil{background:var(--verde-anil)}
+.logo-card.bg-white{background:#fff;border:1px solid rgba(0,65,65,.08)}
+.logo-card .tag{position:absolute;bottom:12px;left:14px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}
+
+/* ============================================================
+   FarmSense — Biblioteca de efeitos e movimento
+   118 efeitos nomeados. Nada quica. Entrada rápida, chegada longa.
+   Prefixos: fs-hv-* (hover) · fs-pr-* (press) · fs-fx-* (foco)
+             fs-in-* (entrada) · fs-am-* (ambiente/loop)
+             fs-tx-* (texto) · fs-dv-* (dados) · fs-ld-* (carregamento)
+   ============================================================ */
+:root{--fx-t:var(--d-base) var(--e-standard)}
+[class*="fs-hv-"],[class*="fs-pr-"]{transition:transform var(--d-fast) var(--e-standard),box-shadow var(--fx-t),background var(--fx-t),color var(--fx-t),border-color var(--fx-t),opacity var(--fx-t),filter var(--fx-t),letter-spacing var(--fx-t)}
+
+/* ── 01–30 · HOVER ──────────────────────────────────── */
+.fs-hv-lift:hover{transform:translateY(-1px)}
+.fs-hv-lift-card:hover{transform:translateY(-3px);box-shadow:var(--sh-3)}
+.fs-hv-lift-far:hover{transform:translateY(-8px);box-shadow:var(--sh-4)}
+.fs-hv-sink:hover{transform:translateY(2px);box-shadow:var(--sh-1)}
+.fs-hv-scale:hover{transform:scale(1.03)}
+.fs-hv-scale-sm:hover{transform:scale(1.012)}
+.fs-hv-shrink:hover{transform:scale(.97)}
+.fs-hv-slide-r:hover{transform:translateX(4px)}
+.fs-hv-slide-l:hover{transform:translateX(-4px)}
+.fs-hv-tilt:hover{transform:perspective(700px) rotateX(3deg) rotateY(-3deg)}
+.fs-hv-glow:hover{box-shadow:var(--sh-neon)}
+.fs-hv-glow-green:hover{box-shadow:var(--sh-neon-green)}
+.fs-hv-glow-soft:hover{box-shadow:0 0 0 6px rgba(51,255,194,.10)}
+.fs-hv-ring:hover{box-shadow:0 0 0 1px rgba(0,65,65,.25),0 0 0 5px rgba(0,65,65,.06)}
+.fs-hv-ring-neon:hover{box-shadow:0 0 0 1px rgba(51,255,194,.5),0 0 0 5px rgba(51,255,194,.10)}
+.fs-hv-tint:hover{background:rgba(0,65,65,.07)}
+.fs-hv-tint-dark:hover{background:rgba(255,255,255,.08)}
+.fs-hv-darken:hover{filter:brightness(.92)}
+.fs-hv-lighten:hover{filter:brightness(1.08)}
+.fs-hv-saturate:hover{filter:saturate(1.35)}
+.fs-hv-desaturate:hover{filter:saturate(.25)}
+.fs-hv-fade:hover{opacity:.86}
+.fs-hv-solid:hover{opacity:1}
+.fs-hv-border:hover{border-color:rgba(0,65,65,.45)}
+.fs-hv-border-neon:hover{border-color:rgba(51,255,194,.6)}
+.fs-hv-ink:hover{color:var(--verde-sombra)}
+.fs-hv-ink-neon:hover{color:var(--ciano-neon)}
+.fs-hv-track:hover{letter-spacing:.06em}
+.fs-hv-blur-bg:hover{backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%)}
+.fs-hv-invert:hover{background:var(--verde-sombra);color:#fff;border-color:var(--verde-sombra)}
+
+/* ── 31–40 · HOVER composto (pseudo-elementos) ─────────── */
+.fs-hv-underline{position:relative;display:inline-block}
+.fs-hv-underline::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform var(--d-base) var(--e-standard)}
+.fs-hv-underline:hover::after{transform:scaleX(1)}
+.fs-hv-underline-out{position:relative;display:inline-block}
+.fs-hv-underline-out::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:currentColor;transform:scaleX(1);transform-origin:right;transition:transform var(--d-base) var(--e-standard)}
+.fs-hv-underline-out:hover::after{transform:scaleX(0)}
+.fs-hv-highlight{position:relative;z-index:0}
+.fs-hv-highlight::before{content:"";position:absolute;inset:-2px -6px;background:rgba(51,255,194,.22);z-index:-1;transform:scaleX(0);transform-origin:left;transition:transform var(--d-base) var(--e-standard)}
+.fs-hv-highlight:hover::before{transform:scaleX(1)}
+.fs-hv-sweep{position:relative;overflow:hidden}
+.fs-hv-sweep::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%);transform:translateX(-100%);transition:transform var(--d-slower) var(--e-scan)}
+.fs-hv-sweep:hover::after{transform:translateX(100%)}
+.fs-hv-fill-up{position:relative;overflow:hidden;z-index:0}
+.fs-hv-fill-up::before{content:"";position:absolute;inset:0;background:var(--verde-sombra);z-index:-1;transform:translateY(101%);transition:transform var(--d-base) var(--e-entrance)}
+.fs-hv-fill-up:hover{color:#fff}
+.fs-hv-fill-up:hover::before{transform:translateY(0)}
+.fs-hv-fill-left{position:relative;overflow:hidden;z-index:0}
+.fs-hv-fill-left::before{content:"";position:absolute;inset:0;background:var(--ciano-neon);z-index:-1;transform:translateX(-101%);transition:transform var(--d-base) var(--e-entrance)}
+.fs-hv-fill-left:hover{color:var(--verde-sombra)}
+.fs-hv-fill-left:hover::before{transform:translateX(0)}
+.fs-hv-arrow .chev,.fs-hv-arrow svg{transition:transform var(--d-base) var(--e-standard)}
+.fs-hv-arrow:hover .chev,.fs-hv-arrow:hover svg{transform:translateX(4px)}
+.fs-hv-corner{position:relative}
+.fs-hv-corner::before,.fs-hv-corner::after{content:"";position:absolute;width:12px;height:12px;border:1px solid var(--ciano-neon);opacity:0;transition:opacity var(--d-base) var(--e-standard),transform var(--d-base) var(--e-standard)}
+.fs-hv-corner::before{top:6px;left:6px;border-right:0;border-bottom:0;transform:translate(4px,4px)}
+.fs-hv-corner::after{bottom:6px;right:6px;border-left:0;border-top:0;transform:translate(-4px,-4px)}
+.fs-hv-corner:hover::before,.fs-hv-corner:hover::after{opacity:1;transform:translate(0,0)}
+.fs-hv-scanline{position:relative;overflow:hidden}
+.fs-hv-scanline::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--ciano-neon),transparent);opacity:0;transition:opacity var(--d-fast) linear}
+.fs-hv-scanline:hover::after{opacity:1;animation:fs-scan-y var(--d-slower) var(--e-scan) infinite}
+.fs-hv-reveal-img img{transition:transform var(--d-slower) var(--e-standard)}
+.fs-hv-reveal-img:hover img{transform:scale(1.05)}
+
+/* ── 41–46 · PRESS ────────────────────────────────────── */
+.fs-pr-scale:active{transform:scale(.985)}
+.fs-pr-scale-deep:active{transform:scale(.95)}
+.fs-pr-sink:active{transform:translateY(2px)}
+.fs-pr-flat:active{box-shadow:none;transform:translateY(1px)}
+.fs-pr-dim:active{opacity:.75}
+.fs-pr-ink:active{background:rgba(0,65,65,.12)}
+
+/* ── 47–52 · FOCO ─────────────────────────────────────── */
+.fs-fx-ring:focus-visible{outline:none;box-shadow:0 0 0 2px var(--bege-perola),0 0 0 4px var(--verde-sombra)}
+.fs-fx-ring-neon:focus-visible{outline:none;box-shadow:0 0 0 2px var(--verde-sombra),0 0 0 4px var(--ciano-neon)}
+.fs-fx-inset:focus-visible{outline:none;box-shadow:inset 0 0 0 2px var(--verde-sombra)}
+.fs-fx-border:focus-within{border-color:var(--verde-sombra)}
+.fs-fx-border-neon:focus-within{border-color:var(--ciano-neon);box-shadow:0 0 0 3px rgba(51,255,194,.15)}
+.fs-fx-lift:focus-visible{transform:translateY(-1px)}
+
+/* ── 53–74 · ENTRADA ──────────────────────────────────── */
+@keyframes fs-fade{from{opacity:0}to{opacity:1}}
+@keyframes fs-fade-up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fs-fade-down{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+@keyframes fs-fade-left{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes fs-fade-right{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+@keyframes fs-rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes fs-scale-in{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+@keyframes fs-scale-out-in{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:none}}
+@keyframes fs-blur-in{from{opacity:0;filter:blur(10px)}to{opacity:1;filter:blur(0)}}
+@keyframes fs-clip-up{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes fs-clip-down{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes fs-clip-left{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+@keyframes fs-clip-right{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes fs-clip-circle{from{clip-path:circle(0% at 50% 50%)}to{clip-path:circle(75% at 50% 50%)}}
+@keyframes fs-unfold{from{opacity:0;transform:perspective(800px) rotateX(-12deg);transform-origin:top}to{opacity:1;transform:none}}
+@keyframes fs-tilt-in{from{opacity:0;transform:perspective(800px) rotateY(9deg) translateX(20px)}to{opacity:1;transform:none}}
+@keyframes fs-drop{from{opacity:0;transform:translateY(-28px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes fs-expand-w{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1)}}
+@keyframes fs-expand-h{from{transform:scaleY(0);transform-origin:top}to{transform:scaleY(1)}}
+.fs-in-fade{animation:fs-fade var(--d-slow) var(--e-entrance) both}
+.fs-in-up{animation:fs-fade-up var(--d-slow) var(--e-entrance) both}
+.fs-in-down{animation:fs-fade-down var(--d-slow) var(--e-entrance) both}
+.fs-in-left{animation:fs-fade-left var(--d-slow) var(--e-entrance) both}
+.fs-in-right{animation:fs-fade-right var(--d-slow) var(--e-entrance) both}
+.fs-in-rise{animation:fs-rise var(--d-slower) var(--e-entrance) both}
+.fs-in-scale{animation:fs-scale-in var(--d-slow) var(--e-entrance) both}
+.fs-in-zoom{animation:fs-scale-out-in var(--d-slower) var(--e-entrance) both}
+.fs-in-blur{animation:fs-blur-in var(--d-slower) var(--e-entrance) both}
+.fs-in-clip-up{animation:fs-clip-up var(--d-slower) var(--e-contour) both}
+.fs-in-clip-down{animation:fs-clip-down var(--d-slower) var(--e-contour) both}
+.fs-in-clip-left{animation:fs-clip-left var(--d-slower) var(--e-contour) both}
+.fs-in-clip-right{animation:fs-clip-right var(--d-slower) var(--e-contour) both}
+.fs-in-iris{animation:fs-clip-circle var(--d-ambient) var(--e-contour) both}
+.fs-in-unfold{animation:fs-unfold var(--d-slower) var(--e-entrance) both}
+.fs-in-tilt{animation:fs-tilt-in var(--d-slower) var(--e-entrance) both}
+.fs-in-drop{animation:fs-drop var(--d-slow) var(--e-entrance) both}
+.fs-in-rule{animation:fs-expand-w var(--d-slower) var(--e-contour) both}
+.fs-in-curtain{animation:fs-expand-h var(--d-slower) var(--e-contour) both}
+.fs-in-d1{animation-delay:80ms}.fs-in-d2{animation-delay:160ms}.fs-in-d3{animation-delay:240ms}
+.fs-in-d4{animation-delay:320ms}.fs-in-d5{animation-delay:400ms}.fs-in-d6{animation-delay:520ms}
+.fs-stagger > *{animation:fs-fade-up var(--d-slow) var(--e-entrance) both}
+.fs-stagger > *:nth-child(1){animation-delay:0ms}
+.fs-stagger > *:nth-child(2){animation-delay:70ms}
+.fs-stagger > *:nth-child(3){animation-delay:140ms}
+.fs-stagger > *:nth-child(4){animation-delay:210ms}
+.fs-stagger > *:nth-child(5){animation-delay:280ms}
+.fs-stagger > *:nth-child(6){animation-delay:350ms}
+.fs-stagger > *:nth-child(7){animation-delay:420ms}
+.fs-stagger > *:nth-child(8){animation-delay:490ms}
+
+/* ── 75–100 · AMBIENTE (loops) ────────────────────────── */
+@keyframes fs-pulse{0%,100%{opacity:1}50%{opacity:.45}}
+@keyframes fs-pulse-ring{0%{box-shadow:0 0 0 0 rgba(51,255,194,.45)}70%{box-shadow:0 0 0 12px rgba(51,255,194,0)}100%{box-shadow:0 0 0 0 rgba(51,255,194,0)}}
+@keyframes fs-pulse-ring-green{0%{box-shadow:0 0 0 0 rgba(10,220,20,.45)}70%{box-shadow:0 0 0 12px rgba(10,220,20,0)}100%{box-shadow:0 0 0 0 rgba(10,220,20,0)}}
+@keyframes fs-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@keyframes fs-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes fs-drift{0%{transform:translate(0,0)}50%{transform:translate(10px,-6px)}100%{transform:translate(0,0)}}
+@keyframes fs-scan-y{0%{transform:translateY(0)}100%{transform:translateY(100%)}}
+@keyframes fs-scan-x{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+@keyframes fs-radar{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+@keyframes fs-shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes fs-glow-pulse{0%,100%{filter:drop-shadow(0 0 3px rgba(51,255,194,.5))}50%{filter:drop-shadow(0 0 12px rgba(51,255,194,.95))}}
+@keyframes fs-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes fs-ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes fs-rotate-slow{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+@keyframes fs-contour-drift{0%{background-position:120% -20%}50%{background-position:112% -14%}100%{background-position:120% -20%}}
+@keyframes fs-grid-drift{0%{background-position:0 0}100%{background-position:56px 56px}}
+@keyframes fs-wave{0%,100%{transform:translateY(0) scaleY(1)}50%{transform:translateY(-3px) scaleY(1.08)}}
+@keyframes fs-strata-shift{0%,100%{background-position:0 0}50%{background-position:0 8px}}
+@keyframes fs-orbit{0%{transform:rotate(0) translateX(14px) rotate(0)}100%{transform:rotate(360deg) translateX(14px) rotate(-360deg)}}
+@keyframes fs-heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.12)}28%{transform:scale(1)}42%{transform:scale(1.08)}56%{transform:scale(1)}}
+.fs-am-pulse{animation:fs-pulse 2.4s var(--e-standard) infinite}
+.fs-am-pulse-fast{animation:fs-pulse 1.2s var(--e-standard) infinite}
+.fs-am-ring{animation:fs-pulse-ring 2s var(--e-standard) infinite}
+.fs-am-ring-green{animation:fs-pulse-ring-green 2s var(--e-standard) infinite}
+.fs-am-breathe{animation:fs-breathe 4s var(--e-standard) infinite}
+.fs-am-float{animation:fs-float 5s var(--e-standard) infinite}
+.fs-am-drift{animation:fs-drift 9s var(--e-standard) infinite}
+.fs-am-glow{animation:fs-glow-pulse 2.8s var(--e-standard) infinite}
+.fs-am-blink{animation:fs-blink 1.2s steps(2) infinite}
+.fs-am-rotate{animation:fs-rotate-slow 18s linear infinite}
+.fs-am-orbit{animation:fs-orbit 6s linear infinite}
+.fs-am-heartbeat{animation:fs-heartbeat 3s var(--e-standard) infinite}
+.fs-am-wave{animation:fs-wave 2.6s var(--e-standard) infinite}
+.fs-am-contour{animation:fs-contour-drift 22s var(--e-standard) infinite}
+.fs-am-grid{animation:fs-grid-drift 14s linear infinite}
+.fs-am-strata{animation:fs-strata-shift 8s var(--e-standard) infinite}
+.fs-am-shimmer{background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.55) 50%,transparent 80%);background-size:200% 100%;animation:fs-shimmer 2.6s linear infinite}
+.fs-am-ticker{display:flex;width:max-content;animation:fs-ticker 26s linear infinite}
+.fs-am-scan{position:relative;overflow:hidden}
+.fs-am-scan::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--ciano-neon),transparent);animation:fs-scan-y 3.2s var(--e-scan) infinite}
+.fs-am-scan-x{position:relative;overflow:hidden}
+.fs-am-scan-x::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--ciano-neon),transparent);animation:fs-scan-x 3.2s var(--e-scan) infinite}
+.fs-am-radar{position:relative;overflow:hidden}
+.fs-am-radar::after{content:"";position:absolute;inset:0;background:conic-gradient(from 0deg,rgba(51,255,194,.22),transparent 24%);animation:fs-radar 4.5s linear infinite;-webkit-mask-image:radial-gradient(circle,#000 0,transparent 70%);mask-image:radial-gradient(circle,#000 0,transparent 70%)}
+.fs-am-none{animation:none!important}
+
+/* ── 101–110 · TEXTO ──────────────────────────────────── */
+@keyframes fs-type{from{width:0}to{width:100%}}
+@keyframes fs-text-shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes fs-word-in{from{opacity:0;transform:translateY(.35em)}to{opacity:1;transform:none}}
+.fs-tx-type{display:inline-block;overflow:hidden;white-space:nowrap;animation:fs-type 2.2s steps(30,end) both}
+.fs-tx-caret::after{content:"";display:inline-block;width:6px;height:1em;background:currentColor;margin-left:4px;vertical-align:-.12em;animation:fs-blink 1.2s steps(2) infinite}
+.fs-tx-shimmer{background:linear-gradient(100deg,var(--verde-sombra) 20%,var(--ciano-neon) 50%,var(--verde-sombra) 80%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fs-text-shimmer 3.4s linear infinite}
+.fs-tx-word > *{animation:fs-word-in var(--d-slow) var(--e-entrance) both}
+.fs-tx-word > *:nth-child(2){animation-delay:60ms}
+.fs-tx-word > *:nth-child(3){animation-delay:120ms}
+.fs-tx-word > *:nth-child(4){animation-delay:180ms}
+.fs-tx-word > *:nth-child(5){animation-delay:240ms}
+.fs-tx-mask{display:inline-block;clip-path:inset(0 0 0 0);animation:fs-clip-up var(--d-slower) var(--e-contour) both}
+.fs-tx-underline-grow{background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size var(--d-base) var(--e-standard)}
+.fs-tx-underline-grow:hover{background-size:100% 1px}
+.fs-tx-num{font-variant-numeric:tabular-nums;transition:opacity var(--d-fast) linear}
+.fs-tx-strike{position:relative}
+.fs-tx-strike::after{content:"";position:absolute;left:0;top:50%;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform var(--d-base) var(--e-standard)}
+.fs-tx-strike:hover::after{transform:scaleX(1)}
+
+/* ── 111–118 · DADOS E CARREGAMENTO ───────────────────── */
+@keyframes fs-bar-grow{from{width:0}}
+@keyframes fs-fill-rise{from{transform:scaleY(0);transform-origin:bottom}to{transform:scaleY(1)}}
+@keyframes fs-draw{to{stroke-dashoffset:0}}
+@keyframes fs-spin{to{transform:rotate(360deg)}}
+@keyframes fs-skeleton{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes fs-indeterminate{0%{transform:translateX(-100%) scaleX(.4)}100%{transform:translateX(250%) scaleX(.4)}}
+.fs-dv-bar{animation:fs-bar-grow var(--d-slower) var(--e-entrance) both}
+.fs-dv-fill{animation:fs-fill-rise var(--d-slower) var(--e-entrance) both}
+.fs-dv-draw{stroke-dasharray:1000;stroke-dashoffset:1000;animation:fs-draw 1.8s var(--e-contour) forwards}
+.fs-dv-tick{animation:fs-pulse 1.6s var(--e-standard) infinite}
+.fs-ld-spin{animation:fs-spin .9s linear infinite}
+.fs-ld-skeleton{background:linear-gradient(100deg,rgba(0,65,65,.06) 20%,rgba(0,65,65,.12) 50%,rgba(0,65,65,.06) 80%);background-size:200% 100%;animation:fs-skeleton 1.4s linear infinite;border-radius:var(--r-xs)}
+.fs-ld-skeleton-dark{background:linear-gradient(100deg,rgba(255,255,255,.05) 20%,rgba(255,255,255,.12) 50%,rgba(255,255,255,.05) 80%);background-size:200% 100%;animation:fs-skeleton 1.4s linear infinite;border-radius:var(--r-xs)}
+.fs-ld-bar{position:relative;overflow:hidden;background:rgba(0,65,65,.08);height:3px;border-radius:var(--r-pill)}
+.fs-ld-bar::after{content:"";position:absolute;inset:0;background:var(--ciano-neon);animation:fs-indeterminate 1.4s var(--e-scan) infinite}
+
+/* ── Utilitários de transição ─────────────────────────── */
+.fs-t-fast{transition:all var(--d-fast) var(--e-standard)}
+.fs-t-base{transition:all var(--d-base) var(--e-standard)}
+.fs-t-slow{transition:all var(--d-slow) var(--e-standard)}
+.fs-gpu{will-change:transform;backface-visibility:hidden}

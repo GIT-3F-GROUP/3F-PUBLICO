@@ -1,0 +1,22 @@
+<!-- @dsCard group="Feedback" height=120 -->
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>RuleCard</title>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{margin:0;padding:16px;background:var(--bege-perola);font-family:var(--font-sans);color:var(--verde-sombra)}.k{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;opacity:.75;display:block;margin:0 0 10px}.pane{border-radius:var(--r-md);padding:16px}.pane-l{background:rgba(0,65,65,.035);border:1px solid rgba(0,65,65,.08)}.pane-d{background:var(--verde-sombra);color:#fff}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const { RuleCard } = window.FarmSenseDesignSystem_c4c636;
+const { useState } = React;
+function Demo(){
+  
+  return (
+<div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:10}}>
+  <RuleCard ok title="Bege como fundo">Tinta sempre em Verde Sombra.</RuleCard>
+  <RuleCard ok title="Neons como detalhe">Pontos, linhas, badges, contornos.</RuleCard>
+  <RuleCard ok={false} title="Não invente cores">Nenhum laranja, vermelho, azul ou cinza.</RuleCard>
+</div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

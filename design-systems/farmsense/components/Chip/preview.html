@@ -1,0 +1,28 @@
+<!-- @dsCard group="Core" height=120 -->
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Chip</title>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{margin:0;padding:16px;background:var(--bege-perola);font-family:var(--font-sans);color:var(--verde-sombra)}.k{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;opacity:.75;display:block;margin:0 0 10px}.pane{border-radius:var(--r-md);padding:16px}.pane-l{background:rgba(0,65,65,.035);border:1px solid rgba(0,65,65,.08)}.pane-d{background:var(--verde-sombra);color:#fff}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const { Chip } = window.FarmSenseDesignSystem_c4c636;
+const { useState } = React;
+function Demo(){
+  
+  return (
+<div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12}}>
+  <div className="pane pane-l"><span className="k">Claro</span>
+    <div className="row-tight" style={{gap:6}}>
+      <Chip>Soja 24/25</Chip><Chip>412 ha</Chip><Chip tone="outline">Sorriso, MT</Chip>
+      <Chip dot>Saudável</Chip><Chip tone="solid">v 1.0</Chip>
+    </div></div>
+  <div className="pane pane-d"><span className="k">Escuro</span>
+    <div className="row-tight" style={{gap:6}}>
+      <Chip tone="dark">Talhão Aurora</Chip><Chip tone="neon" dot>Ao vivo</Chip><Chip tone="neon-green" dot>Estação ON</Chip>
+    </div></div>
+</div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

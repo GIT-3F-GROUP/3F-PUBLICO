@@ -1,0 +1,20 @@
+<!-- @dsCard group="Dados" height=300 subtitle="Card com cabeçalho, ficha chave-valor e número técnico" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.stack{display:flex;flex-direction:column;gap:12px}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;align-items:start}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const h = React.createElement, F = React.Fragment;
+const { Card, CardHeader, Badge, KeyValue, Stat, Meter } = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return h("div", { className: "g" },
+    h(Card, { interactive: true },
+      h(CardHeader, { title: "ORV7 Drop Power", sub: "Adjuvante premium", action: h(Badge, { tone: "success" }, "Herói técnico") }),
+      h("p", { className: "ovx-card__body" }, "Emulsificante, dispersante e antiespumante em um só produto.")),
+    h(Card, null,
+      h("div", { className: "stack" },
+        h(KeyValue, { items: [["Densidade", "1,24"], ["pH", "2,0 a 4,0"], ["Embalagem", "5 L"]] }),
+        h(Stat, { label: "Dose ORV7", value: "30–200", unit: "mL/ha", accent: true }),
+        h(Meter, { label: "Uniformidade da gota", value: 86, hint: "86%" }))));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(h(Demo));
+</script></div></body></html>

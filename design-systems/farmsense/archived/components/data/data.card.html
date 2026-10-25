@@ -1,0 +1,40 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Data" subtitle="KPI, tabela, barras, sparkline e anel." -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>Data</title><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:18px;background:var(--bege-perola);font-family:var(--font-sans);color:var(--verde-sombra)}.k{font-size:9px;letter-spacing:.12em;text-transform:uppercase;opacity:.5;display:block;margin-bottom:8px}.pane{border-radius:var(--r-md);padding:16px}.pane-l{background:rgba(0,65,65,.035);border:1px solid rgba(0,65,65,.08)}.pane-d{background:var(--verde-sombra);color:#fff}</style></head>
+<body><div id="root"></div><script type="text/babel">
+const { Button, IconButton, Chip, NeonDot, Kicker, SectionHeader, Tile, GlassCard, Logo, Divider, Surface, Icon, Input, Textarea, Select, Checkbox, Radio, Switch, SearchField, KpiTile, StatRow, DataTable, BarMeter, Sparkline, ProgressRing, Alert, StatusPill, Tooltip, EmptyState, Skeleton, RuleCard, Tabs, DotNav, Breadcrumb, Pagination, TopBar, LogoCard, Swatch, PatternLayer, QuoteBlock } = window.FarmSenseDesignSystem_c4c636;
+const { useState } = React;
+function Demo(){ 
+  return (<div style={{display:'grid',gap:14}}>
+    <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:14}}>
+      <div className="pane pane-l"><KpiTile label="Sacas / hectare" value="82,4" unit="sc/ha" delta="▲ + 18,1 vs. safra anterior" deltaTone="positivo" /></div>
+      <div className="pane pane-l"><KpiTile label="Área monitorada" value="1 470" unit="ha" delta="12 talhões · 4 culturas" /></div>
+      <div className="pane pane-d"><KpiTile tone="dark" label="Vigor médio" value="0,78" unit="ndvi" delta="▲ + 0,06 nas últimas 24 h" deltaTone="neon" /></div>
+    </div>
+    <div style={{display:'grid',gridTemplateColumns:'1.3fr 1fr',gap:14}}>
+      <div className="pane pane-l"><span className="k">DataTable</span>
+        <DataTable columns={[{key:'t',label:'Talhão'},{key:'ha',label:'Ha',align:'right'},{key:'sc',label:'sc/ha',align:'right',strong:true},{key:'d',label:'Δ',align:'right'}]}
+          rows={[{t:'Aurora',ha:412,sc:'82,4',d:'+18,1',d_tone:'positivo'},{t:'Chapada',ha:228,sc:'74,9',d:'+9,4',d_tone:'positivo'},{t:'Cerrado-Norte',ha:580,sc:'69,2',d:'+2,1'},{t:'Pampulha',ha:250,sc:'66,8',d:'−0,6'}]} /></div>
+      <div className="pane pane-l" style={{display:'grid',gap:10,alignContent:'start'}}><span className="k" style={{margin:0}}>BarMeter</span>
+        <BarMeter label="Aurora" value={82.4} max={90} display="82,4" fill="sombra" />
+        <BarMeter label="Chapada" value={74.9} max={90} display="74,9" fill="anil" />
+        <BarMeter label="Cerrado-N." value={69.2} max={90} display="69,2" fill="bege" />
+        <BarMeter label="Pampulha" value={66.8} max={90} display="66,8" fill="bege" /></div>
+    </div>
+    <div style={{display:'grid',gridTemplateColumns:'1.6fr 1fr',gap:14}}>
+      <div className="pane pane-d"><span className="k" style={{opacity:.55}}>Sparkline · NDVI 24 h</span>
+        <Sparkline points={[.60,.62,.61,.64,.66,.65,.69,.71,.70,.74,.76,.78]} height={110} /></div>
+      <div className="pane pane-l" style={{display:'flex',gap:18,alignItems:'center',justifyContent:'center'}}>
+        <ProgressRing value={68} size={92} /><ProgressRing value={92} size={72} color="var(--verde-anil)" /></div>
+    </div>
+    <div className="pane pane-l"><span className="k">StatRow</span>
+      <StatRow items={[{value:'80',unit:'+ mil',label:'ha sob acompanhamento'},{value:'3',label:'estados atendidos'},{value:'12',label:'anos de operação'}]} /></div>
+  </div>); }
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+if (window.lucide) window.lucide.createIcons();
+</script></body></html>

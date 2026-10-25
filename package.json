@@ -1,0 +1,30 @@
+{
+  "name": "3f-group-design",
+  "version": "1.0.0",
+  "description": "3F GROUP DESIGN: servidor MCP com os design systems e os dados oficiais das empresas do 3F Group.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "private": true,
+  "bin": {
+    "3f-group-design": "mcp/index.js"
+  },
+  "files": [
+    "mcp",
+    "design-systems",
+    "versao.json"
+  ],
+  "scripts": {
+    "start": "node mcp/index.js",
+    "start:http": "node mcp/index.js --http",
+    "test": "node --test \"mcp/**/*.test.js\"",
+    "versao": "node mcp/versao.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "tar": "^7.5.22",
+    "zod": "^3.25.0"
+  }
+}

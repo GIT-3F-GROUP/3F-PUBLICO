@@ -1,0 +1,19 @@
+<!-- @dsCard group="Acessibilidade" height=300 subtitle="WCAG AA em todo texto. Botão até 34px, envolto em área de toque de 44px" page -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.ovx-stage{margin:0;padding:16px;background:var(--bg-deep)}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;font:var(--type-body-sm);color:var(--text-muted)}.rows{display:flex;flex-direction:column;gap:8px}.rows b{color:var(--text-body)}.tt{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.hit{width:44px;height:44px;border:1px dashed var(--verde-a40);border-radius:var(--radius-sm);display:grid;place-items:center}</style>
+</head><body><div class="ovx-stage"><div class="g">
+<div class="rows">
+<div><b>Texto normal</b> mínimo 4,5:1 (WCAG AA e Apple HIG)</div>
+<div><b>Texto grande</b> mínimo 3:1</div>
+<div><b>Verde sobre escuro</b> aprovado a partir de var(--surface-3)</div>
+<div><b>Verde sobre claro</b> reprova em texto. Use só em elemento gráfico</div>
+<div><b>Foco</b> halo de 3px sempre visível, nunca outline:none isolado</div>
+<div><b>prefers-reduced-motion</b> desliga animação e congela o canvas (Reduce Motion do iOS)</div>
+<div><b>Alvo de toque</b> 44 × 44 pt em todo controle, regra da Apple HIG</div>
+</div>
+<div class="rows">
+<div class="tt"><span class="hit"><button class="ovx-iconbtn ovx-iconbtn--lg" aria-label="Alvo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <circle cx="12" cy="12" r="6" /> <circle cx="12" cy="12" r="2" /></svg></button></span><span>44x44 mínimo</span></div>
+<div class="tt"><button class="ovx-btn ovx-btn--primary">Botão · 34px</button><span>envolto em área de toque de 44px</span></div>
+<div class="tt"><input class="ovx-input ovx-input--lg" value="Campo de 44px" aria-label="Campo de 44px" style="max-width:220px;min-height:44px"></div>
+</div>
+</div></div></body></html>

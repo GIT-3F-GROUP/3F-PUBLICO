@@ -1,0 +1,22 @@
+{
+  "3fgroup": {
+    "artifact": "https://claude.ai/artifact/CZnyJUpCsQkZhuHMx2Hefy",
+    "versao": "1792966690-d134"
+  },
+  "orvix": {
+    "artifact": "https://claude.ai/artifact/41srcYzUX2Et1EGtx2zqSS",
+    "versao": "1792966712-29b5"
+  },
+  "barygen": {
+    "artifact": "https://claude.ai/artifact/Cj3XwnxnwHZmL7jKpcqjKZ",
+    "versao": "1792969632-cac1"
+  },
+  "mixsafe": {
+    "artifact": "https://claude.ai/artifact/5qyoNs1EUw13iXXWF5z7iS",
+    "versao": "1792969539-04ba"
+  },
+  "farmsense": {
+    "artifact": "https://claude.ai/artifact/5jPHoTQS426ssXSMCehpg6",
+    "versao": "1792969459-1239"
+  }
+}

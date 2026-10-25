@@ -1,0 +1,210 @@
+<!-- @dsCard group="Marca" height=3000 subtitle="Formatos, margens de segurança para Instagram e Facebook, publicação normal e patrocinada" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN · Mídias sociais</title>
+<style>
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--ff-body);font-size:16px;line-height:1.55}
+.pg{padding:48px 56px 72px;max-width:1120px;margin:0 auto}
+.ey{font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--text-accent)}
+h2{font-size:40px;font-weight:800;line-height:1.06;margin:12px 0 16px}
+h2 span{font-weight:600}
+h3{font-size:22px;font-weight:800;line-height:1.1;margin:0}
+h4{font-size:15px;font-weight:800;margin:0 0 4px;line-height:1.2}
+.lead{font-size:18px;color:var(--text-soft);max-width:64ch;margin:0}
+p{margin:0 0 12px;max-width:68ch}
+.sec{margin-top:64px}
+.sec-h{display:flex;gap:16px;align-items:baseline;margin-bottom:8px}
+.num{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--text-accent)}
+.desc{font-size:15px;color:var(--text-soft);margin:0 0 16px;max-width:72ch}
+.formatos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.fmt{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;padding:20px;display:flex;gap:16px;align-items:center}
+.fmt i{flex:none;background:var(--brand-preto);border-radius:4px;display:block}
+.fmt b{display:block;font-family:var(--ff-display);text-transform:uppercase;font-weight:800;font-size:16px}
+.fmt span{font-size:13px;color:var(--text-soft)}
+.regras{display:grid;gap:20px;grid-template-columns:repeat(3,1fr);align-items:start}
+.card{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;padding:20px;display:flex;flex-direction:column}
+.card .sub{color:var(--text-muted);font-size:13px;line-height:1.5;margin:0 0 16px}
+.larga{grid-column:span 2}
+.quadro{position:relative;container-type:inline-size;overflow:hidden;border-radius:8px;width:100%;align-self:center;flex:none;
+  background:radial-gradient(60% 40% at 60% 35%,#fff6d8 0%,transparent 70%),linear-gradient(#bfd6e6 0%,#e6dfc4 48%,#b99f45 52%,#8f7a2c 100%)}
+.quadro.v{aspect-ratio:9/16;max-width:300px}
+.quadro.h{aspect-ratio:16/9}
+.quadro.f{aspect-ratio:4/5;max-width:360px}
+.zona{position:absolute;background:rgba(0,0,0,.52);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1.25}
+.quadro.v .zona{font-size:3.4cqw}.quadro.h .zona{font-size:1.5cqw}.quadro.f .zona{font-size:3cqw}
+.livre{position:absolute;border:2px solid #F6A200;border-radius:4px}
+.livre b{position:absolute;top:2cqw;left:2.5cqw;color:#000;background:#F6A200;border-radius:.4em;padding:.35em .6em;font-weight:800;text-transform:uppercase;letter-spacing:.08em;line-height:1.3}
+.quadro.v .livre b{font-size:3.6cqw}.quadro.h .livre b{font-size:1.6cqw;top:1.2cqw;left:1.4cqw}.quadro.f .livre b{font-size:3.2cqw}
+.mleg{position:absolute;color:#fff;text-shadow:0 .1em .5em rgba(0,0,0,.6);display:flex;align-items:center;gap:.5em}
+/* gradiente de proteção atrás da legenda: o texto branco fica acima de 4,5 : 1 em qualquer foto */
+.mleg{isolation:isolate}
+.mleg::before{content:"";position:absolute;inset:-70% -45% -70% -25%;z-index:-1;background:radial-gradient(ellipse closest-side at 45% 50%,rgba(0,0,0,.62),rgba(0,0,0,.35) 60%,transparent)}
+.mleg svg{height:2em;width:auto;flex:none}
+.mleg .n{font-weight:800;font-size:1em;text-transform:uppercase;line-height:1.05;white-space:nowrap}
+.mleg .li{height:.09em;margin:.2em -.6em;background:linear-gradient(90deg,rgba(246,162,0,0),#F6A200 14%,#F6A200 86%,rgba(246,162,0,0))}
+.mleg .c{font-size:.55em;font-weight:500;white-space:nowrap}
+.mleg .e{font-size:.38em;font-weight:600;letter-spacing:.24em;text-transform:uppercase;white-space:nowrap;margin-top:.25em}
+.quadro.v .mleg{font-size:6.2cqw;left:9%;bottom:37.5%}
+.quadro.v .mleg.n18{bottom:20.5%}
+.quadro.h .mleg{font-size:3.3cqw;left:6.5%;bottom:9%}
+.quadro.f .mleg{font-size:5.4cqw;left:9.5%;bottom:9.5%}
+table.med{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px}
+table.med th{text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:700;padding:8px 8px 8px 0;border-bottom:1.5px solid var(--rule-strong)}
+table.med td{padding:9px 8px 9px 0;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+table.med td:first-child{font-weight:600}
+table.med td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.lista{margin:0;padding:0;list-style:none;font-size:14px;line-height:1.5}
+.lista li{padding:8px 0 8px 22px;border-bottom:1px solid var(--rule-soft);position:relative}
+.lista li::before{content:'';position:absolute;left:0;top:14px;width:10px;height:10px;border-radius:50%;background:var(--brand-amarelo-principal)}
+.lista.nao li::before{background:var(--brand-preto);border-radius:2px}
+.fonte{color:var(--text-muted);font-size:13px;line-height:1.6;margin-top:24px;max-width:none}
+.fonte a{color:var(--text-link)}
+@media (max-width:900px){.regras,.formatos{grid-template-columns:1fr}.larga{grid-column:auto}}
+@media (max-width:640px){.pg{padding:32px 16px 48px}h2{font-size:30px}}
+</style></head><body>
+<main class="pg">
+  <div class="ey">Marca · Mídias sociais</div>
+  <h2>Mídias <span>sociais</span></h2>
+  <p class="lead">Regras para publicações no Instagram e no Facebook: os formatos e as <b>margens de segurança</b>. O aplicativo coloca informações por cima da peça: o nome do perfil, a legenda da publicação, os botões de curtir e comentar, o áudio. Tudo o que precisa ser lido tem de ficar dentro da área livre. A arte, a foto e o fundo continuam ocupando o quadro inteiro, inclusive as margens.</p>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">01</span><h3>Formatos</h3></div>
+    <div class="formatos">
+      <div class="fmt"><i style="width:36px;height:64px"></i><div><b>Vertical 9:16</b><span>Reels e Stories · 1080 × 1920 px</span></div></div>
+      <div class="fmt"><i style="width:48px;height:60px"></i><div><b>Feed 4:5</b><span>Imagem, carrossel ou vídeo · 1080 × 1350 px</span></div></div>
+      <div class="fmt"><i style="width:80px;height:45px"></i><div><b>Horizontal 16:9</b><span>Vídeo · 1920 × 1080 px</span></div></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">02</span><h3>Margens de segurança</h3></div>
+    <p class="desc">Em cada quadro, o cinza é a margem que o aplicativo pode cobrir e a linha amarela marca a área livre. A legenda de nome aparece na posição certa de cada formato.</p>
+    <div class="regras">
+      <article class="card">
+        <h4>Vertical · publicação normal</h4>
+        <p class="sub">Reels e Stories, 1080 × 1920 px. Base de 18%, regra da BARYGEN.</p>
+        <div class="quadro v">
+          <div class="zona" style="left:0;right:0;top:0;height:14%">Topo · 14%<br>269 px</div>
+          <div class="zona" style="left:0;right:0;bottom:0;height:18%">Base · 18%<br>346 px</div>
+          <div class="zona" style="left:0;width:6%;top:14%;bottom:18%"></div>
+          <div class="zona" style="right:0;width:6%;top:14%;bottom:18%"></div>
+          <div class="livre" style="left:6%;right:6%;top:14%;bottom:18%"><b>Área livre<br>950 × 1305 px</b></div>
+          <div class="mleg n18" data-mleg></div>
+        </div>
+        <table class="med"><tr><th>Margem</th><th>Parte</th><th>Pixels</th></tr>
+          <tr><td>Topo</td><td class="n">14%</td><td class="n">269 px</td></tr>
+          <tr><td>Base</td><td class="n">18%</td><td class="n">346 px</td></tr>
+          <tr><td>Cada lado</td><td class="n">6%</td><td class="n">65 px</td></tr></table>
+      </article>
+      <article class="card">
+        <h4>Vertical · patrocinado</h4>
+        <p class="sub">O mesmo quadro quando o vídeo vai ser impulsionado. Base de 35%, regra da Meta.</p>
+        <div class="quadro v">
+          <div class="zona" style="left:0;right:0;top:0;height:14%">Topo · 14%<br>269 px</div>
+          <div class="zona" style="left:0;right:0;bottom:0;height:35%">Base · 35%<br>672 px</div>
+          <div class="zona" style="left:0;width:6%;top:14%;bottom:35%"></div>
+          <div class="zona" style="right:0;width:6%;top:14%;bottom:35%"></div>
+          <div class="livre" style="left:6%;right:6%;top:14%;bottom:35%"><b>Área livre<br>950 × 979 px</b></div>
+          <div class="mleg" data-mleg></div>
+        </div>
+        <table class="med"><tr><th>Margem</th><th>Parte</th><th>Pixels</th></tr>
+          <tr><td>Topo</td><td class="n">14%</td><td class="n">269 px</td></tr>
+          <tr><td>Base</td><td class="n">35%</td><td class="n">672 px</td></tr>
+          <tr><td>Cada lado</td><td class="n">6%</td><td class="n">65 px</td></tr></table>
+      </article>
+      <article class="card">
+        <h4>Feed · 4:5</h4>
+        <p class="sub">Imagem, carrossel ou vídeo, 1080 × 1350 px. Margem de 6% em cada borda, regra da BARYGEN.</p>
+        <div class="quadro f">
+          <div class="zona" style="left:0;right:0;top:0;height:6%"></div>
+          <div class="zona" style="left:0;right:0;bottom:0;height:6%">6% · 81 px</div>
+          <div class="zona" style="left:0;width:6%;top:6%;bottom:6%"></div>
+          <div class="zona" style="right:0;width:6%;top:6%;bottom:6%"></div>
+          <div class="livre" style="left:6%;right:6%;top:6%;bottom:6%"><b>Área livre<br>950 × 1188 px</b></div>
+          <div class="mleg" data-mleg></div>
+        </div>
+        <table class="med"><tr><th>Margem</th><th>Parte</th><th>Pixels</th></tr>
+          <tr><td>Topo e base</td><td class="n">6%</td><td class="n">81 px</td></tr>
+          <tr><td>Cada lado</td><td class="n">6%</td><td class="n">65 px</td></tr></table>
+      </article>
+      <article class="card larga">
+        <h4>Horizontal · 16:9</h4>
+        <p class="sub">1920 × 1080 px. Margem de 5% em cada borda, regra da BARYGEN.</p>
+        <div class="quadro h">
+          <div class="zona" style="left:0;right:0;top:0;height:5%"></div>
+          <div class="zona" style="left:0;right:0;bottom:0;height:5%">5% · 54 px</div>
+          <div class="zona" style="left:0;width:5%;top:5%;bottom:5%"></div>
+          <div class="zona" style="right:0;width:5%;top:5%;bottom:5%"></div>
+          <div class="livre" style="left:5%;right:5%;top:5%;bottom:5%"><b>Área livre · 1728 × 972 px</b></div>
+          <div class="mleg" data-mleg></div>
+        </div>
+        <table class="med"><tr><th>Margem</th><th>Parte</th><th>Pixels</th></tr>
+          <tr><td>Topo e base</td><td class="n">5% da altura</td><td class="n">54 px</td></tr>
+          <tr><td>Cada lado</td><td class="n">5% da largura</td><td class="n">96 px</td></tr></table>
+      </article>
+      <article class="card">
+        <h4>Normal ou patrocinado</h4>
+        <p class="sub">A única diferença está na base do vídeo vertical.</p>
+        <ul class="lista">
+          <li>Publicação normal: 18% livres na base. É o suficiente para o nome do perfil e a legenda da publicação.</li>
+          <li>Patrocinado: 35% livres na base. O Facebook e o Instagram colocam ali o botão de ação, o contato e outras informações do anúncio.</li>
+          <li>Se o vídeo pode virar patrocinado depois, edite já com 35%.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">03</span><h3>O que vai onde</h3></div>
+    <div class="regras">
+      <article class="card">
+        <h4>Fica dentro da área livre</h4>
+        <p class="sub">Tudo o que precisa ser lido ou reconhecido.</p>
+        <ul class="lista nao"><li>Legenda de nome</li><li>Legenda de fala</li><li>Títulos, frases e números</li><li>Logo da BARYGEN e de produtos</li><li>Site, telefone e QR Code</li><li>O rosto de quem fala</li></ul>
+      </article>
+      <article class="card">
+        <h4>Pode ocupar a margem</h4>
+        <p class="sub">O que serve de fundo e continua fazendo sentido se for coberto.</p>
+        <ul class="lista"><li>A imagem do vídeo</li><li>Fotos e fundos de cor</li><li>A textura de pontos da marca</li><li>O fundo do encerramento com a logo</li></ul>
+      </article>
+      <article class="card">
+        <h4>Como funciona o feed</h4>
+        <p class="sub">Vale para imagem, carrossel e vídeo publicados no feed.</p>
+        <ul class="lista">
+          <li>O formato recomendado pela Meta é o 4:5, em 1080 × 1350 px.</li>
+          <li>No feed, o nome do perfil fica acima da arte e os botões ficam abaixo. O aplicativo cobre só os cantos, com ícones pequenos de som, de marcação e do contador do carrossel.</li>
+          <li>Na grade do perfil do Instagram, a miniatura é um pouco mais estreita e corta cerca de 34 px de cada lado.</li>
+          <li>Por isso a margem de 6%: ela cobre o corte da grade e deixa respiro nos cantos.</li>
+        </ul>
+      </article>
+      <article class="card larga">
+        <h4>Como aplicar na BARYGEN</h4>
+        <p class="sub">O que muda no dia a dia da edição.</p>
+        <ul class="lista">
+          <li>No vertical, a legenda de nome sobe: a base dela fica acima dos 18%, ou dos 35% no patrocinado.</li>
+          <li>No feed e no horizontal, a legenda fica no canto inferior esquerdo, dentro da margem.</li>
+          <li>A entrada da logo é centralizada, então já cai dentro da área livre em todos os formatos.</li>
+          <li>Uma peça feita para mais de um formato segue a regra mais apertada entre eles.</li>
+          <li>Cores, tipografia e logo seguem o resto deste sistema: preto e amarelo como cores principais, textos até 56 px, a logo na versão do fundo e a área de proteção de 1 B.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h4>Encerramento e legenda</h4>
+        <p class="sub">O movimento está na página Vídeo.</p>
+        <ul class="lista">
+          <li>Todo vídeo termina com o encerramento padrão, Linha de origem.</li>
+          <li>As outras três entradas só entram quando forem pedidas.</li>
+          <li>A legenda de nome segue o padrão Da palheta e fica 3 segundos na tela.</li>
+        </ul>
+      </article>
+    </div>
+    <p class="fonte">O que vem da Meta: no vertical, 14% no topo, 6% em cada lado e 35% na base, segundo o Guia de Anúncios, páginas de <a href="https://www.facebook.com/business/ads-guide/update/video/instagram-reels">Reels</a> e de <a href="https://www.facebook.com/business/ads-guide/update/video/instagram-story">Stories</a>; no feed, o formato 4:5, segundo as páginas de <a href="https://www.facebook.com/business/ads-guide/update/image/instagram-feed">feed do Instagram</a> e de <a href="https://www.facebook.com/business/ads-guide/update/video/facebook-feed">feed do Facebook</a>. Consultadas em 08/10/2026. O que é regra da BARYGEN: os 18% na base da publicação normal, os 6% do feed e os 5% do horizontal. A Meta não publica margem para o feed nem para o horizontal. O corte de 34 px na grade do perfil é a conta entre o 4:5 da publicação e o 3:4 da miniatura. Os valores em pixels são a conta sobre o tamanho de cada quadro. O aplicativo muda de tempos em tempos; vale conferir uma vez por ano.</p>
+  </section>
+</main>
+<script>
+(() => {
+  const L = window.BarygenDesignSystem_a84d4b.BARYGEN_LOGO;
+  // legenda de vídeo: símbolo da logo principal, palheta amarela e hélice preta
+  const sym = L.svg({ type: 'simbolo', version: 'colorida', title: '' });
+  document.querySelectorAll('[data-mleg]').forEach(el => { el.innerHTML = sym + '<div><div class="n">Fulano de Tal</div><div class="li"></div><div class="c">Diretor comercial</div><div class="e">BARYGEN Sementes</div></div>'; });
+})();
+</script>
+</body></html>

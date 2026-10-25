@@ -1,0 +1,1217 @@
+/* ── styles.css ── */
+/* ── tokens/fonts.css ── */
+/* ORVIX webfonts. Exo = display (títulos, claims, labels). Be Vietnam Pro = corpo.
+   Só os pesos aprovados pela marca são carregados.
+   Regra de título: sempre Exo, ExtraBold 800, caixa alta.
+   Os itálicos ficam disponíveis, mas a ORVIX raramente escreve em itálico:
+   nenhum componente deste sistema usa font-style:italic. */
+/* @font-face Exo 500 normal: declared by tokens.json (fonts/Exo-Medium.ttf) */
+/* @font-face Exo 500 italic: declared by tokens.json (fonts/Exo-MediumItalic.ttf) */
+/* @font-face Exo 400 normal: declared by tokens.json (fonts/Exo-Regular.ttf) */
+/* @font-face Exo 400 italic: declared by tokens.json (fonts/Exo-Italic.ttf) */
+/* @font-face Exo 800 normal: declared by tokens.json (fonts/Exo-ExtraBold.ttf) */
+/* @font-face Exo 800 italic: declared by tokens.json (fonts/Exo-ExtraBoldItalic.ttf) */
+
+/* @font-face Be Vietnam Pro 400 normal: declared by tokens.json (fonts/BeVietnamPro-Regular.ttf) */
+/* @font-face Be Vietnam Pro 400 italic: declared by tokens.json (fonts/BeVietnamPro-Italic.ttf) */
+/* @font-face Be Vietnam Pro 500 normal: declared by tokens.json (fonts/BeVietnamPro-Medium.ttf) */
+/* @font-face Be Vietnam Pro 500 italic: declared by tokens.json (fonts/BeVietnamPro-MediumItalic.ttf) */
+/* @font-face Be Vietnam Pro 800 normal: declared by tokens.json (fonts/BeVietnamPro-ExtraBold.ttf) */
+/* @font-face Be Vietnam Pro 800 italic: declared by tokens.json (fonts/BeVietnamPro-ExtraBoldItalic.ttf) */
+
+:root{
+}
+
+/* ── styles.css ── */
+
+/* ── tokens/colors.css ── */
+/* ORVIX: cores principais BRANCO (#FFFFFF) e PRETO ORVIX (#101720).
+   Cores secundárias: CLARO ORVIX (#E8EAEE) e VERDE (#13A538), a única cor saturada.
+   Dois temas, escuro (padrão) e claro, sempre tom sobre tom: a superfície fica um
+   passo acima do fundo, nunca uma caixa clara sobre escuro nem escura sobre claro.
+   A escala de cinzas (grafite, web 1 a 3) carrega viés azulado frio. */
+:root{
+}
+
+/* ── styles.css ── */
+
+/* ── tokens/product-colors.css ── */
+/* ORVIX — cores SECUNDÁRIAS de produto.
+   O sistema institucional usa só verde, branco, quase-preto e a escala fria de cinzas.
+   As cores abaixo existem para salientar a presença de um produto ou de uma linha de
+   produtos, nunca para vestir a interface. Regra: uma cor de produto por bloco, sempre
+   sobre superfície escura, sempre acompanhada do verde institucional na ação.
+   Valores derivados dos rótulos e renders 3D oficiais das linhas. */
+:root{
+}
+
+/* ── styles.css ── */
+
+/* ── tokens/typography.css ── */
+/* ORVIX — tipografia. Hierarquia = par tipográfico + peso + escala.
+   Exo fala alto (display). Be Vietnam Pro explica (corpo). Nunca o contrário. */
+:root{ /* @kind font */
+
+  /* Escala fixa (px) */
+  --fs-eyebrow:12px;
+  --fs-caption:12px;
+  --fs-micro:11px;
+  --fs-xs:13px;
+  --fs-sm:14px;
+  --fs-base:16px;
+  --fs-lg:18px;
+  --fs-lead:18px;
+  --fs-h5:18px;
+  --fs-h4:22px;
+  --fs-h3:25px;
+  --fs-h2:29px;
+  --fs-h1:33px;
+  --fs-display:44px;
+  --fs-display-xl:52px; /* @kind font */
+  --lh-display:1.02; /* @kind font */
+
+  /* Tracking */
+  --ls-eyebrow:0.18em; /* @kind font */
+
+  /* Papéis prontos */
+  --type-display:var(--fw-extrabold) var(--fs-fluid-display)/var(--lh-tight) var(--font-display);
+  --type-h1:var(--fw-extrabold) var(--fs-fluid-h1)/var(--lh-display) var(--font-display);
+  --type-h2:var(--fw-extrabold) var(--fs-fluid-h2)/var(--lh-heading) var(--font-display);
+  --type-h3:var(--fw-extrabold) var(--fs-fluid-h3)/var(--lh-heading) var(--font-display);
+  --type-h4:var(--fw-extrabold) var(--fs-h4)/var(--lh-snug) var(--font-display);
+  --type-h5:var(--fw-extrabold) var(--fs-h5)/var(--lh-snug) var(--font-display);
+  --type-eyebrow:var(--fw-medium) var(--fs-eyebrow)/1 var(--font-display);
+  --type-label:var(--fw-medium) var(--fs-xs)/1.2 var(--font-display);
+  --type-lead:var(--fw-regular) var(--fs-fluid-lead)/var(--lh-body) var(--font-body);
+  --type-body:var(--fw-regular) var(--fs-base)/var(--lh-body) var(--font-body);
+  --type-body-sm:var(--fw-regular) var(--fs-sm)/var(--lh-body) var(--font-body);
+  --type-caption:var(--fw-regular) var(--fs-caption)/1.45 var(--font-body);
+  --type-mono:var(--fw-regular) var(--fs-xs)/1.5 var(--font-mono);
+}
+
+/* ── styles.css ── */
+
+/* ── tokens/spacing.css ── */
+/* ORVIX — espaçamento. Base 4px, grid firme, alinhamento rigoroso.
+   Dado técnico (ficha, composição, dose) sempre respira mais que UI comum. */
+:root{
+}
+
+/* ── styles.css ── */
+
+/* ── tokens/radius.css ── */
+/* ORVIX — raios de canto. Contidos: 6 ou 8px na maior parte das caixas e botões, teto de 10px.
+   Caixa com barra lateral ou inferior colorida: raio de no máximo 3px e barra de no máximo 3px.
+   Acima de 10px só a pílula, rara e sob pedido. A tag é reta (3px) para nunca parecer botão. */
+:root{
+}
+
+/* ── styles.css ── */
+
+/* ── tokens/elevation.css ── */
+/* ORVIX — elevação. Sombras curtas, próximas e de baixa difusão: a marca é
+   industrial e precisa, não flutuante. Nada de blur largo nem offset distante.
+   Blur máximo 14px, offset máximo 4px. A separação prioritária vem da HAIRLINE. */
+:root{
+  --inset-hairline:inset 0 0 0 1px var(--claro-a06);
+
+  /* Sombra interna de campo (input em superfície escura) */
+  --inset-field:inset 0 1px 2px rgba(16,23,32,.40);
+}
+
+/* ── styles.css ── */
+
+/* ── tokens/glass.css ── */
+/* ORVIX — sistema GLASS. Vidro frio sobre fundo escuro, sempre com hairline clara
+   e sheen de 1px no topo. Três densidades + uma variante de acento verde.
+   Regra: glass só sobre fundo que tenha textura, gradiente ou imagem por baixo.
+   Sobre chapado puro, usar superfície sólida (--surface-*). */
+:root{ /* @kind other */
+}
+
+/* Utilitários de vidro. Prefira estes a reescrever backdrop-filter. */
+.orvix-glass{background:var(--glass-2-bg);backdrop-filter:blur(var(--glass-2-blur)) saturate(var(--glass-saturate));-webkit-backdrop-filter:blur(var(--glass-2-blur)) saturate(var(--glass-saturate));border:var(--glass-border);border-radius:var(--radius-panel);box-shadow:var(--shadow-2),var(--sheen-top)}
+.orvix-glass--thin{background:var(--glass-1-bg);backdrop-filter:blur(var(--glass-1-blur)) saturate(var(--glass-saturate));-webkit-backdrop-filter:blur(var(--glass-1-blur)) saturate(var(--glass-saturate))}
+.orvix-glass--solid{background:var(--glass-3-bg);backdrop-filter:blur(var(--glass-3-blur)) saturate(var(--glass-saturate));-webkit-backdrop-filter:blur(var(--glass-3-blur)) saturate(var(--glass-saturate))}
+.orvix-glass--verde{background:var(--glass-verde-bg);border:var(--glass-verde-border)}
+
+/* Textura pontilhada do "X": assinatura gráfica recorrente da marca. */
+.orvix-dots{background-image:radial-gradient(rgba(232,234,238,.25) 1px,transparent 1px);background-size:3px 3px}
+.orvix-dots--verde{background-image:radial-gradient(rgba(19,165,56,.25) 1px,transparent 1px);background-size:3px 3px}
+.orvix-dots--dense{background-image:radial-gradient(rgba(232,234,238,.25) 1px,transparent 1px);background-size:3px 3px}
+/* Padrões de pontos ORVIX: densos (4px), sempre suaves (nunca transparência alta); o degradê é só de transparência. */
+.orvix-dots--suave{background-image:radial-gradient(rgba(232,234,238,.25) 1px,transparent 1px);background-size:4px 4px}
+.orvix-dots--fade-y{-webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,transparent 100%)}
+.orvix-dots--fade-y-up{-webkit-mask-image:linear-gradient(0deg,#000 0%,transparent 100%);mask-image:linear-gradient(0deg,#000 0%,transparent 100%)}
+.orvix-dots--fade-x{-webkit-mask-image:linear-gradient(90deg,#000 0%,transparent 100%);mask-image:linear-gradient(90deg,#000 0%,transparent 100%)}
+.orvix-dots--fade-x-left{-webkit-mask-image:linear-gradient(270deg,#000 0%,transparent 100%);mask-image:linear-gradient(270deg,#000 0%,transparent 100%)}
+.orvix-dots--fade-radial{-webkit-mask-image:radial-gradient(70% 70% at 50% 50%,#000 0%,transparent 100%);mask-image:radial-gradient(70% 70% at 50% 50%,#000 0%,transparent 100%)}
+.orvix-dots--fade-diagonal{-webkit-mask-image:linear-gradient(135deg,#000 0%,transparent 100%);mask-image:linear-gradient(135deg,#000 0%,transparent 100%)}
+.orvix-dots--fade-band{-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 30%,#000 70%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 30%,#000 70%,transparent 100%)}
+[data-theme="light"] .orvix-dots,[data-theme="light"] .orvix-dots--dense,[data-theme="light"] .orvix-dots--suave{background-image:radial-gradient(rgba(16,23,32,.25) 1px,transparent 1px)}
+/* Grade técnica de precisão, para fundos de seção densa. */
+.orvix-grid-fx{background-image:linear-gradient(var(--claro-a03) 1px,transparent 1px),linear-gradient(90deg,var(--claro-a03) 1px,transparent 1px);background-size:48px 48px}
+
+/* ── styles.css ── */
+
+/* ── tokens/motion.css ── */
+/* ORVIX — movimento de precisão. Transições curtas e controladas, nada orgânico,
+   nada elástico. Revelações no scroll, traços que se desenham, gotas que se formam.
+   Nunca bounce, nunca overshoot em UI. */
+:root{ /* @kind other */
+
+  --transition-control:background-color var(--dur-fast) var(--ease-precise),border-color var(--dur-fast) var(--ease-precise),color var(--dur-fast) var(--ease-precise),box-shadow var(--dur-fast) var(--ease-precise),transform var(--dur-fast) var(--ease-precise); /* @kind spacing */
+}
+
+@keyframes orvix-fade-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes orvix-fade-in{from{opacity:0}to{opacity:1}}
+@keyframes orvix-draw{from{stroke-dashoffset:var(--dash,240)}to{stroke-dashoffset:0}}
+@keyframes orvix-scan{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
+@keyframes orvix-pulse-ring{0%{transform:scale(.78);opacity:.45}70%{opacity:0}100%{transform:scale(1.42);opacity:0}}
+@keyframes orvix-spin{to{transform:rotate(360deg)}}
+@keyframes orvix-spin-rev{to{transform:rotate(-360deg)}}
+@keyframes orvix-drift-x{0%{transform:translateX(-6%)}100%{transform:translateX(6%)}}
+@keyframes orvix-shimmer{0%{background-position:-140% 0}100%{background-position:240% 0}}
+@keyframes orvix-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+@media (prefers-reduced-motion:reduce){
+  :root{--dur-fast:1ms /* @kind other */;--dur-base:1ms /* @kind other */;--dur-slow:1ms /* @kind other */;--dur-reveal:1ms /* @kind other */;--dur-scene:1ms /* @kind other */}
+  *,*::before,*::after{animation-duration:1ms !important;animation-iteration-count:1 !important;transition-duration:1ms !important}
+}
+
+/* ── styles.css ── */
+
+/* ── tokens/layout.css ── */
+/* ORVIX — layout. Grid firme, mobile primeiro, leitura impecável em 375px. */
+:root{ /* @kind other */
+}
+.orvix-container{width:100%;max-width:var(--container-max);margin-inline:auto;padding-inline:var(--gutter)}
+.orvix-container--narrow{max-width:var(--container-narrow)}
+.orvix-container--prose{max-width:var(--container-prose)}
+.orvix-container--wide{max-width:var(--container-wide)}
+
+/* ── styles.css ── */
+
+/* ── tokens/semantic.css ── */
+/* ORVIX — aliases semânticos. TEMA ESCURO ÚNICO: a ORVIX não trabalha fundo claro
+   em interface. Não existe alternância claro/escuro neste sistema. */
+:root{
+}
+
+/* ── styles.css ── */
+
+/* ── tokens/base.css ── */
+/* ORVIX — base. Reset curto + defaults de tema escuro único. */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth;color-scheme:dark}
+body{margin:0;background:var(--bg-deep);color:var(--text-body);font:var(--type-body);text-wrap:pretty}
+h1,h2,h3,h4,h5,h6{margin:0;font-family:var(--font-display);font-weight:var(--fw-extrabold);color:var(--text-strong);text-wrap:balance;letter-spacing:var(--ls-tight);text-transform:uppercase}
+h1{font:var(--type-h1)}h2{font:var(--type-h2)}h3{font:var(--type-h3)}h4{font:var(--type-h4)}h5{font:var(--type-h5)}
+p{margin:0}
+small{font-size:var(--fs-caption)}
+strong,b{font-weight:var(--fw-medium);color:var(--text-strong)}
+code,kbd,samp,pre{font-family:var(--font-mono);font-size:var(--fs-xs)}
+img,svg,video,canvas{display:block;max-width:100%}
+hr{border:0;border-top:var(--hairline);margin:var(--space-8) 0}
+a{color:var(--link);text-decoration-color:var(--link-underline);text-underline-offset:2px;transition:color var(--dur-fast) var(--ease-precise)}
+a:hover{color:var(--link-hover);text-decoration-color:currentColor}
+a:visited{color:var(--link-visited)}
+::selection{background:var(--selection-bg);color:var(--selection-fg)}
+:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+::placeholder{color:var(--field-placeholder)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--scrollbar-track)}
+::-webkit-scrollbar-thumb{background:var(--scrollbar-thumb);border-radius:var(--radius-pill);border:2px solid var(--scrollbar-track)}
+table{border-collapse:collapse;width:100%}
+
+/* Utilitários tipográficos de marca */
+.orvix-eyebrow{font:var(--type-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--text-accent)}
+.orvix-wordmark{font-family:var(--font-display);font-weight:var(--fw-extrabold);letter-spacing:var(--ls-tight);text-transform:uppercase}
+.orvix-descritor{font-family:var(--font-display);font-weight:var(--fw-medium);letter-spacing:var(--ls-wordmark);text-transform:uppercase;font-size:var(--fs-micro);color:var(--text-muted)}
+.orvix-lead{font:var(--type-lead);color:var(--text-muted)}
+.orvix-mono{font:var(--type-mono);color:var(--text-muted);letter-spacing:.02em}
+.orvix-callout{font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:var(--fs-h4);line-height:var(--lh-snug);color:var(--text-strong);text-transform:uppercase}
+/* Títulos e nomes de produto fora de tag de heading.
+   Regra da marca: sempre Exo, ExtraBold, caixa alta. */
+.ovx-hero__title,.ovx-sectionhead__title,.ovx-manifesto__title,.ovx-closing__title,.ovx-card__title,.ovx-dialog__title,.ovx-product__name,.ovx-line__name,.ovx-axis__title,.ovx-post__title,.ovx-quote__text,.ovx-empty__title,.ovx-step__title,.ovx-cycle__name{font-family:var(--font-display);font-weight:var(--fw-extrabold);text-transform:uppercase}
+.orvix-numeric{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+.orvix-visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ── styles.css ── */
+
+/* ── css/actions.css ── */
+/* ORVIX — Ações. Botões, botões de ícone, grupos e links de ação.
+   Todo botão é de vidro: o verde entra translúcido e ganha corpo no hover.
+   Tamanhos xs, sm e md. Não existem variantes lg nem xl.
+   Press: escurece e reduz a escala para .99. Sombra sempre curta. Raio 6px. */
+.ovx-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:34px;padding:0 14px;border:1px solid transparent;border-radius:var(--radius-control);font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:12px;letter-spacing:.06em;text-transform:uppercase;line-height:1;text-decoration:none;cursor:pointer;white-space:nowrap;transition:var(--transition-control);box-shadow:none}
+.ovx-btn:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.ovx-btn:active{transform:scale(var(--press-scale))}
+.ovx-btn[disabled],.ovx-btn[aria-disabled=true]{opacity:.42;pointer-events:none;box-shadow:none}
+.ovx-btn__icon{display:inline-flex;flex:0 0 auto}
+.ovx-btn__spinner{width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:orvix-spin var(--dur-loop) linear infinite}
+
+.ovx-btn--primary{background:var(--action-bg);color:var(--action-fg);border-color:var(--action-border)}
+.ovx-btn--primary:hover{background:var(--action-bg-hover);border-color:var(--action-border-hover);color:var(--action-fg-hover)}
+.ovx-btn--primary:active{background:var(--action-bg-active);border-color:var(--action-border-hover)}
+
+.ovx-btn--secondary{background:var(--action-2-bg);color:var(--action-2-fg);border-color:var(--action-2-border)}
+.ovx-btn--verde-solido{background:var(--action-bg);color:#fff;border-color:var(--action-border)}
+.ovx-btn--verde-solido:hover{background:var(--action-bg-hover);border-color:var(--action-border-hover);color:#fff}
+.ovx-btn--secondary:hover{background:var(--action-2-bg-hover);border-color:var(--claro-a40);color:var(--text-strong)}
+.ovx-btn--secondary:active{background:var(--action-2-bg-active)}
+
+.ovx-btn--ghost{background:transparent;color:var(--action-3-fg);border-color:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.ovx-btn--ghost:hover{background:var(--action-3-bg-hover);color:var(--text-body)}
+
+.ovx-btn--glass{background:var(--glass-2-bg);backdrop-filter:blur(var(--glass-2-blur));-webkit-backdrop-filter:blur(var(--glass-2-blur));color:var(--text-strong);border-color:var(--claro-a24)}
+.ovx-btn--glass:hover{background:var(--glass-3-bg);border-color:var(--claro-a40)}
+
+.ovx-btn--danger{background:var(--action-danger-bg);color:var(--action-danger-fg);border-color:var(--action-danger-bg)}
+.ovx-btn--danger:hover{filter:brightness(1.12)}
+
+.ovx-btn--inverse{background:var(--surface-inverse);color:var(--text-on-inverse);border-color:var(--surface-inverse)}
+.ovx-btn--inverse:hover{background:var(--branco)}
+
+.ovx-btn--xs{height:24px;padding:0 8px;gap:5px;font-size:11px}
+.ovx-btn--sm{height:29px;padding:0 11px;gap:6px;font-size:var(--fs-micro)}
+.ovx-btn--block{width:100%}
+.ovx-btn--pill{border-radius:var(--radius-pill)}
+
+.ovx-iconbtn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;border:1px solid var(--border);border-radius:var(--radius-control);background:var(--claro-a03);color:var(--text-muted);cursor:pointer;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:var(--transition-control)}
+.ovx-iconbtn:hover{background:var(--claro-a06);color:var(--text-strong);border-color:var(--border-strong)}
+.ovx-iconbtn:active{transform:scale(var(--press-scale))}
+.ovx-iconbtn:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.ovx-iconbtn[disabled]{opacity:.42;pointer-events:none}
+.ovx-iconbtn--accent{background:var(--verde-a12);border-color:var(--verde-a40);color:var(--verde-400)}
+.ovx-iconbtn--accent:hover{background:var(--verde-a18);color:var(--verde-300)}
+.ovx-iconbtn--bare{border-color:transparent;background:transparent}
+.ovx-iconbtn--bare:hover{background:var(--claro-a06);border-color:transparent}
+.ovx-iconbtn--sm{width:29px;height:29px}
+.ovx-iconbtn--lg{width:46px;height:46px}
+.ovx-iconbtn--round{border-radius:var(--radius-circle)}
+
+.ovx-btngroup{display:inline-flex;align-items:stretch}
+.ovx-btngroup>.ovx-btn,.ovx-btngroup>.ovx-iconbtn{border-radius:0;margin-left:-1px;box-shadow:none}
+.ovx-btngroup>:first-child{border-top-left-radius:var(--radius-control);border-bottom-left-radius:var(--radius-control);margin-left:0}
+.ovx-btngroup>:last-child{border-top-right-radius:var(--radius-control);border-bottom-right-radius:var(--radius-control)}
+.ovx-btngroup>[aria-pressed=true]{background:var(--verde-a12);color:var(--verde-300);border-color:var(--verde-a40);position:relative;z-index:1}
+
+.ovx-linkaction{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-sm);color:var(--text-accent);text-decoration:none;cursor:pointer;background:none;border:0;padding:0;transition:color var(--dur-fast) var(--ease-precise),gap var(--dur-fast) var(--ease-precise)}
+.ovx-linkaction:hover{color:var(--verde-300);gap:11px}
+.ovx-linkaction__arrow{transition:transform var(--dur-fast) var(--ease-precise)}
+.ovx-linkaction--muted{color:var(--text-muted)}
+.ovx-linkaction--muted:hover{color:var(--text-strong)}
+.ovx-linkaction--underline{text-decoration:underline;text-decoration-color:var(--link-underline);text-underline-offset:3px}
+
+/* ── styles.css ── */
+
+/* ── css/forms.css ── */
+/* ORVIX — Formulários. Campo escuro afundado, hairline clara, foco verde.
+   Alvo de toque mínimo 44px nas variantes lg (produtor no campo). */
+.ovx-field{display:flex;flex-direction:column;gap:6px}
+.ovx-field__label{font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--label-fg)}
+.ovx-field__label[data-required]::after{content:"*";color:var(--verde-400);margin-left:3px}
+.ovx-field__hint{font:var(--type-caption);color:var(--text-subtle)}
+.ovx-field__error{font:var(--type-caption);color:var(--status-danger);display:flex;align-items:center;gap:5px}
+.ovx-field__row{display:flex;align-items:center;gap:var(--gap-tight)}
+
+.ovx-input{display:block;width:100%;height:38px;padding:0 var(--pad-control-x);background:var(--field-bg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--field-fg);border:1px solid var(--field-border);border-radius:var(--radius-input);font:var(--type-body-sm);box-shadow:var(--inset-field);transition:var(--transition-control)}
+.ovx-input:hover{border-color:var(--field-border-hover)}
+.ovx-input:focus{outline:none;border-color:var(--field-border-focus);box-shadow:var(--inset-field),var(--ring-accent)}
+.ovx-input[disabled]{opacity:.45;cursor:not-allowed}
+.ovx-input[aria-invalid=true]{border-color:var(--status-danger)}
+.ovx-input--sm{height:32px;font-size:var(--fs-xs)}
+.ovx-input--lg{height:44px;font-size:var(--fs-base)}
+.ovx-input--mono{font-family:var(--font-mono);letter-spacing:.02em}
+.ovx-textarea{min-height:104px;height:auto;padding:10px var(--pad-control-x);line-height:var(--lh-body);resize:vertical}
+
+.ovx-inputwrap{position:relative;display:flex;align-items:center}
+.ovx-inputwrap__addon{position:absolute;display:flex;align-items:center;color:var(--text-subtle);pointer-events:none}
+.ovx-inputwrap__addon--left{left:12px}
+.ovx-inputwrap__addon--right{right:12px}
+.ovx-inputwrap--has-left .ovx-input{padding-left:36px}
+.ovx-inputwrap--has-right .ovx-input{padding-right:36px}
+.ovx-inputwrap__unit{position:absolute;right:12px;font:var(--type-mono);color:var(--text-subtle)}
+
+.ovx-select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--text-muted) 50%),linear-gradient(135deg,var(--text-muted) 50%,transparent 50%);background-position:calc(100% - 17px) center,calc(100% - 12px) center;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:34px}
+.ovx-select option{background:var(--surface-2);color:var(--text-body)}
+
+.ovx-check{display:inline-flex;align-items:flex-start;gap:9px;cursor:pointer;font:var(--type-body-sm);color:var(--text-body)}
+.ovx-check__box{flex:0 0 auto;width:17px;height:17px;margin-top:2px;border:1px solid var(--field-border);border-radius:var(--radius-xs);background:var(--field-bg);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:inline-flex;align-items:center;justify-content:center;transition:var(--transition-control)}
+.ovx-check:hover .ovx-check__box{border-color:var(--field-border-hover)}
+.ovx-check input{position:absolute;opacity:0;width:0;height:0}
+.ovx-check input:focus-visible+.ovx-check__box{box-shadow:var(--ring-focus)}
+.ovx-check input:checked+.ovx-check__box{background:rgba(19,165,56,.72);border-color:var(--verde-500)}
+.ovx-check__mark{width:9px;height:9px;color:var(--grafite-900);opacity:0;transition:opacity var(--dur-fast) var(--ease-precise)}
+.ovx-check input:checked+.ovx-check__box .ovx-check__mark{opacity:1}
+.ovx-check--radio .ovx-check__box{border-radius:var(--radius-circle)}
+.ovx-check--radio input:checked+.ovx-check__box{background:transparent;border-color:var(--verde-500)}
+.ovx-check--radio .ovx-check__dot{width:8px;height:8px;border-radius:50%;background:var(--verde-500);transform:scale(0);transition:transform var(--dur-fast) var(--ease-precise)}
+.ovx-check--radio input:checked+.ovx-check__box .ovx-check__dot{transform:scale(1)}
+.ovx-check[data-disabled]{opacity:.45;pointer-events:none}
+.ovx-check__text{display:flex;flex-direction:column;gap:2px}
+.ovx-check__desc{font:var(--type-caption);color:var(--text-subtle)}
+
+.ovx-switch{display:inline-flex;align-items:center;gap:10px;cursor:pointer;font:var(--type-body-sm);color:var(--text-body)}
+.ovx-switch input{position:absolute;opacity:0;width:0;height:0}
+.ovx-switch__track{width:38px;height:21px;flex:0 0 auto;border-radius:var(--radius-pill);background:var(--escuro-a56);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--field-border);position:relative;transition:var(--transition-control)}
+.ovx-switch__thumb{position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:var(--branco-300);box-shadow:var(--shadow-1);transition:transform var(--dur-fast) var(--ease-precise),background-color var(--dur-fast) var(--ease-precise)}
+.ovx-switch input:checked+.ovx-switch__track{background:rgba(19,165,56,.55);border-color:var(--verde-500)}
+.ovx-switch input:checked+.ovx-switch__track .ovx-switch__thumb{transform:translateX(17px);background:var(--branco-100)}
+.ovx-switch input:focus-visible+.ovx-switch__track{box-shadow:var(--ring-focus)}
+.ovx-switch[data-disabled]{opacity:.45;pointer-events:none}
+
+.ovx-slider{width:100%;display:flex;flex-direction:column;gap:8px}
+.ovx-slider__range{-webkit-appearance:none;appearance:none;width:100%;height:var(--touch-min);margin:0;background:transparent;outline:none;cursor:pointer}
+.ovx-slider__range::-webkit-slider-runnable-track{height:4px;border-radius:var(--radius-pill);background:var(--grafite-600)}
+.ovx-slider__range::-moz-range-track{height:4px;border-radius:var(--radius-pill);background:var(--grafite-600)}
+.ovx-slider__range::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;margin-top:-6px;border-radius:50%;background:var(--verde-500);border:2px solid var(--grafite-900);box-shadow:var(--shadow-1);cursor:pointer;transition:transform var(--dur-fast) var(--ease-precise)}
+.ovx-slider__range::-webkit-slider-thumb:hover{transform:scale(1.15)}
+.ovx-slider__range::-moz-range-thumb{width:13px;height:13px;border-radius:50%;background:var(--verde-500);border:2px solid var(--grafite-900);cursor:pointer}
+.ovx-slider__scale{display:flex;justify-content:space-between;font:var(--type-mono);color:var(--text-subtle)}
+
+.ovx-fieldset{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:var(--gap)}
+.ovx-fieldset__legend{font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-xs);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-accent);padding:0 0 4px}
+.ovx-formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--gap)}
+
+/* ── styles.css ── */
+
+/* ── css/data.css ── */
+/* ORVIX — Dados e superfícies. Cards, painéis de vidro, números técnicos,
+   tabelas de ficha, badges e medidores. Separação por hairline antes de sombra. */
+.ovx-card{position:relative;background:var(--surface-card);backdrop-filter:blur(16px) saturate(1.15);-webkit-backdrop-filter:blur(16px) saturate(1.15);border:var(--hairline);border-radius:var(--radius-card);padding:var(--pad-card);box-shadow:var(--shadow-1),var(--sheen-top);transition:var(--transition-surface)}
+.ovx-card--interactive{cursor:pointer}
+.ovx-card--interactive:hover{background:var(--surface-card-hover);border-color:var(--border-strong);transform:translateY(var(--hover-lift));box-shadow:var(--shadow-2)}
+.ovx-card--interactive:active{transform:none}
+.ovx-card--accent{border-color:var(--verde-a40);box-shadow:var(--shadow-1),var(--glow-accent-soft)}
+.ovx-card--sunken{background:var(--surface-sunken);box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.ovx-card--opaco{background:var(--grafite-800);backdrop-filter:none;-webkit-backdrop-filter:none}
+.ovx-card--flush{padding:0;overflow:hidden}
+.ovx-card--lg{padding:var(--pad-card-lg);border-radius:var(--radius-panel)}
+.ovx-card--dots{background-image:radial-gradient(var(--claro-a06) 1px,transparent 1px);background-size:6px 6px}
+.ovx-card__header{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--gap);margin-bottom:var(--space-3)}
+.ovx-card__title{font:var(--type-h5);color:var(--text-strong)}
+.ovx-card__sub{font:var(--type-caption);color:var(--text-subtle)}
+.ovx-card__body{font:var(--type-body-sm);color:var(--text-muted)}
+.ovx-card__footer{display:flex;align-items:center;justify-content:space-between;gap:var(--gap);margin-top:var(--space-4);padding-top:var(--space-3);border-top:var(--hairline)}
+.ovx-card__media{position:relative;aspect-ratio:16/9;background:var(--surface-sunken);overflow:hidden}
+.ovx-card__media img{width:100%;height:100%;object-fit:cover}
+.ovx-card__ribbon{position:absolute;top:0;right:0;padding:4px 10px;background:var(--verde-500);color:var(--grafite-900);font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:var(--fs-micro);letter-spacing:var(--ls-label);text-transform:uppercase;border-bottom-left-radius:var(--radius-sm)}
+
+.ovx-panel{position:relative;background:var(--glass-2-bg);backdrop-filter:blur(var(--glass-2-blur)) saturate(var(--glass-saturate));-webkit-backdrop-filter:blur(var(--glass-2-blur)) saturate(var(--glass-saturate));border:var(--glass-border);border-radius:var(--radius-panel);box-shadow:var(--shadow-2),var(--sheen-top);padding:var(--pad-panel)}
+.ovx-panel--thin{background:var(--glass-1-bg);backdrop-filter:blur(var(--glass-1-blur));-webkit-backdrop-filter:blur(var(--glass-1-blur))}
+.ovx-panel--solid{background:var(--glass-3-bg);backdrop-filter:blur(var(--glass-3-blur));-webkit-backdrop-filter:blur(var(--glass-3-blur))}
+.ovx-panel--verde{background:var(--glass-verde-bg);border:var(--glass-verde-border)}
+.ovx-panel--compact{padding:var(--pad-card)}
+.ovx-panel--surface{border-radius:var(--radius-surface)}
+.ovx-panel::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(160deg,var(--glass-shine) 0%,transparent 42%)}
+
+.ovx-stat{display:flex;flex-direction:column;gap:4px}
+.ovx-stat__label{font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--label-fg)}
+.ovx-stat__value{font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:var(--fs-h3);line-height:1;letter-spacing:var(--ls-tight);color:var(--text-strong);font-variant-numeric:tabular-nums}
+.ovx-stat__value--accent{color:var(--verde-400)}
+.ovx-stat__unit{font-size:.44em;font-weight:var(--fw-medium);color:var(--text-muted);margin-left:3px}
+.ovx-stat__delta{font:var(--type-caption);display:inline-flex;align-items:center;gap:4px}
+.ovx-stat__delta--up{color:var(--verde-400)}
+.ovx-stat__delta--down{color:var(--status-danger)}
+.ovx-stat--lg .ovx-stat__value{font-size:var(--fs-h1)}
+.ovx-statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--divider);border:var(--hairline);border-radius:var(--radius-card);overflow:hidden}
+.ovx-statgrid>*{background:var(--surface-card);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:var(--pad-card)}
+
+.ovx-table{width:100%;border-collapse:collapse;font:var(--type-body-sm)}
+.ovx-table caption{text-align:left;font:var(--type-caption);color:var(--text-subtle);padding-bottom:var(--space-2)}
+.ovx-table th{text-align:left;padding:10px 14px;font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:11px;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--label-fg);border-bottom:1px solid var(--border-strong);white-space:nowrap}
+.ovx-table td{padding:11px 14px;border-bottom:var(--hairline);color:var(--text-body);vertical-align:top}
+.ovx-table tbody tr:last-child td{border-bottom:0}
+.ovx-table--hover tbody tr{transition:background-color var(--dur-fast) var(--ease-precise)}
+.ovx-table--hover tbody tr:hover{background:var(--claro-a03)}
+.ovx-table--zebra tbody tr:nth-child(even){background:var(--claro-a03)}
+.ovx-table--numeric td:not(:first-child),.ovx-table--numeric th:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
+.ovx-table__num{font-variant-numeric:tabular-nums}
+.ovx-tablewrap{border:var(--hairline);border-radius:var(--radius-card);overflow:hidden;background:var(--surface-card)}
+
+.ovx-kv{display:grid;grid-template-columns:minmax(120px,auto) 1fr;gap:1px 0;font:var(--type-body-sm)}
+.ovx-kv dt{padding:9px 0;color:var(--text-subtle);font-size:var(--fs-xs);border-bottom:var(--hairline)}
+.ovx-kv dd{padding:9px 0;margin:0;color:var(--text-body);border-bottom:var(--hairline);text-align:right;font-variant-numeric:tabular-nums}
+.ovx-kv>*:nth-last-child(-n+2){border-bottom:0}
+
+.ovx-badge{display:inline-flex;align-items:center;gap:5px;height:21px;padding:0 8px;border-radius:var(--radius-sm);font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-micro);letter-spacing:.04em;text-transform:uppercase;background:var(--status-neutral-soft);color:var(--text-muted);border:1px solid transparent;white-space:nowrap}
+.ovx-badge--success{background:var(--status-success-soft);color:var(--verde-300);border-color:var(--verde-a24)}
+.ovx-badge--warning{background:var(--status-warning-soft);color:var(--produto-ambar);border-color:rgba(224,168,30,.28)}
+.ovx-badge--danger{background:var(--status-danger-soft);color:#F08A91;border-color:rgba(210,46,58,.28)}
+.ovx-badge--info{background:var(--status-info-soft);color:#7CBDEC;border-color:rgba(28,127,196,.28)}
+.ovx-badge--solid{background:var(--verde-500);color:var(--grafite-900);border-color:var(--verde-500)}
+.ovx-badge--outline{background:transparent;border-color:var(--border-strong);color:var(--text-muted)}
+.ovx-badge--dot::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+.ovx-badge--lg{height:26px;padding:0 11px;font-size:var(--fs-caption)}
+
+.ovx-tag{display:inline-flex;align-items:center;gap:6px;height:22px;padding:0 8px;border-radius:var(--radius-chip);border:1px solid var(--border-strong);background:transparent;color:var(--text-muted);font-family:var(--font-body);font-weight:var(--fw-regular);font-size:var(--fs-micro);letter-spacing:.02em;text-transform:none;white-space:nowrap;transition:var(--transition-control)}
+.ovx-tag--interactive{cursor:pointer}
+.ovx-tag--interactive:hover{border-color:var(--verde-a40);color:var(--text-strong);background:var(--verde-a06)}
+.ovx-tag--selected{background:transparent;border-color:var(--verde-500);color:var(--verde-300)}
+.ovx-tag__x{width:11px;height:11px;opacity:.6}
+.ovx-tag__x:hover{opacity:1}
+.ovx-taglist{display:flex;flex-wrap:wrap;gap:var(--gap-inline)}
+
+.ovx-meter{display:flex;flex-direction:column;gap:6px}
+.ovx-meter__head{display:flex;justify-content:space-between;font:var(--type-caption);color:var(--text-subtle)}
+.ovx-meter__track{height:5px;border-radius:var(--radius-pill);background:var(--grafite-700);overflow:hidden}
+.ovx-meter__fill{height:100%;border-radius:inherit;background:var(--verde-500);transition:width var(--dur-slow) var(--ease-precise)}
+.ovx-meter--warning .ovx-meter__fill{background:var(--status-warning)}
+.ovx-meter--danger .ovx-meter__fill{background:var(--status-danger)}
+.ovx-meter--thick .ovx-meter__track{height:9px}
+.ovx-meter--striped .ovx-meter__fill{background-image:linear-gradient(115deg,var(--claro-a14) 25%,transparent 25%,transparent 50%,var(--claro-a14) 50%,var(--claro-a14) 75%,transparent 75%);background-size:10px 10px}
+
+.ovx-progressring{transform:rotate(-90deg)}
+.ovx-progressring__track{stroke:var(--grafite-700)}
+.ovx-progressring__fill{stroke:var(--verde-500);transition:stroke-dashoffset var(--dur-slow) var(--ease-precise)}
+
+.ovx-divider{border:0;border-top:var(--hairline);margin:0}
+.ovx-divider--strong{border-top:var(--hairline-strong)}
+.ovx-divider--dotted{border-top:0;height:1px;background-image:radial-gradient(var(--claro-a24) 1px,transparent 1px);background-size:5px 1px}
+.ovx-divider--vertical{border-top:0;border-left:var(--hairline);height:auto;align-self:stretch}
+.ovx-divider__label{display:flex;align-items:center;gap:var(--gap-tight);font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--label-fg)}
+.ovx-divider__label::before,.ovx-divider__label::after{content:"";flex:1;border-top:var(--hairline)}
+
+/* ── styles.css ── */
+
+/* ── css/navigation.css ── */
+/* ORVIX — Navegação. Header fixo com vidro, sidebar de painel, abas, trilhas. */
+.ovx-navbar{position:sticky;top:0;z-index:var(--z-header);height:var(--header-h);display:flex;align-items:center;gap:var(--gap-loose);padding-inline:var(--gutter);background:var(--glass-3-bg);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border-bottom:var(--hairline)}
+.ovx-navbar__brand{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.ovx-navbar__brand img{height:32px;width:auto}
+.ovx-navbar__links{display:flex;align-items:center;gap:2px;margin-left:auto}
+.ovx-navlink{position:relative;display:inline-flex;align-items:center;height:34px;padding:0 10px;border-radius:var(--radius-sm);font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-xs);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;color:var(--text-muted);text-decoration:none;transition:var(--transition-control)}
+.ovx-navlink:hover{color:var(--text-strong);background:var(--claro-a06)}
+.ovx-navlink[aria-current=page]{color:var(--text-strong);font-weight:var(--fw-extrabold)}
+.ovx-navlink[aria-current=page]::after{content:"";position:absolute;left:10px;right:10px;bottom:-1px;height:2px;background:var(--verde-500);border-radius:var(--radius-pill)}
+.ovx-navbar__actions{display:flex;align-items:center;gap:var(--gap-inline);flex:0 0 auto}
+.ovx-navbar--compact{height:var(--header-h-compact)}
+.ovx-navbar--solid{background:var(--surface-1);backdrop-filter:none;-webkit-backdrop-filter:none}
+
+.ovx-sidebar{width:var(--sidebar-w);flex:0 0 auto;height:100%;display:flex;flex-direction:column;gap:var(--space-6);padding:var(--space-5) var(--space-4);background:var(--surface-1);border-right:var(--hairline)}
+.ovx-sidebar__group{display:flex;flex-direction:column;gap:2px}
+.ovx-sidebar__grouplabel{font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:11px;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--label-fg);padding:0 10px var(--space-2)}
+.ovx-sideitem{display:flex;align-items:center;gap:10px;height:40px;padding:0 10px;border-radius:var(--radius-rail);border-left:3px solid transparent;font:var(--type-body-sm);color:var(--text-muted);text-decoration:none;cursor:pointer;transition:var(--transition-control)}
+.ovx-sideitem:hover{background:var(--claro-a03);color:var(--text-body)}
+.ovx-sideitem[aria-current=true]{background:var(--verde-a06);border-left-color:var(--verde-500);color:var(--text-strong)}
+.ovx-sideitem__icon{width:16px;height:16px;flex:0 0 auto;opacity:.85}
+.ovx-sideitem__count{margin-left:auto;font:var(--type-mono);color:var(--text-subtle)}
+
+.ovx-tabs{display:flex;align-items:center;gap:2px;border-bottom:var(--hairline)}
+.ovx-tab{position:relative;display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 14px;border:0;background:none;cursor:pointer;font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-xs);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;color:var(--text-subtle);transition:var(--transition-control)}
+.ovx-tab:hover{color:var(--text-body)}
+.ovx-tab[aria-selected=true]{color:var(--text-strong)}
+.ovx-tab[aria-selected=true]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--verde-500)}
+.ovx-tabs--pill{border-bottom:0;gap:4px;padding:3px;background:var(--surface-sunken);border:var(--hairline);border-radius:var(--radius-lg);display:inline-flex}
+.ovx-tabs--pill .ovx-tab{height:30px;border-radius:var(--radius-sm)}
+.ovx-tabs--pill .ovx-tab[aria-selected=true]{background:var(--surface-3)}
+.ovx-tabs--pill .ovx-tab[aria-selected=true]::after{display:none}
+
+.ovx-breadcrumbs{display:flex;align-items:center;flex-wrap:wrap;gap:7px;font:var(--type-caption);font-family:var(--font-display);font-weight:var(--fw-medium);letter-spacing:.06em;text-transform:uppercase;color:var(--text-subtle)}
+.ovx-breadcrumbs a{color:var(--text-subtle);text-decoration:none}
+.ovx-breadcrumbs a:hover{color:var(--text-accent)}
+.ovx-breadcrumbs__sep{opacity:1}
+.ovx-breadcrumbs__current{color:var(--text-body)}
+
+.ovx-pagination{display:flex;align-items:center;gap:4px}
+.ovx-pagination__item{min-width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;padding:0 8px;border:var(--hairline);border-radius:var(--radius-sm);background:transparent;color:var(--text-muted);font:var(--type-body-sm);font-variant-numeric:tabular-nums;cursor:pointer;transition:var(--transition-control)}
+.ovx-pagination__item:hover{border-color:var(--border-strong);color:var(--text-strong)}
+.ovx-pagination__item[aria-current=page]{background:var(--verde-a12);border-color:var(--verde-a40);color:var(--verde-300)}
+.ovx-pagination__gap{color:var(--text-subtle);padding:0 4px}
+
+.ovx-steps{display:flex;align-items:flex-start;gap:0;counter-reset:ovxstep}
+.ovx-step{flex:1;display:flex;flex-direction:column;gap:8px;position:relative;padding-right:var(--space-4)}
+.ovx-step__marker{width:28px;height:28px;border-radius:var(--radius-sm);border:1px solid var(--border-strong);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:var(--fs-xs);color:var(--text-subtle);background:var(--surface-2);z-index:1}
+.ovx-step__line{position:absolute;top:14px;left:28px;right:0;height:1px;background:var(--divider)}
+.ovx-step__title{font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-sm);color:var(--text-body)}
+.ovx-step__desc{font:var(--type-caption);color:var(--text-subtle)}
+.ovx-step[data-state=done] .ovx-step__marker{background:var(--verde-500);border-color:var(--verde-500);color:var(--grafite-900)}
+.ovx-step[data-state=active] .ovx-step__marker{border-color:var(--verde-500);color:var(--verde-400)}
+.ovx-step[data-state=active] .ovx-step__title{color:var(--text-strong)}
+.ovx-step:last-child .ovx-step__line{display:none}
+
+.ovx-footer{container:ovx-footer/inline-size;background:var(--bg-deep);border-top:var(--hairline);padding:clamp(40px,6vw,64px) 0 24px}
+.ovx-footer__top{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,3fr);gap:32px 56px;align-items:start}
+.ovx-footer__brand{display:flex;flex-direction:column;align-items:flex-start;gap:14px;min-width:0}
+.ovx-footer__desc{margin:0;font:var(--type-body-sm);color:var(--text-muted);max-width:34ch}
+.ovx-footer__cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(136px,1fr));gap:28px 24px;min-width:0}
+.ovx-footer__col{display:flex;flex-direction:column;align-items:flex-start;gap:0;min-width:0}
+.ovx-footer__col a{max-width:100%;overflow-wrap:anywhere}
+.ovx-footer__coltitle{margin-bottom:6px;font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--label-fg)}
+.ovx-footer__base{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 32px;margin-top:40px;padding-top:16px;border-top:var(--hairline);font:var(--type-caption);color:var(--text-subtle)}
+.ovx-footer__legal{flex:1 1 260px;min-width:0;overflow-wrap:anywhere}
+.ovx-footer__meta{display:flex;flex-wrap:wrap;align-items:center;gap:0 20px;min-width:0}
+.ovx-footer__brand .ovx-logo--md img{height:41px}
+@container ovx-footer (max-width:720px){.ovx-footer__top{grid-template-columns:minmax(0,1fr)}}
+@container ovx-footer (max-width:400px){.ovx-footer__cols{grid-template-columns:repeat(2,minmax(0,1fr))}.ovx-footer__meta{gap:0 16px}}
+/* Todo link do rodapé é navegação: Exo Medium, caixa alta, tracking leve. */
+.ovx-footer a{color:var(--text-muted);text-decoration:none;font-family:var(--font-display);font-weight:var(--fw-medium);font-size:11px;line-height:1.3;letter-spacing:.06em;text-transform:uppercase}
+.ovx-footer .ovx-footer__meta a{font-size:11px}
+.ovx-footer a:hover{color:var(--text-strong)}
+.ovx-footer__signature{font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-micro);letter-spacing:var(--ls-label);text-transform:uppercase}
+
+/* ── styles.css ── */
+
+/* ── css/feedback.css ── */
+/* ORVIX — Feedback. Alertas, toasts, tooltips, diálogos, skeletons, estados vazios.
+   Verde nunca é alerta: o verde só comunica sucesso e ação. */
+.ovx-alert{display:flex;gap:12px;padding:14px 16px;border:var(--hairline);border-radius:var(--radius-card);background:var(--surface-card);box-shadow:var(--shadow-1)}
+.ovx-alert__icon{flex:0 0 auto;width:18px;height:18px;margin-top:1px}
+.ovx-alert__body{display:flex;flex-direction:column;gap:3px;min-width:0}
+.ovx-alert__title{font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-sm);color:var(--text-strong)}
+.ovx-alert__text{font:var(--type-body-sm);color:var(--text-muted)}
+.ovx-alert__close{margin-left:auto;flex:0 0 auto}
+.ovx-alert--success{border-color:var(--verde-a24);background:var(--status-success-soft)}
+.ovx-alert--success .ovx-alert__icon{color:var(--verde-400)}
+.ovx-alert--warning{border-color:rgba(224,168,30,.28);background:var(--status-warning-soft)}
+.ovx-alert--warning .ovx-alert__icon{color:var(--status-warning)}
+.ovx-alert--danger{border-color:rgba(210,46,58,.28);background:var(--status-danger-soft)}
+.ovx-alert--danger .ovx-alert__icon{color:var(--status-danger)}
+.ovx-alert--info{border-color:rgba(28,127,196,.28);background:var(--status-info-soft)}
+.ovx-alert--info .ovx-alert__icon{color:var(--status-info)}
+.ovx-alert--bar{border-radius:0;border-inline:0;border-top:0}
+
+.ovx-toast{display:flex;align-items:center;gap:11px;min-width:280px;max-width:380px;padding:12px 14px;border-radius:var(--radius-card);background:var(--glass-3-bg);backdrop-filter:blur(var(--glass-3-blur)) saturate(var(--glass-saturate));-webkit-backdrop-filter:blur(var(--glass-3-blur)) saturate(var(--glass-saturate));border:var(--glass-border-strong);box-shadow:var(--shadow-3),var(--sheen-top);animation:orvix-fade-up var(--dur-slow) var(--ease-precise)}
+.ovx-toast__icon{flex:0 0 auto;width:16px;height:16px;color:var(--verde-400)}
+.ovx-toast__text{font:var(--type-body-sm);color:var(--text-body);min-width:0}
+.ovx-toast__bar{position:absolute;left:0;bottom:0;height:2px;background:var(--verde-500);border-bottom-left-radius:inherit}
+.ovx-toaststack{position:fixed;right:var(--gutter);bottom:var(--gutter);z-index:var(--z-toast);display:flex;flex-direction:column;gap:var(--gap-inline)}
+
+.ovx-tooltip{position:relative;display:inline-flex}
+.ovx-tooltip__bubble{position:absolute;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%) translateY(3px);opacity:0;pointer-events:none;padding:6px 9px;border-radius:var(--radius-sm);background:var(--grafite-600);border:var(--hairline);color:var(--text-strong);font:var(--type-caption);white-space:nowrap;box-shadow:var(--shadow-1);transition:opacity var(--dur-fast) var(--ease-precise),transform var(--dur-fast) var(--ease-precise);z-index:var(--z-tooltip)}
+.ovx-tooltip__bubble::after{content:"";position:absolute;top:100%;left:50%;width:7px;height:7px;margin-top:-3.5px;background:inherit;border-right:inherit;border-bottom:inherit;transform:translateX(-50%) rotate(45deg)}
+[data-theme="light"] .ovx-tooltip__bubble{background:var(--branco-50);border:1px solid var(--border);color:var(--text-strong);box-shadow:0 1px 2px rgba(16,23,32,.10),0 4px 12px rgba(16,23,32,.08)}
+.ovx-tooltip:hover .ovx-tooltip__bubble,.ovx-tooltip:focus-within .ovx-tooltip__bubble{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.ovx-scrim{position:fixed;inset:0;z-index:var(--z-dialog);background:rgba(16,23,32,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:var(--gutter);animation:orvix-fade-in var(--dur-base) var(--ease-precise)}
+.ovx-dialog{width:100%;max-width:520px;background:var(--glass-3-bg);backdrop-filter:blur(var(--glass-3-blur)) saturate(var(--glass-saturate));-webkit-backdrop-filter:blur(var(--glass-3-blur)) saturate(var(--glass-saturate));border:var(--glass-border-strong);border-radius:var(--radius-surface);box-shadow:var(--shadow-4),var(--sheen-top-strong);animation:orvix-fade-up var(--dur-slow) var(--ease-precise)}
+.ovx-dialog__header{display:flex;align-items:flex-start;gap:var(--gap);padding:var(--space-6) var(--space-6) var(--space-4)}
+.ovx-dialog__title{font:var(--type-h4);color:var(--text-strong)}
+.ovx-dialog__sub{font:var(--type-caption);color:var(--text-subtle);margin-top:3px}
+.ovx-dialog__body{padding:0 var(--space-6);font:var(--type-body-sm);color:var(--text-muted)}
+.ovx-dialog__footer{display:flex;justify-content:flex-end;gap:var(--gap-inline);padding:var(--space-5) var(--space-6) var(--space-6)}
+.ovx-drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,92vw);z-index:var(--z-drawer);background:var(--surface-1);border-left:var(--hairline);box-shadow:var(--shadow-4);display:flex;flex-direction:column}
+
+.ovx-skeleton{background:linear-gradient(90deg,var(--claro-a03) 0%,var(--claro-a10) 50%,var(--claro-a03) 100%);background-size:220% 100%;animation:orvix-shimmer 2.8s var(--ease-linear) infinite;border-radius:var(--radius-sm)}
+.ovx-skeleton--text{height:11px}
+.ovx-skeleton--title{height:20px;border-radius:var(--radius-xs)}
+.ovx-skeleton--block{height:96px;border-radius:var(--radius-card)}
+.ovx-skeleton--circle{border-radius:50%}
+
+.ovx-spinner{width:18px;height:18px;border:2px solid var(--claro-a24);border-top-color:var(--verde-500);border-radius:50%;animation:orvix-spin 1400ms linear infinite}
+.ovx-spinner--sm{width:13px;height:13px;border-width:2px}
+.ovx-spinner--lg{width:28px;height:28px;border-width:3px}
+
+.ovx-empty{display:flex;flex-direction:column;align-items:center;gap:var(--space-3);text-align:center;padding:var(--space-16) var(--space-6);border:1px dashed var(--border-strong);border-radius:var(--radius-panel);background:var(--claro-a03)}
+.ovx-empty__title{font:var(--type-h5);color:var(--text-body)}
+.ovx-empty__text{font:var(--type-body-sm);color:var(--text-subtle);max-width:44ch}
+
+.ovx-inlinestatus{display:inline-flex;align-items:center;gap:6px;font:var(--type-caption);color:var(--text-subtle)}
+.ovx-inlinestatus__dot{width:6px;height:6px;border-radius:50%;background:var(--verde-500);position:relative}
+.ovx-inlinestatus__dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--verde-a40);animation:orvix-pulse-ring 3.4s var(--ease-out) infinite}
+.ovx-inlinestatus--idle .ovx-inlinestatus__dot{background:var(--grafite-200)}
+.ovx-inlinestatus--idle .ovx-inlinestatus__dot::after{display:none}
+
+/* ── styles.css ── */
+
+/* ── css/brand.css ── */
+/* ORVIX — Marca. Elementos assinatura: eyebrow, cabeçalho de seção, textura do X,
+   alvo tecnológico, callout, citação, selos e badges territoriais. */
+.ovx-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--text-accent)}
+.ovx-eyebrow--muted{color:var(--text-subtle)}
+.ovx-eyebrow--rule::before{content:"";width:24px;height:1px;background:currentColor;opacity:.55}
+.ovx-eyebrow--dot::before{content:"";width:5px;height:5px;background:currentColor;border-radius:50%}
+.ovx-eyebrow--chevron::before{content:"";width:9px;height:9px;background:currentColor;clip-path:polygon(0 0,58% 50%,0 100%,26% 100%,84% 50%,26% 0)}
+
+.ovx-sectionhead{display:flex;flex-direction:column;gap:var(--space-3);max-width:60ch}
+.ovx-sectionhead__title{font:var(--type-h2);color:var(--text-strong)}
+.ovx-sectionhead__lead{font:var(--type-lead);color:var(--text-muted)}
+.ovx-sectionhead--center{align-items:center;text-align:center;margin-inline:auto}
+.ovx-sectionhead--split{max-width:none;flex-direction:row;align-items:flex-end;justify-content:space-between;gap:var(--space-10)}
+.ovx-sectionhead--split .ovx-sectionhead__lead{max-width:44ch;flex:0 1 auto}
+
+/* Textura pontilhada do "X" — padrão de fundo, divisor e máscara */
+.ovx-xtexture{background-image:radial-gradient(rgba(232,234,238,.25) 1px,transparent 1px);background-size:3px 3px}
+.ovx-xtexture--verde{background-image:radial-gradient(rgba(19,165,56,.25) 1px,transparent 1px);background-size:3px 3px}
+.ovx-xtexture--suave{background-image:radial-gradient(rgba(232,234,238,.25) 1px,transparent 1px);background-size:4px 4px}
+.ovx-xtexture--fade-x{-webkit-mask-image:linear-gradient(90deg,#000,transparent);mask-image:linear-gradient(90deg,#000,transparent)}
+.ovx-xtexture--fade-y{-webkit-mask-image:linear-gradient(180deg,#000,transparent);mask-image:linear-gradient(180deg,#000,transparent)}
+.ovx-xtexture--fade-radial{-webkit-mask-image:radial-gradient(70% 70% at 50% 50%,#000,transparent);mask-image:radial-gradient(70% 70% at 50% 50%,#000,transparent)}
+.ovx-xtexture--fade-diagonal{-webkit-mask-image:linear-gradient(135deg,#000,transparent);mask-image:linear-gradient(135deg,#000,transparent)}
+[data-theme="light"] .ovx-xtexture,[data-theme="light"] .ovx-xtexture--suave{background-image:radial-gradient(rgba(16,23,32,.25) 1px,transparent 1px)}
+.ovx-xmark{display:inline-flex;line-height:0}.ovx-xmark .ovx-logo img{height:var(--xmark-h,32px)!important;width:auto}
+.ovx-chevronrule{height:10px;background-image:repeating-linear-gradient(90deg,var(--claro-a14) 0 1px,transparent 1px 7px)}
+
+/* Alvo tecnológico: motivo de precisão da ORVIX, combinado com glass */
+.ovx-target{position:relative;width:120px;aspect-ratio:1;display:grid;place-items:center}
+.ovx-target__ring{position:absolute;inset:0;border:1px solid var(--claro-a14);border-radius:50%}
+.ovx-target__ring--2{inset:18%;border-color:var(--claro-a24)}
+.ovx-target__ring--3{inset:36%;border-color:var(--verde-a40)}
+.ovx-target__core{width:14%;aspect-ratio:1;border-radius:50%;background:var(--verde-500);box-shadow:var(--glow-accent-soft)}
+.ovx-target__cross,.ovx-target__cross--v{position:absolute;background:var(--claro-a10)}
+.ovx-target__cross{left:0;right:0;height:1px;top:50%}
+.ovx-target__cross--v{top:0;bottom:0;width:1px;left:50%}
+.ovx-target__tick{position:absolute;width:1px;height:9px;background:var(--verde-a40)}
+.ovx-target--live .ovx-target__ring--3{animation:orvix-spin 30s linear infinite}
+.ovx-target--live .ovx-target__core::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px solid var(--verde-a40);animation:orvix-pulse-ring 4.6s var(--ease-out) infinite}
+.ovx-target--glass{background:var(--glass-2-bg);backdrop-filter:blur(var(--glass-2-blur));-webkit-backdrop-filter:blur(var(--glass-2-blur));border:var(--glass-border);border-radius:50%;box-shadow:var(--shadow-2),var(--sheen-top)}
+
+.ovx-callout{position:relative;padding:var(--space-6) var(--space-7);border-radius:var(--radius-panel);background:var(--glass-verde-bg);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border:var(--glass-verde-border);box-shadow:var(--sheen-top)}
+.ovx-callout__text{font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:var(--fs-h4);line-height:var(--lh-snug);color:var(--text-strong);text-transform:uppercase}
+.ovx-callout__source{margin-top:var(--space-3);font:var(--type-caption);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-accent)}
+.ovx-callout--neutral{background:var(--claro-a03);border:var(--hairline)}
+.ovx-callout--bare{padding:0;background:none;border:0;box-shadow:none;border-left:3px solid var(--verde-500);border-radius:0;padding-left:var(--space-5)}
+
+.ovx-quote{display:flex;flex-direction:column;gap:var(--space-4)}
+.ovx-quote__text{font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:var(--fs-fluid-h3);line-height:var(--lh-heading);letter-spacing:var(--ls-tight);color:var(--text-strong)}
+.ovx-quote__meta{display:flex;align-items:center;gap:11px;font:var(--type-caption);color:var(--text-subtle)}
+.ovx-quote__meta::before{content:"";width:18px;height:1px;background:var(--verde-500)}
+
+.ovx-seal{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 10px;border-radius:var(--radius-lg);background:var(--claro-a06);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:var(--hairline)}
+.ovx-seal__mark{display:inline-flex;align-items:center;flex:0 0 auto;line-height:0}
+.ovx-seal__label{display:flex;flex-direction:column;line-height:1.25}
+.ovx-seal__label b{font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:var(--fs-xs);letter-spacing:.03em;text-transform:uppercase;color:var(--text-strong)}
+.ovx-seal__label span{font:var(--type-caption);font-size:11px;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-subtle)}
+.ovx-seal--verde{background:var(--verde-a12);border-color:var(--verde-a40)}
+
+.ovx-hashtag{display:inline-flex;align-items:center;font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:var(--fs-sm);letter-spacing:.06em;text-transform:uppercase;color:var(--verde-400)}
+.ovx-hashtag--lg{font-size:var(--fs-h4);letter-spacing:.04em}
+
+.ovx-logo{display:inline-flex;align-items:center}
+.ovx-logo img{display:block;width:auto}
+.ovx-logo--xs img{height:18px}
+.ovx-logo--sm img{height:24px}
+.ovx-logo--md img{height:34px}
+.ovx-logo--lg img{height:52px}
+.ovx-logo--xl img{height:76px}
+.ovx-logo--2xl img{height:120px}
+.ovx-logo--2xl.ovx-logo--quadrada img{height:240px}
+.ovx-logo__protect{padding:calc(var(--space-2) + 2px)}
+
+.ovx-wordmark-type{font-family:var(--font-display);font-weight:var(--fw-extrabold);letter-spacing:var(--ls-tight);text-transform:uppercase;line-height:1;color:var(--text-strong)}
+.ovx-wordmark-type small{display:block;margin-top:5px;font-weight:var(--fw-medium);font-size:max(11px,.22em);letter-spacing:var(--ls-wordmark);color:var(--text-muted)}
+
+.ovx-scrim-bottom{position:absolute;inset:0;background:var(--scrim-bottom);pointer-events:none}
+.ovx-scrim-top{position:absolute;inset:0;background:var(--scrim-top);pointer-events:none}
+.ovx-capsule{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:var(--radius-chip);background:var(--claro-a10);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:var(--hairline);font:var(--type-caption);color:var(--text-body)}
+
+/* ── styles.css ── */
+
+/* ── css/product.css ── */
+/* ORVIX — Produto. Cards de produto e de linha, ficha técnica, escala de pH,
+   documentos (bula, FISPQ, ficha), eixos calda/gota/alvo.
+   A cor secundária entra pela variável --linha, definida por linha de produto. */
+.ovx-product{position:relative;display:flex;flex-direction:column;background:var(--surface-card);border:var(--hairline);border-radius:var(--radius-card);overflow:hidden;transition:var(--transition-surface)}
+.ovx-product:hover{border-color:color-mix(in srgb,var(--linha) 45%,transparent);transform:translateY(var(--hover-lift));box-shadow:var(--shadow-2)}
+.ovx-product__shot{position:relative;aspect-ratio:4/3;display:grid;place-items:center;padding:var(--space-5);background:radial-gradient(120% 90% at 50% 108%,color-mix(in srgb,var(--linha) 16%,transparent) 0%,transparent 62%),var(--surface-sunken)}
+.ovx-product__shot img{max-height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 3px 8px rgba(16,23,32,.5))}
+.ovx-product__body{display:flex;flex-direction:column;gap:7px;padding:var(--pad-card)}
+.ovx-product__line{font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-micro);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--linha)}
+.ovx-product__name{font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:var(--fs-lg);letter-spacing:var(--ls-tight);color:var(--text-strong)}
+.ovx-product__claim{font:var(--type-body-sm);color:var(--text-muted)}
+.ovx-product__specs{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.ovx-product__foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:var(--gap);padding:var(--space-3) var(--pad-card);border-top:var(--hairline)}
+.ovx-product__rail{position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--linha)}
+.ovx-product--rail,.ovx-product:has(>.ovx-product__rail){border-radius:var(--radius-rail)}
+.ovx-product--hero .ovx-product__shot{aspect-ratio:1}
+
+.ovx-line{--linha:var(--verde-500);position:relative;display:flex;flex-direction:column;gap:var(--space-3);padding:var(--pad-card-lg);border:var(--hairline);border-radius:var(--radius-panel);background:linear-gradient(165deg,color-mix(in srgb,var(--linha) 9%,transparent) 0%,transparent 46%),var(--surface-card);overflow:hidden;transition:var(--transition-surface)}
+.ovx-line:hover{border-color:color-mix(in srgb,var(--linha) 45%,transparent);transform:translateY(var(--hover-lift))}
+.ovx-line__badge{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;padding:4px 9px;border-radius:var(--radius-sm);background:color-mix(in srgb,var(--linha) 16%,transparent);border:1px solid color-mix(in srgb,var(--linha) 40%,transparent);font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-micro);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--linha)}
+.ovx-line__name{font:var(--type-h4);color:var(--text-strong);letter-spacing:var(--ls-tight)}
+.ovx-line__promise{font:var(--type-body-sm);color:var(--text-muted)}
+.ovx-line__count{font:var(--type-mono);color:var(--text-subtle)}
+.ovx-line__mark{position:absolute;top:-14px;right:-6px;font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:96px;line-height:1;color:color-mix(in srgb,var(--linha) 12%,transparent);pointer-events:none;user-select:none}
+
+.ovx-spec{display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 8px;border-radius:var(--radius-xs);background:var(--claro-a03);border:var(--hairline);font:var(--type-mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted)}
+.ovx-spec b{color:var(--text-body);font-weight:var(--fw-medium)}
+
+.ovx-dose{width:100%;font:var(--type-body-sm)}
+.ovx-dose th{text-align:left;padding:9px 12px;font-family:var(--font-display);font-size:var(--fs-micro);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-subtle);border-bottom:1px solid var(--border-strong)}
+.ovx-dose td{padding:10px 12px;border-bottom:var(--hairline);font-variant-numeric:tabular-nums}
+.ovx-dose td:first-child{color:var(--text-body)}
+.ovx-dose td:not(:first-child){color:var(--text-muted);text-align:right}
+.ovx-dose tr:last-child td{border-bottom:0}
+
+.ovx-phscale{display:flex;flex-direction:column;gap:7px}
+.ovx-phscale__bar{height:11px;border-radius:var(--radius-pill);background:linear-gradient(90deg,var(--ph-1) 0%,var(--ph-3) 17%,var(--ph-5) 33%,var(--ph-7) 50%,var(--ph-9) 67%,var(--ph-11) 83%,var(--ph-13) 100%);position:relative;border:1px solid var(--claro-a10)}
+.ovx-phscale__pin{position:absolute;top:-4px;width:3px;height:19px;background:var(--branco-100);border-radius:var(--radius-pill);box-shadow:var(--shadow-1);transform:translateX(-50%)}
+.ovx-phscale__ticks{display:flex;justify-content:space-between;font:var(--type-mono);color:var(--text-subtle)}
+
+.ovx-doc{display:flex;align-items:center;gap:11px;padding:11px 14px;border:var(--hairline);border-radius:var(--radius-card);background:var(--claro-a03);text-decoration:none;transition:var(--transition-control)}
+.ovx-doc:hover{border-color:var(--verde-a40);background:var(--verde-a06)}
+.ovx-doc__type{flex:0 0 auto;width:32px;height:32px;display:grid;place-items:center;border-radius:var(--radius-sm);background:var(--surface-3);font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:11px;letter-spacing:.04em;color:var(--text-muted)}
+.ovx-doc__meta{display:flex;flex-direction:column;gap:1px;min-width:0}
+.ovx-doc__name{font:var(--type-body-sm);color:var(--text-body)}
+.ovx-doc__size{font:var(--type-caption);color:var(--text-subtle)}
+
+.ovx-axis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--divider);border:var(--hairline);border-radius:var(--radius-panel);overflow:hidden}
+.ovx-axis__cell{background:var(--surface-card);padding:var(--pad-card-lg);display:flex;flex-direction:column;gap:10px;transition:background-color var(--dur-base) var(--ease-precise)}
+.ovx-axis__cell:hover{background:var(--surface-card-hover)}
+.ovx-axis__num{font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:var(--fs-caption);letter-spacing:var(--ls-label);color:var(--verde-400)}
+.ovx-axis__title{font:var(--type-h5);color:var(--text-strong)}
+.ovx-axis__text{font:var(--type-body-sm);color:var(--text-muted)}
+@media (max-width:820px){.ovx-axis{grid-template-columns:1fr}}
+
+/* ── styles.css ── */
+
+/* ── css/sections.css ── */
+/* ORVIX — Padrões de seção da home. Cada padrão é um estilo de abertura ou de
+   bloco, todos em tema escuro, com movimento de precisão e vidro. */
+.ovx-section{position:relative;padding-block:var(--section-y);overflow:hidden}
+.ovx-section--sm{padding-block:var(--section-y-sm)}
+.ovx-section--lg{padding-block:var(--section-y-lg)}
+.ovx-section--deep{background:var(--bg-deep)}
+.ovx-section--raised{background:var(--surface-1)}
+.ovx-section--hairline{border-top:var(--hairline)}
+.ovx-section__fx{position:absolute;inset:0;z-index:0;pointer-events:none}
+.ovx-section__inner{position:relative;z-index:1}
+
+/* 1. Hero full-bleed com scrim e vidro */
+.ovx-hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:flex-end;padding-block:var(--space-20);overflow:hidden}
+.ovx-hero__bg{position:absolute;inset:0;z-index:0}
+.ovx-hero__bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.06) brightness(.62)}
+.ovx-hero__scrim{position:absolute;inset:0;background:linear-gradient(var(--split-angle),var(--bg-deep) 0 48%,rgba(16,23,32,.62) 48%,rgba(16,23,32,.30) 100%)}
+.ovx-hero__scrim::after{content:"";position:absolute;inset:0;background:linear-gradient(var(--split-angle),transparent calc(48% - 1px),var(--claro-a14) calc(48% - 1px),var(--claro-a14) 48%,transparent 48%)}
+[data-theme="light"] .ovx-hero__scrim{background:linear-gradient(var(--split-angle),var(--bg-deep) 0 48%,rgba(255,255,255,.55) 48%,rgba(255,255,255,.20) 100%)}
+[data-theme="light"] .ovx-hero__scrim::after{background:linear-gradient(var(--split-angle),transparent calc(48% - 1px),var(--web-3) calc(48% - 1px),var(--web-3) 48%,transparent 48%)}
+.ovx-hero__content{position:relative;z-index:2;display:flex;flex-direction:column;gap:var(--space-5);max-width:44ch}
+.ovx-hero__title{font:var(--type-h1);color:var(--text-strong);letter-spacing:var(--ls-tighter)}
+.ovx-hero__cta{display:flex;flex-wrap:wrap;gap:var(--gap-tight);margin-top:var(--space-2)}
+.ovx-hero__meta{position:absolute;right:var(--gutter);bottom:var(--space-20);z-index:2}
+
+/* 2. Faixa de manifesto centrada */
+.ovx-manifesto{text-align:center;display:flex;flex-direction:column;align-items:center;gap:var(--space-5);max-width:64ch;margin-inline:auto}
+.ovx-manifesto__title{font:var(--type-h2);color:var(--text-strong);max-width:24ch}
+.ovx-manifesto__body{font:var(--type-body);color:var(--text-muted);max-width:58ch}
+
+/* 3. Trilha do ciclo (calda, pH, gota, alvo, limpeza) */
+.ovx-cycle{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:var(--hairline);border-radius:var(--radius-panel);overflow:hidden;background:var(--surface-card)}
+.ovx-cycle__step{position:relative;padding:var(--pad-card-lg) var(--pad-card);display:flex;flex-direction:column;gap:9px;border-right:var(--hairline);transition:background-color var(--dur-base) var(--ease-precise)}
+.ovx-cycle__step:last-child{border-right:0}
+.ovx-cycle__step:hover{background:var(--verde-a06)}
+.ovx-cycle__idx{font:var(--type-mono);color:var(--verde-400)}
+.ovx-cycle__name{font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-sm);color:var(--text-strong)}
+.ovx-cycle__desc{font:var(--type-caption);color:var(--text-subtle)}
+.ovx-cycle__flow{position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent,var(--verde-a40),transparent);background-size:200% 100%;animation:orvix-shimmer 6s var(--ease-linear) infinite}
+@media (max-width:960px){.ovx-cycle{grid-template-columns:1fr 1fr}.ovx-cycle__step{border-bottom:var(--hairline)}}
+
+/* 4. Split técnico: imagem colada em um lado, dado no outro */
+.ovx-split{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center}
+.ovx-split--reverse{direction:rtl}
+.ovx-split--reverse>*{direction:ltr}
+.ovx-split__visual{position:relative;border-radius:var(--radius-surface);overflow:hidden;border:var(--hairline);aspect-ratio:4/3;background:var(--surface-sunken)}
+@media (max-width:900px){.ovx-split{grid-template-columns:1fr;gap:var(--space-8)}}
+
+/* 5. Bloco de destaque de produto herói, número gigante ao fundo */
+.ovx-flagship{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:var(--space-12);align-items:center;padding:var(--pad-panel);border-radius:var(--radius-surface);border:var(--hairline);background:linear-gradient(135deg,var(--surface-2) 0%,var(--bg-deep) 100%);overflow:hidden}
+.ovx-flagship__ghost{position:absolute;right:-2%;bottom:-24%;font-family:var(--font-display);font-weight:var(--fw-extrabold);font-size:min(46vw,440px);line-height:.8;color:var(--claro-a03);pointer-events:none;user-select:none}
+@media (max-width:900px){.ovx-flagship{grid-template-columns:1fr}}
+
+/* 6. Grade de linhas de produto */
+.ovx-linegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:var(--gap-grid)}
+
+/* 7. Faixa de números */
+.ovx-figures{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:var(--space-6) var(--space-8);padding-block:var(--space-8);border-block:var(--hairline)}
+.ovx-figures__item{display:flex;flex-direction:column;gap:var(--space-2);padding-left:var(--space-4);border-left:var(--hairline)}
+.ovx-figures__note{font:var(--type-caption);color:var(--text-muted)}
+.ovx-figures .ovx-stat--lg .ovx-stat__value{font-size:var(--fs-h2)}
+
+/* 8. Marquee técnico (vocabulário agronômico) */
+.ovx-marquee{overflow:hidden;border-block:var(--hairline);padding-block:14px;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.ovx-marquee__track{display:flex;gap:var(--space-10);width:max-content;animation:orvix-marquee 52s linear infinite}
+.ovx-marquee__item{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-sm);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-subtle);white-space:nowrap}
+.ovx-marquee__item::before{content:"";width:5px;height:5px;background:var(--verde-500);border-radius:50%;flex:0 0 auto}
+
+/* 9. CTA de fechamento com vidro sobre gradiente verde discreto */
+.ovx-closing{position:relative;padding:var(--space-20) var(--pad-panel);border-radius:var(--radius-surface);border:var(--hairline);background:linear-gradient(180deg,var(--surface-1) 0%,var(--bg-deep) 100%);text-align:center;overflow:hidden}
+.ovx-closing__title{font:var(--type-h2);color:var(--text-strong);max-width:22ch;margin-inline:auto}
+
+/* 10. Bloco territorial (MT) */
+.ovx-territory{display:flex;align-items:center;gap:var(--space-8);padding:var(--pad-panel);border-radius:var(--radius-surface);border:var(--hairline);background:var(--surface-card)}
+.ovx-territory__flag{width:84px;flex:0 0 auto;opacity:.92}
+.ovx-territory{justify-content:space-between;flex-wrap:wrap}
+.ovx-territory__texto{flex:1 1 320px;min-width:0}
+.ovx-territory__x{flex:0 0 auto;opacity:.9}
+@media (max-width:640px){.ovx-territory__x{display:none}}
+
+/* 11. Editorial / blog */
+.ovx-postgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:var(--gap-grid)}
+.ovx-post{display:flex;flex-direction:column;background:var(--surface-card);border:var(--hairline);border-radius:var(--radius-card);overflow:hidden;transition:var(--transition-surface);text-decoration:none}
+.ovx-post:hover{border-color:var(--border-strong);transform:translateY(var(--hover-lift))}
+.ovx-post__cover{aspect-ratio:16/9;background:var(--surface-sunken);overflow:hidden}
+.ovx-post__cover img{width:100%;height:100%;object-fit:cover;transition:transform var(--dur-slow) var(--ease-precise)}
+.ovx-post:hover .ovx-post__cover img{transform:scale(1.025)}
+.ovx-post__body{display:flex;flex-direction:column;gap:8px;padding:var(--pad-card)}
+.ovx-post__cat{font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-micro);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--verde-400)}
+.ovx-post__title{font-family:var(--font-display);font-weight:var(--fw-medium);font-size:var(--fs-lg);line-height:var(--lh-heading);color:var(--text-strong)}
+.ovx-post__excerpt{font:var(--type-body-sm);color:var(--text-muted)}
+.ovx-post__meta{display:flex;gap:10px;font:var(--type-caption);color:var(--text-subtle);margin-top:2px}
+
+/* 12. Prosa técnica (artigo, bula, página legal) */
+.ovx-prose{max-width:var(--container-prose);font:var(--type-body);color:var(--text-muted)}
+.ovx-prose h2{font:var(--type-h3);color:var(--text-strong);margin:var(--space-10) 0 var(--space-3)}
+.ovx-prose h3{font:var(--type-h4);color:var(--text-strong);margin:var(--space-8) 0 var(--space-2)}
+.ovx-prose p+p{margin-top:var(--space-4)}
+.ovx-prose ul,.ovx-prose ol{margin:var(--space-4) 0;padding-left:var(--space-5);display:flex;flex-direction:column;gap:7px}
+.ovx-prose li::marker{color:var(--verde-500)}
+.ovx-prose strong{color:var(--text-body)}
+.ovx-prose blockquote{margin:var(--space-6) 0;padding-left:var(--space-5);border-left:2px solid var(--verde-500);font-family:var(--font-display);font-weight:var(--fw-extrabold);text-transform:uppercase;color:var(--text-body)}
+.ovx-prose figcaption{font:var(--type-caption);color:var(--text-subtle);margin-top:7px}
+
+/* ── styles.css ── */
+
+/* ── css/mix-motion.css ── */
+/* ORVIX — MOTION DE CALDA. Estrutura compartilhada dos 40 elementos de mistura.
+   Cada elemento representa, de forma abstrata, o comportamento de uma calda
+   agrícola: redemoinho, dispersão, deriva direcional, tensão superficial, caos
+   molecular com direção. Nenhum elemento revela composição química real. */
+
+
+/* ── styles.css ── */
+
+
+/* ── tokens/fonts.css ── */
+
+/* ── tokens/colors.css ── */
+
+/* ── tokens/product-colors.css ── */
+
+/* ── tokens/typography.css ── */
+
+/* ── tokens/spacing.css ── */
+
+/* ── tokens/radius.css ── */
+
+/* ── tokens/elevation.css ── */
+
+/* ── tokens/glass.css ── */
+
+/* ── tokens/motion.css ── */
+
+/* ── tokens/layout.css ── */
+
+/* ── tokens/semantic.css ── */
+
+/* ── tokens/base.css ── */
+
+/* ── css/actions.css ── */
+
+/* ── css/forms.css ── */
+
+/* ── css/data.css ── */
+
+/* ── css/navigation.css ── */
+
+/* ── css/feedback.css ── */
+
+/* ── css/brand.css ── */
+
+/* ── css/product.css ── */
+
+/* ── css/sections.css ── */
+
+/* ── css/mix-motion.css ── */
+
+
+/* ==========================================================================
+   Responsivo e Apple HIG (revisão 2026-10)
+   Mobile primeiro: nenhuma largura fixa, grades fluidas, alvo de toque 44px,
+   safe areas e reduce motion. Vale para site, painel e previews.
+   ========================================================================== */
+:root,[data-theme="dark"]{color-scheme:dark}
+[data-theme="light"]{color-scheme:light}
+html{-webkit-text-size-adjust:100%}
+img,video,canvas{max-width:100%;height:auto}
+.orvix-container{width:100%;max-width:var(--container-max);margin-inline:auto;padding-inline:max(var(--gutter),env(safe-area-inset-left),env(safe-area-inset-right));box-sizing:border-box}
+/* alvo de toque de 44px em todo controle menor que isso: área invisível centrada (Apple HIG) */
+.ovx-btn,.ovx-iconbtn,.ovx-navlink,.ovx-tab,.ovx-pagination__item,.ovx-tag--interactive,.ovx-capsule[href]{position:relative}
+.ovx-btn::before,.ovx-iconbtn::before,.ovx-navlink::before,.ovx-tab::before,.ovx-pagination__item::before,.ovx-tag--interactive::before{content:"";position:absolute;left:0;right:0;top:50%;height:var(--touch-min);transform:translateY(-50%);min-width:var(--touch-min)}
+.ovx-input,.ovx-select,.ovx-textarea{min-height:var(--touch-min)}
+.ovx-check,.ovx-switch{min-height:var(--touch-min);display:inline-flex;align-items:center}
+/* foco sempre visível */
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:none;box-shadow:var(--ring-focus)}
+/* navbar: em telas estreitas os links viram trilho rolável abaixo da marca */
+.ovx-navbar{padding-top:env(safe-area-inset-top)}
+@media (max-width:768px){
+  .ovx-navbar{height:auto;min-height:var(--header-h-compact);flex-wrap:wrap;gap:var(--gap-tight);padding-block:var(--space-2);padding-top:calc(var(--space-2) + env(safe-area-inset-top))}
+  .ovx-navbar__links{order:3;flex:1 0 100%;margin-left:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+  .ovx-navbar__links::-webkit-scrollbar{display:none}
+  .ovx-navlink{white-space:nowrap}
+  .ovx-navbar__actions{margin-left:auto}
+  .ovx-sidebar{width:100%;height:auto;border-right:0;border-bottom:var(--hairline)}
+  .ovx-section{padding-block:var(--section-y-sm)}
+  .ovx-hero{min-height:auto;padding-block:var(--space-16)}
+  .ovx-hero__meta{position:static;margin-top:var(--space-6)}
+  .ovx-steps{flex-wrap:wrap;gap:var(--space-4)}
+  .ovx-step{flex:1 1 150px}
+  .ovx-tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .ovx-table{min-width:480px}
+  .ovx-tabs{overflow-x:auto;scrollbar-width:none}
+  .ovx-tabs::-webkit-scrollbar{display:none}
+  .ovx-tab{white-space:nowrap;flex:0 0 auto}
+  .ovx-dialog{max-width:calc(100% - 2*var(--gutter))}
+}
+@media (max-width:480px){
+  .ovx-cycle{grid-template-columns:1fr}
+  .ovx-kv{grid-template-columns:1fr}
+  .ovx-figures{gap:var(--space-6)}
+  .ovx-hero__cta .ovx-btn{width:100%}
+}
+/* toast e barra inferior respeitam o indicador de Home */
+.ovx-toaststack{padding-bottom:env(safe-area-inset-bottom)}
+@media (prefers-reduced-motion:reduce){
+  .ovx-marquee__track{animation:none!important;transform:none!important}
+  .ovx-target--live *{animation:none!important}
+}
+
+/* ==========================================================================
+   Tema claro: as propriedades compostas (hairline, vidro, sheen, foco) que o
+   tokens.json só guarda em um valor trocam aqui. Tom sobre tom em ambos.
+   ========================================================================== */
+[data-theme="light"]{
+  --hairline:1px solid rgba(16,23,32,.10);
+  --hairline-strong:1px solid rgba(16,23,32,.22);
+  --glass-border:1px solid rgba(255,255,255,.75);
+  --glass-border-strong:1px solid rgba(16,23,32,.12);
+  --sheen-top:inset 0 1px 0 rgba(255,255,255,.9);
+  --sheen-top-strong:inset 0 1px 0 rgba(255,255,255,1);
+  --inset-hairline:inset 0 0 0 1px rgba(16,23,32,.06);
+  --inset-field:inset 0 1px 2px rgba(16,23,32,.08);
+  --ring-focus:0 0 0 1px #f0f2f4,0 0 0 3px rgba(19,165,56,.45);
+  --glass-tint:255,255,255;
+  --glass-saturate:1.1;
+}
+[data-theme="light"] body,[data-theme="light"] .ovx-stage{background:var(--bg-deep);color:var(--text-body)}
+
+/* Logo: duas versões no mesmo nó; o tema escolhe. tone="preto"|"branco" fixa uma. */
+.ovx-logo .ovx-logo__img--light{display:none}
+[data-theme="light"] .ovx-logo .ovx-logo__img--light{display:block}
+[data-theme="light"] .ovx-logo .ovx-logo__img--dark{display:none}
+.ovx-logo__img--light{display:none}
+[data-theme="light"] .ovx-logo__img--light{display:inline-block}
+[data-theme="light"] .ovx-logo__img--dark{display:none}
+.ovx-logo--quadrada img{height:auto;width:auto}
+.ovx-logo--xs.ovx-logo--quadrada img{height:40px}
+.ovx-logo--sm.ovx-logo--quadrada img{height:56px}
+.ovx-logo--md.ovx-logo--quadrada img{height:80px}
+.ovx-logo--lg.ovx-logo--quadrada img{height:120px}
+.ovx-logo--xl.ovx-logo--quadrada img{height:168px}
+/* Área de proteção da logo: a altura do X em volta, nunca menos. */
+.ovx-logo__protect{padding:calc(var(--space-2) + 2px)}
+
+/* Tipografia: Exo é a principal; títulos em Exo ExtraBold caixa alta.
+   Be Vietnam Pro é corpo: nunca acima de 30px e nunca em título. */
+h1,h2,h3,h4,h5,h6,.ovx-title{font-family:var(--font-display);font-weight:var(--fw-extrabold);text-transform:uppercase}
+.orvix-lead{font-size:min(var(--fs-lead),30px)}
+/* Cápsula e scrim sobre superfície clara: vidro branco, não caixa escura (tom sobre tom). Sobre foto, use tone="escuro". */
+[data-theme="light"] .ovx-capsule:not(.ovx-capsule--escuro){background:var(--glass-3-bg);color:var(--text-body);border:1px solid var(--web-3)}
+
+/* Fundos: degradê só de preto para grafite, nunca com verde. */
+.ovx-grad-preto{background:linear-gradient(180deg,var(--surface-2) 0%,var(--bg-deep) 100%)}
+.ovx-grad-preto--radial{background:radial-gradient(120% 120% at 20% 0%,var(--surface-2) 0%,var(--bg-deep) 65%)}
+/* Tema claro: degradê de web-1 para branco, horizontal. web-1 à esquerda e branco à direita (ou o inverso). */
+.ovx-grad-claro{background:linear-gradient(90deg,var(--web-1) 0%,var(--branco) 100%)}
+.ovx-grad-claro--inv{background:linear-gradient(90deg,var(--branco) 0%,var(--web-1) 100%)}
+.ovx-grad-claro--diagonal{background:linear-gradient(var(--split-angle),var(--web-1) 0%,var(--branco) 100%)}
+
+/* Logos em showcase: nunca minúsculas; mínimo 24px na principal, 40px na quadrada */
+.ovx-logo img{min-height:24px}
+.ovx-logo--quadrada img{min-height:40px}
+
+.ovx-territory__texto{display:flex;flex-direction:column;gap:var(--space-4)}
+
+/* Alvo de toque 44px (HIG) em links de texto e botões sem moldura */
+.ovx-btn,.ovx-iconbtn,.ovx-navlink,.ovx-tab,.ovx-pagination__item,.ovx-tag--interactive,.ovx-linkaction,.ovx-footer a,.ovx-breadcrumbs a,.ovx-sideitem{position:relative}
+.ovx-linkaction::before,.ovx-footer a::before,.ovx-breadcrumbs a::before,.ovx-sideitem::before{content:"";position:absolute;left:-6px;right:-6px;top:50%;height:var(--touch-min);transform:translateY(-50%)}
+.ovx-footer a{display:inline-flex;align-items:center;min-height:32px}
+/* Tema claro: ação sólida, sem vidro. Primário verde-700 com texto branco; secundário cinza claro ORVIX com texto preto. */
+[data-theme="light"] .ovx-btn--primary:not([data-theme="dark"] *){background:var(--action-bg);color:var(--branco);border-color:var(--action-border)}
+[data-theme="light"] .ovx-btn--primary:hover:not([data-theme="dark"] *){background:var(--action-bg-hover);border-color:var(--action-border-hover);color:var(--branco)}
+[data-theme="light"] .ovx-btn--primary:active:not([data-theme="dark"] *){background:var(--verde-800);border-color:var(--verde-800)}
+[data-theme="light"] .ovx-btn--secondary:not([data-theme="dark"] *){background:var(--branco);color:var(--preto);border-color:var(--web-3);backdrop-filter:none;-webkit-backdrop-filter:none}
+[data-theme="light"] .ovx-btn--secondary:hover:not([data-theme="dark"] *){background:var(--branco);border-color:var(--grafite-300);color:var(--preto)}
+[data-theme="light"] .ovx-btn--glass:not([data-theme="dark"] *){background:rgba(255,255,255,.82);color:var(--preto);border-color:var(--web-3)}
+[data-theme="light"] .ovx-btn--glass:hover:not([data-theme="dark"] *){background:var(--branco);border-color:var(--grafite-300)}
+[data-theme="light"] .ovx-input:not([data-theme="dark"] *),[data-theme="light"] .ovx-select:not([data-theme="dark"] *),[data-theme="light"] .ovx-textarea:not([data-theme="dark"] *){background:var(--branco);border-color:var(--web-3);box-shadow:none}
+[data-theme="light"] .ovx-tag:not([data-theme="dark"] *){background:transparent;border-color:var(--web-3);color:var(--grafite-300)}
+[data-theme="light"] .ovx-tag--selected:not([data-theme="dark"] *){background:transparent;color:var(--verde-700);border-color:var(--verde-700)}
+.ovx-closing__logo img{height:112px;max-width:100%}
+@media (max-width:480px){.ovx-closing__logo img{height:96px}}
+
+/* Divisão diagonal ORVIX: a tela nunca se divide em linha reta. A divisória segue o ângulo da perna do X (--x-leg-angle, 30,5° da vertical). */
+:root{--x-leg-angle:30.5deg;--split-angle:120.5deg;--split-at:50%}
+.ovx-split{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:0;isolation:isolate;overflow:hidden;border-radius:var(--radius-panel)}
+.ovx-split__pane{position:absolute;inset:0;z-index:0;overflow:hidden}
+.ovx-split__pane--a{-webkit-mask-image:linear-gradient(var(--split-angle),#000 var(--split-at),transparent var(--split-at));mask-image:linear-gradient(var(--split-angle),#000 var(--split-at),transparent var(--split-at))}
+.ovx-split__pane--b{-webkit-mask-image:linear-gradient(var(--split-angle),transparent var(--split-at),#000 var(--split-at));mask-image:linear-gradient(var(--split-angle),transparent var(--split-at),#000 var(--split-at))}
+.ovx-split__pane img,.ovx-split__pane canvas,.ovx-split__pane>.ovx-mix{width:100%;height:100%;object-fit:cover}
+.ovx-split__edge{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(var(--split-angle),transparent calc(var(--split-at) - 1px),var(--border-strong) calc(var(--split-at) - 1px),var(--border-strong) var(--split-at),transparent var(--split-at))}
+.ovx-split__edge--verde{background:linear-gradient(var(--split-angle),transparent calc(var(--split-at) - 1px),var(--verde-500) calc(var(--split-at) - 1px),var(--verde-500) var(--split-at),transparent var(--split-at))}
+.ovx-split__a,.ovx-split__b{position:relative;z-index:2;padding:var(--pad-panel);display:flex;flex-direction:column;justify-content:center;gap:var(--space-4);min-height:260px}
+.ovx-split__b{padding-left:calc(var(--pad-panel) + 6%)}
+.ovx-split--40{--split-at:40%}.ovx-split--60{--split-at:60%}
+@media (max-width:640px){
+  .ovx-split{grid-template-columns:1fr;background:var(--bg-deep)}
+  .ovx-split__pane{display:none}
+  .ovx-split__edge{display:none}
+  .ovx-split__a{min-height:0}
+  .ovx-split__b{padding-left:var(--pad-panel);min-height:0;border-top:var(--hairline)}
+}
+
+/* Login do painel: divisão diagonal no ângulo do X */
+.ovx-login{--split-at:56%;position:relative;min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;background:var(--bg-deep);isolation:isolate;overflow:hidden}
+.ovx-login__visual{position:absolute;inset:0;z-index:0;overflow:hidden;-webkit-mask-image:linear-gradient(var(--split-angle),#000 var(--split-at),transparent var(--split-at));mask-image:linear-gradient(var(--split-angle),#000 var(--split-at),transparent var(--split-at))}
+.ovx-login__edge{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(var(--split-angle),transparent calc(var(--split-at) - 1px),var(--border-strong) calc(var(--split-at) - 1px),var(--border-strong) var(--split-at),transparent var(--split-at))}
+.ovx-login__brand{position:relative;z-index:2;display:flex;flex-direction:column;gap:var(--space-5);align-items:center;justify-content:center;text-align:center;padding:var(--space-10);padding-right:calc(var(--space-10) + 8%)}
+.ovx-login__form{position:relative;z-index:2;display:grid;place-items:center;padding:var(--space-10)}
+@media (max-width:767px){
+  .ovx-login{grid-template-columns:1fr;min-height:auto}
+  .ovx-login__visual{position:relative;inset:auto;height:220px;-webkit-mask-image:linear-gradient(calc(var(--split-angle) + 60deg),#000 70%,transparent 70%);mask-image:linear-gradient(calc(var(--split-angle) + 60deg),#000 70%,transparent 70%)}
+  .ovx-login__edge{display:none}
+  .ovx-login__brand{padding:var(--space-6);padding-right:var(--space-6);margin-top:-80px}
+  .ovx-login__form{padding:var(--space-6)}
+}
+.ovx-breadcrumbs a{display:inline-flex;align-items:center;min-height:28px}
+
+/* Botão alvo: raro, só para tecnologia de aplicação e temas de alvo. Contorno verde, mira à esquerda, texto Exo ExtraBold caixa alta. Hover clareia. */
+.ovx-btn--alvo{background:transparent;color:var(--verde-400);border-color:var(--verde-500)}
+.ovx-btn--alvo:hover{background:var(--verde-a12);color:var(--verde-300);border-color:var(--verde-400)}
+[data-theme="light"] .ovx-btn--alvo:not([data-theme="dark"] *){color:var(--verde-700);border-color:var(--verde-700)}
+[data-theme="light"] .ovx-btn--alvo:hover:not([data-theme="dark"] *){background:var(--verde-a06);color:var(--verde-600);border-color:var(--verde-600)}
+/* Caixa com barra colorida (lateral ou inferior): raio 3px e barra de 3px */
+.ovx-line{border-radius:var(--radius-rail)}
+.ovx-alert--rail{border-radius:var(--radius-rail);border-left:3px solid currentColor}
+
+/* Padrão pontilhado ORVIX ------------------------------------------------ */
+.ovx-pp{position:relative;overflow:hidden;isolation:isolate}
+.ovx-pp__defs{position:absolute;width:0;height:0;overflow:hidden}
+.ovx-pp__base,.ovx-pp__luz{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ovx-pp__luz{-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.ovx-pp__pontos{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.ovx-pp__conteudo{position:relative;z-index:1}
+
+/* Três bases de fundo: preto, grafite e degradê. Tom sobre tom: toda caixa à frente é um pouco mais clara que a de trás. */
+.ovx-fundo--preto{background:var(--bg-deep)}
+.ovx-fundo--grafite{background:var(--fundo-grafite)}
+.ovx-fundo--degrade{background:linear-gradient(180deg,var(--fundo-grafite) 0%,var(--bg-deep) 100%)}
+
+/* Tema claro: superfícies 3 e 4 ficam no branco e se separam por hairline, nunca por um tom mais escuro. */
+[data-theme="light"] .ovx-tabs--pill .ovx-tab[aria-selected=true],[data-theme="light"] .ovx-doc__type{box-shadow:inset 0 0 0 1px var(--web-3)}
+.ovx-capsule--escuro{background:var(--escuro-a72)}
+[data-theme="light"] .ovx-axis__cell,[data-theme="light"] .ovx-statgrid>*{background:var(--branco)}
+/* Hero com o pontilhado adensado da marca: malha densa e parada entrando na inclinação da perna do X, com a hairline da divisão. */
+.ovx-hero--pontilhado{background:linear-gradient(165deg,var(--fundo-grafite) 0%,var(--bg-deep) 72%)}
+.ovx-hero__dots{position:absolute;inset:0;-webkit-mask-image:linear-gradient(var(--split-angle),transparent 46%,#000 46%,#000 100%);mask-image:linear-gradient(var(--split-angle),transparent 46%,#000 46%,#000 100%)}
+.ovx-hero__edge{position:absolute;inset:0;background:linear-gradient(var(--split-angle),transparent calc(46% - 1px),var(--claro-a14) calc(46% - 1px),var(--claro-a14) 46%,transparent 46%)}
+[data-theme="light"] .ovx-hero__edge{background:linear-gradient(var(--split-angle),transparent calc(46% - 1px),var(--web-3) calc(46% - 1px),var(--web-3) 46%,transparent 46%)}
+@media (max-width:720px){.ovx-hero__dots{-webkit-mask-image:linear-gradient(180deg,transparent 20%,#000 100%);mask-image:linear-gradient(180deg,transparent 20%,#000 100%)}.ovx-hero__edge{display:none}}
+/* Login do painel: lado visual em grafite com o pontilhado adensado, parado. */
+.ovx-login__visual{background:var(--fundo-grafite)}
+.ovx-login__dots{position:absolute;inset:0;-webkit-mask-image:linear-gradient(var(--split-angle),#000 20%,transparent 92%);mask-image:linear-gradient(var(--split-angle),#000 20%,transparent 92%)}
+.ovx-login__logo img{max-width:min(320px,80vw);height:auto!important;max-height:120px}
+@media (max-width:720px){.ovx-hero{flex-direction:column;align-items:stretch;justify-content:flex-end}.ovx-hero__meta{align-self:flex-start}}
+/* Alvo da marca: redondo e quadrado. */
+.ovx-alvo{display:inline-block;color:var(--text-strong);overflow:visible;flex:0 0 auto}
+.ovx-alvo--live .ovx-alvo__nucleo{transform-origin:50px 50px;animation:ovx-alvo-pulso 2.4s var(--ease-precise,ease-in-out) infinite}
+@keyframes ovx-alvo-pulso{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.8);opacity:.55}}
+@media (prefers-reduced-motion:reduce){.ovx-alvo--live .ovx-alvo__nucleo{animation:none}}
+
+/* Telas do painel: respiro em cima, à direita, embaixo e à esquerda, sempre. A própria tela leva o padding, sozinha ou dentro do PainelApp. */
+.ovx-painel-pagina{container:ovx-painel/inline-size;box-sizing:border-box;width:100%;padding:clamp(20px,3.2vw,40px) clamp(16px,3.2vw,40px) clamp(28px,4vw,48px)}
+.ovx-painel-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px}
+.ovx-painel-head h1{margin:0}
+.ovx-painel-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;flex:1 1 420px;justify-content:flex-end;min-width:0}
+.ovx-painel-toolbar__busca{flex:1 1 220px;max-width:300px;min-width:0}
+.ovx-painel-toolbar .ovx-select{flex:0 1 190px;width:auto;min-width:150px}
+.ovx-painel-toolbar .ovx-input{height:var(--touch-min);min-height:var(--touch-min)}
+.ovx-painel-toolbar .ovx-btn{height:var(--touch-min)}
+.ovx-painel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap);align-items:start}
+.ovx-painel-grid--destaque{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);align-items:stretch}
+.ovx-painel-tabela .ovx-table{min-width:720px}
+.ovx-painel-tabela td{white-space:nowrap}
+@container ovx-painel (max-width:760px){.ovx-painel-grid,.ovx-painel-grid--destaque{grid-template-columns:minmax(0,1fr)}}
+@container ovx-painel (max-width:560px){.ovx-painel-toolbar{flex-basis:100%;justify-content:stretch}.ovx-painel-toolbar__busca{flex:1 1 100%;max-width:none}.ovx-painel-toolbar .ovx-select{flex:1 1 0}}
+
+/* ===== Apple HIG: conformidade obrigatória em todo o sistema ===== */
+/* Toque: link curto de rodapé nunca abaixo de 44px de largura. */
+.ovx-footer a{min-width:var(--touch-min)}
+/* Badges no tema claro: texto escuro do mesmo tom, 4,5:1 sobre o fundo suave. */
+/* Texto de estado: tons que passam 4,5:1 em cada tema. */
+:root,[data-theme="dark"]{--text-success:var(--verde-300);--text-warning:var(--produto-ambar);--text-danger:#F08A91;--text-info:#7CBDEC}
+[data-theme="light"]{--text-success:var(--verde-700);--text-warning:#7a5600;--text-danger:#b02530;--text-info:#155a8a}
+[data-theme="light"] .ovx-badge--success:not(.ovx-badge--solid){color:var(--text-success)}
+[data-theme="light"] .ovx-badge--warning{color:var(--text-warning)}
+[data-theme="light"] .ovx-badge--danger{color:var(--text-danger)}
+[data-theme="light"] .ovx-badge--info{color:var(--text-info)}
+[data-theme="light"] .ovx-field__error{color:var(--text-danger)}
+/* Cápsula escura vive sobre foto: texto claro em qualquer tema. */
+.ovx-capsule--escuro{color:#f4f6f8}
+/* Nome de linha em texto: neutro; a cor da linha fica só no marcador (cor de produto nunca é texto). */
+.ovx-product__line{color:var(--text-muted)}
+.ovx-product__line::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--linha);margin-right:8px;vertical-align:1px}
+/* iOS: campo com texto menor que 16px dá zoom ao focar. No celular todo campo usa 16px. */
+@media (max-width:600px){.ovx-input,.ovx-select,.ovx-textarea,.ovx-input--sm{font-size:16px}}
+/* Reduce Transparency: o vidro vira superfície sólida, tom sobre tom. */
+@media (prefers-reduced-transparency:reduce){
+  .orvix-glass,.orvix-glass--thin,.orvix-glass--solid,.ovx-btn--glass,.ovx-iconbtn,.ovx-input,.ovx-check__box,.ovx-switch__track,.ovx-card,.ovx-panel,.ovx-panel--thin,.ovx-panel--solid,.ovx-statgrid>*,.ovx-navbar,.ovx-toast,.ovx-dialog,.ovx-target--glass,.ovx-callout,.ovx-seal,.ovx-capsule{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+  .orvix-glass,.orvix-glass--thin,.ovx-btn--glass,.ovx-panel,.ovx-panel--thin,.ovx-toast,.ovx-dialog,.ovx-seal,.ovx-capsule,.ovx-navbar{background-color:var(--surface-2)!important}
+  .ovx-card{background-color:var(--surface-1)}
+}
+/* Increase Contrast: texto de apoio sobe um degrau e as bordas ganham corpo. */
+@media (prefers-contrast:more){
+  :root,[data-theme="dark"]{--text-muted:var(--text-body);--text-subtle:var(--branco-500);--label-fg:rgba(255,255,255,.78);--border:var(--claro-a24)}
+  [data-theme="light"]{--text-muted:var(--text-body);--text-subtle:var(--grafite-300);--label-fg:rgba(16,23,32,.82);--border:rgba(16,23,32,.28)}
+}
+
+/* Fundo pontilhado parado: substitui os antigos elementos animados de calda. Malha adensada da marca, entrando na inclinação da perna do X. */
+.ovx-pontos-fundo{display:block;pointer-events:none;-webkit-mask-image:linear-gradient(var(--split-angle),transparent 30%,#000 70%);mask-image:linear-gradient(var(--split-angle),transparent 30%,#000 70%)}
+/* Capa de post e visual de split: a receita da seção modelo (HeroPrecisao) em escala menor. */
+.ovx-post__cover,.ovx-split__visual{position:relative;overflow:hidden;background:linear-gradient(165deg,var(--fundo-grafite) 0%,var(--bg-deep) 80%)}
+.ovx-post__cover .ovx-pontos-fundo,.ovx-split__visual .ovx-pontos-fundo{position:absolute;inset:0;width:100%;height:100%;-webkit-mask-image:linear-gradient(var(--split-angle),transparent 46%,#000 46%);mask-image:linear-gradient(var(--split-angle),transparent 46%,#000 46%)}
+.ovx-post__cover::after,.ovx-split__visual::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(var(--split-angle),transparent calc(46% - 1px),var(--claro-a14) calc(46% - 1px),var(--claro-a14) 46%,transparent 46%)}
+[data-theme="light"] .ovx-post__cover::after,[data-theme="light"] .ovx-split__visual::after{background:linear-gradient(var(--split-angle),transparent calc(46% - 1px),var(--web-3) calc(46% - 1px),var(--web-3) 46%,transparent 46%)}
+.ovx-split__visual{min-height:260px;display:grid;place-items:center}
+.ovx-split__visual .ovx-xmark{position:relative;z-index:1}
+/* Safe area inferior: o rodapé nunca fica sob o indicador de Home. */
+.ovx-footer{padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+.ovx-dialog:focus{outline:none}
+.ovx-dialog:focus-visible{box-shadow:var(--ring-focus)}
+/* Verde como texto no tema claro: sempre o text-accent (verde-700, 6,2:1). Verde-300 a 500 só passa sobre o escuro. */
+[data-theme="light"] :is(.ovx-iconbtn--accent,.ovx-btngroup>[aria-pressed=true],.ovx-pagination__item[aria-current=page],.ovx-step[data-state=active] .ovx-step__marker,.ovx-toast__icon,.ovx-hashtag,.ovx-axis__num,.ovx-cycle__idx,.ovx-post__cat,.ovx-stat__value--accent,.ovx-stat__delta--up){color:var(--text-accent)}
+[data-theme="light"] .ovx-field__label[data-required]::after{color:var(--text-accent)}
+
+/* ===== Tema claro: Web 1, Web 2 e Web 3 =====
+   Web 1: fundo de página, hover, linha alternada, fundo suave.
+   Web 2: borda, divisor e hairline padrão.
+   Web 3: raro, contorno de campo, borda forte, barra de rolagem.
+   Os véus claros do tema escuro (claro a 3% a 24%) somem sobre branco; aqui viram Web. */
+[data-theme="light"] .ovx-iconbtn{background:var(--branco);border-color:var(--web-2)}
+[data-theme="light"] .ovx-iconbtn--bare{background:transparent;border-color:transparent}
+[data-theme="light"] :is(.ovx-iconbtn:hover,.ovx-iconbtn--bare:hover,.ovx-navlink:hover,.ovx-sideitem:hover,.ovx-table--hover tbody tr:hover){background:var(--web-1)}
+[data-theme="light"] .ovx-table--zebra tbody tr:nth-child(even){background:var(--web-1)}
+[data-theme="light"] .ovx-skeleton{background:var(--web-2)}
+[data-theme="light"] .ovx-spinner{border-color:var(--web-2);border-top-color:var(--text-accent)}
+[data-theme="light"] :is(.ovx-empty,.ovx-callout--neutral,.ovx-spec,.ovx-doc,.ovx-seal){background:var(--branco);border-color:var(--web-2)}
+[data-theme="light"] .ovx-phscale__bar{border-color:var(--web-2)}
+[data-theme="light"] .ovx-target__ring{border-color:var(--web-3)}
+[data-theme="light"] .ovx-target__ring--2{border-color:var(--web-3)}
+[data-theme="light"] :is(.ovx-target__cross,.ovx-target__cross--v){background:var(--web-3)}
+[data-theme="light"] .ovx-meter__track{background:var(--web-2)}
+[data-theme="light"] .ovx-slider__range::-webkit-slider-runnable-track{background:var(--web-2)}
+[data-theme="light"] .ovx-slider__range::-moz-range-track{background:var(--web-2)}
+[data-theme="light"] .ovx-card--opaco{background:var(--branco)}
+[data-theme="light"] .ovx-inlinestatus--idle .ovx-inlinestatus__dot{background:var(--web-3)}
+.ovx-table caption{padding:12px 14px 8px}
+[data-theme="light"] .ovx-progressring__track{stroke:var(--web-2)}
+[data-theme="light"] .ovx-switch__track{background:var(--web-3)}
+/* Ícone e unidade do campo ficam acima do fundo do campo (no claro o campo é branco opaco). */
+.ovx-inputwrap__addon,.ovx-inputwrap__unit{z-index:1}
+/* Hover de linha de tabela: sempre um passo acima do tom da linha, inclusive na linha alternada (zebra). Suave, mas perceptível. */
+.ovx-table--hover tbody tr:is(:hover,:focus-within){background:var(--claro-a06)}
+.ovx-table--hover.ovx-table--zebra tbody tr:nth-child(even):is(:hover,:focus-within){background:var(--claro-a10)}
+[data-theme="light"] .ovx-table--hover tbody tr:is(:hover,:focus-within){background:var(--web-1)}
+[data-theme="light"] .ovx-table--hover.ovx-table--zebra tbody tr:nth-child(even):is(:hover,:focus-within){background:color-mix(in srgb,var(--web-2) 75%,var(--web-1))}

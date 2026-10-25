@@ -1,0 +1,26 @@
+<!-- @dsCard group="Components" height=400 subtitle="Tabela, indicadores, cartão de híbrido, acordeão" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN</title>
+<script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{padding:20px;background:var(--brand-amarelo-suave);font-family:var(--ff-body)}.lab{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:8px}</style>
+</head><body><div id="root"></div><script type="text/babel">
+const B=window.BarygenDesignSystem_a84d4b;
+const {Table,Accordion,KPI,ProductCard,Badge}=B;
+function Card(){return <div style={{display:'grid',gridTemplateColumns:'minmax(0,1fr)',gap:18}}>
+ <div className="bry-row" style={{gap:16}}>
+  <KPI label="Produtividade média" value="218 sc/ha" trend="12% vs. safra anterior" direction="up"/>
+  <KPI label="Campos demonstrativos" value="47" trend="9 novos no MT" direction="up"/>
+  <KPI label="Ciclo" value="Precoce" trend="Estável"/>
+ </div>
+ <Table columns={[{key:'h',label:'Híbrido'},{key:'c',label:'Ciclo'},{key:'f',label:'Finalidade'},{key:'r',label:'Região'},{key:'s',label:'Status'}]}
+  rows={[
+   {h:<b>BG307 Max</b>,c:'Precoce',f:'Grãos',r:'MT · GO · MS',s:<Badge tone="success" dot>Disponível</Badge>}]}/>
+ <div className="bry-row" style={{gap:16,alignItems:'flex-start'}}>
+  <ProductCard name="BG307 Max" badge="Lançamento" regions="MT · GO · MS"
+   description="Híbrido precoce de alto investimento, feito para a rentabilidade do produtor."/>
+  <div style={{flex:1,minWidth:280}}><Accordion items={[
+   {q:'Qual a população recomendada do BG307 Max?',a:'A recomendação varia por ambiente de produção e época de plantio. Consulte o posicionamento técnico oficial com o consultor da sua região.',open:true},
+   {q:'O híbrido tem tolerância às principais doenças foliares?',a:'O pacote sanitário completo está na ficha técnica do produto.'}]}/></div>
+ </div>
+</div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<Card/>);
+</script></body></html>

@@ -1,0 +1,8 @@
+/* FarmSense — Raios e traços. */
+:root{
+  --r-xs:6px;--r-sm:10px;--r-md:16px;--r-lg:22px;--r-xl:32px;--r-pill:999px;
+  --hairline-light:1px solid rgba(0,65,65,.12); /* @kind other */
+  --hairline-dark:1px solid rgba(255,255,255,.14); /* @kind other */
+  --stroke-icon:1.5px; /* @kind other */
+  --stroke-contour:1px; /* @kind other */
+}

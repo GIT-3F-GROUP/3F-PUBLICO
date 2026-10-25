@@ -1,0 +1,1711 @@
+{
+  "manifestVersion": 3,
+  "name": "ORVIX Design System",
+  "namespace": "ORVIXDesignSystem_019de6",
+  "files": [
+    "assets/Logos/README.md",
+    "assets/Pontilhado/README.md",
+    "components/A11yContraste/README.md",
+    "components/Actions/README.md",
+    "components/Alert/Alert.d.ts",
+    "components/Alert/README.md",
+    "components/AppleHIG/README.md",
+    "components/AxisTrio/README.md",
+    "components/Badge/README.md",
+    "components/Brand/README.md",
+    "components/BrandAlvo/README.md",
+    "components/BrandTexturaX/README.md",
+    "components/Breadcrumbs/README.md",
+    "components/Button/Button.d.ts",
+    "components/Button/README.md",
+    "components/ButtonGroup/README.md",
+    "components/C/README.md",
+    "components/Callout/README.md",
+    "components/Capsule/README.md",
+    "components/Card/Card.d.ts",
+    "components/Card/README.md",
+    "components/CardHeader/README.md",
+    "components/Checkbox/README.md",
+    "components/ClubeOrvix/README.md",
+    "components/ColorBranco/README.md",
+    "components/ColorContraste/README.md",
+    "components/ColorEstados/README.md",
+    "components/ColorGrafite/README.md",
+    "components/ColorPh/README.md",
+    "components/ColorProduto/README.md",
+    "components/ColorRegraProduto/README.md",
+    "components/ColorSuperficies/README.md",
+    "components/ColorTexto/README.md",
+    "components/ColorTransparencia/README.md",
+    "components/ColorVerde/README.md",
+    "components/DadoTecnico/README.md",
+    "components/Data/README.md",
+    "components/DataTable/README.md",
+    "components/DestaqueORV7/README.md",
+    "components/Dialog/README.md",
+    "components/Divider/README.md",
+    "components/DivisaoDiagonal/README.md",
+    "components/DocLink/README.md",
+    "components/DoseTable/README.md",
+    "components/EditorialBlog/README.md",
+    "components/ElevFoco/README.md",
+    "components/ElevHairline/README.md",
+    "components/ElevSombras/README.md",
+    "components/EmptyState/README.md",
+    "components/Eyebrow/README.md",
+    "components/FaixaDeNumeros/README.md",
+    "components/FechamentoCTA/README.md",
+    "components/Feedback/README.md",
+    "components/Field/Field.d.ts",
+    "components/Field/README.md",
+    "components/Fieldset/README.md",
+    "components/FormaReal/README.md",
+    "components/Forms/README.md",
+    "components/GlassAcao/README.md",
+    "components/GlassDensidades/README.md",
+    "components/GlassPanel/README.md",
+    "components/GlassScrim/README.md",
+    "components/GradeDeLinhas/README.md",
+    "components/HOME_ORDER/README.md",
+    "components/Hashtag/README.md",
+    "components/HeroPrecisao/README.md",
+    "components/HomeSections/HomeSections.d.ts",
+    "components/HomeSections/README.md",
+    "components/Icon/Icon.d.ts",
+    "components/Icon/README.md",
+    "components/Icon2/README.md",
+    "components/IconButton/README.md",
+    "components/IconGrade/README.md",
+    "components/IconRegras/README.md",
+    "components/InlineStatus/README.md",
+    "components/Input/README.md",
+    "components/KeyValue/README.md",
+    "components/LINE_COLORS/README.md",
+    "components/LayoutBreakpoints/README.md",
+    "components/LayoutContainer/README.md",
+    "components/LineCard/README.md",
+    "components/LinhasProduto/README.md",
+    "components/LinkAction/README.md",
+    "components/Logo/Logo.d.ts",
+    "components/Logo/README.md",
+    "components/LogoHierarquia/README.md",
+    "components/LogoPernas/README.md",
+    "components/LogoSemAssinatura/README.md",
+    "components/LogoTamanhoMinimo/README.md",
+    "components/LogoUso/README.md",
+    "components/MIX_KEYS/README.md",
+    "components/MIX_VARIANTS/README.md",
+    "components/ManifestoCentrado/README.md",
+    "components/MapaLegenda/README.md",
+    "components/MapaPresenca/README.md",
+    "components/MarqueeTecnico/README.md",
+    "components/Meter/README.md",
+    "components/Mix02Dispersao/README.md",
+    "components/Mix03Alvo/README.md",
+    "components/Mix04Sistema/README.md",
+    "components/MixGallery/README.md",
+    "components/MixMotion/MixMotion.d.ts",
+    "components/MixMotion/README.md",
+    "components/MotionEstados/README.md",
+    "components/Navbar/Navbar.d.ts",
+    "components/Navbar/README.md",
+    "components/Navigation/README.md",
+    "components/PadraoPontilhado/PadraoPontilhado.d.ts",
+    "components/PadraoPontilhado/README.md",
+    "components/PadraoPontilhadoImagem/README.md",
+    "components/PadraoPontilhadoSecoes/README.md",
+    "components/PadroesPontos/README.md",
+    "components/Pagination/README.md",
+    "components/PainelApp/README.md",
+    "components/PainelBiblioteca/README.md",
+    "components/PainelCalculadora/README.md",
+    "components/PainelCatalogo/README.md",
+    "components/PainelLogin/README.md",
+    "components/PainelPerfil/README.md",
+    "components/PainelVisaoGeral/README.md",
+    "components/PhScale/README.md",
+    "components/Product/README.md",
+    "components/ProductCard/ProductCard.d.ts",
+    "components/ProductCard/README.md",
+    "components/ProgressRing/README.md",
+    "components/ProsaTecnica/README.md",
+    "components/PullQuote/README.md",
+    "components/Radio/README.md",
+    "components/RadiusEscala/README.md",
+    "components/RadiusUso/README.md",
+    "components/RodapeAssinaturas/README.md",
+    "components/ScreenBlog/README.md",
+    "components/ScreenContato/README.md",
+    "components/ScreenHome/README.md",
+    "components/ScreenLinha/README.md",
+    "components/ScreenProduto/README.md",
+    "components/ScreenTecnologia/README.md",
+    "components/Seal/README.md",
+    "components/SearchField/README.md",
+    "components/SectionHeading/README.md",
+    "components/Sections/README.md",
+    "components/Select/README.md",
+    "components/SidebarNav/README.md",
+    "components/SiteApp/README.md",
+    "components/SiteFooter/README.md",
+    "components/Skeleton/README.md",
+    "components/Slider/README.md",
+    "components/SpaceEscala/README.md",
+    "components/SpaceSecao/README.md",
+    "components/SpaceUso/README.md",
+    "components/SpecChip/README.md",
+    "components/Spinner/README.md",
+    "components/Stat/README.md",
+    "components/StatGrid/README.md",
+    "components/StepFlow/README.md",
+    "components/Switch/README.md",
+    "components/TAU/README.md",
+    "components/TabelaChaveValor/README.md",
+    "components/TabelaFicha/README.md",
+    "components/Tabs/README.md",
+    "components/Tag/README.md",
+    "components/TargetMark/README.md",
+    "components/Temas/README.md",
+    "components/TerritorioMT/README.md",
+    "components/TerritoryBadge/README.md",
+    "components/Textarea/README.md",
+    "components/Toast/README.md",
+    "components/ToastStack/README.md",
+    "components/TomSobreTom/README.md",
+    "components/Tooltip/README.md",
+    "components/TresEixos/README.md",
+    "components/TrilhaDoCiclo/README.md",
+    "components/TypeCorpo/README.md",
+    "components/TypeDisplay/README.md",
+    "components/TypeLabels/README.md",
+    "components/TypeNumerico/README.md",
+    "components/TypePar/README.md",
+    "components/TypeTitulos/README.md",
+    "components/VendaDireta/README.md",
+    "components/VozExemplos/README.md",
+    "components/VozVocabulario/README.md",
+    "components/WordmarkType/README.md",
+    "components/XMark/README.md",
+    "components/XTexture/README.md",
+    "components/bundle.css",
+    "components/bundle.js",
+    "components/lib/react-dom.production.min.js",
+    "components/lib/react.production.min.js",
+    "fonts/BeVietnamPro-ExtraBold.ttf",
+    "fonts/BeVietnamPro-ExtraBoldItalic.ttf",
+    "fonts/BeVietnamPro-Italic.ttf",
+    "fonts/BeVietnamPro-Medium.ttf",
+    "fonts/BeVietnamPro-MediumItalic.ttf",
+    "fonts/BeVietnamPro-Regular.ttf",
+    "fonts/Exo-ExtraBold.ttf",
+    "fonts/Exo-ExtraBoldItalic.ttf",
+    "fonts/Exo-Italic.ttf",
+    "fonts/Exo-Medium.ttf",
+    "fonts/Exo-MediumItalic.ttf",
+    "fonts/Exo-Regular.ttf",
+    "templates/home-orvix/HomeOrvix.dc.html",
+    "templates/home-orvix/ds-base.js",
+    "templates/home-orvix/support.js",
+    "templates/painel-orvix/PainelOrvix.dc.html",
+    "templates/painel-orvix/ds-base.js",
+    "templates/painel-orvix/support.js",
+    "templates/site-orvix/SiteOrvix.dc.html",
+    "templates/site-orvix/ds-base.js",
+    "templates/site-orvix/support.js",
+    "tokens.css",
+    "ui_kits/painel-orvix/README.md",
+    "ui_kits/site-orvix/README.md"
+  ],
+  "libraries": [
+    {
+      "name": "react",
+      "version": "18.3.1",
+      "global": "React",
+      "file": "components/lib/react.production.min.js"
+    },
+    {
+      "name": "react-dom",
+      "version": "18.3.1",
+      "global": "ReactDOM",
+      "file": "components/lib/react-dom.production.min.js"
+    }
+  ],
+  "components": [
+    {
+      "name": "Button",
+      "group": "Ações",
+      "summary": "Ações da ORVIX: Button (verde primário sólido, contorno secundário, vidro só sobre foto), IconButton, ButtonGroup e LinkAction (link com seta que avança)."
+    },
+    {
+      "name": "IconButton",
+      "group": "Ações",
+      "summary": "Botão só de ícone: padrão, acento, sem moldura e redondo, sempre com rótulo acessível."
+    },
+    {
+      "name": "ButtonGroup",
+      "group": "Ações",
+      "summary": "Grupo de botões secundários com o item ativo marcado em verde."
+    },
+    {
+      "name": "LinkAction",
+      "group": "Ações",
+      "summary": "Link que avança: seta à direita, tom de acento ou neutro."
+    },
+    {
+      "name": "Logo",
+      "group": "Logo",
+      "summary": "Marca ORVIX: Logo, WordmarkType, Eyebrow, SectionHeading, XTexture/XMark, TargetMark (alvo tecnológico), Callout, PullQuote, Seal, TerritoryBadge, Hashtag, Cap…"
+    },
+    {
+      "name": "MapaPresenca",
+      "group": "Marca",
+      "summary": "O Mato Grosso em malha de hexágonos: o estado em cinza, os vizinhos e países sumindo nas bordas, e o verde só onde a ORVIX atua."
+    },
+    {
+      "name": "MapaLegenda",
+      "group": "Marca",
+      "summary": "Legenda do mapa de presença: matriz, escritório e área de atuação."
+    },
+    {
+      "name": "PadraoPontilhado",
+      "group": "Padrões de Fundo",
+      "summary": "Malha de pontos em colmeia, adensada e parada na tela: 5 px entre centros no tom sobre tom (pontos de 0,6 a 1,5 px) e 11 px sobre imagem, como nas referências…"
+    },
+    {
+      "name": "WordmarkType",
+      "group": "Marca",
+      "summary": "Recurso tipográfico de apoio quando o arquivo da logo não está disponível."
+    },
+    {
+      "name": "Eyebrow",
+      "group": "Marca",
+      "summary": "Rótulo acima do título, com filete, ponto ou seta."
+    },
+    {
+      "name": "SectionHeading",
+      "group": "Marca",
+      "summary": "Cabeçalho de seção: eyebrow, título em Exo caixa alta e lead."
+    },
+    {
+      "name": "XTexture",
+      "group": "Marca",
+      "summary": "Malha de pontos adensada da marca, a 25%, cheia ou em degradê de transparência."
+    },
+    {
+      "name": "XMark",
+      "group": "Marca",
+      "summary": "O X da marca em tamanho de ícone."
+    },
+    {
+      "name": "TargetMark",
+      "group": "Marca",
+      "summary": "Alvo tecnológico da marca: estático, com aro de vidro e animado (uma vez por tela)."
+    },
+    {
+      "name": "Callout",
+      "group": "Marca",
+      "summary": "Frase-tese em Exo ExtraBold caixa alta, com fonte."
+    },
+    {
+      "name": "PullQuote",
+      "group": "Marca",
+      "summary": "Citação com autor e cargo."
+    },
+    {
+      "name": "Seal",
+      "group": "Marca",
+      "summary": "Selo de garantia ou origem, neutro ou verde."
+    },
+    {
+      "name": "TerritoryBadge",
+      "group": "Marca",
+      "summary": "Badge de origem territorial."
+    },
+    {
+      "name": "Hashtag",
+      "group": "Marca",
+      "summary": "Hashtag da comunidade."
+    },
+    {
+      "name": "Capsule",
+      "group": "Marca",
+      "summary": "Cápsula de contexto: sobre superfície, um tom acima; sobre foto, vidro escuro."
+    },
+    {
+      "name": "Card",
+      "group": "Dados",
+      "summary": "Superfícies e dados da ORVIX: Card e CardHeader, GlassPanel, Stat/StatGrid, DataTable, KeyValue, Badge, Tag, Meter, ProgressRing, Divider."
+    },
+    {
+      "name": "CardHeader",
+      "group": "Dados",
+      "summary": "Cabeçalho de card: título, subtítulo e ação."
+    },
+    {
+      "name": "GlassPanel",
+      "group": "Dados",
+      "summary": "Painel de vidro em três densidades."
+    },
+    {
+      "name": "Stat",
+      "group": "Dados",
+      "summary": "Número técnico com unidade, acento e variação."
+    },
+    {
+      "name": "StatGrid",
+      "group": "Dados",
+      "summary": "Grade de números com hairline entre células."
+    },
+    {
+      "name": "DataTable",
+      "group": "Dados",
+      "summary": "Tabela de ficha com cabeçalho em label, hover e numerais tabulares."
+    },
+    {
+      "name": "KeyValue",
+      "group": "Dados",
+      "summary": "Pares de rótulo e valor da ficha técnica."
+    },
+    {
+      "name": "Badge",
+      "group": "Dados",
+      "summary": "Badge por tom, sólido ou contornado, com ponto ou ícone."
+    },
+    {
+      "name": "Tag",
+      "group": "Dados",
+      "summary": "Tag de filtro: reta, pequena, sem preenchimento; selecionada fica verde."
+    },
+    {
+      "name": "Meter",
+      "group": "Dados",
+      "summary": "Medidor linear por tom, fino ou espesso."
+    },
+    {
+      "name": "ProgressRing",
+      "group": "Dados",
+      "summary": "Anel de progresso."
+    },
+    {
+      "name": "Divider",
+      "group": "Dados",
+      "summary": "Divisor: simples, forte, pontilhado e com rótulo."
+    },
+    {
+      "name": "Alert",
+      "group": "Feedback",
+      "summary": "Feedback da ORVIX: Alert, Toast/ToastStack, Tooltip, Dialog, Skeleton, Spinner, EmptyState, InlineStatus."
+    },
+    {
+      "name": "Toast",
+      "group": "Feedback",
+      "summary": "Aviso temporário de vidro, com ícone e progresso."
+    },
+    {
+      "name": "ToastStack",
+      "group": "Feedback",
+      "summary": "Pilha de avisos no canto da tela."
+    },
+    {
+      "name": "Tooltip",
+      "group": "Feedback",
+      "summary": "Dica sobre elemento, em superfície invertida."
+    },
+    {
+      "name": "Dialog",
+      "group": "Feedback",
+      "summary": "Diálogo com título, conteúdo e rodapé de ações."
+    },
+    {
+      "name": "Skeleton",
+      "group": "Feedback",
+      "summary": "Esqueleto de carregamento: texto, título, bloco."
+    },
+    {
+      "name": "Spinner",
+      "group": "Feedback",
+      "summary": "Indicador de carregamento em três tamanhos."
+    },
+    {
+      "name": "EmptyState",
+      "group": "Feedback",
+      "summary": "Estado vazio com ícone, texto e ação."
+    },
+    {
+      "name": "InlineStatus",
+      "group": "Feedback",
+      "summary": "Status em linha, ativo ou parado."
+    },
+    {
+      "name": "Field",
+      "group": "Formulários",
+      "summary": "Formulários da ORVIX: Field (rótulo, hint e erro), Input, Textarea, Select, SearchField, Checkbox, Radio, Switch, Slider, Fieldset."
+    },
+    {
+      "name": "Input",
+      "group": "Formulários",
+      "summary": "Campo de texto: ícone, unidade, monoespaçado e inválido."
+    },
+    {
+      "name": "Textarea",
+      "group": "Formulários",
+      "summary": "Área de texto."
+    },
+    {
+      "name": "Select",
+      "group": "Formulários",
+      "summary": "Seleção com placeholder."
+    },
+    {
+      "name": "SearchField",
+      "group": "Formulários",
+      "summary": "Busca de produto, linha ou artigo."
+    },
+    {
+      "name": "Checkbox",
+      "group": "Formulários",
+      "summary": "Caixa de seleção com descrição."
+    },
+    {
+      "name": "Radio",
+      "group": "Formulários",
+      "summary": "Escolha única com descrição."
+    },
+    {
+      "name": "Switch",
+      "group": "Formulários",
+      "summary": "Alternância."
+    },
+    {
+      "name": "Slider",
+      "group": "Formulários",
+      "summary": "Controle deslizante com escala."
+    },
+    {
+      "name": "Fieldset",
+      "group": "Formulários",
+      "summary": "Grupo de campos com legenda."
+    },
+    {
+      "name": "Icon",
+      "group": "Iconografia",
+      "summary": "Ícone de interface da ORVIX: conjunto Lucide embutido no bundle (ORVIX_ICONS, 120 glifos em SVG inline) e herda currentColor, para qualquer glifo de UI (ação,…"
+    },
+    {
+      "name": "MIX_VARIANTS",
+      "group": "Movimento de Calda",
+      "summary": "Registro dos elementos de movimento: chave, código, nome e nota."
+    },
+    {
+      "name": "MIX_KEYS",
+      "group": "Movimento de Calda",
+      "summary": "Lista das chaves válidas de variant."
+    },
+    {
+      "name": "MixMotion",
+      "group": "Movimento de Calda",
+      "summary": "Movimento de calda: 7 elementos animados em canvas que representam o comportamento de uma mistura agrícola sem revelar composição química."
+    },
+    {
+      "name": "MixGallery",
+      "group": "Movimento de Calda",
+      "summary": "Galeria dos sete elementos de movimento de calda, com código e nota."
+    },
+    {
+      "name": "C",
+      "group": "Movimento de Calda",
+      "summary": "Paleta de canvas do movimento de calda (RGB)."
+    },
+    {
+      "name": "TAU",
+      "group": "Movimento de Calda",
+      "summary": "Constante 2π usada no desenho dos elementos."
+    },
+    {
+      "name": "Navbar",
+      "group": "Navegação",
+      "summary": "Navegação da ORVIX: Navbar (vidro fixo no topo), SidebarNav (painel interno), Tabs, Breadcrumbs, Pagination, StepFlow, SiteFooter."
+    },
+    {
+      "name": "SidebarNav",
+      "group": "Navegação",
+      "summary": "Navegação lateral do painel com grupo, contagem e item ativo."
+    },
+    {
+      "name": "Tabs",
+      "group": "Navegação",
+      "summary": "Abas sublinhadas e em pílula, em caixa alta."
+    },
+    {
+      "name": "Breadcrumbs",
+      "group": "Navegação",
+      "summary": "Trilha de navegação em caixa alta."
+    },
+    {
+      "name": "Pagination",
+      "group": "Navegação",
+      "summary": "Paginação com página atual em verde."
+    },
+    {
+      "name": "StepFlow",
+      "group": "Navegação",
+      "summary": "Fluxo de etapas numeradas."
+    },
+    {
+      "name": "SiteFooter",
+      "group": "Navegação",
+      "summary": "Rodapé do site com colunas, marca e assinaturas obrigatórias."
+    },
+    {
+      "name": "LINE_COLORS",
+      "group": "Produto",
+      "summary": "Cor secundária de cada linha e família de produto."
+    },
+    {
+      "name": "ProductCard",
+      "group": "Produto",
+      "summary": "Produto ORVIX: ProductCard, LineCard, SpecChip, DoseTable, PhScale, DocLink, AxisTrio (calda, gota, alvo)."
+    },
+    {
+      "name": "LineCard",
+      "group": "Produto",
+      "summary": "Card de linha de produto com a cor secundária da linha."
+    },
+    {
+      "name": "SpecChip",
+      "group": "Produto",
+      "summary": "Chip de especificação com numerais tabulares."
+    },
+    {
+      "name": "DoseTable",
+      "group": "Produto",
+      "summary": "Tabela de dose por cultura."
+    },
+    {
+      "name": "PhScale",
+      "group": "Produto",
+      "summary": "Escala de pH da linha SOLV."
+    },
+    {
+      "name": "DocLink",
+      "group": "Produto",
+      "summary": "Link de documento técnico com tipo e tamanho."
+    },
+    {
+      "name": "AxisTrio",
+      "group": "Produto",
+      "summary": "Os três eixos da ORVIX: calda, gota e alvo."
+    },
+    {
+      "name": "HeroPrecisao",
+      "group": "Seções de Home",
+      "summary": "Full-bleed com o pontilhado adensado da marca, parado, entrando na inclinação da perna do X, e dois CTAs"
+    },
+    {
+      "name": "ManifestoCentrado",
+      "group": "Seções de Home",
+      "summary": "Tese da marca sobre textura pontilhada, fechada por callout"
+    },
+    {
+      "name": "TrilhaDoCiclo",
+      "group": "Seções de Home",
+      "summary": "Cinco etapas da aplicação com fluxo animado na base"
+    },
+    {
+      "name": "TresEixos",
+      "group": "Seções de Home",
+      "summary": "Ações de calda, de gota e no alvo em grade de três"
+    },
+    {
+      "name": "DestaqueORV7",
+      "group": "Seções de Home",
+      "summary": "Produto-âncora com o 7 gigante ao fundo e ficha rápida"
+    },
+    {
+      "name": "GradeDeLinhas",
+      "group": "Seções de Home",
+      "summary": "Seis linhas, cada card com a cor secundária da sua linha"
+    },
+    {
+      "name": "FaixaDeNumeros",
+      "group": "Seções de Home",
+      "summary": "Números do portfólio entre duas hairlines"
+    },
+    {
+      "name": "MarqueeTecnico",
+      "group": "Seções de Home",
+      "summary": "Vocabulário agronômico em rolagem contínua, conector entre seções"
+    },
+    {
+      "name": "TerritorioMT",
+      "group": "Seções de Home",
+      "summary": "Mapa de presença em Mato Grosso e o claim de origem"
+    },
+    {
+      "name": "ClubeOrvix",
+      "group": "Seções de Home",
+      "summary": "Regra-âncora de pontos e a mecânica em quatro passos"
+    },
+    {
+      "name": "EditorialBlog",
+      "group": "Seções de Home",
+      "summary": "Grade de artigos com capas em movimento"
+    },
+    {
+      "name": "FechamentoCTA",
+      "group": "Seções de Home",
+      "summary": "Alvo tecnológico, CTA duplo e a hashtag da comunidade"
+    },
+    {
+      "name": "VendaDireta",
+      "group": "Seções de Home",
+      "summary": "Vantagens da compra direta e portfólio completo"
+    },
+    {
+      "name": "HomeSections",
+      "group": "Seções de Home",
+      "summary": "Padrões de seção da home da ORVIX, prontos para montar uma página inteira em tema escuro."
+    },
+    {
+      "name": "HOME_ORDER",
+      "group": "Seções de Home",
+      "summary": "Ordem canônica das seções da home."
+    },
+    {
+      "name": "PainelLogin",
+      "group": "Painel ORVIX",
+      "summary": "Login do painel: pontilhado adensado na diagonal do X, logo em destaque e acesso."
+    },
+    {
+      "name": "PainelVisaoGeral",
+      "group": "Painel ORVIX",
+      "summary": "Visão geral do representante."
+    },
+    {
+      "name": "PainelCatalogo",
+      "group": "Painel ORVIX",
+      "summary": "Catálogo técnico com filtros e tabela."
+    },
+    {
+      "name": "PainelBiblioteca",
+      "group": "Painel ORVIX",
+      "summary": "Biblioteca de documentos técnicos."
+    },
+    {
+      "name": "PainelCalculadora",
+      "group": "Painel ORVIX",
+      "summary": "Calculadora de calda."
+    },
+    {
+      "name": "PainelPerfil",
+      "group": "Painel ORVIX",
+      "summary": "Perfil do representante."
+    },
+    {
+      "name": "PainelApp",
+      "group": "Painel ORVIX",
+      "summary": "Login, visão geral, catálogo técnico, biblioteca, calculadora de calda e perfil"
+    },
+    {
+      "name": "ScreenHome",
+      "group": "Site ORVIX",
+      "summary": "Home do site."
+    },
+    {
+      "name": "ScreenLinha",
+      "group": "Site ORVIX",
+      "summary": "Página de linha de produto."
+    },
+    {
+      "name": "ScreenProduto",
+      "group": "Site ORVIX",
+      "summary": "Página de produto."
+    },
+    {
+      "name": "ScreenBlog",
+      "group": "Site ORVIX",
+      "summary": "Blog técnico."
+    },
+    {
+      "name": "ScreenContato",
+      "group": "Site ORVIX",
+      "summary": "Contato comercial."
+    },
+    {
+      "name": "ScreenTecnologia",
+      "group": "Site ORVIX",
+      "summary": "Tecnologia de aplicação."
+    },
+    {
+      "name": "SiteApp",
+      "group": "Site ORVIX",
+      "summary": "Home, linha, produto, blog e contato, navegáveis"
+    },
+    {
+      "name": "A11yContraste",
+      "group": "Acessibilidade",
+      "summary": "WCAG AA em todo texto.",
+      "page": true
+    },
+    {
+      "name": "Actions",
+      "group": "Ações",
+      "summary": "Vidro em todas as variantes, verde translúcido que ganha corpo no hover, três tamanhos",
+      "page": true
+    },
+    {
+      "name": "AppleHIG",
+      "group": "Acessibilidade",
+      "summary": "Regra zero da ORVIX: toda peça, tela ou ação já nasce conforme as Human Interface Guidelines e as App Store Review Guidelines.",
+      "page": true
+    },
+    {
+      "name": "Brand",
+      "group": "Marca",
+      "summary": "Os elementos de marca em uso, um bloco por elemento: logo (sempre monocromática, o tema escolhe branco ou preto), eyebrow, cabeçalho de seção, callout, citação…",
+      "page": true
+    },
+    {
+      "name": "BrandAlvo",
+      "group": "Marca",
+      "summary": "Elemento terciário.",
+      "page": true
+    },
+    {
+      "name": "BrandTexturaX",
+      "group": "Padrões de Fundo",
+      "summary": "Malha pontilhada como assinatura gráfica, grade de precisão como fundo de seção",
+      "page": true
+    },
+    {
+      "name": "ColorBranco",
+      "group": "Cores",
+      "summary": "Principais: branco (#FFFFFF) e preto ORVIX (#101720, nunca o preto absoluto).",
+      "page": true
+    },
+    {
+      "name": "ColorContraste",
+      "group": "Cores",
+      "summary": "Pares medidos (WCAG 2).",
+      "page": true
+    },
+    {
+      "name": "ColorEstados",
+      "group": "Cores",
+      "summary": "O verde nunca vira alerta: sucesso é o único tom verde",
+      "page": true
+    },
+    {
+      "name": "ColorGrafite",
+      "group": "Cores",
+      "summary": "Rampa de cinzas azulados frios (100 a 1000) para superfícies e texto de apoio do tema escuro.",
+      "page": true
+    },
+    {
+      "name": "ColorPh",
+      "group": "Cores de Produto",
+      "summary": "Única gradiente multicolor do sistema.",
+      "page": true
+    },
+    {
+      "name": "ColorProduto",
+      "group": "Cores de Produto",
+      "summary": "Existem para salientar um produto ou linha, nunca para vestir a interface",
+      "page": true
+    },
+    {
+      "name": "ColorRegraProduto",
+      "group": "Cores de Produto",
+      "summary": "Uma cor de produto por bloco, sempre com o verde institucional na ação",
+      "page": true
+    },
+    {
+      "name": "ColorSuperficies",
+      "group": "Cores",
+      "summary": "Dois temas (dark padrão, light) com as mesmas camadas: bg-deep, bg, surface-1 a surface-4.",
+      "page": true
+    },
+    {
+      "name": "ColorTexto",
+      "group": "Cores",
+      "summary": "Quatro níveis de leitura sobre superfície escura",
+      "page": true
+    },
+    {
+      "name": "ColorTransparencia",
+      "group": "Cores",
+      "summary": "A marca prefere opacidade sobre os dois tons-base a criar novos hexadecimais",
+      "page": true
+    },
+    {
+      "name": "ColorVerde",
+      "group": "Cores",
+      "summary": "Rampa completa da única cor saturada da marca.",
+      "page": true
+    },
+    {
+      "name": "DadoTecnico",
+      "group": "Dado Técnico",
+      "summary": "Vírgula decimal, unidade separada por espaço, faixa com a palavra a",
+      "page": true
+    },
+    {
+      "name": "Data",
+      "group": "Dados",
+      "summary": "Card sólido, painel de vidro, números técnicos, tabela de ficha e badges",
+      "page": true
+    },
+    {
+      "name": "DivisaoDiagonal",
+      "group": "Layout e Grid",
+      "summary": "A ORVIX nunca divide uma tela em linha reta.",
+      "page": true
+    },
+    {
+      "name": "ElevFoco",
+      "group": "Elevação e Sombra",
+      "summary": "Halo curto de 3px no foco.",
+      "page": true
+    },
+    {
+      "name": "ElevHairline",
+      "group": "Elevação e Sombra",
+      "summary": "A separação entre blocos vem da linha de 1px com uma sombra baixa e suave: --shadow-1 ou, no máximo, --shadow-2.",
+      "page": true
+    },
+    {
+      "name": "ElevSombras",
+      "group": "Elevação e Sombra",
+      "summary": "Sombras curtas e próximas.",
+      "page": true
+    },
+    {
+      "name": "Feedback",
+      "group": "Feedback",
+      "summary": "Alertas por tom, toast de vidro, diálogo, skeleton e estado vazio",
+      "page": true
+    },
+    {
+      "name": "FormaReal",
+      "group": "Iconografia",
+      "summary": "Regra de criação para infográficos, elementos gráficos, ícones e movimento: tudo o que representa algo real segue as formas, as proporções e as inclinações do…",
+      "page": true
+    },
+    {
+      "name": "Forms",
+      "group": "Formulários",
+      "summary": "Campo escuro afundado, foco verde, escolha, alternância e escala",
+      "page": true
+    },
+    {
+      "name": "GlassAcao",
+      "group": "Vidro e Blur",
+      "summary": "Botão, cápsula e card de vidro só existem sobre foto ou fundo irregular, porque o vidro depende do que aparece por trás dele.",
+      "page": true
+    },
+    {
+      "name": "GlassDensidades",
+      "group": "Vidro e Blur",
+      "summary": "Três densidades mais a variante verde.",
+      "page": true
+    },
+    {
+      "name": "GlassScrim",
+      "group": "Vidro e Blur",
+      "summary": "Sobre foto o contexto é sempre escuro, em qualquer tema: scrim sutil em preto ORVIX só na área do texto (.ovx-scrim-bottom, .ovx-scrim-top), texto branco e cáp…",
+      "page": true
+    },
+    {
+      "name": "Icon2",
+      "group": "Iconografia",
+      "summary": "Glifo Lucide por mask-image, herda currentColor.",
+      "page": true
+    },
+    {
+      "name": "IconGrade",
+      "group": "Iconografia",
+      "summary": "Lucide, traço 2px.",
+      "page": true
+    },
+    {
+      "name": "IconRegras",
+      "group": "Iconografia",
+      "summary": "Ícone é apoio de leitura técnica, não decoração.",
+      "page": true
+    },
+    {
+      "name": "LayoutBreakpoints",
+      "group": "Layout e Grid",
+      "summary": "Mobile primeiro.",
+      "page": true
+    },
+    {
+      "name": "LayoutContainer",
+      "group": "Layout e Grid",
+      "summary": "1280px de largura máxima, gutter 20px, prosa em 680px",
+      "page": true
+    },
+    {
+      "name": "LinhasProduto",
+      "group": "Produto",
+      "page": true
+    },
+    {
+      "name": "LogoHierarquia",
+      "group": "Logo",
+      "summary": "As oito marcas oficiais, uma a uma, em bloco próprio: papel, quando usar, o que nunca fazer, pernas e opacidades, tamanho mínimo, proporção e arquivo.",
+      "page": true
+    },
+    {
+      "name": "LogoPernas",
+      "group": "Logo",
+      "summary": "Perna sólida à direita e três pernas pontilhadas (P1, P2, P3) com opacidade crescente: 20/50/100 na logo principal, 30/60/100 em todas as outras.",
+      "page": true
+    },
+    {
+      "name": "LogoSemAssinatura",
+      "group": "Logo",
+      "summary": "As quatro logos (principal, quadrada, X com detalhe mínimo e sem detalhes) sem a escrita AGROQUÍMICA na base, em preto puro e branco puro.",
+      "page": true
+    },
+    {
+      "name": "LogoTamanhoMinimo",
+      "group": "Logo",
+      "summary": "A logo ORVIX tem escrita pequena (AGROQUÍMICA) e um X feito de pontos.",
+      "page": true
+    },
+    {
+      "name": "LogoUso",
+      "group": "Logo",
+      "summary": "Guia de decisão em quatro passos: comece pela principal; espaço pequeno, quadrado ou estreito; produção que não reproduz pontos ou transparência; foto, grafism…",
+      "page": true
+    },
+    {
+      "name": "Mix02Dispersao",
+      "group": "Movimento de Calda",
+      "summary": "Corrente helicoidal e varredura de alvo",
+      "page": true
+    },
+    {
+      "name": "Mix03Alvo",
+      "group": "Movimento de Calda",
+      "summary": "Deposição no alvo, absorção foliar e trilhas de moléculas",
+      "page": true
+    },
+    {
+      "name": "Mix04Sistema",
+      "group": "Movimento de Calda",
+      "summary": "Gradiente de pH e descontaminação",
+      "page": true
+    },
+    {
+      "name": "MotionEstados",
+      "group": "Estados",
+      "summary": "O verde da ação entra a 20% e sobe a 62% no hover.",
+      "page": true
+    },
+    {
+      "name": "Navigation",
+      "group": "Navegação",
+      "summary": "Navbar de vidro, abas, trilha, paginação e fluxo de etapas",
+      "page": true
+    },
+    {
+      "name": "PadraoPontilhadoImagem",
+      "group": "Padrões de Fundo",
+      "summary": "As nove referências aprovadas em 12/10/2026 no projeto ESTRUTURALLE, para HTML e edição de vídeo."
+    },
+    {
+      "name": "PadraoPontilhadoSecoes",
+      "group": "Padrões de Fundo",
+      "summary": "Página."
+    },
+    {
+      "name": "PadroesPontos",
+      "group": "Padrões de Fundo",
+      "summary": "A malha de pontos da marca como padrão de fundo: densa (4px), sempre suave (claro a 6%, no máximo 10%), em versão cheia ou em degradê de transparência (vertica…",
+      "page": true
+    },
+    {
+      "name": "Product",
+      "group": "Produto",
+      "summary": "Cor secundária por linha, ficha rápida, doses e documentos",
+      "page": true
+    },
+    {
+      "name": "ProsaTecnica",
+      "group": "Prosa Técnica",
+      "summary": "Prosa em 680px, marcador verde, citação com barra verde de 2px",
+      "page": true
+    },
+    {
+      "name": "RadiusEscala",
+      "group": "Raios",
+      "summary": "Levemente arredondado: nunca quadrado, nunca pílula em superfície",
+      "page": true
+    },
+    {
+      "name": "RadiusUso",
+      "group": "Raios",
+      "summary": "Controle 6px, card 10px, painel 14px, superfície 18px",
+      "page": true
+    },
+    {
+      "name": "RodapeAssinaturas",
+      "group": "Rodapé",
+      "summary": "DESIGNED BY XERXIZ.COM, UMA EMPRESA 3F Group, Política e Termos",
+      "page": true
+    },
+    {
+      "name": "Sections",
+      "group": "Seções de Home",
+      "summary": "As 13 seções da home na ordem canônica, com o padrão de fundo de cada uma",
+      "page": true
+    },
+    {
+      "name": "SpaceEscala",
+      "group": "Espaçamento",
+      "summary": "Base 4px.",
+      "page": true
+    },
+    {
+      "name": "SpaceSecao",
+      "group": "Espaçamento",
+      "summary": "Quatro alturas de respiro entre blocos de página",
+      "page": true
+    },
+    {
+      "name": "SpaceUso",
+      "group": "Espaçamento",
+      "summary": "Card canônico: padding 20, gap 12, rodapé separado por hairline",
+      "page": true
+    },
+    {
+      "name": "TabelaChaveValor",
+      "group": "Tabelas",
+      "summary": "Ficha rápida de produto: rótulo à esquerda, dado alinhado à direita",
+      "page": true
+    },
+    {
+      "name": "TabelaFicha",
+      "group": "Tabelas",
+      "summary": "Cabeçalho em Exo caixa-alta, hairline entre linhas, numerais tabulares",
+      "page": true
+    },
+    {
+      "name": "Temas",
+      "group": "Cores",
+      "summary": "data-theme=\"dark\" (padrão) e data-theme=\"light\", no html ou em qualquer bloco.",
+      "page": true
+    },
+    {
+      "name": "TomSobreTom",
+      "group": "Cores",
+      "summary": "A regra de camadas da ORVIX: toda caixa à frente de outra é sempre um pouco mais clara que a de trás."
+    },
+    {
+      "name": "TypeCorpo",
+      "group": "Escala Tipográfica",
+      "summary": "Be Vietnam Pro, altura de linha 1,6.",
+      "page": true
+    },
+    {
+      "name": "TypeDisplay",
+      "group": "Escala Tipográfica",
+      "summary": "Exo ExtraBold em caixa alta.",
+      "page": true
+    },
+    {
+      "name": "TypeLabels",
+      "group": "Tipografia",
+      "summary": "Exo caixa-alta com tracking largo.",
+      "page": true
+    },
+    {
+      "name": "TypeNumerico",
+      "group": "Tipografia",
+      "summary": "Numerais tabulares em toda ficha, dose e tabela.",
+      "page": true
+    },
+    {
+      "name": "TypePar",
+      "group": "Tipografia",
+      "summary": "Exo ExtraBold em título e nome de produto.",
+      "page": true
+    },
+    {
+      "name": "TypeTitulos",
+      "group": "Escala Tipográfica",
+      "summary": "Todo título em Exo ExtraBold, caixa alta.",
+      "page": true
+    },
+    {
+      "name": "VozExemplos",
+      "group": "Voz e Tom",
+      "summary": "Frases oficiais da marca, prontas para diagramar",
+      "page": true
+    },
+    {
+      "name": "VozVocabulario",
+      "group": "Voz e Tom",
+      "summary": "Voz técnica, fria e precisa.",
+      "page": true
+    }
+  ],
+  "assetGroups": [
+    {
+      "name": "Logos",
+      "tile": "l",
+      "order": [
+        "elemento-orvix-branco.svg",
+        "elemento-orvix-preto.svg",
+        "elemento-x-orvix-branco.svg",
+        "elemento-x-orvix-preto.svg",
+        "logo-clube-orvix-branco.svg",
+        "logo-clube-orvix-preto.svg",
+        "logo-orvix-para-videos-branco.svg",
+        "logo-orvix-para-videos-preto.svg",
+        "logo-orvix-principal-branco.svg",
+        "logo-orvix-principal-preto.svg",
+        "logo-orvix-principal-sem-assinatura-branco.svg",
+        "logo-orvix-principal-sem-assinatura-preto.svg",
+        "logo-orvix-quadrada-branco.svg",
+        "logo-orvix-quadrada-preto.svg",
+        "logo-orvix-quadrada-sem-assinatura-branco.svg",
+        "logo-orvix-quadrada-sem-assinatura-preto.svg",
+        "logo-orvix-sem-detalhes-branco.svg",
+        "logo-orvix-sem-detalhes-preto.svg",
+        "logo-orvix-sem-detalhes-sem-assinatura-branco.svg",
+        "logo-orvix-sem-detalhes-sem-assinatura-preto.svg",
+        "logo-orvix-x-detalhe-minimo-branco.svg",
+        "logo-orvix-x-detalhe-minimo-preto.svg",
+        "logo-orvix-x-detalhe-minimo-sem-assinatura-branco.svg",
+        "logo-orvix-x-detalhe-minimo-sem-assinatura-preto.svg"
+      ],
+      "files": [
+        {
+          "path": "assets/Logos/elemento-orvix-branco.svg",
+          "id": "334c7fdf95f8d201989a61ee8118137c"
+        },
+        {
+          "path": "assets/Logos/elemento-orvix-preto.svg",
+          "id": "e6ff050076ce3fa5d32cbdfc9a0dff73"
+        },
+        {
+          "path": "assets/Logos/elemento-x-orvix-branco.svg",
+          "id": "3d3c722f4e7207f389a8f961448d0b69"
+        },
+        {
+          "path": "assets/Logos/elemento-x-orvix-preto.svg",
+          "id": "2edacab321bb6041dfc821e9f8ba47f2"
+        },
+        {
+          "path": "assets/Logos/logo-clube-orvix-branco.svg",
+          "id": "78df973a39b40458439e925099b645b5"
+        },
+        {
+          "path": "assets/Logos/logo-clube-orvix-preto.svg",
+          "id": "244d261495fff3e4a55fafd491f0d7cb"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-para-videos-branco.svg",
+          "id": "d2532e2c26f5d81d2637dfa96e294105"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-para-videos-preto.svg",
+          "id": "ca1380471d5c6924e4b01ed603b6ad1a"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-principal-branco.svg",
+          "id": "319c85b4a15f2b9661f9558975cdf54e"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-principal-preto.svg",
+          "id": "99d1e572cb82297f7babbb86f84b2d3d"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-principal-sem-assinatura-branco.svg",
+          "id": "00dbc2dfede08926f53e92da61b7bef7"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-principal-sem-assinatura-preto.svg",
+          "id": "40f50f66c4eaf113498664c66f66b35d"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-quadrada-branco.svg",
+          "id": "9cab002f3bb5ebe4c8a25cdca9cd8554"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-quadrada-preto.svg",
+          "id": "d7af7805942277353d37ab0d6f75a301"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-quadrada-sem-assinatura-branco.svg",
+          "id": "deda07ef6b13d655d944b26e71a21c51"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-quadrada-sem-assinatura-preto.svg",
+          "id": "54999bd7002ce852ceb9acf9ab35cdda"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-sem-detalhes-branco.svg",
+          "id": "6acfff50fcf3e7eef45422bc5b972b9f"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-sem-detalhes-preto.svg",
+          "id": "9d037d227853264281ec7ae48ed68fff"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-sem-detalhes-sem-assinatura-branco.svg",
+          "id": "52553c25023f16df3df3622d01ba95d1"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-sem-detalhes-sem-assinatura-preto.svg",
+          "id": "cc8a80429a862a4d91e5f8edfcd8bf7c"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-x-detalhe-minimo-branco.svg",
+          "id": "fe4a3cfc622fdf3b93ea00be0bbe50dc"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-x-detalhe-minimo-preto.svg",
+          "id": "88836e101f2863253673ba81e5fb591e"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-x-detalhe-minimo-sem-assinatura-branco.svg",
+          "id": "afe2f613b0635d1b1d3b19f62823fdae"
+        },
+        {
+          "path": "assets/Logos/logo-orvix-x-detalhe-minimo-sem-assinatura-preto.svg",
+          "id": "7e8b220cbb82bf6cf7c487217066badf"
+        }
+      ]
+    },
+    {
+      "name": "Pontilhado",
+      "tile": "l",
+      "order": [
+        "fp-01-pontos-de-luz-em-onda.jpg",
+        "fp-02-pontos-de-luz-nas-faixas-do-x.jpg",
+        "fp-03-pontos-de-sombra-em-onda.jpg",
+        "fp-04-pontos-de-sombra-nas-faixas-do-x.jpg",
+        "fp-05-tela-perfurada.jpg",
+        "fp-06-pontos-no-verde-do-produto-em-onda.jpg",
+        "fp-07-pontos-no-verde-do-produto-nas-faixas-do-x.jpg",
+        "fp-08-base-fechada-em-pontos-com-malha-de-luz.jpg",
+        "fp-09-pontos-de-luz-so-nas-sombras.jpg"
+      ],
+      "files": [
+        {
+          "path": "assets/Pontilhado/fp-01-pontos-de-luz-em-onda.jpg",
+          "id": "7d3273efc5734f6fab0afc267b0b9070"
+        },
+        {
+          "path": "assets/Pontilhado/fp-02-pontos-de-luz-nas-faixas-do-x.jpg",
+          "id": "2fd3f3c13be8964087fac2174a3d8e67"
+        },
+        {
+          "path": "assets/Pontilhado/fp-03-pontos-de-sombra-em-onda.jpg",
+          "id": "3f16aa46ef907f50149839e376a50702"
+        },
+        {
+          "path": "assets/Pontilhado/fp-04-pontos-de-sombra-nas-faixas-do-x.jpg",
+          "id": "4207ef088bb34a8ad0efa2a35e5b7ef0"
+        },
+        {
+          "path": "assets/Pontilhado/fp-05-tela-perfurada.jpg",
+          "id": "3cfd35f92893b169106c32fec55821d5"
+        },
+        {
+          "path": "assets/Pontilhado/fp-06-pontos-no-verde-do-produto-em-onda.jpg",
+          "id": "b01cc2ed13082bd6c6a2f0d502bec42f"
+        },
+        {
+          "path": "assets/Pontilhado/fp-07-pontos-no-verde-do-produto-nas-faixas-do-x.jpg",
+          "id": "0cece73f9da8bcb39ba1fce04045f5c3"
+        },
+        {
+          "path": "assets/Pontilhado/fp-08-base-fechada-em-pontos-com-malha-de-luz.jpg",
+          "id": "5361c77559f340e82efcb7cf31392685"
+        },
+        {
+          "path": "assets/Pontilhado/fp-09-pontos-de-luz-so-nas-sombras.jpg",
+          "id": "a0801496bd235aeaff232b86c9f716d8"
+        }
+      ]
+    },
+    {
+      "name": "Uploads",
+      "files": [
+        {
+          "path": "assets/Uploads/BeVietnamPro-ExtraBold.ttf",
+          "id": "77866c3de8a1d912629091178562e132"
+        },
+        {
+          "path": "assets/Uploads/BeVietnamPro-ExtraBoldItalic.ttf",
+          "id": "5759bcc21b369fa6c008cc9e21298324"
+        },
+        {
+          "path": "assets/Uploads/BeVietnamPro-Italic.ttf",
+          "id": "27ccfefa6389c64768714ae1d622d51f"
+        },
+        {
+          "path": "assets/Uploads/BeVietnamPro-Medium.ttf",
+          "id": "ce657087585cbd0bce6d24c67126f870"
+        },
+        {
+          "path": "assets/Uploads/BeVietnamPro-MediumItalic.ttf",
+          "id": "8f17cd5614cf041cd3dcb8ea2e3a97d6"
+        },
+        {
+          "path": "assets/Uploads/BeVietnamPro-Regular.ttf",
+          "id": "f5c39ecfc3418f656d785b6330f4df5c"
+        },
+        {
+          "path": "assets/Uploads/Exo-ExtraBold.ttf",
+          "id": "c9ec1e88b538135168819f9ca06c2bdb"
+        },
+        {
+          "path": "assets/Uploads/Exo-ExtraBoldItalic.ttf",
+          "id": "0d0024c649f35fbca8db706f300296cb"
+        },
+        {
+          "path": "assets/Uploads/Exo-Italic.ttf",
+          "id": "9fbd5b1b78effc572c7e9c96036267fd"
+        },
+        {
+          "path": "assets/Uploads/Exo-Medium.ttf",
+          "id": "6b75f8028c96b45bcd6770c13d928689"
+        },
+        {
+          "path": "assets/Uploads/Exo-MediumItalic.ttf",
+          "id": "a17c97655531b9ba78b48be0b8dde7ad"
+        },
+        {
+          "path": "assets/Uploads/Exo-Regular.ttf",
+          "id": "0cb642b34acaa7bd7b038da37f87ac91"
+        }
+      ]
+    }
+  ],
+  "storage": {
+    "files": {
+      "assets/Logos/elemento-orvix-branco.svg": {
+        "store": "blob",
+        "id": "334c7fdf95f8d201989a61ee8118137c",
+        "sha256": "9111abeff472acaf1e280a950f5974678c03fa2e581e96570b120b28e858e9e9",
+        "bytes": 25645,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/elemento-orvix-preto.svg": {
+        "store": "blob",
+        "id": "e6ff050076ce3fa5d32cbdfc9a0dff73",
+        "sha256": "1a054115704349209e19095616baa9212e08a24b05c80db2c6922e28b1124b02",
+        "bytes": 25645,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/elemento-x-orvix-branco.svg": {
+        "store": "blob",
+        "id": "3d3c722f4e7207f389a8f961448d0b69",
+        "sha256": "f530ae997885eba0de6d6fd16589dd80ada8ed7f2cde1ec047d0d951eba3b37e",
+        "bytes": 24179,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/elemento-x-orvix-preto.svg": {
+        "store": "blob",
+        "id": "2edacab321bb6041dfc821e9f8ba47f2",
+        "sha256": "9e16c677c7d12172126f2aa2e1c486da38643e3aedebf44a9b70e1590b24c072",
+        "bytes": 24179,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-clube-orvix-branco.svg": {
+        "store": "blob",
+        "id": "78df973a39b40458439e925099b645b5",
+        "sha256": "b84d620e6d4f7b72080f914fd52a80f7215b4d9e991b78ec37cec6cc0da2a690",
+        "bytes": 25520,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-clube-orvix-preto.svg": {
+        "store": "blob",
+        "id": "244d261495fff3e4a55fafd491f0d7cb",
+        "sha256": "ac06cd9a1c7390500dc93332f783f783c0a9cd2a0eca461742a33bb997537bfc",
+        "bytes": 25520,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-para-videos-branco.svg": {
+        "store": "blob",
+        "id": "d2532e2c26f5d81d2637dfa96e294105",
+        "sha256": "349c572ffa2f25cfe9648b486b412549a634a32e0bf6739a627c23a06c0ceb87",
+        "bytes": 33515,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-para-videos-preto.svg": {
+        "store": "blob",
+        "id": "ca1380471d5c6924e4b01ed603b6ad1a",
+        "sha256": "d9ef77fbac078861fdc28d3f8096a97bdc19592d8fc4e8c7d8e9955369121e66",
+        "bytes": 33515,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-principal-branco.svg": {
+        "store": "blob",
+        "id": "319c85b4a15f2b9661f9558975cdf54e",
+        "sha256": "113120bde41741196124fe883282fdf33ffd678e7bf70b18d1d48246870287dd",
+        "bytes": 31729,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-principal-preto.svg": {
+        "store": "blob",
+        "id": "99d1e572cb82297f7babbb86f84b2d3d",
+        "sha256": "a9842338afab662c14f496fe44a955f45d3e20561d8b34f4f8a57c96834ab4ed",
+        "bytes": 31729,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-principal-sem-assinatura-branco.svg": {
+        "store": "blob",
+        "id": "00dbc2dfede08926f53e92da61b7bef7",
+        "sha256": "9a5816d654c29857331ab3f9315ea2d08eebdf55f71403085df6e60216a487a2",
+        "bytes": 26493,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-principal-sem-assinatura-preto.svg": {
+        "store": "blob",
+        "id": "40f50f66c4eaf113498664c66f66b35d",
+        "sha256": "b2d6fc0e7f8e30e1a4230d27fd858b93f5ef8406f37b7004a26a938933d0958d",
+        "bytes": 26493,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-quadrada-branco.svg": {
+        "store": "blob",
+        "id": "9cab002f3bb5ebe4c8a25cdca9cd8554",
+        "sha256": "d3765953ebd9a078fe9d39881918e1296664f08c76cde802c3357d196027b9c9",
+        "bytes": 31367,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-quadrada-preto.svg": {
+        "store": "blob",
+        "id": "d7af7805942277353d37ab0d6f75a301",
+        "sha256": "2375b5e834089fe5ffe653266639a3ed631ee512bc4c2a2ee3ee7cd61a69792d",
+        "bytes": 31367,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-quadrada-sem-assinatura-branco.svg": {
+        "store": "blob",
+        "id": "deda07ef6b13d655d944b26e71a21c51",
+        "sha256": "35d3da9ece1660c0f440153c43adcf28b72f84faa539a7610c6856e9b1f4d550",
+        "bytes": 26287,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-quadrada-sem-assinatura-preto.svg": {
+        "store": "blob",
+        "id": "54999bd7002ce852ceb9acf9ab35cdda",
+        "sha256": "2795fdfd8aba681396cf269ef0623f590b564964a2741f1730e1d03398ffc643",
+        "bytes": 26287,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-sem-detalhes-branco.svg": {
+        "store": "blob",
+        "id": "6acfff50fcf3e7eef45422bc5b972b9f",
+        "sha256": "6fa79a12bec212be3cd256c8ff44ed81ee79fcfad3280b4378b06325e6d0d019",
+        "bytes": 7788,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-sem-detalhes-preto.svg": {
+        "store": "blob",
+        "id": "9d037d227853264281ec7ae48ed68fff",
+        "sha256": "0b8971fa89e89e5b1920ec1c3ad2a6d7391cead876257dee94e913d0de7c55bc",
+        "bytes": 7788,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-sem-detalhes-sem-assinatura-branco.svg": {
+        "store": "blob",
+        "id": "52553c25023f16df3df3622d01ba95d1",
+        "sha256": "efe3f0881f2c2c1c82558ff6addced021c1417fe63a81699327a6a54aa58a193",
+        "bytes": 2499,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-sem-detalhes-sem-assinatura-preto.svg": {
+        "store": "blob",
+        "id": "cc8a80429a862a4d91e5f8edfcd8bf7c",
+        "sha256": "b54366bbaa9a5cc56477c09d383d47f2bb2b50bc7d84ad8d4fa9dfd2c03c47b3",
+        "bytes": 2499,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-x-detalhe-minimo-branco.svg": {
+        "store": "blob",
+        "id": "fe4a3cfc622fdf3b93ea00be0bbe50dc",
+        "sha256": "2abc141233a7484d624c11f94ec6ecd78a8a02e8a918c4c3c6bfb2a9024609d2",
+        "bytes": 13165,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-x-detalhe-minimo-preto.svg": {
+        "store": "blob",
+        "id": "88836e101f2863253673ba81e5fb591e",
+        "sha256": "b9d0d1300baf765b627bc099601fafd2a9f76990129501db1276f65cfcc2bbeb",
+        "bytes": 13165,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-x-detalhe-minimo-sem-assinatura-branco.svg": {
+        "store": "blob",
+        "id": "afe2f613b0635d1b1d3b19f62823fdae",
+        "sha256": "518835c6958bdcc6a5085dc999e58420bd2d43b85583f56eaa94fc768c1a86e1",
+        "bytes": 7998,
+        "type": "image/svg+xml"
+      },
+      "assets/Logos/logo-orvix-x-detalhe-minimo-sem-assinatura-preto.svg": {
+        "store": "blob",
+        "id": "7e8b220cbb82bf6cf7c487217066badf",
+        "sha256": "b1f0f9a949260ca36d3112136b45e10dabda96eca5ff20a22f4f776c91cd43a9",
+        "bytes": 7998,
+        "type": "image/svg+xml"
+      },
+      "assets/Pontilhado/fp-01-pontos-de-luz-em-onda.jpg": {
+        "store": "blob",
+        "id": "7d3273efc5734f6fab0afc267b0b9070",
+        "sha256": "86b7ebfad646e7a61849f1101a6783c14b9e41aeec17a1fa0e1204b7c162cfa0",
+        "bytes": 398202,
+        "type": "image/jpeg"
+      },
+      "assets/Pontilhado/fp-02-pontos-de-luz-nas-faixas-do-x.jpg": {
+        "store": "blob",
+        "id": "2fd3f3c13be8964087fac2174a3d8e67",
+        "sha256": "13215a10a7097074aec42bfa9b743bd766c28ad88d601b557f466c06613af3e6",
+        "bytes": 420665,
+        "type": "image/jpeg"
+      },
+      "assets/Pontilhado/fp-03-pontos-de-sombra-em-onda.jpg": {
+        "store": "blob",
+        "id": "3f16aa46ef907f50149839e376a50702",
+        "sha256": "f8d5e701ee058a5592a362f34fc2563369f8d801dd3efd7168731a5189a3d1a3",
+        "bytes": 320434,
+        "type": "image/jpeg"
+      },
+      "assets/Pontilhado/fp-04-pontos-de-sombra-nas-faixas-do-x.jpg": {
+        "store": "blob",
+        "id": "4207ef088bb34a8ad0efa2a35e5b7ef0",
+        "sha256": "f9cd06a10b8c3065dd0c074eee79888123f338289a87ae52c4a384465f60f6d3",
+        "bytes": 288590,
+        "type": "image/jpeg"
+      },
+      "assets/Pontilhado/fp-05-tela-perfurada.jpg": {
+        "store": "blob",
+        "id": "3cfd35f92893b169106c32fec55821d5",
+        "sha256": "3643ce64c1c949814e5b203e823dc71de2bcdb00554d447f6a7d349009c94d8c",
+        "bytes": 481901,
+        "type": "image/jpeg"
+      },
+      "assets/Pontilhado/fp-06-pontos-no-verde-do-produto-em-onda.jpg": {
+        "store": "blob",
+        "id": "b01cc2ed13082bd6c6a2f0d502bec42f",
+        "sha256": "a0ad055eb03e5072da4049f7c8843e6e848b89c2f6187cf06c76b6d26cadbba8",
+        "bytes": 246877,
+        "type": "image/jpeg"
+      },
+      "assets/Pontilhado/fp-07-pontos-no-verde-do-produto-nas-faixas-do-x.jpg": {
+        "store": "blob",
+        "id": "0cece73f9da8bcb39ba1fce04045f5c3",
+        "sha256": "75884793dff4b406cb3e74a54c7561da599359b78caa49c55e77d00f78241e76",
+        "bytes": 223995,
+        "type": "image/jpeg"
+      },
+      "assets/Pontilhado/fp-08-base-fechada-em-pontos-com-malha-de-luz.jpg": {
+        "store": "blob",
+        "id": "5361c77559f340e82efcb7cf31392685",
+        "sha256": "e25f40e5a238e096061e142bbae894d21f7f21e36ac39ec28b7ec62fb2ca6b1f",
+        "bytes": 326745,
+        "type": "image/jpeg"
+      },
+      "assets/Pontilhado/fp-09-pontos-de-luz-so-nas-sombras.jpg": {
+        "store": "blob",
+        "id": "a0801496bd235aeaff232b86c9f716d8",
+        "sha256": "4086ca8fadd99dc8eeaf3abcc06beb0f70f3663b04ee03e608216074d65cf183",
+        "bytes": 201999,
+        "type": "image/jpeg"
+      },
+      "assets/Uploads/BeVietnamPro-ExtraBold.ttf": {
+        "store": "blob",
+        "id": "77866c3de8a1d912629091178562e132",
+        "sha256": "39a30dd4a43c2912796983167cc669d772d4c01b9bedda9385c2b4f562ef76a0",
+        "bytes": 138372,
+        "type": "font/ttf"
+      },
+      "assets/Uploads/BeVietnamPro-ExtraBoldItalic.ttf": {
+        "store": "blob",
+        "id": "5759bcc21b369fa6c008cc9e21298324",
+        "sha256": "fad54ddd2e33629fb5e303fa3fc6508ded1b86747ff193223343746f81b268e2",
+        "bytes": 136856,
+        "type": "font/ttf"
+      },
+      "assets/Uploads/BeVietnamPro-Italic.ttf": {
+        "store": "blob",
+        "id": "27ccfefa6389c64768714ae1d622d51f",
+        "sha256": "a66bc74c4ca143f200ead4f93fda51fabe0d53df23662ba6ad0617c3866bf33b",
+        "bytes": 135952,
+        "type": "font/ttf"
+      },
+      "assets/Uploads/BeVietnamPro-Medium.ttf": {
+        "store": "blob",
+        "id": "ce657087585cbd0bce6d24c67126f870",
+        "sha256": "dd962b7d1958924d745f32bcbe5a8677d85f735b84453ceee3d30bc5179b2926",
+        "bytes": 134668,
+        "type": "font/ttf"
+      },
+      "assets/Uploads/BeVietnamPro-MediumItalic.ttf": {
+        "store": "blob",
+        "id": "8f17cd5614cf041cd3dcb8ea2e3a97d6",
+        "sha256": "5233f641be9da3e531e0236b70b0df9c303c6d0d5ceb78afa5134e18e03c8537",
+        "bytes": 137004,
+        "type": "font/ttf"
+      },
+      "assets/Uploads/BeVietnamPro-Regular.ttf": {
+        "store": "blob",
+        "id": "f5c39ecfc3418f656d785b6330f4df5c",
+        "sha256": "963d97c63f832e7216e71afb32f9c2da6e4a2d7d73ea3469df809a43dfe0d151",
+        "bytes": 131660,
+        "type": "font/ttf"
+      },
+      "assets/Uploads/Exo-ExtraBold.ttf": {
+        "store": "blob",
+        "id": "c9ec1e88b538135168819f9ca06c2bdb",
+        "sha256": "eaae5ba28c088fdce5dbe80a79ab845f11dd7932f1ab73b53f01a4f8fde9f2e1",
+        "bytes": 91400,
+        "type": "font/ttf"
+      },
+      "assets/Uploads/Exo-ExtraBoldItalic.ttf": {
+        "store": "blob",
+        "id": "0d0024c649f35fbca8db706f300296cb",
+        "sha256": "6e41cb37d24fd48edb8fd3b0bd92d309cd3f761b2351d5ae63811374a392cf01",
+        "bytes": 94188,
+        "type": "font/ttf"
+      },
+      "assets/Uploads/Exo-Italic.ttf": {
+        "store": "blob",
+        "id": "9fbd5b1b78effc572c7e9c96036267fd",
+        "sha256": "723d9b94ef757da0ed72f70b46a595b210f0c3b0be75c13afd9824605df4e5d9",
+        "bytes": 94264,
+        "type": "font/ttf"
+      },
+      "assets/Uploads/Exo-Medium.ttf": {
+        "store": "blob",
+        "id": "6b75f8028c96b45bcd6770c13d928689",
+        "sha256": "bf9eca648adc3bb26f8c17deeb527a3e46f44c6c076a32782e43a0ffa2719cb9",
+        "bytes": 91596,
+        "type": "font/ttf"
+      },
+      "assets/Uploads/Exo-MediumItalic.ttf": {
+        "store": "blob",
+        "id": "a17c97655531b9ba78b48be0b8dde7ad",
+        "sha256": "8c790a041e7fc0169ab1c1a668a193ee52770c2e13de1528e94aed177e568850",
+        "bytes": 94340,
+        "type": "font/ttf"
+      },
+      "assets/Uploads/Exo-Regular.ttf": {
+        "store": "blob",
+        "id": "0cb642b34acaa7bd7b038da37f87ac91",
+        "sha256": "cbc3569af02d5f9fe277db74e1c3757f39143e444dcfb8d7e980cfea6e164802",
+        "bytes": 91580,
+        "type": "font/ttf"
+      }
+    },
+    "blobBytesUsed": 4793658
+  }
+}

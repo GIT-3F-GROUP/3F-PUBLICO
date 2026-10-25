@@ -1,0 +1,50 @@
+<!-- @dsCard group="Produto" height=560 subtitle="As quatro linhas ORVIX: TEC, ORV Clear, ORVALE e VIX" page -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--gap-loose)}
+.ln{position:relative;display:flex;flex-direction:column;gap:var(--space-2);padding:var(--pad-card-lg);border-radius:var(--radius-card);background:var(--surface-card);border:1px solid var(--border);box-shadow:var(--sheen-top),var(--shadow-1);overflow:hidden}
+.ln::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--linha)}
+.shot{display:grid;place-items:center;height:168px;border-radius:var(--radius-md);background:radial-gradient(80% 90% at 50% 100%,rgba(232,234,238,.08) 0%,rgba(232,234,238,0) 70%)}
+.shot img{max-height:160px;width:auto;filter:drop-shadow(0 4px 14px rgba(8,12,18,.6))}
+.badge{align-self:flex-start;font-family:var(--font-display);font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);display:inline-flex;align-items:center;gap:8px;margin-bottom:var(--space-2)}.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--linha);flex:none}
+.name{margin:0 0 var(--space-1);font-family:var(--font-display);font-weight:800;font-size:20px;line-height:1.15;text-transform:uppercase;color:var(--text-strong)}
+.fam{margin:0;font:var(--type-caption);color:var(--text-muted)}
+.fam b{color:var(--text-body);font-weight:500}
+.prom{margin:var(--space-2) 0 var(--space-4);font:var(--type-body-sm);color:var(--text-muted);max-width:40ch}
+.foot{margin-top:auto;padding-top:var(--space-4);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:var(--space-3);flex-wrap:wrap}
+.foot .orvix-mono{font-size:11px;color:var(--text-subtle)}
+.note{margin:14px 0 0;font:var(--type-caption);color:var(--text-muted)}
+</style>
+</head><body><div class="ovx-stage">
+<div class="g">
+<article class="ln" style="--linha:var(--produto-verde)">
+  <span class="badge">Tecnologia de aplicação</span>
+  <h3 class="name">Linha TEC</h3>
+  <p class="fam"><b>Adjuvantes ORV7</b> · <b>Adjuvantes ORV</b> · <b>SOLV pH</b></p>
+  <p class="prom">Calda estável, gota uniforme e alvo bem coberto. Do preparo da calda ao alvo.</p>
+  <div class="foot"><span class="orvix-mono">ORV7 Drop Power · ORV7 Aero Guard</span><button class="ovx-btn ovx-btn--primary ovx-btn--sm">Ver linha</button></div>
+</article>
+<article class="ln" style="--linha:var(--produto-azul-profundo)">
+  <span class="badge">Limpeza de equipamento</span>
+  <h3 class="name">Linha ORV Clear</h3>
+  <p class="fam"><b>Limpa Tanque</b> · <b>Limpa Fuso</b></p>
+  <p class="prom">Descontaminação do circuito hidráulico e cuidado com o equipamento depois do uso.</p>
+  <div class="foot"><span class="orvix-mono">Depois de cada aplicação</span><button class="ovx-btn ovx-btn--primary ovx-btn--sm">Ver linha</button></div>
+</article>
+<article class="ln" style="--linha:var(--produto-laranja)">
+  <span class="badge">Óleos agrícolas</span>
+  <h3 class="name">Linha ORVALE</h3>
+  <p class="fam"><b>Citrus</b> · <b>Mineral</b> · <b>Vegetal</b></p>
+  <p class="prom">Penetração, aderência e proteção da gota com óleos de três origens.</p>
+  <div class="foot"><span class="orvix-mono">Citrus Prime · Mineral Platinum</span><button class="ovx-btn ovx-btn--primary ovx-btn--sm">Ver linha</button></div>
+</article>
+<article class="ln" style="--linha:var(--produto-lima)">
+  <span class="badge">Fertilizantes</span>
+  <h3 class="name">Linha VIX</h3>
+  <p class="fam"><b>VIX HS</b> · <b>VIX SS</b> · <b>VIX Classe A</b></p>
+  <p class="prom">Nutrição de precisão por estádio fenológico. O segredo não está só na dose. Está na fisiologia.</p>
+  <div class="foot"><span class="orvix-mono">Hidrossolúveis · Sólidos · Organominerais</span><button class="ovx-btn ovx-btn--primary ovx-btn--sm">Ver linha</button></div>
+</article>
+</div>
+<p class="note">Uma cor de produto por card, na barra lateral. A ação segue sempre verde. Tratamento de sementes não faz parte do portfólio ORVIX.</p>
+</div></body></html>

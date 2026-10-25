@@ -1,0 +1,100 @@
+<!-- @dsCard group="Formulários" height=400 subtitle="Campo um passo mais claro que o card, foco verde, escolha, alternância e escala" page -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.ovx-stage{padding:20px;background:radial-gradient(120% 130% at 12% 0%,var(--surface-1) 0%,var(--bg-deep) 62%)}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px 18px;align-items:start}.stack{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const {
+  Field,
+  Input,
+  Textarea,
+  Select,
+  SearchField,
+  Checkbox,
+  Radio,
+  Switch,
+  Slider
+} = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  const [v, setV] = React.useState(120);
+  return /*#__PURE__*/React.createElement("div", {
+    className: "g"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "stack"
+  }, /*#__PURE__*/React.createElement(SearchField, null), /*#__PURE__*/React.createElement(Field, {
+    label: "Munic\xEDpio",
+    hint: "Onde est\xE1 a lavoura",
+    htmlFor: "a"
+  }, /*#__PURE__*/React.createElement(Input, {
+    id: "a",
+    iconLeft: "map-pin",
+    defaultValue: "Sorriso"
+  })), /*#__PURE__*/React.createElement(Field, {
+    label: "Volume de calda",
+    htmlFor: "b"
+  }, /*#__PURE__*/React.createElement(Input, {
+    id: "b",
+    mono: true,
+    unit: "L/ha",
+    defaultValue: "80"
+  })), /*#__PURE__*/React.createElement(Field, {
+    label: "Registro MAPA",
+    error: "Registro n\xE3o localizado",
+    htmlFor: "c"
+  }, /*#__PURE__*/React.createElement(Input, {
+    id: "c",
+    mono: true,
+    invalid: true,
+    defaultValue: "MT 002087-7"
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "stack"
+  }, /*#__PURE__*/React.createElement(Field, {
+    label: "Cultura",
+    htmlFor: "d"
+  }, /*#__PURE__*/React.createElement(Select, {
+    id: "d",
+    placeholder: "Selecione a cultura",
+    options: ["Soja", "Milho", "Algodão", "Feijão"]
+  })), /*#__PURE__*/React.createElement(Field, {
+    label: "Observa\xE7\xE3o t\xE9cnica",
+    htmlFor: "e"
+  }, /*#__PURE__*/React.createElement(Textarea, {
+    id: "e",
+    rows: "2",
+    placeholder: "Descreva a opera\xE7\xE3o"
+  })), /*#__PURE__*/React.createElement(Field, {
+    label: "Dose ORV7 · " + v + " mL/ha"
+  }, /*#__PURE__*/React.createElement(Slider, {
+    min: 30,
+    max: 200,
+    value: v,
+    onChange: e => setV(+e.target.value),
+    scale: ["30", "200 mL/ha"]
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "stack"
+  }, /*#__PURE__*/React.createElement(Checkbox, {
+    label: "Aceito receber conte\xFAdo t\xE9cnico",
+    description: "Desmarcado por padr\xE3o"
+  }), /*#__PURE__*/React.createElement(Checkbox, {
+    label: "Aplica\xE7\xE3o a\xE9rea",
+    defaultChecked: true
+  }), /*#__PURE__*/React.createElement(Checkbox, {
+    label: "Sem estoque",
+    disabled: true
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "stack"
+  }, /*#__PURE__*/React.createElement(Radio, {
+    name: "eixo",
+    label: "A\xE7\xF5es de calda",
+    description: "pH, espuma, solubilidade",
+    defaultChecked: true
+  }), /*#__PURE__*/React.createElement(Radio, {
+    name: "eixo",
+    label: "A\xE7\xF5es de gota",
+    description: "Tens\xE3o superficial, deriva"
+  }), /*#__PURE__*/React.createElement(Switch, {
+    label: "Notificar por WhatsApp",
+    defaultChecked: true
+  })));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(Demo, null));
+</script></div></body></html>

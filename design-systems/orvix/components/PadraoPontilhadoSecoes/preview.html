@@ -1,0 +1,47 @@
+<!-- @dsCard group="Padrões de Fundo" height=980 subtitle="Ideias de uso: página com seções alternando as três bases, pontilhado sutil só onde não há imagem, e peças de publicidade" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.lbl{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}.ttl{font-family:var(--font-display);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin:0 0 10px}.pg{border-radius:var(--radius-card);border:var(--hairline);overflow:hidden}.sec{padding:28px 20px;border-top:var(--hairline)}.sec:first-child{border-top:0}.sec .ovx-pp__conteudo{padding:28px 20px}.sec.ovx-pp{padding:0}.tag{float:right;margin-left:12px}.cards{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.cards .ovx-card{min-height:96px}.cards strong{display:block;font-family:var(--font-display);font-weight:800;color:var(--text-strong);margin-bottom:4px}.cards span{font:var(--type-body-sm);color:var(--text-muted)}.fecha{text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}.fecha h2,.ad h2{margin:0;font-family:var(--font-display);font-weight:800;color:var(--text-strong);line-height:1.08}.fecha h2{font-size:26px;max-width:22ch}.ads{margin-top:18px;display:grid;grid-template-columns:minmax(150px,200px) minmax(180px,260px) 1fr;gap:12px;align-items:start}.ads>*{min-width:0}@media (max-width:900px){.ads{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.ad--banner{grid-column:1/-1}}.ad{border-radius:var(--radius-md);border:var(--hairline)}.ad .ovx-pp__conteudo{height:100%;padding:16px;display:flex;flex-direction:column;gap:10px}.ad--story{aspect-ratio:9/16}.ad--feed{aspect-ratio:1}.ad--banner{aspect-ratio:3/1;min-height:110px}.ad h2{font-size:20px}.ad--story h2{margin-top:auto}.ad p{margin:0;font:var(--type-body-sm);color:var(--text-body)}.ad--banner .ovx-pp__conteudo{flex-direction:row;align-items:center;justify-content:space-between;gap:16px}.ad--banner h2{font-size:18px;max-width:20ch}@media (max-width:420px){.ads{grid-template-columns:minmax(0,1fr)}.ad--story{aspect-ratio:auto;min-height:320px}.ad--banner{aspect-ratio:auto}.ad--banner .ovx-pp__conteudo{flex-direction:column;align-items:flex-start}}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const h = React.createElement, F = React.Fragment;
+const { PadraoPontilhado, Logo, Eyebrow, SectionHeading, Button, Card, Badge } = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return h(F, null,
+    h("p", { className: "ttl" }, "Página: tom sobre tom entre seções"),
+    h("div", { className: "pg" },
+      h("section", { className: "sec ovx-fundo--preto" },
+        h(Badge, { className: "tag" }, "preto · sem pontos"),
+        h(SectionHeading, { eyebrow: "Tecnologia de aplicação", title: "Cada gota no alvo certo", lead: "Abertura limpa sobre o preto ORVIX. A imagem, quando houver, fica nesta seção, sem pontilhado." })),
+      h(PadraoPontilhado, { className: "sec ovx-fundo--grafite" },
+        h(Badge, { className: "tag" }, "grafite · pontilhado tom"),
+        h(SectionHeading, { eyebrow: "Linhas ORVIX", title: "Seção sem imagem ganha textura sutil" }),
+        h("div", { className: "cards" },
+          h(Card, null, h("strong", null, "Adjuvantes"), h("span", null, "Calda estável e gota uniforme.")),
+          h(Card, null, h("strong", null, "Nutrição"), h("span", null, "Foliares para cada fase do ciclo.")),
+          h(Card, null, h("strong", null, "Tecnologia"), h("span", null, "Medição e ajuste da aplicação.")))),
+      h("section", { className: "sec ovx-fundo--degrade" },
+        h(Badge, { className: "tag" }, "degradê · sem pontos"),
+        h(SectionHeading, { eyebrow: "Conteúdo técnico", title: "Respiro entre seções texturizadas", lead: "Nem toda seção leva o padrão. Ele aparece em algumas, nunca como regra da página." })),
+      h(PadraoPontilhado, { desenho: "faixas", className: "sec ovx-fundo--preto" },
+        h("div", { className: "fecha" },
+          h(Logo, { variant: "principal", size: "lg" }),
+          h("h2", null, "Fale com um consultor ORVIX"),
+          h(Button, { variant: "primary", icon: "phone" }, "Falar com consultor")))),
+    h("p", { className: "ttl", style: { marginTop: 22 } }, "Publicidade: story, feed e banner"),
+    h("div", { className: "ads" },
+      h(PadraoPontilhado, { className: "ad ad--story ovx-fundo--degrade" },
+        h(Logo, { variant: "principal-sem-assinatura", size: "md" }),
+        h("h2", null, "Calda certa, aplicação precisa."),
+        h("p", null, "Tecnologia de aplicação agrícola."),
+        h(Button, { variant: "primary", size: "sm" }, "Saiba mais")),
+      h(PadraoPontilhado, { desenho: "faixas", className: "ad ad--feed ovx-fundo--grafite" },
+        h(Eyebrow, null, "ORV7 Drop Power"),
+        h("h2", null, "Emulsifica, dispersa e controla a espuma."),
+        h("p", { style: { marginTop: "auto" } }, "orvix.com.br")),
+      h(PadraoPontilhado, { className: "ad ad--banner ovx-fundo--preto" },
+        h(Logo, { variant: "principal-sem-assinatura", size: "md" }),
+        h("h2", null, "Tecnologia de aplicação do tanque ao alvo"),
+        h(Button, { variant: "secondary", size: "sm", iconRight: "arrow-right" }, "Conheça"))));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(h(Demo));
+</script></div></body></html>

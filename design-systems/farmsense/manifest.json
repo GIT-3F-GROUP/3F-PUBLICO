@@ -1,0 +1,681 @@
+{
+  "manifestVersion": 3,
+  "name": "FarmSense Design System",
+  "namespace": "FarmSenseDesignSystem_c4c636",
+  "files": [
+    "assets/Logos/README.md",
+    "assets/Patterns/README.md",
+    "components/Alert/Alert.d.ts",
+    "components/Alert/README.md",
+    "components/BarMeter/BarMeter.d.ts",
+    "components/BarMeter/README.md",
+    "components/Breadcrumb/Breadcrumb.d.ts",
+    "components/Breadcrumb/README.md",
+    "components/Button/Button.d.ts",
+    "components/Button/README.md",
+    "components/Checkbox/Checkbox.d.ts",
+    "components/Checkbox/README.md",
+    "components/Chip/Chip.d.ts",
+    "components/Chip/README.md",
+    "components/DataTable/DataTable.d.ts",
+    "components/DataTable/README.md",
+    "components/Divider/Divider.d.ts",
+    "components/Divider/README.md",
+    "components/DotNav/DotNav.d.ts",
+    "components/DotNav/README.md",
+    "components/EmptyState/EmptyState.d.ts",
+    "components/EmptyState/README.md",
+    "components/GlassCard/GlassCard.d.ts",
+    "components/GlassCard/README.md",
+    "components/Icon/Icon.d.ts",
+    "components/Icon/README.md",
+    "components/IconButton/IconButton.d.ts",
+    "components/IconButton/README.md",
+    "components/Input/Input.d.ts",
+    "components/Input/README.md",
+    "components/Kicker/Kicker.d.ts",
+    "components/Kicker/README.md",
+    "components/KpiTile/KpiTile.d.ts",
+    "components/KpiTile/README.md",
+    "components/Logo/Logo.d.ts",
+    "components/Logo/README.md",
+    "components/LogoCard/LogoCard.d.ts",
+    "components/LogoCard/README.md",
+    "components/NeonDot/NeonDot.d.ts",
+    "components/NeonDot/README.md",
+    "components/Pagination/Pagination.d.ts",
+    "components/Pagination/README.md",
+    "components/PatternLayer/PatternLayer.d.ts",
+    "components/PatternLayer/README.md",
+    "components/ProgressRing/ProgressRing.d.ts",
+    "components/ProgressRing/README.md",
+    "components/QuoteBlock/QuoteBlock.d.ts",
+    "components/QuoteBlock/README.md",
+    "components/Radio/README.md",
+    "components/Radio/Radio.d.ts",
+    "components/RuleCard/README.md",
+    "components/RuleCard/RuleCard.d.ts",
+    "components/SearchField/README.md",
+    "components/SearchField/SearchField.d.ts",
+    "components/SectionHeader/README.md",
+    "components/SectionHeader/SectionHeader.d.ts",
+    "components/Select/README.md",
+    "components/Select/Select.d.ts",
+    "components/Skeleton/README.md",
+    "components/Skeleton/Skeleton.d.ts",
+    "components/Sparkline/README.md",
+    "components/Sparkline/Sparkline.d.ts",
+    "components/StatRow/README.md",
+    "components/StatRow/StatRow.d.ts",
+    "components/StatusPill/README.md",
+    "components/StatusPill/StatusPill.d.ts",
+    "components/Surface/README.md",
+    "components/Surface/Surface.d.ts",
+    "components/Swatch/README.md",
+    "components/Swatch/Swatch.d.ts",
+    "components/Switch/README.md",
+    "components/Switch/Switch.d.ts",
+    "components/Tabs/README.md",
+    "components/Tabs/Tabs.d.ts",
+    "components/Textarea/README.md",
+    "components/Textarea/Textarea.d.ts",
+    "components/Tile/README.md",
+    "components/Tile/Tile.d.ts",
+    "components/Tooltip/README.md",
+    "components/Tooltip/Tooltip.d.ts",
+    "components/TopBar/README.md",
+    "components/TopBar/TopBar.d.ts",
+    "components/bundle.css",
+    "components/bundle.js",
+    "components/index.d.ts",
+    "fonts/BeVietnamPro-ExtraBold.ttf",
+    "fonts/BeVietnamPro-ExtraBoldItalic.ttf",
+    "fonts/BeVietnamPro-Italic.ttf",
+    "fonts/BeVietnamPro-Medium.ttf",
+    "fonts/BeVietnamPro-MediumItalic.ttf",
+    "fonts/BeVietnamPro-Regular.ttf",
+    "templates/apresentacao/Apresentacao.dc.html",
+    "templates/apresentacao/ds-base.js",
+    "templates/apresentacao/support.js",
+    "templates/relatorio-tecnico/RelatorioTecnico.dc.html",
+    "templates/relatorio-tecnico/ds-base.js",
+    "templates/relatorio-tecnico/support.js",
+    "tokens.css",
+    "ui_kits/manual/ManualApp.jsx",
+    "ui_kits/manual/ManualSections.jsx",
+    "ui_kits/manual/README.md",
+    "ui_kits/painel/PainelApp.jsx",
+    "ui_kits/painel/README.md",
+    "ui_kits/proposta/PropostaApp.jsx",
+    "ui_kits/proposta/PropostaPages.jsx",
+    "ui_kits/proposta/README.md"
+  ],
+  "libraries": [
+    {
+      "name": "react",
+      "version": "18.3.1",
+      "global": "React"
+    },
+    {
+      "name": "react-dom",
+      "version": "18.3.1",
+      "global": "ReactDOM"
+    }
+  ],
+  "components": [
+    {
+      "name": "LogoCard",
+      "group": "Brand",
+      "summary": "Cartão de aplicação da marca — usado no manual para mostrar a variante correta em cada fundo."
+    },
+    {
+      "name": "PatternLayer",
+      "group": "Brand",
+      "summary": "Assinatura ambiente da FarmSense."
+    },
+    {
+      "name": "QuoteBlock",
+      "group": "Brand",
+      "summary": "Citação editorial."
+    },
+    {
+      "name": "Swatch",
+      "group": "Brand",
+      "summary": "Amostra de cor do manual de marca."
+    },
+    {
+      "name": "Button",
+      "group": "Core",
+      "summary": "Botão principal da FarmSense — pílula, Be Vietnam Pro 500, usado em CTAs, cards e barras de ação."
+    },
+    {
+      "name": "Chip",
+      "group": "Core",
+      "summary": "Etiqueta de metadado em caixa alta, 11 px, tracking .12em."
+    },
+    {
+      "name": "Divider",
+      "group": "Core",
+      "summary": "Fio de 1 px em currentColor a 15 %."
+    },
+    {
+      "name": "GlassCard",
+      "group": "Core",
+      "summary": "Card de vidro fosco. É o container padrão para conteúdo sobreposto a uma superfície com padrão."
+    },
+    {
+      "name": "Icon",
+      "group": "Core",
+      "summary": "Ícone de linha do sistema — Lucide, traço 1,5 px, cantos retos, sempre em Verde Sombra (ou branco no escuro) com variação por opacidade, nunca por cor."
+    },
+    {
+      "name": "IconButton",
+      "group": "Core",
+      "summary": "Botão circular só-ícone, para barras de ferramentas, fechar e navegação compacta."
+    },
+    {
+      "name": "Kicker",
+      "group": "Core",
+      "summary": "Sobretítulo de seção: 11 px, caixa alta, tracking .18em, fio horizontal antes do texto."
+    },
+    {
+      "name": "Logo",
+      "group": "Core",
+      "summary": "Marca FarmSense em seis arquivos: horizontal e compacta × cor, mono branca e mono escura."
+    },
+    {
+      "name": "NeonDot",
+      "group": "Core",
+      "summary": "Ponto luminoso de 8 px que sinaliza estado."
+    },
+    {
+      "name": "SectionHeader",
+      "group": "Core",
+      "summary": "Abre toda seção do sistema."
+    },
+    {
+      "name": "Surface",
+      "group": "Core",
+      "summary": "Fundo de seção completo, com padrão ambiente já embutido. É a peça que dá ritmo a uma página."
+    },
+    {
+      "name": "Tile",
+      "group": "Core",
+      "summary": "Bloco tonal de conteúdo — o card mais simples do sistema, sem vidro e sem sombra."
+    },
+    {
+      "name": "BarMeter",
+      "group": "Data",
+      "summary": "Barra de comparação entre talhões."
+    },
+    {
+      "name": "DataTable",
+      "group": "Data",
+      "summary": "Tabela de relatório técnico."
+    },
+    {
+      "name": "KpiTile",
+      "group": "Data",
+      "summary": "Indicador-chave da FarmSense."
+    },
+    {
+      "name": "ProgressRing",
+      "group": "Data",
+      "summary": "Anel de progresso."
+    },
+    {
+      "name": "Sparkline",
+      "group": "Data",
+      "summary": "Série temporal de leitura contínua."
+    },
+    {
+      "name": "StatRow",
+      "group": "Data",
+      "summary": "Faixa horizontal de números institucionais, separados por fio vertical."
+    },
+    {
+      "name": "Alert",
+      "group": "Feedback",
+      "summary": "Aviso em bloco com fio de 3 px à esquerda."
+    },
+    {
+      "name": "EmptyState",
+      "group": "Feedback",
+      "summary": "Estado vazio — escreva o próximo passo, não a ausência."
+    },
+    {
+      "name": "RuleCard",
+      "group": "Feedback",
+      "summary": "Regra de uso do manual — o par faça/não faça aparece sempre em grade de três."
+    },
+    {
+      "name": "Skeleton",
+      "group": "Feedback",
+      "summary": "Placeholder enquanto o dado de campo carrega."
+    },
+    {
+      "name": "StatusPill",
+      "group": "Feedback",
+      "summary": "Estado de equipamento ou leitura."
+    },
+    {
+      "name": "Tooltip",
+      "group": "Feedback",
+      "summary": "Dica de uma linha, em Verde Sombra sólido."
+    },
+    {
+      "name": "Checkbox",
+      "group": "Forms",
+      "summary": "Seleção múltipla — escopo de serviço, itens de checklist de visita."
+    },
+    {
+      "name": "Input",
+      "group": "Forms",
+      "summary": "Campo de texto com rótulo em label e dica em body-sm a 55 %."
+    },
+    {
+      "name": "Radio",
+      "group": "Forms",
+      "summary": "Escolha exclusiva — plano contratado, tipo de amostragem."
+    },
+    {
+      "name": "SearchField",
+      "group": "Forms",
+      "summary": "Busca ao vivo em pílula."
+    },
+    {
+      "name": "Select",
+      "group": "Forms",
+      "summary": "Seleção única com chevron próprio, para cultura, safra e talhão."
+    },
+    {
+      "name": "Switch",
+      "group": "Forms",
+      "summary": "Interruptor para camadas de mapa e alertas."
+    },
+    {
+      "name": "Textarea",
+      "group": "Forms",
+      "summary": "Campo multilinha para observação de campo e recomendação técnica."
+    },
+    {
+      "name": "Breadcrumb",
+      "group": "Navigation",
+      "summary": "Trilha de navegação."
+    },
+    {
+      "name": "DotNav",
+      "group": "Navigation",
+      "summary": "Índice lateral de um documento longo."
+    },
+    {
+      "name": "Pagination",
+      "group": "Navigation",
+      "summary": "Paginação de listas e relatórios longos."
+    },
+    {
+      "name": "Tabs",
+      "group": "Navigation",
+      "summary": "Abas de seção."
+    },
+    {
+      "name": "TopBar",
+      "group": "Navigation",
+      "summary": "Barra superior de produto e site."
+    },
+    {
+      "name": "Catalogo01Botoes",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo02Chips",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo03Indicadores",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo04Campos",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo05Cards",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo06Kpis",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo07Graficos",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo08Tabelas",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo09Editorial",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo10Fios",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo11Icones",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo12Estados",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo13Navegacao",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo14Padroes",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo15Selos",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "Catalogo16Impresso",
+      "group": "Catálogo",
+      "page": true
+    },
+    {
+      "name": "CoresEscalaBege",
+      "group": "Cores",
+      "page": true
+    },
+    {
+      "name": "CoresEscalaVerde",
+      "group": "Cores",
+      "page": true
+    },
+    {
+      "name": "CoresNeons",
+      "group": "Cores",
+      "page": true
+    },
+    {
+      "name": "CoresPareamento",
+      "group": "Cores",
+      "page": true
+    },
+    {
+      "name": "CoresTintaClara",
+      "group": "Cores",
+      "page": true
+    },
+    {
+      "name": "CoresTintaEscura",
+      "group": "Cores",
+      "page": true
+    },
+    {
+      "name": "EspacoBreakpoints",
+      "group": "Espaço",
+      "page": true
+    },
+    {
+      "name": "EspacoElevacao",
+      "group": "Espaço",
+      "page": true
+    },
+    {
+      "name": "EspacoEscala",
+      "group": "Espaço",
+      "page": true
+    },
+    {
+      "name": "EspacoFios",
+      "group": "Espaço",
+      "page": true
+    },
+    {
+      "name": "EspacoRaios",
+      "group": "Espaço",
+      "page": true
+    },
+    {
+      "name": "KitManualDeMarca",
+      "group": "Manual de marca",
+      "page": true
+    },
+    {
+      "name": "KitPainelDeCampo",
+      "group": "Painel de campo",
+      "page": true
+    },
+    {
+      "name": "KitPropostaEditorial",
+      "group": "Proposta",
+      "page": true
+    },
+    {
+      "name": "MarcaEspacoDeProtecao",
+      "group": "Brand",
+      "page": true
+    },
+    {
+      "name": "MarcaLogoCompacta",
+      "group": "Brand",
+      "page": true
+    },
+    {
+      "name": "MarcaLogoPrincipal",
+      "group": "Brand",
+      "page": true
+    },
+    {
+      "name": "MarcaProibicoes",
+      "group": "Brand",
+      "page": true
+    },
+    {
+      "name": "MarcaTamanhosMinimos",
+      "group": "Brand",
+      "page": true
+    },
+    {
+      "name": "MovimentoAmbientePulso",
+      "group": "Movimento",
+      "page": true
+    },
+    {
+      "name": "MovimentoAmbienteVarredura",
+      "group": "Movimento",
+      "page": true
+    },
+    {
+      "name": "MovimentoDadosCarregamento",
+      "group": "Movimento",
+      "page": true
+    },
+    {
+      "name": "MovimentoDuracoesCurvas",
+      "group": "Movimento",
+      "page": true
+    },
+    {
+      "name": "MovimentoEntradaCorte",
+      "group": "Movimento",
+      "page": true
+    },
+    {
+      "name": "MovimentoEntradaDirecao",
+      "group": "Movimento",
+      "page": true
+    },
+    {
+      "name": "MovimentoHoverBorda",
+      "group": "Movimento",
+      "page": true
+    },
+    {
+      "name": "MovimentoHoverElevacao",
+      "group": "Movimento",
+      "page": true
+    },
+    {
+      "name": "MovimentoHoverLuz",
+      "group": "Movimento",
+      "page": true
+    },
+    {
+      "name": "MovimentoHoverMarcas",
+      "group": "Movimento",
+      "page": true
+    },
+    {
+      "name": "MovimentoPressFoco",
+      "group": "Movimento",
+      "page": true
+    },
+    {
+      "name": "MovimentoTexto",
+      "group": "Movimento",
+      "page": true
+    },
+    {
+      "name": "PadraoAlvoVarredura",
+      "group": "Padrões",
+      "page": true
+    },
+    {
+      "name": "PadraoCurvasDeNivel",
+      "group": "Padrões",
+      "page": true
+    },
+    {
+      "name": "PadraoGrade",
+      "group": "Padrões",
+      "page": true
+    },
+    {
+      "name": "PadraoGradientesProtecao",
+      "group": "Padrões",
+      "page": true
+    },
+    {
+      "name": "PadraoSoloTalhao",
+      "group": "Padrões",
+      "page": true
+    },
+    {
+      "name": "Superficie01Perola",
+      "group": "Superfícies",
+      "page": true
+    },
+    {
+      "name": "Superficie02Rastro",
+      "group": "Superfícies",
+      "page": true
+    },
+    {
+      "name": "Superficie03Estrada",
+      "group": "Superfícies",
+      "page": true
+    },
+    {
+      "name": "Superficie04Papel",
+      "group": "Superfícies",
+      "page": true
+    },
+    {
+      "name": "Superficie05Grade",
+      "group": "Superfícies",
+      "page": true
+    },
+    {
+      "name": "Superficie06Relevo",
+      "group": "Superfícies",
+      "page": true
+    },
+    {
+      "name": "Superficie07Alvo",
+      "group": "Superfícies",
+      "page": true
+    },
+    {
+      "name": "Superficie08Solo",
+      "group": "Superfícies",
+      "page": true
+    },
+    {
+      "name": "TipoArquivosDeFonte",
+      "group": "Tipografia",
+      "page": true
+    },
+    {
+      "name": "TipoDisplay",
+      "group": "Tipografia",
+      "page": true
+    },
+    {
+      "name": "TipoEscala",
+      "group": "Tipografia",
+      "page": true
+    },
+    {
+      "name": "TipoGeorgia",
+      "group": "Tipografia",
+      "page": true
+    },
+    {
+      "name": "TipoKicker",
+      "group": "Tipografia",
+      "page": true
+    },
+    {
+      "name": "TipoPesos",
+      "group": "Tipografia",
+      "page": true
+    }
+  ],
+  "assetGroups": [
+    {
+      "name": "Logos",
+      "tile": "l",
+      "order": [
+        "logo-horizontal.png",
+        "logo-horizontal-mono-branca.svg",
+        "logo-horizontal-mono-escura.svg",
+        "logo-compacta.png",
+        "logo-compacta-mono-branca.svg",
+        "logo-compacta-mono-escura.svg"
+      ]
+    },
+    {
+      "name": "Patterns",
+      "order": [
+        "contour-tonal.svg",
+        "contour-neon.svg",
+        "contour-sombra.svg",
+        "ridge-neon.svg",
+        "ridge-sombra.svg"
+      ]
+    }
+  ]
+}

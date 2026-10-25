@@ -1,0 +1,132 @@
+<!-- @dsCard group="Dados" height=430 subtitle="Card sólido, painel de vidro, números técnicos, tabela de ficha e badges" page -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.ovx-stage{padding:20px;background:radial-gradient(130% 120% at 82% 0%,var(--surface-1) 0%,var(--bg-deep) 60%)}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.stack{display:flex;flex-direction:column;gap:12px}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const {
+  Card,
+  CardHeader,
+  GlassPanel,
+  Stat,
+  StatGrid,
+  DataTable,
+  KeyValue,
+  Badge,
+  Tag,
+  Meter,
+  ProgressRing,
+  Divider
+} = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "g"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "stack"
+  }, /*#__PURE__*/React.createElement(Card, {
+    interactive: true
+  }, /*#__PURE__*/React.createElement(CardHeader, {
+    title: "ORV7 Drop Power",
+    sub: "Adjuvante premium multifuncional",
+    action: /*#__PURE__*/React.createElement(Badge, {
+      tone: "success",
+      dot: true
+    }, "Her\xF3i")
+  }), /*#__PURE__*/React.createElement("p", {
+    className: "ovx-card__body"
+  }, "Emulsificante, dispersante e antiespumante em um s\xF3 produto."), /*#__PURE__*/React.createElement("div", {
+    className: "ovx-card__footer"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "ovx-mono"
+  }, "30 a 200 mL/ha"), /*#__PURE__*/React.createElement(Badge, {
+    variant: "outline"
+  }, "5 L"))), /*#__PURE__*/React.createElement(Card, {
+    variant: "accent",
+    dots: true
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ovx-eyebrow ovx-eyebrow--rule"
+  }, "Ficha r\xE1pida"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 10
+    }
+  }), /*#__PURE__*/React.createElement(KeyValue, {
+    items: [["Densidade", "1,24"], ["pH", "2,0 a 4,0"], ["Cultura", "Todas"]]
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "ovx-taglist"
+  }, /*#__PURE__*/React.createElement(Tag, {
+    selected: true
+  }, "Emuls\xE3o"), /*#__PURE__*/React.createElement(Tag, {
+    interactive: true
+  }, "Dispers\xE3o"), /*#__PURE__*/React.createElement(Tag, {
+    interactive: true
+  }, "Antiespuma"), /*#__PURE__*/React.createElement(Tag, {
+    interactive: true
+  }, "Menos incrusta\xE7\xE3o"))), /*#__PURE__*/React.createElement("div", {
+    className: "stack"
+  }, /*#__PURE__*/React.createElement(GlassPanel, {
+    density: "base",
+    surface: true,
+    compact: true
+  }, /*#__PURE__*/React.createElement(StatGrid, {
+    items: [{
+      label: "Linhas",
+      value: "4"
+    }, {
+      label: "Frentes",
+      value: "3"
+    }, {
+      label: "Dose",
+      value: "200",
+      unit: "mL/ha",
+      accent: true
+    }]
+  })), /*#__PURE__*/React.createElement(DataTable, {
+    numeric: true,
+    caption: "Dose de refer\xEAncia por cultura",
+    columns: ["Cultura", "Dose", "Calda"],
+    rows: [["Soja", "120 mL/ha", "80 L/ha"], ["Milho", "150 mL/ha", "100 L/ha"], ["Algodão", "180 mL/ha", "120 L/ha"]]
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 16,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement(Meter, {
+    label: "Uniformidade da gota",
+    value: 86,
+    hint: "86%"
+  }), /*#__PURE__*/React.createElement(Meter, {
+    label: "Deriva",
+    value: 22,
+    hint: "22%",
+    tone: "warning",
+    thick: true
+  })), /*#__PURE__*/React.createElement(ProgressRing, {
+    value: 72,
+    label: "72%"
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 8,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/React.createElement(Badge, {
+    tone: "success"
+  }, "Publicado"), /*#__PURE__*/React.createElement(Badge, {
+    tone: "warning"
+  }, "Verificar"), /*#__PURE__*/React.createElement(Badge, {
+    tone: "danger"
+  }, "Vencido"), /*#__PURE__*/React.createElement(Badge, {
+    tone: "info"
+  }, "Base t\xE9cnica"), /*#__PURE__*/React.createElement(Badge, {
+    variant: "solid"
+  }, "Novo"))));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(Demo, null));
+</script></div></body></html>

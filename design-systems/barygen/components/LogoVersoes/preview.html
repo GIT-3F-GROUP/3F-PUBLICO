@@ -1,0 +1,91 @@
+<!-- @dsCard group="Marca" height=3730 subtitle="As 16 versões oficiais: com símbolo (colorida, monocromática preta e branca) e só texto, e qual usar em cada fundo" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN · Versões da logo</title>
+<style>
+body{margin:0;background:var(--surface-page);color:var(--text-body);font-family:var(--ff-body);font-size:16px;line-height:1.55}
+.pg{padding:48px 56px 72px;max-width:1120px;margin:0 auto}
+.ey{font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--text-accent)}
+h2{font-size:40px;font-weight:800;line-height:1.06;margin:12px 0 16px}
+h2 span{font-weight:600}
+h3{font-size:22px;font-weight:800;line-height:1.1;margin:0}
+h4{font-size:15px;font-weight:800;margin:0 0 12px;letter-spacing:.02em;text-transform:uppercase;font-family:var(--ff-display)}
+.lead{font-size:18px;color:var(--text-soft);max-width:62ch;margin:0}
+p{margin:0 0 12px;max-width:68ch}
+.sec{margin-top:64px}
+.sec-h{display:flex;gap:16px;align-items:baseline;margin-bottom:20px}
+.num{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--text-accent)}
+.arranjo+.arranjo{margin-top:32px}
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.dois{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.palco{min-height:170px;display:grid;place-items:center;padding:28px 24px}
+.palco svg{width:100%;max-width:250px;height:auto}
+.palco.v svg{max-width:130px}
+.palco.t svg{max-width:200px}
+.b-claro{background:var(--brand-amarelo-suave)} .b-preto{background:#000} .b-amarelo{background:var(--brand-amarelo-principal)}
+.info{padding:14px 16px 16px;font-size:13.5px;color:var(--text-soft);border-top:1px solid var(--rule-soft);flex:1}
+.tag{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-accent);margin-bottom:2px}
+.arq{display:block;margin-top:6px;font-family:var(--ff-mono);font-size:11px;color:var(--text-muted)}
+.padrao{display:inline-block;margin-left:6px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--brand-amarelo-principal);color:var(--brand-preto);padding:2px 8px;border-radius:99px;vertical-align:1px}
+.regras{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.regra{background:var(--brand-branco);border:1px solid var(--rule-soft);border-radius:14px;padding:18px 20px;font-size:14px;color:var(--text-soft)}
+.regra b{display:block;color:var(--text-body);font-size:15px;margin-bottom:4px}
+.fundos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fundos .palco{min-height:150px;border-radius:14px;border:1px solid var(--rule-soft)}
+.fundos .palco svg{max-width:190px}
+.leg{font-size:12.5px;color:var(--text-muted);margin-top:8px}
+.foto{background:radial-gradient(ellipse 60% 55% at 78% 22%,rgba(251,186,0,.7),transparent 60%),radial-gradient(ellipse 50% 60% at 18% 90%,rgba(225,136,0,.45),transparent 65%),linear-gradient(170deg,#2b1c05 0%,#120c03 55%,#000 100%)}
+@media (max-width:900px){.tres,.regras{grid-template-columns:1fr}.fundos{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.pg{padding:32px 16px 48px}h2{font-size:30px}.dois,.fundos{grid-template-columns:1fr}}
+</style></head><body>
+<main class="pg">
+  <div class="ey">Marca · Logo · 02</div>
+  <h2>Versões <span>da logo</span></h2>
+  <p class="lead">São 16 arquivos oficiais. A única peça colorida da marca é o símbolo: com ele, cada arranjo existe colorido, em monocromática preta e em monocromática branca; sem ele, só em uma cor. Os arquivos estão em Assets › Logos, com os mesmos nomes desta página.</p>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">01</span><h3>Qual usar</h3></div>
+    <div class="regras">
+      <div class="regra"><b>Padrão: horizontal principal</b>Símbolo, nome e SEMENTES, lado a lado. Na dúvida, é esta.</div>
+      <div class="regra"><b>Com atividade sempre que der</b>Símbolo e nome só quando SEMENTES ficaria pequeno demais para ler (abaixo de 40 px na horizontal e 72 px na vertical) ou quando for mais conveniente.</div>
+      <div class="regra"><b>Horizontal ou vertical</b>A horizontal vai em espaços mais largos que altos: barra, rodapé, assinatura, banner. A vertical, em espaços quadrados ou altos: post, capa, cartaz, abertura de app.</div>
+      <div class="regra"><b>Colorida em fundo claro</b>Branco, suave e claros.</div>
+      <div class="regra"><b>Monocromática preta</b>Em fundo claro ou amarelo, quando a peça pede uma cor só.</div>
+      <div class="regra"><b>Monocromática branca</b>Em fundo escuro, colorido ou foto, quando a peça pede uma cor só. A hélice fica vazada e mostra o fundo.</div>
+      <div class="regra" style="grid-column:1/-1"><b>Principal sobre o preto</b>Palheta amarela, hélice preta e letras brancas (<code>version="colorida-escuro"</code>). É a logo da barra de navegação escura, do rodapé escuro e dos vídeos. Montada no código a partir dos arquivos coloridos, só com as letras em branco.</div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">02</span><h3>Com símbolo</h3></div>
+    <div id="com"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">03</span><h3>Só texto</h3></div>
+    <p>Sem o símbolo, a logo é sempre de uma cor só. Para carimbos, rodapés de documento, bordados e lugares onde o símbolo já aparece por perto.</p>
+    <div id="texto"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="num">04</span><h3>Em cada fundo</h3></div>
+    <div class="fundos" id="fundos"></div>
+  </section>
+</main>
+<script>
+(() => {
+  const L = window.BarygenDesignSystem_a84d4b.BARYGEN_LOGO;
+  const V = { 'colorida': ['Colorida', 'b-claro', 'Fundo claro.'], 'mono-preta': ['Monocromática preta', 'b-claro', 'Fundo claro ou amarelo, uma cor só.'], 'mono-branca': ['Monocromática branca', 'b-preto', 'Fundo escuro, colorido ou foto.'] };
+  const card = (type, version, cls, padrao) => {
+    const [nome, bg, uso] = V[version];
+    return `<div class="card"><div class="palco ${bg} ${cls}">${L.svg({ type, version, title: L.arquivo(type, version).replace('.svg', '') })}</div><div class="info"><span class="tag">${nome}${padrao ? '<span class="padrao">Padrão</span>' : ''}</span>${uso}<span class="arq">${L.arquivo(type, version)}</span></div></div>`;
+  };
+  const COM = [['horizontal', 'Horizontal principal', ''], ['horizontal-nome', 'Horizontal símbolo e nome', ''], ['vertical', 'Vertical principal', 'v'], ['vertical-nome', 'Vertical símbolo e nome', 'v']];
+  document.getElementById('com').innerHTML = COM.map(([t, n, c]) => `<div class="arranjo"><h4>${n}</h4><div class="tres">${['colorida', 'mono-preta', 'mono-branca'].map(v => card(t, v, c, t === 'horizontal' && v === 'colorida')).join('')}</div></div>`).join('');
+  const TX = [['nome-atividade', 'Nome e atividade'], ['nome', 'Nome']];
+  document.getElementById('texto').innerHTML = TX.map(([t, n]) => `<div class="arranjo"><h4>${n}</h4><div class="dois">${['mono-preta', 'mono-branca'].map(v => card(t, v, 't')).join('')}</div></div>`).join('');
+  const F = [['bry-sec-light-1', 'colorida', 'Colorida · suave'], ['', 'colorida', 'Colorida · branco', 'background:#fff'], ['bry-sec-tom-amarelo-grad', 'mono-preta', 'Monocromática preta · amarelo'], ['bry-sec-tom-amarelo-claro', 'mono-preta', 'Monocromática preta · amarelo claro'],
+             ['bry-sec-dark-1', 'mono-branca', 'Monocromática branca · preto'], ['bry-sec-tom-preto-grad', 'colorida-escuro', 'Principal sobre o preto · barra, rodapé e vídeo'], ['foto', 'mono-branca', 'Monocromática branca · foto'], ['bry-sec-grad-ambar', 'mono-branca', 'Monocromática branca · degradê âmbar']];
+  document.getElementById('fundos').innerHTML = F.map(([c, v, leg, st]) => `<div><div class="palco ${c}" style="${st || ''}">${L.svg({ type: 'horizontal', version: v })}</div><div class="leg">${leg}</div></div>`).join('');
+})();
+</script>
+</body></html>

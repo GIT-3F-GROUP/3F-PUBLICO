@@ -1,0 +1,68 @@
+{
+  "v": 3,
+  "assetGroups": {
+    "Logos": {
+      "files": {},
+      "name": "Logos",
+      "order": [
+        "logo-horizontal.png",
+        "logo-horizontal-mono-branca.svg",
+        "logo-horizontal-mono-escura.svg",
+        "logo-compacta.png",
+        "logo-compacta-mono-branca.svg",
+        "logo-compacta-mono-escura.svg"
+      ],
+      "tile": "l"
+    },
+    "Patterns": {
+      "files": {},
+      "name": "Patterns",
+      "order": [
+        "contour-tonal.svg",
+        "contour-neon.svg",
+        "contour-sombra.svg",
+        "ridge-neon.svg",
+        "ridge-sombra.svg"
+      ]
+    }
+  },
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-10-09T23:22:40Z",
+    "v": 1
+  },
+  "docs": {
+    "readme": "project/README.md",
+    "sections": [
+      "project/ui_kits/manual/README.md",
+      "project/ui_kits/painel/README.md",
+      "project/ui_kits/proposta/README.md"
+    ]
+  },
+  "groups": [
+    "Logos",
+    "Patterns"
+  ],
+  "lastChange": {
+    "at": "2026-10-09T23:22:40Z",
+    "by": "Claude",
+    "note": "Cópia do FarmSense Design System com a migração concluída: tokens.json, bundle em components/, prévias por componente, fichas como páginas e capa.",
+    "via": "Claude Code"
+  },
+  "layout": "files",
+  "libraries": [
+    {
+      "global": "React",
+      "name": "react",
+      "version": "18.3.1"
+    },
+    {
+      "global": "ReactDOM",
+      "name": "react-dom",
+      "version": "18.3.1"
+    }
+  ],
+  "namespace": "FarmSenseDesignSystem_c4c636",
+  "sections": {},
+  "title": "FarmSense Design System"
+}

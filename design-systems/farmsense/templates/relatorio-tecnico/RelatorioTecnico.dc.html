@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Relatório técnico" description="Documento agronômico FarmSense: capa escura, sumário, fichas de talhão e fechamento." -->
+<helmet><script src="./ds-base.js"></script><link rel="preconnect" href="https://fonts.gstatic.com"><style>@page{margin:0}body{margin:0;background:#D8BE98}</style></helmet>
+<div style="font-family:'Be Vietnam Pro',system-ui,sans-serif;color:#004141;padding:40px 0;display:flex;flex-direction:column;align-items:center;gap:32px">
+
+<section style="width:1000px;min-height:1320px;background:#004141;color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column" data-screen-label="01 Capa">
+<div style="position:absolute;inset:0;background-image:url('../../assets/Patterns/contour-neon.svg');background-size:cover;background-position:120% -20%;background-repeat:no-repeat;opacity:.42;pointer-events:none"></div>
+<div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;pointer-events:none"></div>
+<div style="position:relative;flex:1;padding:64px 72px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<img src="../../assets/Logos/logo-horizontal-mono-branca.svg" alt="FarmSense" style="width:280px">
+<span style="display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:999px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;background:rgba(51,255,194,.12);color:#33FFC2;border:1px solid rgba(51,255,194,.4)"><span style="width:8px;height:8px;border-radius:50%;background:#33FFC2;box-shadow:0 0 14px #33FFC2"></span>Relatório nº 03 / 26</span>
+</div>
+<div>
+<span style="display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:#33FFC2"><span style="width:28px;height:1px;background:currentColor;opacity:.6"></span>Diagnóstico agronômico · Safra 24/25</span>
+<h1 style="margin:24px 0 0;font-weight:800;font-size:88px;line-height:.98;letter-spacing:-.022em">Fazenda<br>São Bento<span style="color:#33FFC2">.</span></h1>
+<p style="margin:24px 0 0;max-width:46ch;font-size:19px;line-height:1.5;opacity:.7">Leitura de solo em grade de 2 ha, sensoriamento espectral multitemporal e recomendação de manejo por zona para os doze talhões mapeados.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+<div><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55">Cliente</span><div style="margin-top:6px;font-weight:500;font-size:17px">Fazenda São Bento</div></div>
+<div><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55">Área</span><div style="margin-top:6px;font-weight:500;font-size:17px">1 470 ha</div></div>
+<div><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55">Cultura</span><div style="margin-top:6px;font-weight:500;font-size:17px">Soja 24/25</div></div>
+<div><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55">Eng. resp.</span><div style="margin-top:6px;font-weight:500;font-size:17px">N. Sobrenome · CREA-MT</div></div>
+</div>
+</div>
+<div style="position:relative;display:flex;justify-content:space-between;padding:22px 72px;border-top:1px solid rgba(255,255,255,.14);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55"><span>FarmSense Agro · Sorriso, MT</span><span>Emissão 12.05.2026</span></div>
+</section>
+
+<section style="width:1000px;min-height:1320px;background:#fff;position:relative;display:flex;flex-direction:column" data-screen-label="02 Resumo">
+<div style="flex:1;padding:64px 72px">
+<div style="display:flex;align-items:baseline;gap:24px;margin-bottom:48px"><span style="font-family:Georgia,serif;font-style:italic;font-size:14px;opacity:.55">§ 01</span><span style="display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;opacity:.55"><span style="width:28px;height:1px;background:currentColor;opacity:.6"></span>Resumo executivo</span></div>
+<h2 style="margin:0;max-width:18ch;font-weight:800;font-size:44px;line-height:1.02;letter-spacing:-.018em">A safra fechou <span style="font-family:Georgia,serif;font-style:italic;font-weight:400">18 % acima</span> da média regional.</h2>
+<p style="margin:24px 0 0;max-width:62ch;font-size:19px;line-height:1.5;opacity:.7">A correção de potássio aplicada em pré-plantio nos setores norte de Aurora e Chapada respondeu conforme o previsto. Os dois talhões de menor variabilidade histórica mantiveram o patamar da safra anterior. Cerrado-Norte segue como prioridade de investigação para 25/26.</p>
+<hr style="border:0;height:1px;background:currentColor;opacity:.15;margin:48px 0">
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+<div><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.6">Sacas / hectare</div><div style="font-weight:800;font-size:48px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin-top:6px">82,4<sup style="font-size:.42em;font-weight:500;opacity:.7;margin-left:4px">sc/ha</sup></div><div style="font-size:12px;margin-top:6px;color:#00655C">▲ + 18,1 vs. safra anterior</div></div>
+<div><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.6">Área monitorada</div><div style="font-weight:800;font-size:48px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin-top:6px">1 470<sup style="font-size:.42em;font-weight:500;opacity:.7;margin-left:4px">ha</sup></div><div style="font-size:12px;margin-top:6px;opacity:.7">12 talhões · 4 culturas</div></div>
+<div><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.6">Pontos de coleta</div><div style="font-weight:800;font-size:48px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin-top:6px">1 725</div><div style="font-size:12px;margin-top:6px;opacity:.7">grade de 2 ha</div></div>
+</div>
+<hr style="border:0;height:1px;background:currentColor;opacity:.15;margin:48px 0">
+<span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55">Comparativo por talhão</span>
+<table style="width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;margin-top:16px">
+<thead><tr><th style="text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55;padding:6px 0;border-bottom:1px solid rgba(0,65,65,.18)">Talhão</th><th style="text-align:right;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55;padding:6px 0;border-bottom:1px solid rgba(0,65,65,.18)">Ha</th><th style="text-align:right;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55;padding:6px 0;border-bottom:1px solid rgba(0,65,65,.18)">NDVI</th><th style="text-align:right;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55;padding:6px 0;border-bottom:1px solid rgba(0,65,65,.18)">sc/ha</th><th style="text-align:right;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55;padding:6px 0;border-bottom:1px solid rgba(0,65,65,.18)">Δ</th></tr></thead>
+<tbody>
+<tr><td style="padding:12px 0;border-bottom:1px solid rgba(0,65,65,.08)">Aurora</td><td style="text-align:right;border-bottom:1px solid rgba(0,65,65,.08)">412</td><td style="text-align:right;border-bottom:1px solid rgba(0,65,65,.08)">0,78</td><td style="text-align:right;border-bottom:1px solid rgba(0,65,65,.08);font-weight:700">82,4</td><td style="text-align:right;border-bottom:1px solid rgba(0,65,65,.08);color:#00655C">+18,1</td></tr>
+<tr><td style="padding:12px 0;border-bottom:1px solid rgba(0,65,65,.08)">Chapada</td><td style="text-align:right;border-bottom:1px solid rgba(0,65,65,.08)">228</td><td style="text-align:right;border-bottom:1px solid rgba(0,65,65,.08)">0,71</td><td style="text-align:right;border-bottom:1px solid rgba(0,65,65,.08);font-weight:700">74,9</td><td style="text-align:right;border-bottom:1px solid rgba(0,65,65,.08);color:#00655C">+9,4</td></tr>
+<tr><td style="padding:12px 0;border-bottom:1px solid rgba(0,65,65,.08)">Cerrado-Norte</td><td style="text-align:right;border-bottom:1px solid rgba(0,65,65,.08)">580</td><td style="text-align:right;border-bottom:1px solid rgba(0,65,65,.08)">0,66</td><td style="text-align:right;border-bottom:1px solid rgba(0,65,65,.08);font-weight:700">69,2</td><td style="text-align:right;border-bottom:1px solid rgba(0,65,65,.08);opacity:.7">+2,1</td></tr>
+<tr><td style="padding:12px 0">Pampulha</td><td style="text-align:right">250</td><td style="text-align:right">0,58</td><td style="text-align:right;font-weight:700">66,8</td><td style="text-align:right;opacity:.7">−0,6</td></tr>
+</tbody></table>
+</div>
+<div style="display:flex;justify-content:space-between;padding:22px 72px;border-top:1px solid rgba(0,65,65,.12);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55"><span>Relatório · 03/26</span><span>Resumo executivo</span><span style="font-family:Georgia,serif;font-style:italic;text-transform:none;letter-spacing:0;font-size:14px">02</span></div>
+</section>
+
+<section style="width:1000px;min-height:1320px;background:#fff;position:relative;display:flex;flex-direction:column" data-screen-label="03 Ficha de talhão">
+<div style="flex:1;padding:64px 72px">
+<div style="display:flex;align-items:baseline;gap:24px;margin-bottom:48px"><span style="font-family:Georgia,serif;font-style:italic;font-size:14px;opacity:.55">§ 02</span><span style="display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;opacity:.55"><span style="width:28px;height:1px;background:currentColor;opacity:.6"></span>Ficha de talhão · Aurora</span></div>
+<h2 style="margin:0;max-width:20ch;font-weight:800;font-size:44px;line-height:1.02;letter-spacing:-.018em">Fertilidade do <span style="font-family:Georgia,serif;font-style:italic;font-weight:400">talhão Aurora.</span></h2>
+<div style="margin-top:32px;background:#F3EAD9;border-radius:16px;padding:32px">
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+<div><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55">pH</span><div style="font-weight:500;font-size:22px;margin-top:6px">5,8</div></div>
+<div><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55">P (mg/dm³)</span><div style="font-weight:500;font-size:22px;margin-top:6px">22</div></div>
+<div><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55">K (cmol)</span><div style="font-weight:500;font-size:22px;margin-top:6px">0,18</div></div>
+</div>
+</div>
+<p style="margin:32px 0 0;max-width:62ch;font-size:16px;line-height:1.55;opacity:.7">Recomendação: correção de potássio em pré-plantio, KCl 60 % a 90 kg/ha aplicado em taxa variável conforme o zoneamento entregue. A janela ideal fecha 12 dias antes do plantio da soja precoce.</p>
+<div style="margin-top:32px;display:grid;gap:14px">
+<div><div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:14px;opacity:.7">Setor norte</span><span style="font-size:14px;font-weight:500;font-variant-numeric:tabular-nums">88,1</span></div><div style="height:10px;background:rgba(0,65,65,.08);border-radius:999px;overflow:hidden"><div style="height:100%;width:96%;background:#004141"></div></div></div>
+<div><div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:14px;opacity:.7">Setor central</span><span style="font-size:14px;font-weight:500;font-variant-numeric:tabular-nums">82,4</span></div><div style="height:10px;background:rgba(0,65,65,.08);border-radius:999px;overflow:hidden"><div style="height:100%;width:88%;background:#00655C"></div></div></div>
+<div><div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:14px;opacity:.7">Setor sul</span><span style="font-size:14px;font-weight:500;font-variant-numeric:tabular-nums">74,2</span></div><div style="height:10px;background:rgba(0,65,65,.08);border-radius:999px;overflow:hidden"><div style="height:100%;width:79%;background:#D8BE98"></div></div></div>
+</div>
+<hr style="border:0;height:1px;background:currentColor;opacity:.15;margin:48px 0 24px">
+<p style="margin:0;font-family:Georgia,serif;font-style:italic;font-size:14px;opacity:.55">Eng. Agr. Nome Sobrenome · CREA 000000/MT</p>
+</div>
+<div style="display:flex;justify-content:space-between;padding:22px 72px;border-top:1px solid rgba(0,65,65,.12);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;opacity:.55"><span>Relatório · 03/26</span><span>Ficha de talhão</span><span style="font-family:Georgia,serif;font-style:italic;text-transform:none;letter-spacing:0;font-size:14px">03</span></div>
+</section>
+
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!-- @dsCard group="Navegação" height=520 subtitle="Navbar de vidro, abas, trilha, paginação e fluxo de etapas" page -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:transparent}.ovx-stage{box-sizing:border-box;min-height:100%;padding:16px;background:var(--bg-deep);color:var(--text-body);font-family:var(--font-body);border-radius:var(--radius-card);border:1px solid var(--border);overflow:hidden}.ovx-stage *,.ovx-stage *::before,.ovx-stage *::after{box-sizing:border-box}.ovx-stage img{max-width:100%}@media (max-width:480px){.ovx-stage{padding:12px;border-radius:var(--radius-md)}}.ovx-stage{margin:0;background:radial-gradient(120% 120% at 20% 0%,var(--surface-1) 0%,var(--bg-deep) 60%)}.pad{padding:20px;display:flex;flex-direction:column;gap:20px}.side{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start}.sidewrap{flex:1 1 264px;max-width:300px;min-height:210px;border:var(--hairline);border-radius:var(--radius-panel);overflow:hidden;display:flex}.sidewrap .ovx-sidebar{width:100%;border-right:0;border-bottom:0}</style>
+</head><body><div class="ovx-stage"><div id="root"></div>
+<script>
+const {
+  Navbar,
+  SidebarNav,
+  Tabs,
+  Breadcrumbs,
+  Pagination,
+  StepFlow,
+  Button,
+  Logo,
+  IconButton
+} = window.ORVIXDesignSystem_019de6;
+function Demo() {
+  const [t, setT] = React.useState("Ações de gota");
+  const [p, setP] = React.useState(3);
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Navbar, {
+    logo: /*#__PURE__*/React.createElement(Logo, {
+      variant: "principal-sem-assinatura",
+      size: "md"
+    }),
+    current: "Linhas",
+    links: [{
+      label: "Tecnologia de Aplicação"
+    }, {
+      label: "Linhas"
+    }, {
+      label: "Blog"
+    }, {
+      label: "Sobre"
+    }, {
+      label: "Contato"
+    }],
+    actions: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(IconButton, {
+      icon: "search",
+      label: "Buscar",
+      variant: "bare"
+    }), /*#__PURE__*/React.createElement(Button, {
+      variant: "primary",
+      size: "sm"
+    }, "Falar com consultor"))
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "pad"
+  }, /*#__PURE__*/React.createElement(Breadcrumbs, {
+    items: [{
+      label: "Linhas",
+      href: "#"
+    }, {
+      label: "Linha TEC",
+      href: "#"
+    }, {
+      label: "Adjuvantes ORV7",
+      href: "#"
+    }, {
+      label: "ORV7 Drop Power"
+    }]
+  }), /*#__PURE__*/React.createElement(Tabs, {
+    tabs: [{
+      label: "Ações de calda",
+      icon: "flask-conical"
+    }, {
+      label: "Ações de gota",
+      icon: "droplet"
+    }, {
+      label: "Ações no alvo",
+      icon: "target"
+    }],
+    value: t,
+    onChange: setT
+  }), /*#__PURE__*/React.createElement(Tabs, {
+    variant: "pill",
+    tabs: ["Ficha", "Doses", "Bula", "FISPQ"],
+    value: "Doses"
+  }), /*#__PURE__*/React.createElement(StepFlow, {
+    active: 2,
+    steps: [{
+      title: "Acesse a Orbia",
+      desc: "Login ou cadastro"
+    }, {
+      title: "Cadastre a nota",
+      desc: "PDF ou XML, até 90 dias"
+    }, {
+      title: "Aguarde a validação",
+      desc: "Até 30 dias"
+    }, {
+      title: "Resgate os pontos",
+      desc: "25 mil itens"
+    }]
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "side"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "sidewrap"
+  }, /*#__PURE__*/React.createElement(SidebarNav, {
+    current: "Cat\xE1logo T\xE9cnico",
+    groups: [{
+      label: "Painel",
+      items: [{
+        label: "Visão geral",
+        icon: "layout-dashboard"
+      }, {
+        label: "Catálogo Técnico",
+        icon: "package",
+        count: 41
+      }, {
+        label: "Biblioteca",
+        icon: "file-text",
+        count: 86
+      }]
+    }, {
+      label: "Conta",
+      items: [{
+        label: "Perfil",
+        icon: "user"
+      }, {
+        label: "Sair",
+        icon: "log-out"
+      }]
+    }]
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      alignSelf: 'center'
+    }
+  }, /*#__PURE__*/React.createElement(Pagination, {
+    page: p,
+    pages: 9,
+    onChange: setP
+  })))));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(Demo, null));
+</script></div></body></html>

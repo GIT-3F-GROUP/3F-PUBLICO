@@ -1,0 +1,135 @@
+{
+  "v": 3,
+  "assetGroups": {
+    "Icones": {
+      "files": {
+        "mixsafe-icones.svg": {
+          "blob": "040a7d09cc979f61567430da01c76557",
+          "name": "mixsafe-icones.svg",
+          "size": 25960,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Icones",
+      "order": [
+        "mixsafe-icones.svg"
+      ],
+      "tile": "l"
+    },
+    "Logos": {
+      "files": {
+        "mixsafe-app-icon-1024-claro.png": {
+          "blob": "f5228b7f6f60d2a9e9f87306a5dae7b8",
+          "name": "mixsafe-app-icon-1024-claro.png",
+          "size": 77582,
+          "type": "image/png"
+        },
+        "mixsafe-app-icon-1024-escuro.png": {
+          "blob": "1b0c0884a63b67af01f299982d9de3fb",
+          "name": "mixsafe-app-icon-1024-escuro.png",
+          "size": 48527,
+          "type": "image/png"
+        },
+        "mixsafe-app-icon-1024-matizado.png": {
+          "blob": "b8e0e5887798e35d70e927ffbb94eee9",
+          "name": "mixsafe-app-icon-1024-matizado.png",
+          "size": 47644,
+          "type": "image/png"
+        },
+        "mixsafe-favicon.svg": {
+          "blob": "80ee9f411f3eadad39634a0e668497b7",
+          "name": "mixsafe-favicon.svg",
+          "size": 752,
+          "type": "image/svg+xml"
+        },
+        "mixsafe-icone-app.svg": {
+          "blob": "03db886b61aaf5f5081f0c33778c3767",
+          "name": "mixsafe-icone-app.svg",
+          "size": 933,
+          "type": "image/svg+xml"
+        },
+        "mixsafe-logo-azul-business-04.svg": {
+          "blob": "387c4dfaca00dac0c6349333efe4b113",
+          "name": "mixsafe-logo-azul-business-04.svg",
+          "size": 4896,
+          "type": "image/svg+xml"
+        },
+        "mixsafe-logo-branca-sem-registro.svg": {
+          "blob": "e8d46f33a8443728c869e930ac915425",
+          "name": "mixsafe-logo-branca-sem-registro.svg",
+          "size": 4213,
+          "type": "image/svg+xml"
+        },
+        "mixsafe-logo-branca.svg": {
+          "blob": "2b77e12862838b2027598ca1cdccaad5",
+          "name": "mixsafe-logo-branca.svg",
+          "size": 4896,
+          "type": "image/svg+xml"
+        },
+        "mixsafe-palavra-azul-business-04.svg": {
+          "blob": "26b3b106e650f122f85a31cb62f2d4a1",
+          "name": "mixsafe-palavra-azul-business-04.svg",
+          "size": 3615,
+          "type": "image/svg+xml"
+        },
+        "mixsafe-palavra-branca.svg": {
+          "blob": "fd56b4c6a639473c834cb76e1cf62c41",
+          "name": "mixsafe-palavra-branca.svg",
+          "size": 3615,
+          "type": "image/svg+xml"
+        },
+        "mixsafe-simbolo-azul-business-04.svg": {
+          "blob": "765c73d288af7cf0f9e2057d9ea0906b",
+          "name": "mixsafe-simbolo-azul-business-04.svg",
+          "size": 612,
+          "type": "image/svg+xml"
+        },
+        "mixsafe-simbolo-branco.svg": {
+          "blob": "0fa687cc7de53391bceba91910fa2d53",
+          "name": "mixsafe-simbolo-branco.svg",
+          "size": 612,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Logos",
+      "order": [
+        "mixsafe-logo-branca.svg",
+        "mixsafe-logo-azul-business-04.svg",
+        "mixsafe-logo-branca-sem-registro.svg",
+        "mixsafe-palavra-branca.svg",
+        "mixsafe-palavra-azul-business-04.svg",
+        "mixsafe-simbolo-branco.svg",
+        "mixsafe-simbolo-azul-business-04.svg",
+        "mixsafe-icone-app.svg",
+        "mixsafe-favicon.svg",
+        "mixsafe-app-icon-1024-claro.png",
+        "mixsafe-app-icon-1024-escuro.png",
+        "mixsafe-app-icon-1024-matizado.png"
+      ],
+      "tile": "l"
+    }
+  },
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-10-07T16:00:00Z",
+    "v": 1
+  },
+  "docs": {
+    "sections": []
+  },
+  "groups": [
+    "Logos",
+    "Icones"
+  ],
+  "lastChange": {
+    "at": "2026-10-07T16:00:00Z",
+    "by": "XERXIZ 3F",
+    "note": "Cópia completa do mixsafe Design System (tokens, brand book, 87 componentes, fontes e ativos).",
+    "via": "Claude (Cowork)"
+  },
+  "layout": "files",
+  "libraries": [],
+  "namespace": "MixSafe",
+  "sections": {},
+  "title": "mixsafe Design System"
+}

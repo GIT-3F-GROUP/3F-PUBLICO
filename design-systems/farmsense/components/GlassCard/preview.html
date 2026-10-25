@@ -1,0 +1,30 @@
+<!-- @dsCard group="Core" height=200 -->
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>GlassCard</title>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{margin:0;padding:16px;background:var(--bege-perola);font-family:var(--font-sans);color:var(--verde-sombra)}.k{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;opacity:.75;display:block;margin:0 0 10px}.pane{border-radius:var(--r-md);padding:16px}.pane-l{background:rgba(0,65,65,.035);border:1px solid rgba(0,65,65,.08)}.pane-d{background:var(--verde-sombra);color:#fff}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const { Divider, GlassCard, NeonDot, PatternLayer } = window.FarmSenseDesignSystem_c4c636;
+const { useState } = React;
+function Demo(){
+  
+  return (
+<div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12}}>
+  <div className="pane" style={{background:'var(--bege-rastro)',position:'relative',overflow:'hidden'}}>
+    <PatternLayer pattern="curvas-tonal" corner="tr" />
+    <GlassCard tone="tone" style={{padding:18}}><span className="k">tone</span><div className="h4">Produtividade 28 % acima</div><Divider spacing="10px" /><span className="body-sm">Talhão Aurora · soja 24/25</span></GlassCard>
+  </div>
+  <div className="pane" style={{background:'var(--bege-estrada)',position:'relative',overflow:'hidden'}}>
+    <GlassCard tone="light" style={{padding:18}}><span className="k">light</span><div className="h4">Fertilidade corrigida</div><Divider spacing="10px" /><span className="body-sm">22 unidades de K antes do plantio</span></GlassCard>
+  </div>
+  <div className="pane pane-d" style={{position:'relative',overflow:'hidden'}}>
+    <PatternLayer pattern="grade" corner={null} />
+    <GlassCard tone="dark" accent="ciano" style={{padding:18}}><span className="k">dark · accent ciano</span><div className="row-tight" style={{gap:8}}><NeonDot pulse /><span className="body-sm">Leitura NDVI ao vivo</span></div></GlassCard>
+  </div>
+</div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

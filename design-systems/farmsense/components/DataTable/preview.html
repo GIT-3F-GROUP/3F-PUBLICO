@@ -1,0 +1,21 @@
+<!-- @dsCard group="Data" height=210 -->
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>DataTable</title>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{margin:0;padding:16px;background:var(--bege-perola);font-family:var(--font-sans);color:var(--verde-sombra)}.k{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;opacity:.75;display:block;margin:0 0 10px}.pane{border-radius:var(--r-md);padding:16px}.pane-l{background:rgba(0,65,65,.035);border:1px solid rgba(0,65,65,.08)}.pane-d{background:var(--verde-sombra);color:#fff}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const { DataTable } = window.FarmSenseDesignSystem_c4c636;
+const { useState } = React;
+function Demo(){
+  
+  return (
+<div className="pane pane-l">
+  <DataTable columns={[{key:'t',label:'Talhão'},{key:'ha',label:'Ha',align:'right'},{key:'sc',label:'sc/ha',align:'right',strong:true},{key:'d',label:'Δ',align:'right'}]}
+    rows={[{t:'Aurora',ha:412,sc:'82,4',d:'+18,1',d_tone:'positivo'},{t:'Chapada',ha:228,sc:'74,9',d:'+9,4',d_tone:'positivo'},{t:'Cerrado-Norte',ha:580,sc:'69,2',d:'+2,1'},{t:'Pampulha',ha:250,sc:'66,8',d:'−0,6'}]} />
+</div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

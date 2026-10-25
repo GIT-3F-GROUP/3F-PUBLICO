@@ -1,0 +1,29 @@
+<!-- @dsCard group="Components" height=420 subtitle="Herói, faixa de conversão, acesso, rodapé" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN</title>
+<script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{padding:0;background:var(--brand-amarelo-suave);font-family:var(--ff-body)}.lab{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:8px}</style>
+</head><body><div id="root"></div><script type="text/babel">
+const B=window.BarygenDesignSystem_a84d4b;
+const {Hero,CTAStrip,LoginCard,SiteFooter,Button,Field,Input}=B;
+const COLS=[{title:'Produtos',links:['BG307 Max','Pipeline','Posicionamento']},{title:'A BARYGEN',links:['Quem somos','Eventos','Notícias','Trabalhe conosco']},{title:'Contato',links:['Consultores','Onde comprar','Imprensa']}];
+function Card(){return <div style={{display:'grid',gridTemplateColumns:'minmax(0,1fr)',gap:0}}>
+ <Hero background="dark-1" eyebrow="Híbrido de milho · Lançamento"
+  title={<>Feito para a rentabilidade <em>do produtor.</em></>}
+  subtitle="BG307 Max: o híbrido que fará frente aos melhores do mercado nos próximos anos. Veja a espiga de perto em um campo demonstrativo."
+  actions={<><Button variant="primary">Encontrar um campo</Button><Button variant="on-dark">Ficha técnica</Button></>}/>
+ <CTAStrip title="Fale com um consultor da sua região." action={<Button variant="secondary" size="lg">Quero plantar BARYGEN</Button>}/>
+ <div style={{padding:'28px clamp(16px,5vw,48px)',display:'flex',flexWrap:'wrap',gap:32,alignItems:'flex-start',background:'var(--brand-amarelo-suave)'}}>
+  <LoginCard>
+   <Field label="E-mail"><Input placeholder="nome@fazenda.com.br"/></Field>
+   <Field label="Senha"><Input type="password" defaultValue="········"/></Field>
+   <Button variant="primary" fullWidth>Entrar</Button>
+   <Button variant="link" style={{alignSelf:'center'}}>Esqueci minha senha</Button>
+  </LoginCard>
+ </div>
+ <div className="lab" style={{padding:'24px clamp(16px,5vw,48px) 0'}}>Rodapé · escuro (padrão)</div>
+ <SiteFooter cnpj="00.000.000/0000-00" columns={COLS}/>
+ <div className="lab" style={{padding:'24px clamp(16px,5vw,48px) 0'}}>Rodapé · claro</div>
+ <SiteFooter tone="light" cnpj="00.000.000/0000-00" columns={COLS}/>
+</div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<Card/>);
+</script></body></html>

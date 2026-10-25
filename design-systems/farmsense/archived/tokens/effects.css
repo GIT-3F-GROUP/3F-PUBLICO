@@ -1,0 +1,232 @@
+/* ============================================================
+   FarmSense — Biblioteca de efeitos e movimento
+   118 efeitos nomeados. Nada quica. Entrada rápida, chegada longa.
+   Prefixos: fs-hv-* (hover) · fs-pr-* (press) · fs-fx-* (foco)
+             fs-in-* (entrada) · fs-am-* (ambiente/loop)
+             fs-tx-* (texto) · fs-dv-* (dados) · fs-ld-* (carregamento)
+   ============================================================ */
+:root{--fx-t:var(--d-base) var(--e-standard)}
+[class*="fs-hv-"],[class*="fs-pr-"]{transition:transform var(--d-fast) var(--e-standard),box-shadow var(--fx-t),background var(--fx-t),color var(--fx-t),border-color var(--fx-t),opacity var(--fx-t),filter var(--fx-t),letter-spacing var(--fx-t)}
+
+/* ── 01–30 · HOVER ──────────────────────────────────── */
+.fs-hv-lift:hover{transform:translateY(-1px)}
+.fs-hv-lift-card:hover{transform:translateY(-3px);box-shadow:var(--sh-3)}
+.fs-hv-lift-far:hover{transform:translateY(-8px);box-shadow:var(--sh-4)}
+.fs-hv-sink:hover{transform:translateY(2px);box-shadow:var(--sh-1)}
+.fs-hv-scale:hover{transform:scale(1.03)}
+.fs-hv-scale-sm:hover{transform:scale(1.012)}
+.fs-hv-shrink:hover{transform:scale(.97)}
+.fs-hv-slide-r:hover{transform:translateX(4px)}
+.fs-hv-slide-l:hover{transform:translateX(-4px)}
+.fs-hv-tilt:hover{transform:perspective(700px) rotateX(3deg) rotateY(-3deg)}
+.fs-hv-glow:hover{box-shadow:var(--sh-neon)}
+.fs-hv-glow-green:hover{box-shadow:var(--sh-neon-green)}
+.fs-hv-glow-soft:hover{box-shadow:0 0 0 6px rgba(51,255,194,.10)}
+.fs-hv-ring:hover{box-shadow:0 0 0 1px rgba(0,65,65,.25),0 0 0 5px rgba(0,65,65,.06)}
+.fs-hv-ring-neon:hover{box-shadow:0 0 0 1px rgba(51,255,194,.5),0 0 0 5px rgba(51,255,194,.10)}
+.fs-hv-tint:hover{background:rgba(0,65,65,.07)}
+.fs-hv-tint-dark:hover{background:rgba(255,255,255,.08)}
+.fs-hv-darken:hover{filter:brightness(.92)}
+.fs-hv-lighten:hover{filter:brightness(1.08)}
+.fs-hv-saturate:hover{filter:saturate(1.35)}
+.fs-hv-desaturate:hover{filter:saturate(.25)}
+.fs-hv-fade:hover{opacity:.86}
+.fs-hv-solid:hover{opacity:1}
+.fs-hv-border:hover{border-color:rgba(0,65,65,.45)}
+.fs-hv-border-neon:hover{border-color:rgba(51,255,194,.6)}
+.fs-hv-ink:hover{color:var(--verde-sombra)}
+.fs-hv-ink-neon:hover{color:var(--ciano-neon)}
+.fs-hv-track:hover{letter-spacing:.06em}
+.fs-hv-blur-bg:hover{backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%)}
+.fs-hv-invert:hover{background:var(--verde-sombra);color:#fff;border-color:var(--verde-sombra)}
+
+/* ── 31–40 · HOVER composto (pseudo-elementos) ─────────── */
+.fs-hv-underline{position:relative;display:inline-block}
+.fs-hv-underline::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform var(--d-base) var(--e-standard)}
+.fs-hv-underline:hover::after{transform:scaleX(1)}
+.fs-hv-underline-out{position:relative;display:inline-block}
+.fs-hv-underline-out::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:currentColor;transform:scaleX(1);transform-origin:right;transition:transform var(--d-base) var(--e-standard)}
+.fs-hv-underline-out:hover::after{transform:scaleX(0)}
+.fs-hv-highlight{position:relative;z-index:0}
+.fs-hv-highlight::before{content:"";position:absolute;inset:-2px -6px;background:rgba(51,255,194,.22);z-index:-1;transform:scaleX(0);transform-origin:left;transition:transform var(--d-base) var(--e-standard)}
+.fs-hv-highlight:hover::before{transform:scaleX(1)}
+.fs-hv-sweep{position:relative;overflow:hidden}
+.fs-hv-sweep::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%);transform:translateX(-100%);transition:transform var(--d-slower) var(--e-scan)}
+.fs-hv-sweep:hover::after{transform:translateX(100%)}
+.fs-hv-fill-up{position:relative;overflow:hidden;z-index:0}
+.fs-hv-fill-up::before{content:"";position:absolute;inset:0;background:var(--verde-sombra);z-index:-1;transform:translateY(101%);transition:transform var(--d-base) var(--e-entrance)}
+.fs-hv-fill-up:hover{color:#fff}
+.fs-hv-fill-up:hover::before{transform:translateY(0)}
+.fs-hv-fill-left{position:relative;overflow:hidden;z-index:0}
+.fs-hv-fill-left::before{content:"";position:absolute;inset:0;background:var(--ciano-neon);z-index:-1;transform:translateX(-101%);transition:transform var(--d-base) var(--e-entrance)}
+.fs-hv-fill-left:hover{color:var(--verde-sombra)}
+.fs-hv-fill-left:hover::before{transform:translateX(0)}
+.fs-hv-arrow .chev,.fs-hv-arrow svg{transition:transform var(--d-base) var(--e-standard)}
+.fs-hv-arrow:hover .chev,.fs-hv-arrow:hover svg{transform:translateX(4px)}
+.fs-hv-corner{position:relative}
+.fs-hv-corner::before,.fs-hv-corner::after{content:"";position:absolute;width:12px;height:12px;border:1px solid var(--ciano-neon);opacity:0;transition:opacity var(--d-base) var(--e-standard),transform var(--d-base) var(--e-standard)}
+.fs-hv-corner::before{top:6px;left:6px;border-right:0;border-bottom:0;transform:translate(4px,4px)}
+.fs-hv-corner::after{bottom:6px;right:6px;border-left:0;border-top:0;transform:translate(-4px,-4px)}
+.fs-hv-corner:hover::before,.fs-hv-corner:hover::after{opacity:1;transform:translate(0,0)}
+.fs-hv-scanline{position:relative;overflow:hidden}
+.fs-hv-scanline::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--ciano-neon),transparent);opacity:0;transition:opacity var(--d-fast) linear}
+.fs-hv-scanline:hover::after{opacity:1;animation:fs-scan-y var(--d-slower) var(--e-scan) infinite}
+.fs-hv-reveal-img img{transition:transform var(--d-slower) var(--e-standard)}
+.fs-hv-reveal-img:hover img{transform:scale(1.05)}
+
+/* ── 41–46 · PRESS ────────────────────────────────────── */
+.fs-pr-scale:active{transform:scale(.985)}
+.fs-pr-scale-deep:active{transform:scale(.95)}
+.fs-pr-sink:active{transform:translateY(2px)}
+.fs-pr-flat:active{box-shadow:none;transform:translateY(1px)}
+.fs-pr-dim:active{opacity:.75}
+.fs-pr-ink:active{background:rgba(0,65,65,.12)}
+
+/* ── 47–52 · FOCO ─────────────────────────────────────── */
+.fs-fx-ring:focus-visible{outline:none;box-shadow:0 0 0 2px var(--bege-perola),0 0 0 4px var(--verde-sombra)}
+.fs-fx-ring-neon:focus-visible{outline:none;box-shadow:0 0 0 2px var(--verde-sombra),0 0 0 4px var(--ciano-neon)}
+.fs-fx-inset:focus-visible{outline:none;box-shadow:inset 0 0 0 2px var(--verde-sombra)}
+.fs-fx-border:focus-within{border-color:var(--verde-sombra)}
+.fs-fx-border-neon:focus-within{border-color:var(--ciano-neon);box-shadow:0 0 0 3px rgba(51,255,194,.15)}
+.fs-fx-lift:focus-visible{transform:translateY(-1px)}
+
+/* ── 53–74 · ENTRADA ──────────────────────────────────── */
+@keyframes fs-fade{from{opacity:0}to{opacity:1}}
+@keyframes fs-fade-up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fs-fade-down{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+@keyframes fs-fade-left{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes fs-fade-right{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+@keyframes fs-rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes fs-scale-in{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+@keyframes fs-scale-out-in{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:none}}
+@keyframes fs-blur-in{from{opacity:0;filter:blur(10px)}to{opacity:1;filter:blur(0)}}
+@keyframes fs-clip-up{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes fs-clip-down{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes fs-clip-left{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+@keyframes fs-clip-right{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes fs-clip-circle{from{clip-path:circle(0% at 50% 50%)}to{clip-path:circle(75% at 50% 50%)}}
+@keyframes fs-unfold{from{opacity:0;transform:perspective(800px) rotateX(-12deg);transform-origin:top}to{opacity:1;transform:none}}
+@keyframes fs-tilt-in{from{opacity:0;transform:perspective(800px) rotateY(9deg) translateX(20px)}to{opacity:1;transform:none}}
+@keyframes fs-drop{from{opacity:0;transform:translateY(-28px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes fs-expand-w{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1)}}
+@keyframes fs-expand-h{from{transform:scaleY(0);transform-origin:top}to{transform:scaleY(1)}}
+.fs-in-fade{animation:fs-fade var(--d-slow) var(--e-entrance) both}
+.fs-in-up{animation:fs-fade-up var(--d-slow) var(--e-entrance) both}
+.fs-in-down{animation:fs-fade-down var(--d-slow) var(--e-entrance) both}
+.fs-in-left{animation:fs-fade-left var(--d-slow) var(--e-entrance) both}
+.fs-in-right{animation:fs-fade-right var(--d-slow) var(--e-entrance) both}
+.fs-in-rise{animation:fs-rise var(--d-slower) var(--e-entrance) both}
+.fs-in-scale{animation:fs-scale-in var(--d-slow) var(--e-entrance) both}
+.fs-in-zoom{animation:fs-scale-out-in var(--d-slower) var(--e-entrance) both}
+.fs-in-blur{animation:fs-blur-in var(--d-slower) var(--e-entrance) both}
+.fs-in-clip-up{animation:fs-clip-up var(--d-slower) var(--e-contour) both}
+.fs-in-clip-down{animation:fs-clip-down var(--d-slower) var(--e-contour) both}
+.fs-in-clip-left{animation:fs-clip-left var(--d-slower) var(--e-contour) both}
+.fs-in-clip-right{animation:fs-clip-right var(--d-slower) var(--e-contour) both}
+.fs-in-iris{animation:fs-clip-circle var(--d-ambient) var(--e-contour) both}
+.fs-in-unfold{animation:fs-unfold var(--d-slower) var(--e-entrance) both}
+.fs-in-tilt{animation:fs-tilt-in var(--d-slower) var(--e-entrance) both}
+.fs-in-drop{animation:fs-drop var(--d-slow) var(--e-entrance) both}
+.fs-in-rule{animation:fs-expand-w var(--d-slower) var(--e-contour) both}
+.fs-in-curtain{animation:fs-expand-h var(--d-slower) var(--e-contour) both}
+.fs-in-d1{animation-delay:80ms}.fs-in-d2{animation-delay:160ms}.fs-in-d3{animation-delay:240ms}
+.fs-in-d4{animation-delay:320ms}.fs-in-d5{animation-delay:400ms}.fs-in-d6{animation-delay:520ms}
+.fs-stagger > *{animation:fs-fade-up var(--d-slow) var(--e-entrance) both}
+.fs-stagger > *:nth-child(1){animation-delay:0ms}
+.fs-stagger > *:nth-child(2){animation-delay:70ms}
+.fs-stagger > *:nth-child(3){animation-delay:140ms}
+.fs-stagger > *:nth-child(4){animation-delay:210ms}
+.fs-stagger > *:nth-child(5){animation-delay:280ms}
+.fs-stagger > *:nth-child(6){animation-delay:350ms}
+.fs-stagger > *:nth-child(7){animation-delay:420ms}
+.fs-stagger > *:nth-child(8){animation-delay:490ms}
+
+/* ── 75–100 · AMBIENTE (loops) ────────────────────────── */
+@keyframes fs-pulse{0%,100%{opacity:1}50%{opacity:.45}}
+@keyframes fs-pulse-ring{0%{box-shadow:0 0 0 0 rgba(51,255,194,.45)}70%{box-shadow:0 0 0 12px rgba(51,255,194,0)}100%{box-shadow:0 0 0 0 rgba(51,255,194,0)}}
+@keyframes fs-pulse-ring-green{0%{box-shadow:0 0 0 0 rgba(10,220,20,.45)}70%{box-shadow:0 0 0 12px rgba(10,220,20,0)}100%{box-shadow:0 0 0 0 rgba(10,220,20,0)}}
+@keyframes fs-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@keyframes fs-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes fs-drift{0%{transform:translate(0,0)}50%{transform:translate(10px,-6px)}100%{transform:translate(0,0)}}
+@keyframes fs-scan-y{0%{transform:translateY(0)}100%{transform:translateY(100%)}}
+@keyframes fs-scan-x{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+@keyframes fs-radar{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+@keyframes fs-shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes fs-glow-pulse{0%,100%{filter:drop-shadow(0 0 3px rgba(51,255,194,.5))}50%{filter:drop-shadow(0 0 12px rgba(51,255,194,.95))}}
+@keyframes fs-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes fs-ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes fs-rotate-slow{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+@keyframes fs-contour-drift{0%{background-position:120% -20%}50%{background-position:112% -14%}100%{background-position:120% -20%}}
+@keyframes fs-grid-drift{0%{background-position:0 0}100%{background-position:56px 56px}}
+@keyframes fs-wave{0%,100%{transform:translateY(0) scaleY(1)}50%{transform:translateY(-3px) scaleY(1.08)}}
+@keyframes fs-strata-shift{0%,100%{background-position:0 0}50%{background-position:0 8px}}
+@keyframes fs-orbit{0%{transform:rotate(0) translateX(14px) rotate(0)}100%{transform:rotate(360deg) translateX(14px) rotate(-360deg)}}
+@keyframes fs-heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.12)}28%{transform:scale(1)}42%{transform:scale(1.08)}56%{transform:scale(1)}}
+.fs-am-pulse{animation:fs-pulse 2.4s var(--e-standard) infinite}
+.fs-am-pulse-fast{animation:fs-pulse 1.2s var(--e-standard) infinite}
+.fs-am-ring{animation:fs-pulse-ring 2s var(--e-standard) infinite}
+.fs-am-ring-green{animation:fs-pulse-ring-green 2s var(--e-standard) infinite}
+.fs-am-breathe{animation:fs-breathe 4s var(--e-standard) infinite}
+.fs-am-float{animation:fs-float 5s var(--e-standard) infinite}
+.fs-am-drift{animation:fs-drift 9s var(--e-standard) infinite}
+.fs-am-glow{animation:fs-glow-pulse 2.8s var(--e-standard) infinite}
+.fs-am-blink{animation:fs-blink 1.2s steps(2) infinite}
+.fs-am-rotate{animation:fs-rotate-slow 18s linear infinite}
+.fs-am-orbit{animation:fs-orbit 6s linear infinite}
+.fs-am-heartbeat{animation:fs-heartbeat 3s var(--e-standard) infinite}
+.fs-am-wave{animation:fs-wave 2.6s var(--e-standard) infinite}
+.fs-am-contour{animation:fs-contour-drift 22s var(--e-standard) infinite}
+.fs-am-grid{animation:fs-grid-drift 14s linear infinite}
+.fs-am-strata{animation:fs-strata-shift 8s var(--e-standard) infinite}
+.fs-am-shimmer{background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.55) 50%,transparent 80%);background-size:200% 100%;animation:fs-shimmer 2.6s linear infinite}
+.fs-am-ticker{display:flex;width:max-content;animation:fs-ticker 26s linear infinite}
+.fs-am-scan{position:relative;overflow:hidden}
+.fs-am-scan::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--ciano-neon),transparent);animation:fs-scan-y 3.2s var(--e-scan) infinite}
+.fs-am-scan-x{position:relative;overflow:hidden}
+.fs-am-scan-x::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--ciano-neon),transparent);animation:fs-scan-x 3.2s var(--e-scan) infinite}
+.fs-am-radar{position:relative;overflow:hidden}
+.fs-am-radar::after{content:"";position:absolute;inset:0;background:conic-gradient(from 0deg,rgba(51,255,194,.22),transparent 24%);animation:fs-radar 4.5s linear infinite;-webkit-mask-image:radial-gradient(circle,#000 0,transparent 70%);mask-image:radial-gradient(circle,#000 0,transparent 70%)}
+.fs-am-none{animation:none!important}
+
+/* ── 101–110 · TEXTO ──────────────────────────────────── */
+@keyframes fs-type{from{width:0}to{width:100%}}
+@keyframes fs-text-shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes fs-word-in{from{opacity:0;transform:translateY(.35em)}to{opacity:1;transform:none}}
+.fs-tx-type{display:inline-block;overflow:hidden;white-space:nowrap;animation:fs-type 2.2s steps(30,end) both}
+.fs-tx-caret::after{content:"";display:inline-block;width:6px;height:1em;background:currentColor;margin-left:4px;vertical-align:-.12em;animation:fs-blink 1.2s steps(2) infinite}
+.fs-tx-shimmer{background:linear-gradient(100deg,var(--verde-sombra) 20%,var(--ciano-neon) 50%,var(--verde-sombra) 80%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fs-text-shimmer 3.4s linear infinite}
+.fs-tx-word > *{animation:fs-word-in var(--d-slow) var(--e-entrance) both}
+.fs-tx-word > *:nth-child(2){animation-delay:60ms}
+.fs-tx-word > *:nth-child(3){animation-delay:120ms}
+.fs-tx-word > *:nth-child(4){animation-delay:180ms}
+.fs-tx-word > *:nth-child(5){animation-delay:240ms}
+.fs-tx-mask{display:inline-block;clip-path:inset(0 0 0 0);animation:fs-clip-up var(--d-slower) var(--e-contour) both}
+.fs-tx-underline-grow{background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size var(--d-base) var(--e-standard)}
+.fs-tx-underline-grow:hover{background-size:100% 1px}
+.fs-tx-num{font-variant-numeric:tabular-nums;transition:opacity var(--d-fast) linear}
+.fs-tx-strike{position:relative}
+.fs-tx-strike::after{content:"";position:absolute;left:0;top:50%;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform var(--d-base) var(--e-standard)}
+.fs-tx-strike:hover::after{transform:scaleX(1)}
+
+/* ── 111–118 · DADOS E CARREGAMENTO ───────────────────── */
+@keyframes fs-bar-grow{from{width:0}}
+@keyframes fs-fill-rise{from{transform:scaleY(0);transform-origin:bottom}to{transform:scaleY(1)}}
+@keyframes fs-draw{to{stroke-dashoffset:0}}
+@keyframes fs-spin{to{transform:rotate(360deg)}}
+@keyframes fs-skeleton{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes fs-indeterminate{0%{transform:translateX(-100%) scaleX(.4)}100%{transform:translateX(250%) scaleX(.4)}}
+.fs-dv-bar{animation:fs-bar-grow var(--d-slower) var(--e-entrance) both}
+.fs-dv-fill{animation:fs-fill-rise var(--d-slower) var(--e-entrance) both}
+.fs-dv-draw{stroke-dasharray:1000;stroke-dashoffset:1000;animation:fs-draw 1.8s var(--e-contour) forwards}
+.fs-dv-tick{animation:fs-pulse 1.6s var(--e-standard) infinite}
+.fs-ld-spin{animation:fs-spin .9s linear infinite}
+.fs-ld-skeleton{background:linear-gradient(100deg,rgba(0,65,65,.06) 20%,rgba(0,65,65,.12) 50%,rgba(0,65,65,.06) 80%);background-size:200% 100%;animation:fs-skeleton 1.4s linear infinite;border-radius:var(--r-xs)}
+.fs-ld-skeleton-dark{background:linear-gradient(100deg,rgba(255,255,255,.05) 20%,rgba(255,255,255,.12) 50%,rgba(255,255,255,.05) 80%);background-size:200% 100%;animation:fs-skeleton 1.4s linear infinite;border-radius:var(--r-xs)}
+.fs-ld-bar{position:relative;overflow:hidden;background:rgba(0,65,65,.08);height:3px;border-radius:var(--r-pill)}
+.fs-ld-bar::after{content:"";position:absolute;inset:0;background:var(--ciano-neon);animation:fs-indeterminate 1.4s var(--e-scan) infinite}
+
+/* ── Utilitários de transição ─────────────────────────── */
+.fs-t-fast{transition:all var(--d-fast) var(--e-standard)}
+.fs-t-base{transition:all var(--d-base) var(--e-standard)}
+.fs-t-slow{transition:all var(--d-slow) var(--e-standard)}
+.fs-gpu{will-change:transform;backface-visibility:hidden}

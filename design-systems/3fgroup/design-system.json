@@ -1,0 +1,240 @@
+{
+ "v": 3,
+ "layout": "files",
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-10-07T18:05:33Z"
+ },
+ "title": "3F Group Design System",
+ "namespace": "TresFGroup",
+ "libraries": [],
+ "sections": {},
+ "groups": [
+  "Logos",
+  "Empresas"
+ ],
+ "assetGroups": {
+  "Logos": {
+   "name": "Logos",
+   "tile": "l",
+   "order": [
+    "principal-3fgroup-colorida-171x48px.svg",
+    "principal-3fgroup-escura-171x48px.svg",
+    "principal-3fgroup-branca-171x48px.svg",
+    "horizontal-3fgroup-colorida-148x32px.svg",
+    "horizontal-3fgroup-escura-148x32px.svg",
+    "horizontal-3fgroup-branca-148x32px.svg",
+    "vertical-3fgroup-colorida-76x46px.svg",
+    "vertical-3fgroup-escura-76x46px.svg",
+    "vertical-3fgroup-branca-76x46px.svg",
+    "pattern-lavoura-3fgroup-103x103px.svg"
+   ],
+   "files": {
+    "principal-3fgroup-colorida-171x48px.svg": {
+     "name": "principal-3fgroup-colorida-171x48px.svg",
+     "blob": "959fa40bf6ed3a44a3fd850a98a606e9",
+     "size": 3714,
+     "type": "image/svg+xml"
+    },
+    "principal-3fgroup-escura-171x48px.svg": {
+     "name": "principal-3fgroup-escura-171x48px.svg",
+     "blob": "9feb5c2c16b425ea24369b3b51255fcd",
+     "size": 3594,
+     "type": "image/svg+xml"
+    },
+    "principal-3fgroup-branca-171x48px.svg": {
+     "name": "principal-3fgroup-branca-171x48px.svg",
+     "blob": "0c88ea55e956eab06484d416ece9ba2b",
+     "size": 3594,
+     "type": "image/svg+xml"
+    },
+    "horizontal-3fgroup-colorida-148x32px.svg": {
+     "name": "horizontal-3fgroup-colorida-148x32px.svg",
+     "blob": "510ec88c9dfb0a0198e54f62bd2583b4",
+     "size": 3674,
+     "type": "image/svg+xml"
+    },
+    "horizontal-3fgroup-escura-148x32px.svg": {
+     "name": "horizontal-3fgroup-escura-148x32px.svg",
+     "blob": "5d9fbce72728c85694b559f0144e8b50",
+     "size": 3554,
+     "type": "image/svg+xml"
+    },
+    "horizontal-3fgroup-branca-148x32px.svg": {
+     "name": "horizontal-3fgroup-branca-148x32px.svg",
+     "blob": "95bc1cb8c067e34b70998f960724bbda",
+     "size": 3554,
+     "type": "image/svg+xml"
+    },
+    "vertical-3fgroup-colorida-76x46px.svg": {
+     "name": "vertical-3fgroup-colorida-76x46px.svg",
+     "blob": "d5b1683ee6358a44d6e5d94220f1b967",
+     "size": 3534,
+     "type": "image/svg+xml"
+    },
+    "vertical-3fgroup-escura-76x46px.svg": {
+     "name": "vertical-3fgroup-escura-76x46px.svg",
+     "blob": "41f453c4df8652816121c812e6981513",
+     "size": 3414,
+     "type": "image/svg+xml"
+    },
+    "vertical-3fgroup-branca-76x46px.svg": {
+     "name": "vertical-3fgroup-branca-76x46px.svg",
+     "blob": "d278a2f8cdbabda37fe1e29b9a020186",
+     "size": 3414,
+     "type": "image/svg+xml"
+    },
+    "pattern-lavoura-3fgroup-103x103px.svg": {
+     "name": "pattern-lavoura-3fgroup-103x103px.svg",
+     "blob": "022276726229f4574a19efa059449bfb",
+     "size": 5073,
+     "type": "image/svg+xml"
+    }
+   }
+  },
+  "Empresas": {
+   "name": "Empresas",
+   "tile": "m",
+   "order": [
+    "agro3f-monocromatica-escura-150x80px.svg",
+    "agro3f-monocromatica-clara-150x80px.svg",
+    "orvix-monocromatica-escura-150x80px.svg",
+    "orvix-monocromatica-clara-150x80px.svg",
+    "barygen-monocromatica-escura-150x80px.svg",
+    "barygen-monocromatica-clara-150x80px.svg",
+    "farmsense-monocromatica-escura-150x80px.svg",
+    "farmsense-monocromatica-clara-150x80px.svg",
+    "mixsafe-monocromatica-escura-150x80px.svg",
+    "mixsafe-monocromatica-clara-150x80px.svg",
+    "matria-monocromatica-escura-150x80px.svg",
+    "matria-monocromatica-clara-150x80px.svg",
+    "adisa-monocromatica-escura-150x80px.svg",
+    "adisa-monocromatica-clara-150x80px.svg",
+    "horizontal-farmcast-monocromatica-escura-150x80px.svg",
+    "horizontal-farmcast-monocromatica-clara-150x80px.svg",
+    "horizontal-farmcast-colorida-escura-150x80px.svg",
+    "horizontal-farmcast-colorida-clara-150x80px.svg"
+   ],
+   "files": {
+    "agro3f-monocromatica-escura-150x80px.svg": {
+     "name": "agro3f-monocromatica-escura-150x80px.svg",
+     "blob": "6cff5c75af8d652d063fd441122f6a86",
+     "size": 3406,
+     "type": "image/svg+xml"
+    },
+    "agro3f-monocromatica-clara-150x80px.svg": {
+     "name": "agro3f-monocromatica-clara-150x80px.svg",
+     "blob": "e9c810685a5798c6abf4d7c594511c3b",
+     "size": 3406,
+     "type": "image/svg+xml"
+    },
+    "orvix-monocromatica-escura-150x80px.svg": {
+     "name": "orvix-monocromatica-escura-150x80px.svg",
+     "blob": "868430e7a391de6fb04d995f89b44365",
+     "size": 12621,
+     "type": "image/svg+xml"
+    },
+    "orvix-monocromatica-clara-150x80px.svg": {
+     "name": "orvix-monocromatica-clara-150x80px.svg",
+     "blob": "44095d5c48063edda22d6718db7901a6",
+     "size": 12621,
+     "type": "image/svg+xml"
+    },
+    "barygen-monocromatica-escura-150x80px.svg": {
+     "name": "barygen-monocromatica-escura-150x80px.svg",
+     "blob": "e61e5790dd518a47e1e9900651efd54f",
+     "size": 8763,
+     "type": "image/svg+xml"
+    },
+    "barygen-monocromatica-clara-150x80px.svg": {
+     "name": "barygen-monocromatica-clara-150x80px.svg",
+     "blob": "27677e70118d339eda3ebed145a6c9a1",
+     "size": 8763,
+     "type": "image/svg+xml"
+    },
+    "farmsense-monocromatica-escura-150x80px.svg": {
+     "name": "farmsense-monocromatica-escura-150x80px.svg",
+     "blob": "2e6b0f081289c40167404a1c44781315",
+     "size": 6937,
+     "type": "image/svg+xml"
+    },
+    "farmsense-monocromatica-clara-150x80px.svg": {
+     "name": "farmsense-monocromatica-clara-150x80px.svg",
+     "blob": "fa53d53c795255940bf46ebcdcf59980",
+     "size": 6884,
+     "type": "image/svg+xml"
+    },
+    "mixsafe-monocromatica-escura-150x80px.svg": {
+     "name": "mixsafe-monocromatica-escura-150x80px.svg",
+     "blob": "308791ddab189dedfab6ff863559175c",
+     "size": 5033,
+     "type": "image/svg+xml"
+    },
+    "mixsafe-monocromatica-clara-150x80px.svg": {
+     "name": "mixsafe-monocromatica-clara-150x80px.svg",
+     "blob": "e33e8f080d15024d2cabf62377f4b1f1",
+     "size": 5033,
+     "type": "image/svg+xml"
+    },
+    "matria-monocromatica-escura-150x80px.svg": {
+     "name": "matria-monocromatica-escura-150x80px.svg",
+     "blob": "f9801ee4d75c2061053c699545c1ef94",
+     "size": 4209,
+     "type": "image/svg+xml"
+    },
+    "matria-monocromatica-clara-150x80px.svg": {
+     "name": "matria-monocromatica-clara-150x80px.svg",
+     "blob": "753e703c2367b37529376f73dfbfb91b",
+     "size": 4209,
+     "type": "image/svg+xml"
+    },
+    "adisa-monocromatica-escura-150x80px.svg": {
+     "name": "adisa-monocromatica-escura-150x80px.svg",
+     "blob": "05e29fff04f5efe66876948d47de4fbf",
+     "size": 4379,
+     "type": "image/svg+xml"
+    },
+    "adisa-monocromatica-clara-150x80px.svg": {
+     "name": "adisa-monocromatica-clara-150x80px.svg",
+     "blob": "57636bec576b60c344b69bb057de5913",
+     "size": 4379,
+     "type": "image/svg+xml"
+    },
+    "horizontal-farmcast-monocromatica-escura-150x80px.svg": {
+     "name": "horizontal-farmcast-monocromatica-escura-150x80px.svg",
+     "blob": "e21719377a7ff713a047b32afad29213",
+     "size": 6233,
+     "type": "image/svg+xml"
+    },
+    "horizontal-farmcast-monocromatica-clara-150x80px.svg": {
+     "name": "horizontal-farmcast-monocromatica-clara-150x80px.svg",
+     "blob": "4b22297b202df91f0fe02f26016d406b",
+     "size": 6233,
+     "type": "image/svg+xml"
+    },
+    "horizontal-farmcast-colorida-escura-150x80px.svg": {
+     "name": "horizontal-farmcast-colorida-escura-150x80px.svg",
+     "blob": "a51810ef749e3a5c038341a988f728a0",
+     "size": 6488,
+     "type": "image/svg+xml"
+    },
+    "horizontal-farmcast-colorida-clara-150x80px.svg": {
+     "name": "horizontal-farmcast-colorida-clara-150x80px.svg",
+     "blob": "93c6eb1d902e0470f1f7c072cfd03831",
+     "size": 6488,
+     "type": "image/svg+xml"
+    }
+   }
+  }
+ },
+ "blobs": {},
+ "docs": {
+  "sections": []
+ },
+ "lastChange": {
+  "by": "Claude",
+  "at": "2026-10-07T18:05:33Z",
+  "via": "Claude Code",
+  "note": "Reprodução completa do 3F Group Design System: tokens, brand book, 95 componentes, fontes Be Vietnam Pro e 28 logos."
+ }
+}

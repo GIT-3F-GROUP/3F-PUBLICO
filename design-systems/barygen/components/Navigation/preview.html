@@ -1,0 +1,29 @@
+<!-- @dsCard group="Components" height=360 subtitle="Barra, abas, trilha, paginação, passos, menus" page -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>BARYGEN</title>
+<script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{padding:20px;background:var(--brand-amarelo-suave);font-family:var(--ff-body)}.lab{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:8px}</style>
+</head><body><div id="root"></div><script type="text/babel">
+const B=window.BarygenDesignSystem_a84d4b;
+const {Navbar,Tabs,PillTabs,Breadcrumb,Pagination,Steps,SideMenu,Dropdown,Button}=B;
+function Card(){const [t,setT]=React.useState('Características');const [p,setP]=React.useState(1);
+ return <div style={{display:'grid',gridTemplateColumns:'minmax(0,1fr)',gap:18}}>
+ <Navbar links={['Híbridos','Tecnologia','Onde comprar','Eventos','Contato']} active="Híbridos"
+  action={<Button variant="primary" size="sm">Fale com um consultor</Button>}/>
+ <Navbar tone="light" links={['Visão geral','Campos','Pedidos','Suporte']} active="Visão geral"
+  action={<Button variant="secondary" size="sm">Fale com um consultor</Button>}/>
+ <div className="bry-row" style={{gap:24}}>
+  <Tabs tabs={['Características','Posicionamento','Resultados','Downloads']} value={t} onChange={setT}/>
+ </div>
+ <div className="bry-row" style={{gap:28}}>
+  <PillTabs tabs={['Grãos','Silagem','Ambos']} value="Grãos"/>
+  <Breadcrumb items={['Início','Híbridos','BG307 Max']}/>
+  <Pagination page={p} total={12} onChange={setP}/>
+ </div>
+ <Steps steps={['Dados','Fazenda','Interesse','Confirmação']} current={2}/>
+ <div className="bry-row" style={{gap:28,alignItems:'flex-start'}}>
+  <SideMenu active="Visão geral" items={[{label:'Visão geral',icon:'casa'},{label:'Eventos',icon:'agenda'},{label:'Campos',icon:'local'},{label:'Consultores',icon:'conta'}]}/>
+  <Dropdown items={[{label:'Ver perfil'},{label:'Minhas lavouras'},{label:'Preferências'},{separator:true},{label:'Sair da conta',danger:true}]}/>
+ </div>
+</div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<Card/>);
+</script></body></html>
