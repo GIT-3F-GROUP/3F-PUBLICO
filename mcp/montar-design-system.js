@@ -11,7 +11,7 @@
 
 import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-import { RAIZ_EMBUTIDA } from './biblioteca.js';
+import { RAIZ_EMBUTIDA } from './arquivos.js';
 import { DESIGN_SYSTEMS } from './empresas.js';
 
 const [ds, baixada, versao] = process.argv.slice(2);

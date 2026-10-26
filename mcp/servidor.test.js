@@ -2,14 +2,16 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { InMemoryTransport } from '@modelcontextprotocol/sdk/inMemory.js';
+import './arquivos.js';
 import { criarServidor } from './servidor.js';
+import { lerVersao } from './versao.js';
 import { disponiveis } from './biblioteca.js';
 import { escolherDesignSystem, resolverDesignSystem } from './empresas.js';
 
 async function conectar() {
   const [lado1, lado2] = InMemoryTransport.createLinkedPair();
   const cliente = new Client({ name: 'teste', version: '0.0.0' });
-  await Promise.all([criarServidor().connect(lado1), cliente.connect(lado2)]);
+  await Promise.all([criarServidor({ versao: lerVersao() }).connect(lado1), cliente.connect(lado2)]);
   return cliente;
 }
 
@@ -105,7 +107,7 @@ test('recusa design system desconhecido com a lista de opções', async () => {
 
 test('nenhum design system tem dados sensíveis (POLITICA-DE-DADOS.md)', async () => {
   const { verificar } = await import('./verificar-sensiveis.js');
-  const achados = disponiveis().flatMap(verificar);
+  const achados = (await Promise.all(disponiveis().map(verificar))).flat();
   const resumo = achados.slice(0, 20).map((a) => `${a.ds}/${a.arquivo}:${a.linha} [${a.tipo}] ${a.trecho}`);
   assert.equal(achados.length, 0, `Rode "node mcp/verificar-sensiveis.js":\n${resumo.join('\n')}`);
 });
@@ -134,4 +136,11 @@ test('numera as versões e mantém o README em dia', async () => {
   const { readFileSync } = await import('node:fs');
   const readme = readFileSync(new URL('../README.md', import.meta.url), 'utf8');
   assert.equal(readme.match(LINHA_VERSAO)?.[0], linhaDaVersao(lerVersao()), 'Rode "npm run versao".');
+});
+
+test('acha subseções do guia quando não há seção com o nome', async () => {
+  const cliente = await conectar();
+  const r = await chamar(cliente, 'ler_guia', { design_system: 'orvix', secao: 'cores' });
+  assert.ok(!r.isError, r.texto.slice(0, 200));
+  assert.match(r.texto, /^### Cores/);
 });

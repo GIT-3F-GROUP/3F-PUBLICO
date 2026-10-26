@@ -26,5 +26,8 @@
     "@modelcontextprotocol/sdk": "^1.32.2",
     "tar": "^7.5.22",
     "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.152.0"
   }
 }

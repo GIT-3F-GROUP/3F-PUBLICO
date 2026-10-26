@@ -6,8 +6,10 @@
 import { createServer } from 'node:http';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
+import './arquivos.js';
 import { iniciarAtualizacao } from './atualizador.js';
 import { criarServidor } from './servidor.js';
+import { lerVersao } from './versao.js';
 
 async function lerCorpo(req) {
   const partes = [];
@@ -34,7 +36,7 @@ function iniciarHttp(porta) {
     }
     try {
       const corpo = await lerCorpo(req);
-      const servidor = criarServidor();
+      const servidor = criarServidor({ versao: lerVersao() });
       const transporte = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined, enableJsonResponse: true });
       res.on('close', () => {
         transporte.close();
@@ -58,5 +60,5 @@ iniciarAtualizacao();
 if (process.argv.includes('--http')) {
   iniciarHttp(Number(process.env.PORT) || 3000);
 } else {
-  await criarServidor().connect(new StdioServerTransport());
+  await criarServidor({ versao: lerVersao() }).connect(new StdioServerTransport());
 }

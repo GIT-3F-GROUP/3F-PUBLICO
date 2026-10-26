@@ -8,6 +8,7 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import './arquivos.js';
 import * as bib from './biblioteca.js';
 
 const PERMITIDOS = JSON.parse(
@@ -84,11 +85,11 @@ const REGRAS = [
 // Arquivos de terceiros, sem conteúdo da marca.
 const IGNORAR = /(^|\/)(lib\/|fonts\/)|\.min\.js$/;
 
-export function verificar(ds) {
+export async function verificar(ds) {
   const achados = [];
   for (const arquivo of bib.listarArquivos(ds)) {
     if (IGNORAR.test(arquivo) || !bib.ehTexto(arquivo) || arquivo.endsWith('.svg')) continue;
-    const linhas = bib.lerTexto(ds, arquivo).split('\n');
+    const linhas = (await bib.lerTexto(ds, arquivo)).split('\n');
     linhas.forEach((linha, i) => {
       for (const regra of REGRAS) {
         for (const [trecho] of linha.matchAll(regra.padrao)) {
@@ -105,7 +106,7 @@ export function verificar(ds) {
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const pedidos = process.argv.slice(2);
   const lista = pedidos.length ? pedidos : bib.disponiveis();
-  const achados = lista.flatMap(verificar);
+  const achados = (await Promise.all(lista.map(verificar))).flat();
   for (const a of achados) console.log(`${a.ds}/${a.arquivo}:${a.linha}  [${a.tipo}] ${a.trecho}  …${a.contexto}…`);
   console.log(achados.length ? `\n${achados.length} trecho(s) sensível(is).` : 'Nenhum dado sensível encontrado.');
   process.exit(achados.length ? 1 : 0);

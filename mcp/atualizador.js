@@ -9,7 +9,7 @@ import path from 'node:path';
 import { Readable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
 import * as tar from 'tar';
-import { definirRaiz } from './biblioteca.js';
+import { usarPasta } from './arquivos.js';
 
 const REPO = process.env.DS_REPO || 'GIT-3F-GROUP/3F-PUBLICO';
 const RAMO = process.env.DS_RAMO || 'main';
@@ -65,7 +65,7 @@ export async function atualizar() {
     if (!sha || sha === commitAtual) return false;
     const pasta = await baixar(sha);
     if (!existsSync(path.join(pasta, 'design-systems'))) throw new Error(`${RAMO} não tem a pasta design-systems/`);
-    definirRaiz(path.join(pasta, 'design-systems'));
+    usarPasta(path.join(pasta, 'design-systems'));
     commitAtual = sha;
     limparAntigas(sha);
     log(`atualizado para ${REPO}@${sha.slice(0, 7)}`);

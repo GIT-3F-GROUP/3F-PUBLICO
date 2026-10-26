@@ -1,0 +1,20 @@
+// Cloudflare Worker do 3F GROUP DESIGN (ver mcp/worker.js).
+// Publicação: o Cloudflare (Workers Builds) roda `npx wrangler deploy` a
+// cada push no main; o build abaixo monta os assets antes.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "3f-group-design",
+  "main": "mcp/worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "build": {
+    "command": "node mcp/construir-worker.js"
+  },
+  "assets": {
+    "directory": ".worker/publico",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

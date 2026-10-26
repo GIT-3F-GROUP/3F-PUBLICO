@@ -2,24 +2,26 @@
 // Cada design system segue o formato do tipo Design System do Claude:
 // README.md (brand book), tokens.json, design-system.json, components/,
 // assets/, fonts/ e, em alguns, api/ e tokens.css.
+//
+// Os arquivos vêm de uma "fonte", que pode ser a pasta no disco (Node, ver
+// arquivos.js) ou os assets do Cloudflare Worker (ver worker.js). A fonte
+// tem a lista de todos os caminhos ("<ds>/<caminho>") e lê o conteúdo.
 
-import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { DESIGN_SYSTEMS, normalizar } from './empresas.js';
 
-export const RAIZ_EMBUTIDA = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'design-systems');
+const posix = path.posix;
 
-// Pasta de onde os design systems são lidos. Começa na cópia que veio com o
-// pacote e passa para a cópia baixada do GitHub quando ela fica pronta.
-let raiz = process.env.DS_DIR ? path.resolve(process.env.DS_DIR) : RAIZ_EMBUTIDA;
+let fonte = null;
 
-export function raizAtual() {
-  return raiz;
+// fonte = { arquivos: string[] (ordenados, "<ds>/<caminho>"), ler: async (caminho) => Uint8Array }
+export function definirFonte(nova) {
+  fonte = { ...nova, conjunto: new Set(nova.arquivos) };
 }
 
-export function definirRaiz(pasta) {
-  raiz = pasta;
+function exigirFonte() {
+  if (!fonte) throw new Error('Nenhuma fonte de design systems configurada.');
+  return fonte;
 }
 
 const TIPOS = {
@@ -44,7 +46,7 @@ const TIPOS = {
 };
 
 export function tipoDoArquivo(caminho) {
-  return TIPOS[path.extname(caminho).toLowerCase()] ?? 'application/octet-stream';
+  return TIPOS[posix.extname(caminho).toLowerCase()] ?? 'application/octet-stream';
 }
 
 export function ehTexto(caminho) {
@@ -52,56 +54,52 @@ export function ehTexto(caminho) {
   return tipo.startsWith('text/') || tipo === 'application/json' || tipo === 'image/svg+xml';
 }
 
-export function pastaDo(ds) {
-  return path.join(raiz, ds);
-}
-
 export function disponiveis() {
-  return Object.keys(DESIGN_SYSTEMS).filter((ds) => existsSync(pastaDo(ds)));
+  const { arquivos } = exigirFonte();
+  return Object.keys(DESIGN_SYSTEMS).filter((ds) => arquivos.some((f) => f.startsWith(`${ds}/`)));
 }
 
-// Resolve um caminho relativo dentro do design system, sem deixar sair dele.
-export function resolverCaminho(ds, relativo = '') {
-  const base = pastaDo(ds);
-  const alvo = path.resolve(base, relativo.replace(/^\/+/, ''));
-  if (alvo !== base && !alvo.startsWith(base + path.sep)) {
-    throw new Error(`Caminho fora do design system: ${relativo}`);
-  }
-  return alvo;
+// Normaliza um caminho relativo dentro do design system, sem deixar sair dele.
+export function resolverCaminho(relativo = '') {
+  const limpo = posix.normalize(String(relativo).replace(/^\/+/, ''));
+  if (limpo === '..' || limpo.startsWith('../')) throw new Error(`Caminho fora do design system: ${relativo}`);
+  return limpo === '.' ? '' : limpo.replace(/\/+$/, '');
 }
 
 export function existe(ds, relativo) {
-  return existsSync(resolverCaminho(ds, relativo));
+  return exigirFonte().conjunto.has(`${ds}/${resolverCaminho(relativo)}`);
 }
 
-export function lerTexto(ds, relativo) {
-  return readFileSync(resolverCaminho(ds, relativo), 'utf8');
+export async function lerBinario(ds, relativo) {
+  const caminho = resolverCaminho(relativo);
+  if (!existe(ds, caminho)) throw new Error(`Arquivo não encontrado: ${ds}/${caminho}.`);
+  return exigirFonte().ler(`${ds}/${caminho}`);
 }
 
-export function lerBinario(ds, relativo) {
-  return readFileSync(resolverCaminho(ds, relativo));
+export async function lerTexto(ds, relativo) {
+  return new TextDecoder().decode(await lerBinario(ds, relativo));
 }
 
-export function lerJson(ds, relativo) {
-  return JSON.parse(lerTexto(ds, relativo));
+export async function lerJson(ds, relativo) {
+  return JSON.parse(await lerTexto(ds, relativo));
+}
+
+export function paraBase64(bytes) {
+  let binario = '';
+  for (let i = 0; i < bytes.length; i += 0x8000) binario += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+  return btoa(binario);
 }
 
 // Lista os arquivos (recursivamente) de uma pasta do design system.
 export function listarArquivos(ds, pasta = '') {
-  const inicio = resolverCaminho(ds, pasta);
-  if (!existsSync(inicio)) return [];
-  if (statSync(inicio).isFile()) return [path.relative(pastaDo(ds), inicio)];
-  const saida = [];
-  const visitar = (dir) => {
-    for (const item of readdirSync(dir, { withFileTypes: true })) {
-      if (item.name.startsWith('.')) continue;
-      const completo = path.join(dir, item.name);
-      if (item.isDirectory()) visitar(completo);
-      else saida.push(path.relative(pastaDo(ds), completo).split(path.sep).join('/'));
-    }
-  };
-  visitar(inicio);
-  return saida.sort();
+  const relativo = resolverCaminho(pasta);
+  const prefixo = relativo ? `${ds}/${relativo}` : ds;
+  const { arquivos, conjunto } = exigirFonte();
+  if (relativo && conjunto.has(prefixo)) return [relativo];
+  return arquivos
+    .filter((f) => f.startsWith(`${prefixo}/`))
+    .map((f) => f.slice(ds.length + 1))
+    .filter((f) => !f.split('/').some((parte) => parte.startsWith('.')));
 }
 
 // ---------- Guia (README.md) ----------
@@ -115,6 +113,22 @@ export function secoes(markdown) {
     if (linha.startsWith('```')) emCodigo = !emCodigo;
     if (!emCodigo && /^##\s+/.test(linha)) lista.push({ titulo: linha.replace(/^##\s+/, '').trim(), linhas: [] });
     lista[lista.length - 1].linhas.push(linha);
+  }
+  return lista.map((s) => ({ titulo: s.titulo, texto: s.linhas.join('\n').trim() }));
+}
+
+// Subseções de nível 3 (###) de todo o Markdown, cada uma até o próximo ### ou ##.
+export function subsecoes(markdown) {
+  const lista = [];
+  let atual = null;
+  let emCodigo = false;
+  for (const linha of markdown.split('\n')) {
+    if (linha.startsWith('```')) emCodigo = !emCodigo;
+    if (!emCodigo && /^#{2,3}\s+/.test(linha)) {
+      atual = /^###\s+/.test(linha) ? { titulo: linha.replace(/^###\s+/, '').trim(), linhas: [] } : null;
+      if (atual) lista.push(atual);
+    }
+    atual?.linhas.push(linha);
   }
   return lista.map((s) => ({ titulo: s.titulo, texto: s.linhas.join('\n').trim() }));
 }
@@ -137,93 +151,98 @@ function primeiraFrase(markdown) {
   return '';
 }
 
-export function listarComponentes(ds) {
-  const pasta = resolverCaminho(ds, 'components');
-  if (!existsSync(pasta)) return [];
-  return readdirSync(pasta, { withFileTypes: true })
-    .filter((d) => d.isDirectory() && !['lib', 'src'].includes(d.name))
-    .map((d) => {
-      const nome = d.name;
-      const readme = existe(ds, `components/${nome}/README.md`) ? lerTexto(ds, `components/${nome}/README.md`) : '';
-      const api = existe(ds, `api/components/${nome}.md`) ? lerTexto(ds, `api/components/${nome}.md`) : '';
-      return { nome, descricao: primeiraFrase(readme) || primeiraFrase(api) };
-    })
-    .sort((a, b) => a.nome.localeCompare(b.nome));
+function nomesDeComponentes(ds) {
+  const nomes = new Set();
+  for (const f of listarArquivos(ds, 'components')) {
+    const partes = f.split('/');
+    if (partes.length > 2 && !['lib', 'src'].includes(partes[1])) nomes.add(partes[1]);
+  }
+  return [...nomes].sort((a, b) => a.localeCompare(b));
+}
+
+const lerSeExistir = async (ds, caminho) => (existe(ds, caminho) ? lerTexto(ds, caminho) : '');
+
+export async function listarComponentes(ds) {
+  return Promise.all(
+    nomesDeComponentes(ds).map(async (nome) => {
+      const readme = await lerSeExistir(ds, `components/${nome}/README.md`);
+      const descricao = primeiraFrase(readme) || primeiraFrase(await lerSeExistir(ds, `api/components/${nome}.md`));
+      return { nome, descricao };
+    }),
+  );
+}
+
+export function contarComponentes(ds) {
+  return nomesDeComponentes(ds).length;
 }
 
 export function resolverComponente(ds, nome) {
-  const lista = listarComponentes(ds);
+  const lista = nomesDeComponentes(ds);
   const alvo = normalizar(nome);
-  return (
-    lista.find((c) => normalizar(c.nome) === alvo) ??
-    lista.find((c) => normalizar(c.nome).includes(alvo) || alvo.includes(normalizar(c.nome)))
-  )?.nome;
+  return lista.find((c) => normalizar(c) === alvo) ?? lista.find((c) => normalizar(c).includes(alvo) || alvo.includes(normalizar(c)));
 }
 
 // Arquivos de código-fonte (.jsx) cujo nome é o do componente.
 export function fontesDoComponente(ds, nome) {
-  return listarArquivos(ds, 'components/src').filter((f) => path.basename(f, path.extname(f)) === nome);
+  return listarArquivos(ds, 'components/src').filter((f) => posix.basename(f, posix.extname(f)) === nome);
 }
 
 // ---------- Logos e outros assets ----------
 
 // Lê os grupos de assets descritos no design-system.json.
-export function gruposDeAssets(ds) {
+export async function gruposDeAssets(ds) {
   if (!existe(ds, 'design-system.json')) return [];
-  const manifesto = lerJson(ds, 'design-system.json');
+  const manifesto = await lerJson(ds, 'design-system.json');
   const grupos = manifesto.assetGroups ?? {};
-  return Object.entries(grupos).map(([chave, grupo]) => {
-    // Alguns design systems guardam os arquivos no armazenamento de assets
-    // (listados em "files"); outros como arquivos publicados na pasta, só
-    // com a ordem no manifesto. Junta os dois casos.
-    const naPasta = listarArquivos(ds, `assets/${chave}`)
-      .map((f) => path.basename(f))
-      .filter((nome) => nome !== 'README.md');
-    const nomes = [...new Set([...(grupo.order ?? []), ...Object.keys(grupo.files ?? {}), ...naPasta])];
-    const arquivos = nomes
-      .filter((nome) => grupo.files?.[nome] || naPasta.includes(nome))
-      .map((nome) => {
-        const caminho = `assets/${chave}/${nome}`;
-        return { nome, caminho, tipo: grupo.files?.[nome]?.type ?? tipoDoArquivo(nome), disponivel: existe(ds, caminho) };
-      });
-    const leiaMe = existe(ds, `assets/${chave}/README.md`) ? lerTexto(ds, `assets/${chave}/README.md`) : '';
-    return { grupo: grupo.name ?? chave, pasta: `assets/${chave}`, orientacoes: leiaMe, arquivos };
-  });
+  return Promise.all(
+    Object.entries(grupos).map(async ([chave, grupo]) => {
+      // Alguns design systems guardam os arquivos no armazenamento de assets
+      // (listados em "files"); outros como arquivos publicados na pasta, só
+      // com a ordem no manifesto. Junta os dois casos.
+      const naPasta = listarArquivos(ds, `assets/${chave}`)
+        .map((f) => posix.basename(f))
+        .filter((nome) => nome !== 'README.md');
+      const nomes = [...new Set([...(grupo.order ?? []), ...Object.keys(grupo.files ?? {}), ...naPasta])];
+      const arquivos = nomes
+        .filter((nome) => grupo.files?.[nome] || naPasta.includes(nome))
+        .map((nome) => {
+          const caminho = `assets/${chave}/${nome}`;
+          return { nome, caminho, tipo: grupo.files?.[nome]?.type ?? tipoDoArquivo(nome), disponivel: existe(ds, caminho) };
+        });
+      const orientacoes = await lerSeExistir(ds, `assets/${chave}/README.md`);
+      return { grupo: grupo.name ?? chave, pasta: `assets/${chave}`, orientacoes, arquivos };
+    }),
+  );
 }
 
-export function resolverAsset(ds, nome) {
+export async function resolverAsset(ds, nome) {
   const alvo = nome.trim().toLowerCase();
-  for (const grupo of gruposDeAssets(ds)) {
+  for (const grupo of await gruposDeAssets(ds)) {
     for (const arquivo of grupo.arquivos) {
       if (arquivo.nome.toLowerCase() === alvo || arquivo.caminho.toLowerCase() === alvo) return arquivo.caminho;
     }
   }
-  return existe(ds, nome) ? nome : null;
+  return existe(ds, nome) ? resolverCaminho(nome) : null;
 }
 
 // ---------- Busca ----------
 
-const PASTAS_DE_BUSCA = ['README.md', 'SKILL.md', 'components', 'api', 'assets', 'ui_kits'];
+const PASTAS_DE_BUSCA = ['README.md', 'components', 'api', 'assets', 'ui_kits'];
+const plano = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
-export function buscar(termo, lista, limite = 40) {
+export async function buscar(termo, lista, limite = 40) {
   const alvo = normalizar(termo);
-  const palavras = String(termo)
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .toLowerCase()
-    .split(/\s+/)
-    .filter(Boolean);
+  const palavras = plano(String(termo)).split(/\s+/).filter(Boolean);
   const achados = [];
   for (const ds of lista) {
     const arquivos = PASTAS_DE_BUSCA.flatMap((p) => listarArquivos(ds, p)).filter((f) => f.endsWith('.md'));
-    for (const arquivo of arquivos) {
-      const linhas = lerTexto(ds, arquivo).split('\n');
-      linhas.forEach((linha, i) => {
-        const plana = linha.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-        const casa = palavras.every((p) => plana.includes(p)) || (alvo && normalizar(linha).includes(alvo));
+    const textos = await Promise.all(arquivos.map((f) => lerTexto(ds, f)));
+    arquivos.forEach((arquivo, n) => {
+      textos[n].split('\n').forEach((linha, i) => {
+        const casa = palavras.every((p) => plano(linha).includes(p)) || (alvo && normalizar(linha).includes(alvo));
         if (casa) achados.push({ designSystem: ds, arquivo, linha: i + 1, trecho: linha.trim().slice(0, 240) });
       });
-    }
+    });
   }
   return { total: achados.length, achados: achados.slice(0, limite) };
 }

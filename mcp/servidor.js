@@ -1,9 +1,8 @@
-// Monta o 3F GROUP DESIGN: ferramentas, recursos
-// e prompts. O transporte (stdio ou HTTP) fica em index.js.
+// Monta o 3F GROUP DESIGN: ferramentas, recursos e prompts. O transporte
+// fica em index.js (stdio e HTTP em Node) e em worker.js (Cloudflare).
 
 import { McpServer, ResourceTemplate } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
-import { lerVersao } from './versao.js';
 import * as bib from './biblioteca.js';
 import { DESIGN_SYSTEMS, EMPRESAS_SEM_DS, dadosDaEmpresa, escolherDesignSystem, resolverDesignSystem } from './empresas.js';
 
@@ -55,11 +54,15 @@ const campoDS = z
   .string()
   .describe('Design system: 3fgroup, orvix, barygen, mixsafe ou farmsense (aceita o nome da empresa, como "ORVIX" ou "3F Group").');
 
-export function criarServidor() {
+// versao: { versao, data } de versao.json. urlPublica: endereço onde os
+// arquivos dos design systems ficam abertos na web (só no Worker).
+export function criarServidor({ versao, urlPublica } = {}) {
   const servidor = new McpServer(
-    { name: '3f-group-design', title: '3F GROUP DESIGN', version: lerVersao().versao },
+    { name: '3f-group-design', title: '3F GROUP DESIGN', version: versao?.versao ?? '0' },
     { instructions: INSTRUCOES },
   );
+
+  const linkPublico = (ds, caminho) => `${urlPublica}/${ds}/${caminho.split('/').map(encodeURIComponent).join('/')}`;
 
   servidor.registerTool(
     'listar_design_systems',
@@ -75,12 +78,11 @@ export function criarServidor() {
         marca: DESIGN_SYSTEMS[ds].marca,
         site: DESIGN_SYSTEMS[ds].site,
         atuacao: DESIGN_SYSTEMS[ds].atuacao,
-        componentes: bib.listarComponentes(ds).length,
+        componentes: bib.contarComponentes(ds),
         artifact: DESIGN_SYSTEMS[ds].artifact,
       }));
-      const { versao, data } = lerVersao();
       return texto({
-        versao: `${versao} · ${data}`,
+        versao: versao ? `${versao.versao} · ${versao.data}` : undefined,
         designSystems: lista,
         semDesignSystemProprio: Object.values(EMPRESAS_SEM_DS).map((e) => `${e.marca}: usa o 3F Group Design System`),
       });
@@ -125,13 +127,13 @@ export function criarServidor() {
         'Lê o guia (brand book) de um design system: regras de ouro, voz, cores, tipografia, layout, logos, ícones e catálogo de componentes. Sem "secao", devolve o guia inteiro quando é curto, ou a abertura e o índice de seções quando é longo.',
       inputSchema: {
         design_system: campoDS,
-        secao: z.string().optional().describe('Título (ou parte) de uma seção de nível ##, como "Cor", "Tipografia" ou "Logos".'),
+        secao: z.string().optional().describe('Título (ou parte) de uma seção ou subseção do guia, como "Cor", "Tipografia" ou "Logos".'),
         completo: z.boolean().default(false).describe('Devolve o guia inteiro mesmo se for longo.'),
       },
     },
     seguro(async ({ design_system, secao, completo }) => {
       const ds = exigirDS(design_system);
-      const guia = bib.lerTexto(ds, 'README.md');
+      const guia = await bib.lerTexto(ds, 'README.md');
       const lista = bib.secoes(guia);
       const indice = lista
         .filter((s) => s.titulo)
@@ -145,7 +147,9 @@ export function criarServidor() {
         const alvo = secao.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
         const plano = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
         const achadas = lista.filter((s) => s.titulo && plano(s.titulo) === alvo);
-        const escolhidas = achadas.length ? achadas : lista.filter((s) => s.titulo && plano(s.titulo).includes(alvo));
+        let escolhidas = achadas.length ? achadas : lista.filter((s) => s.titulo && plano(s.titulo).includes(alvo));
+        // Sem seção de nível ## com esse nome, procura nas subseções (###).
+        if (!escolhidas.length) escolhidas = bib.subsecoes(guia).filter((s) => plano(s.titulo).includes(alvo));
         if (!escolhidas.length) return erro(`Seção "${secao}" não encontrada no guia de ${ds}. Seções:\n${indice}`);
         return texto(escolhidas.map((s) => s.texto).join('\n\n'));
       }
@@ -171,13 +175,13 @@ export function criarServidor() {
     seguro(async ({ design_system, formato, grupo }) => {
       const ds = exigirDS(design_system);
       if (formato === 'css') {
-        if (bib.existe(ds, 'tokens.css')) return texto(bib.lerTexto(ds, 'tokens.css'));
+        if (bib.existe(ds, 'tokens.css')) return texto(await bib.lerTexto(ds, 'tokens.css'));
         if (bib.existe(ds, 'components/bundle.css')) {
-          return texto(`/* ${ds} não tem tokens.css; este é o components/bundle.css, que declara as variáveis no :root. */\n${bib.lerTexto(ds, 'components/bundle.css')}`);
+          return texto(`/* ${ds} não tem tokens.css; este é o components/bundle.css, que declara as variáveis no :root. */\n${await bib.lerTexto(ds, 'components/bundle.css')}`);
         }
         return erro(`${ds} não tem tokens em CSS. Use formato json.`);
       }
-      const tokens = bib.lerJson(ds, 'tokens.json');
+      const tokens = await bib.lerJson(ds, 'tokens.json');
       if (!grupo) return texto(tokens);
       if (!(grupo in tokens)) return erro(`Grupo "${grupo}" não existe. Grupos: ${Object.keys(tokens).join(', ')}.`);
       return texto({ [grupo]: tokens[grupo] });
@@ -193,7 +197,7 @@ export function criarServidor() {
     },
     seguro(async ({ design_system }) => {
       const ds = exigirDS(design_system);
-      return texto(bib.listarComponentes(ds).map((c) => `- ${c.nome}: ${c.descricao}`).join('\n'));
+      return texto((await bib.listarComponentes(ds)).map((c) => `- ${c.nome}: ${c.descricao}`).join('\n'));
     }),
   );
 
@@ -214,17 +218,17 @@ export function criarServidor() {
       const nome = bib.resolverComponente(ds, componente);
       if (!nome) return erro(`Componente "${componente}" não encontrado em ${ds}. Use listar_componentes.`);
       const partes = [`# ${nome} (${DESIGN_SYSTEMS[ds].nome})`];
-      const anexar = (titulo, caminho, limite) => {
+      const anexar = async (titulo, caminho, limite) => {
         if (!bib.existe(ds, caminho)) return;
-        const conteudo = bib.lerTexto(ds, caminho);
+        const conteudo = await bib.lerTexto(ds, caminho);
         if (!conteudo.trim()) return;
         partes.push(`## ${titulo} · ${caminho}\n\n${limite ? cortar(conteudo, limite, `Leia o arquivo inteiro com ler_arquivo("${caminho}").`) : conteudo}`);
       };
-      anexar('Diretrizes', `components/${nome}/README.md`);
-      anexar('API', `api/components/${nome}.md`);
-      anexar('Tipos', `components/${nome}/${nome}.d.ts`);
-      for (const fonte of bib.fontesDoComponente(ds, nome)) anexar('Código-fonte', fonte, LIMITE_PREVIEW);
-      if (incluir_preview) anexar('Prévia', `components/${nome}/preview.html`, LIMITE_PREVIEW);
+      await anexar('Diretrizes', `components/${nome}/README.md`);
+      await anexar('API', `api/components/${nome}.md`);
+      await anexar('Tipos', `components/${nome}/${nome}.d.ts`);
+      for (const fonte of bib.fontesDoComponente(ds, nome)) await anexar('Código-fonte', fonte, LIMITE_PREVIEW);
+      if (incluir_preview) await anexar('Prévia', `components/${nome}/preview.html`, LIMITE_PREVIEW);
       return texto(partes.join('\n\n'));
     }),
   );
@@ -239,7 +243,7 @@ export function criarServidor() {
     },
     seguro(async ({ design_system }) => {
       const ds = exigirDS(design_system);
-      const grupos = bib.gruposDeAssets(ds);
+      const grupos = await bib.gruposDeAssets(ds);
       if (!grupos.length) return erro(`${ds} não tem assets registrados no design-system.json.`);
       return texto(
         grupos
@@ -265,14 +269,16 @@ export function criarServidor() {
     },
     seguro(async ({ design_system, arquivo }) => {
       const ds = exigirDS(design_system);
-      const caminho = bib.resolverAsset(ds, arquivo);
+      const caminho = await bib.resolverAsset(ds, arquivo);
       if (!caminho || !bib.existe(ds, caminho)) return erro(`Asset "${arquivo}" não encontrado em ${ds}. Use listar_logos.`);
       const tipo = bib.tipoDoArquivo(caminho);
-      if (bib.ehTexto(caminho)) return texto(bib.lerTexto(ds, caminho));
-      if (tipo.startsWith('image/')) {
-        return { content: [{ type: 'image', data: bib.lerBinario(ds, caminho).toString('base64'), mimeType: tipo }] };
-      }
-      return erro(`${caminho} é ${tipo}; baixe pelo recurso ds://${ds}/${caminho}.`);
+      const link = urlPublica ? { type: 'text', text: `Arquivo oficial: ${linkPublico(ds, caminho)}` } : null;
+      let conteudo;
+      if (bib.ehTexto(caminho)) conteudo = { type: 'text', text: await bib.lerTexto(ds, caminho) };
+      else if (tipo.startsWith('image/')) conteudo = { type: 'image', data: bib.paraBase64(await bib.lerBinario(ds, caminho)), mimeType: tipo };
+      else if (link) return { content: [link] };
+      else return erro(`${caminho} é ${tipo}; baixe pelo recurso ds://${ds}/${caminho}.`);
+      return { content: link ? [link, conteudo] : [conteudo] };
     }),
   );
 
@@ -288,7 +294,7 @@ export function criarServidor() {
     },
     seguro(async ({ termo, design_system }) => {
       const lista = design_system ? [exigirDS(design_system)] : bib.disponiveis();
-      const { total, achados } = bib.buscar(termo, lista);
+      const { total, achados } = await bib.buscar(termo, lista);
       if (!total) return texto(`Nada encontrado para "${termo}".`);
       const linhas = achados.map((a) => `${a.designSystem}/${a.arquivo}:${a.linha}  ${a.trecho}`);
       return texto(`${total} ocorrência(s)${total > achados.length ? `, mostrando ${achados.length}` : ''}:\n${linhas.join('\n')}`);
@@ -321,10 +327,11 @@ export function criarServidor() {
       const ds = exigirDS(design_system);
       if (!bib.existe(ds, caminho)) return erro(`Arquivo não encontrado: ${ds}/${caminho}.`);
       const tipo = bib.tipoDoArquivo(caminho);
-      if (bib.ehTexto(caminho)) return texto(bib.lerTexto(ds, caminho));
+      if (bib.ehTexto(caminho)) return texto(await bib.lerTexto(ds, caminho));
       if (tipo.startsWith('image/')) {
-        return { content: [{ type: 'image', data: bib.lerBinario(ds, caminho).toString('base64'), mimeType: tipo }] };
+        return { content: [{ type: 'image', data: bib.paraBase64(await bib.lerBinario(ds, caminho)), mimeType: tipo }] };
       }
+      if (urlPublica) return texto(`${caminho} é binário (${tipo}). Arquivo: ${linkPublico(ds, bib.resolverCaminho(caminho))}`);
       return erro(`${caminho} é binário (${tipo}); baixe pelo recurso ds://${ds}/${caminho}.`);
     }),
   );
@@ -348,8 +355,8 @@ export function criarServidor() {
       const relativo = decodeURIComponent(String(caminho));
       if (!bib.existe(ds, relativo)) throw new Error(`Arquivo não encontrado: ${uri.href}`);
       const mimeType = bib.tipoDoArquivo(relativo);
-      if (bib.ehTexto(relativo)) return { contents: [{ uri: uri.href, mimeType, text: bib.lerTexto(ds, relativo) }] };
-      return { contents: [{ uri: uri.href, mimeType, blob: bib.lerBinario(ds, relativo).toString('base64') }] };
+      if (bib.ehTexto(relativo)) return { contents: [{ uri: uri.href, mimeType, text: await bib.lerTexto(ds, relativo) }] };
+      return { contents: [{ uri: uri.href, mimeType, blob: bib.paraBase64(await bib.lerBinario(ds, relativo)) }] };
     },
   );
 

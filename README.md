@@ -1,6 +1,6 @@
 # 3F GROUP DESIGN
 
-**Versão 01.001 · 25/10/2026**
+**Versão 01.002 · 25/10/2026**
 
 Servidor [MCP](https://modelcontextprotocol.io) público que dá ao Claude (e a qualquer cliente MCP) acesso aos design systems oficiais e aos dados de contato das empresas do 3F Group.
 
@@ -129,7 +129,7 @@ Melhoramento genético agrícola, principalmente de milho.
 
 1. Os design systems continuam sendo editados nos artifacts do claude.ai.
 2. Uma rotina automática exporta os artifacts que mudaram, verifica dados sensíveis e publica no `main` (roteiro em [SINCRONIZAR.md](SINCRONIZAR.md)).
-3. O servidor confere o `main` a cada 15 minutos e passa a servir a versão nova sozinho, sem reinstalar.
+3. A cada push no `main`, o Cloudflare publica o conector de novo. Quem já está conectado recebe a versão nova sem fazer nada.
 
 ## Dados sensíveis
 
@@ -151,41 +151,34 @@ Nada de pessoas, negócios, estrutura interna ou planos de produto entra nos des
 
 Todos os arquivos também ficam disponíveis como recursos `ds://<design-system>/<caminho>` (inclusive fontes), e o prompt `usar_design_system` prepara o contexto para produzir uma peça. Os nomes aceitam variações: `ORVIX`, `orvix`, `Barigen`, `Farmasense`, `3F Group`.
 
-## Instalação
+## Conectar
 
-Precisa de Node.js 18 ou mais novo.
+O conector fica publicado no Cloudflare Workers, sempre ligado e sem login. Abra o endereço do conector no navegador para ver a página com o passo a passo e o botão de copiar. Para conectar, use o endereço terminado em `/mcp`:
 
-**Claude Code**
+| Onde | Como |
+|---|---|
+| **Claude** (claude.ai, app e celular) | Configurações → Conectores → Adicionar conector personalizado. Nome **3F GROUP DESIGN**, URL do conector, sem login. Em contas Team e Enterprise, o administrador cadastra uma vez em Configurações da organização → Conectores, e cada pessoa só ativa. |
+| **ChatGPT** | Configurações → Aplicativos e conectores → Configurações avançadas → modo desenvolvedor. Depois, criar conector com nome **3F GROUP DESIGN**, URL do conector e autenticação nenhuma. |
+| **Claude Code** | `claude mcp add --transport http 3f-group-design <URL do conector>` |
+| **Cursor e outros clientes MCP** | Servidor remoto (Streamable HTTP) com a URL do conector. |
+
+### Publicação no Cloudflare (uma vez só)
+
+1. No painel do Cloudflare: Workers e Pages → Criar → Importar um repositório → GitHub → `GIT-3F-GROUP/3F-PUBLICO`, ramo `main`.
+2. Comando de deploy: `npx wrangler deploy` (o [`wrangler.jsonc`](wrangler.jsonc) já monta os arquivos antes). Não precisa de comando de build nem de variáveis.
+3. O endereço fica `https://3f-group-design.<sua-conta>.workers.dev`. Opcional: em Configurações → Domínios, use um domínio próprio, como `design.3f.group`.
+
+Daí em diante, cada push no `main` publica sozinho.
+
+### Rodar no próprio computador (opcional)
+
+Para quem prefere não depender do endereço público. Precisa de Node.js 18 ou mais novo; o servidor confere o `main` a cada 15 minutos e se atualiza sozinho.
 
 ```bash
 claude mcp add 3f-group-design -- npx -y github:GIT-3F-GROUP/3F-PUBLICO
 ```
 
-Quem abrir o Claude Code dentro deste repositório já recebe o servidor pelo [`.mcp.json`](.mcp.json) (rode `npm install` antes).
-
-**Claude Desktop, Cursor e outros clientes** (arquivo de configuração MCP)
-
-```json
-{
-  "mcpServers": {
-    "3f-group-design": {
-      "command": "npx",
-      "args": ["-y", "github:GIT-3F-GROUP/3F-PUBLICO"]
-    }
-  }
-}
-```
-
-**Conector remoto (claude.ai, celular e times)**
-
-O servidor também fala Streamable HTTP, sem autenticação, em `/mcp`:
-
-```bash
-npm install
-PORT=3000 npm run start:http   # MCP em http://localhost:3000/mcp
-```
-
-Para hospedar, use o [`Dockerfile`](Dockerfile) em qualquer serviço de contêiner, ou o [`render.yaml`](render.yaml) no Render (plano gratuito): <https://render.com/deploy?repo=https://github.com/GIT-3F-GROUP/3F-PUBLICO>. Depois cadastre `https://<endereço>/mcp` no claude.ai em Configurações → Conectores → Adicionar conector personalizado, com o nome **3F GROUP DESIGN**.
+O [`Dockerfile`](Dockerfile) roda o mesmo servidor em HTTP (`/mcp`) em qualquer serviço de contêiner.
 
 ## Configuração
 
@@ -204,10 +197,11 @@ npm install
 npm test                              # ferramentas, regra de escolha e dados sensíveis
 node mcp/verificar-sensiveis.js orvix # verifica um design system
 npm start                             # stdio
+npx wrangler dev                      # conector do Cloudflare em http://localhost:8787/mcp
 ```
 
 ### Versão
 
 A linha do topo deste README mostra a versão e a data da última alteração, no formato `01.001`. O primeiro número sobe quando um design system entra ou sai do conjunto (e o segundo volta para `001`); o segundo sobe a cada commit. Antes de cada commit, rode `npm run versao`: o script faz a conta, grava `versao.json` e atualiza o README.
 
-O código fica em [`mcp/`](mcp): `empresas.js` (cadastro das marcas e regra de escolha), `biblioteca.js` (leitura dos arquivos), `servidor.js` (ferramentas, recursos e prompt), `atualizador.js` (atualização pelo GitHub), `montar-design-system.js` e `verificar-sensiveis.js` (sincronização) e `index.js` (transportes).
+O código fica em [`mcp/`](mcp): `empresas.js` (cadastro das marcas e regra de escolha), `biblioteca.js` (leitura dos arquivos), `servidor.js` (ferramentas, recursos e prompt), `worker.js` e `construir-worker.js` (conector no Cloudflare), `index.js`, `arquivos.js` e `atualizador.js` (servidor em Node), `montar-design-system.js`, `verificar-sensiveis.js` e `versao.js` (sincronização e versão).

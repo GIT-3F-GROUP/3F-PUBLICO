@@ -10,7 +10,7 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { RAIZ_EMBUTIDA } from './biblioteca.js';
+import { RAIZ_EMBUTIDA } from './arquivos.js';
 import { DESIGN_SYSTEMS } from './empresas.js';
 
 const RAIZ_REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
