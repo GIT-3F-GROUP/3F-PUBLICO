@@ -2,7 +2,7 @@ As camadas de cor da área interna e do BI.
 
 ## Quando usar
 
-- Toda tela interna (`/painel`, `/admin`) e o BI.
+- Toda tela da área interna restrita e o BI.
 
 ## Variações desenhadas
 

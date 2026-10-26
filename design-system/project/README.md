@@ -22,8 +22,8 @@ Estas doze regras valem para toda peça digital. Na dúvida, elas decidem.
 O sistema serve a quatro superfícies:
 
 1. **Portal público** (`3f.group`) e sites institucionais: fundo limpo, texto de alto contraste, bordas de 1px, sem sombra. Tema claro por padrão, com tema escuro pronto.
-2. **Área interna** (`/painel`, `/admin`): tom sobre tom. Página em `i-bg`, cartões brancos com `sombra-cartao`, campos em `i-s2`.
-3. **BI** (`/bi`): mesmas camadas da área interna, com tema claro e escuro (tokens `bi-*`).
+2. **Área interna** restrita: tom sobre tom. Página em `i-bg`, cartões brancos com `sombra-cartao`, campos em `i-s2`.
+3. **BI**: mesmas camadas da área interna, com tema claro e escuro (tokens `bi-*`).
 4. **Aplicativos Apple** (iPhone, iPad, Mac): as mesmas cores, a mesma família e as mesmas regras, nos limites da seção "Aplicativos Apple".
 
 ## Voz e texto
@@ -31,7 +31,6 @@ O sistema serve a quatro superfícies:
 - A frase institucional é "O agro se constrói com gente de confiança." Use-a inteira, com ponto final, em capas, aberturas e assinaturas.
 - Os valores que sustentam a fala do grupo são confiança e caráter: texto realista e honesto, que só afirma o que o campo confirma.
 - O propósito: servir o agro com confiança e caráter, unindo as pessoas que trabalham em torno dele, em indústrias e empresas de serviço que beneficiam o homem do campo.
-- A frase "Sete empresas. Um propósito." foi aposentada e não entra em material novo.
 - Escreva em português do Brasil com acentuação completa.
 - Tom institucional, sóbrio e claro. Fale pelo conjunto das empresas e deixe cada empresa protagonizar a própria história.
 - Use vocabulário agronômico preciso ao descrever as empresas: "tecnologia de aplicação agrícola", "melhoramento genético de milho", "consultoria agronômica de campo".

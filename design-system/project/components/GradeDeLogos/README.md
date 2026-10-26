@@ -6,7 +6,7 @@ As marcas das empresas lado a lado, em grade de 1px.
 
 ## Variações desenhadas
 
-- Sete empresas
+- Empresas do grupo
 
 ## Regras
 

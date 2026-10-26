@@ -1,6 +1,6 @@
 Marcas das empresas em versão monocromática, em preto e em branco, para uso coletivo no contexto do grupo (grade da home, páginas de empresas, materiais institucionais).
 
-- Sete empresas: Agro 3F, Orvix, Barygen, FarmSense, MixSafe.ai, Mátria e ADISA. Mais o FarmCast.
+- Empresas: Agro 3F, Orvix, Barygen, FarmSense, MixSafe.ai, Mátria e ADISA. Mais o FarmCast.
 - `escura`: tinta única preta (#000000), sobre fundo claro. `clara`: tinta única branca (#ffffff), sobre fundo escuro.
 - Tela padronizada de 150 por 80, para que todas alinhem na mesma grade.
 - FarmCast tem também a versão `colorida` (faixas em verde e âmbar), com letras pretas (`escura`) ou brancas (`clara`).
